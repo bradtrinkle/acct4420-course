@@ -8,7 +8,7 @@
     {n:6,t:"Calculate the Q3 warranty reserve, the amount set aside for expected repair claims (1,210 cars, 4% claim rate, $6,500 per claim)",team:"Controller's Office"},
     {n:7,t:"Find the current Iowa corporate income tax rate",team:"Tax"},
     {n:8,t:"Recommend whether to write off (stop expecting payment on) a struggling dealer's $1.2 million receivable",team:"Controller's Office"},
-    {n:9,t:"Prepare support for the CFO's quarterly certification that Velox's internal controls over financial reporting work (known as SOX certification)",team:"Internal Audit"},
+    {n:9,t:"Prepare support for the CFO's quarterly certification that Velox's internal controls over financial reporting work (known as SOX, short for Sarbanes-Oxley, certification)",team:"Internal Audit"},
     {n:10,t:"Analyze employee salary and performance files to support layoff planning",team:"Human Resources and Finance",req:true}
   ];
   const CATS = ["AI does it well","AI helps, a person checks","AI assists, a person decides"];
