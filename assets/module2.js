@@ -45,7 +45,7 @@
 
   /* ---------- config-driven bits ---------- */
   const C = window.COURSE || {};
-  if(C.videoUrl && C.videoUrl[2]) $("#videoBox").innerHTML = `<iframe src="${esc(C.videoUrl[2])}" title="Module 2 video" allowfullscreen></iframe>`;
+  if(C.videoUrl && C.videoUrl[2]) $("#videoBox").innerHTML = videoHtml(C.videoUrl[2], "Module 2 video");
   if(C.quizUrl && C.quizUrl[2]){ const q=$("#quizLink"); q.href=C.quizUrl[2]; q.style.display="inline-block"; $("#quizNone").style.display="none"; }
   if(C.submitUrl && C.submitUrl[2]){ const s=$("#submitLink"); s.href=C.submitUrl[2]; s.style.display="inline"; }
 

@@ -4,6 +4,11 @@
     set(k, v){ try{ localStorage.setItem("velox."+k, JSON.stringify(v)); }catch(e){} }
   };
   window.store = store;
+  window.videoHtml = function(url, title){
+    const u = String(url).replace(/&/g,"&amp;").replace(/"/g,"&quot;");
+    if(/\.mp4(\?|$)/i.test(url)) return `<video controls playsinline preload="metadata" title="${title}"><source src="${u}" type="video/mp4">Your browser cannot play this video. Use the transcript button below instead.</video>`;
+    return `<iframe src="${u}" title="${title}" allowfullscreen></iframe>`;
+  };
   window.toast = function(msg){
     let t = document.querySelector(".toast");
     if(!t){ t = document.createElement("div"); t.className="toast"; t.setAttribute("role","status"); document.body.appendChild(t); }

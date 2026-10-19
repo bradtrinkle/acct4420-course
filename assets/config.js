@@ -2,7 +2,7 @@
 window.COURSE = {
   title: "Generative AI in Business Decision-Making",
   // Paste the embed URL of the Module 1 video here (ISU video platform or unlisted YouTube embed link).
-  videoUrl: { 1: "" },
+  videoUrl: { 1: "assets/videos/module-1.mp4" },
   // Paste the Canvas quiz link for each module here.
   quizUrl: { 1: "" },
   // Canvas assignment submission link for each module.

@@ -51,7 +51,7 @@
 
   /* ---------- config-driven bits ---------- */
   const C = window.COURSE || {};
-  if(C.videoUrl && C.videoUrl[1]) $("#videoBox").innerHTML = `<iframe src="${esc(C.videoUrl[1])}" title="Module 1 video" allowfullscreen></iframe>`;
+  if(C.videoUrl && C.videoUrl[1]) $("#videoBox").innerHTML = videoHtml(C.videoUrl[1], "Module 1 video");
   if(C.quizUrl && C.quizUrl[1]){ const q=$("#quizLink"); q.href=C.quizUrl[1]; q.style.display="inline-block"; $("#quizNone").style.display="none"; }
   if(C.submitUrl && C.submitUrl[1]){ const s=$("#submitLink"); s.href=C.submitUrl[1]; s.style.display="inline"; }
 
