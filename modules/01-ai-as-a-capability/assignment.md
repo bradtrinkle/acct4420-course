@@ -2,7 +2,6 @@
 title: "Module 1 Assignment: What Can AI Do for Velox?"
 ---
 
-# Core assignment: What Can AI Do for Velox?
 
 > **Jordan:** Priya wants to know where AI fits in Velox finance before the rotations start. Here are 10 real tasks from the finance teams. Sort them, test a few, and tell her what you found.
 

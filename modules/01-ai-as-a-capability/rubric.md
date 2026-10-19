@@ -2,7 +2,6 @@
 title: "Module 1 Rubric"
 ---
 
-# Module 1 rubric (100 points)
 
 Your mastery attempt is scored against this rubric. Every level describes something visible in your submission. Your Jordan coach uses the same rubric.
 

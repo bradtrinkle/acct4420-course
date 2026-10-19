@@ -6,3 +6,7 @@ plugins:
 relative_links:
   enabled: true
   collections: false
+header_pages:
+  - index.md
+  - modules/01-ai-as-a-capability/index.md
+  - shared/responsible-ai-policy.md

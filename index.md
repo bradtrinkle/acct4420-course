@@ -1,8 +1,7 @@
 ---
-title: Home
+title: "Generative AI in Business Decision-Making"
 ---
 
-# Generative AI in Business Decision-Making
 
 ACCT/MIS 4420 and 5420 · Spring 2027 · Online, asynchronous
 

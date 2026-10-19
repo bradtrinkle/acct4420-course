@@ -2,7 +2,6 @@
 title: "Module 1: AI as a Capability"
 ---
 
-# Module 1: AI as a Capability
 
 *Week 1 · Tallgrass Advisory training · about 6 hours*
 

@@ -2,7 +2,6 @@
 title: "Set up your Jordan coach"
 ---
 
-# Set up your Jordan coach
 
 You build this once, in your own Claude account, and reuse it all term. It takes about 10 minutes.
 
