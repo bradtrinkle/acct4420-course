@@ -17,11 +17,10 @@
 </div></header>
 
 <section class="hero"><div class="wrap">
-  <span class="eyebrow">Iowa State University · Spring 2027</span>
-  <h1>When you face a task, ask: "How can AI help me do this?"</h1>
-  <p>You are a new hire at Velox Motorworks. Over 12 weeks you will learn to work with AI like a pro, and to prove it is right before you rely on it.</p>
-  <a id="startBtn" class="btn btn-gold" href="module-1.html">Start Module 1</a>
-  <span id="resumeNote" class="hint" style="color:#fde9ec;margin-left:12px"></span>
+  <span class="eyebrow">Course Home · Start Here</span>
+  <h1>Generative AI in Business Decision-Making</h1>
+  <p>ACCT/MIS 4420 and 5420 · Spring 2027 · Online, asynchronous · Iowa State University</p>
+  <p style="font-size:17px;margin-bottom:0">Welcome! This is the first page of the course. Read it from top to bottom: it explains the story you are part of, the 12-week journey, and how every module works. The button to begin is at the bottom.</p>
 </div></section>
 
 <main><div class="wrap">
@@ -35,7 +34,7 @@
 
 <h2>Your journey</h2>
 <ol class="path" id="path">
-  <li><span class="num">1</span><div><div class="t">AI as a Capability</div><div class="s">Week 1 · Tallgrass training · What AI can and cannot do</div></div><a class="btn btn-red btn-sm go" href="module-1.html">Open</a></li>
+  <li><span class="num">1</span><div><div class="t">AI as a Capability</div><div class="s">Week 1 · Tallgrass training · What AI can and cannot do</div></div><span class="pill go">Start at the bottom of this page</span></li>
   <li class="locked"><span class="num">2</span><div><div class="t">Communicating with AI in Context</div><div class="s">Week 2 · Tallgrass training</div></div><span class="pill go">Coming soon</span></li>
   <li class="locked"><span class="num">3</span><div><div class="t">Thinking Through Work with AI</div><div class="s">Week 3 · Tallgrass training</div></div><span class="pill go">Coming soon</span></li>
   <li class="locked"><span class="num">4</span><div><div class="t">AI in Financial Accounting</div><div class="s">Week 4 · Velox Controller's Office</div></div><span class="pill go">Coming soon</span></li>
@@ -57,9 +56,21 @@
   <div class="card"><h3>6 · About 7 hours</h3>A week, at most. Your progress saves on this device automatically.</div>
 </div>
 
+<h2>Your goal for this course</h2>
+<div class="card">
+  <p style="margin:0">By the end, when you face a task, your first thought will be <b>"How can AI help me do this?"</b> and your second will be <b>"How do I know the answer is right?"</b></p>
+</div>
+
 <div class="card" style="background:var(--gold-soft);border-color:#ecd48f">
   <b>Privacy.</b> Everything you type here is saved only in your own browser. Nothing is sent anywhere until you upload your submission in Canvas. Use only the simulated data in this course.
 </div>
+
+<div class="card" style="text-align:center;padding:30px">
+  <h2 style="margin-top:0">Ready? Start your first day at Velox.</h2>
+  <p class="hint" id="resumeNote" style="margin-top:0">Module 1 takes about 6 hours. Your progress saves automatically.</p>
+  <a id="startBtn" class="btn btn-gold" href="module-1.html">Start Module 1</a>
+</div>
+
 </div></main>
 
 <footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. Jordan Reyes is a fictional character presented by an AI avatar.</div></footer>
@@ -68,8 +79,8 @@
 (function(){
   const step = store.get("m1.step", 1), done = store.get("m1.done", false);
   const b = document.getElementById("startBtn"), n = document.getElementById("resumeNote");
-  if(done){ b.textContent="Review Module 1"; n.textContent="Module 1 complete"; }
-  else if(step>1){ b.textContent="Continue Module 1"; n.textContent="You are on step "+step+" of 8"; }
+  if(done){ b.textContent="Review Module 1"; n.textContent="You have completed Module 1."; }
+  else if(step>1){ b.textContent="Continue Module 1"; n.textContent="Welcome back. You are on step "+step+" of 8 in Module 1."; }
 })();
 </script>
 </body>
