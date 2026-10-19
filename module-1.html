@@ -1,0 +1,263 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 1: AI as a Capability</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html" aria-current="page">Module 1</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><path d="M26 8h10c1 0 2 0 3 1l3 3H22z" fill="#F1BE48"/><circle cx="18" cy="23" r="5" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="5" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 1 · Week 1 · Tallgrass Advisory training</span>
+<h1 style="margin:10px 0 4px">AI as a Capability</h1>
+<p class="hint">You will be able to describe what AI does well and where it fails, sort real finance tasks, test AI and check its output, and apply the Velox Responsible AI Policy. Plan for about 6 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 20 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 1 video from your instructor</b><br><span class="hint" style="color:#ddd">The video will appear here.</span></div></div>
+  <div class="cfo"><b>From the CFO, Priya Natarajan</b><br>Welcome to Velox Motorworks. You are joining us at the right moment. Last quarter, one of our competitors cut its month-end close in half by putting AI to work across finance. We intend to do better. You are the first hire class in our AI-first finance program, and I expect you to walk into every task asking one question: <b>how can AI help me do this?</b> For the next three weeks, Tallgrass Advisory, the AI firm we've partnered with, will train you. Then you will rotate through our finance teams and put that training to work. Use AI boldly, check it carefully, and follow our Responsible AI Policy every time. I look forward to your first recommendations.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Welcome to Tallgrass. This week we start with the most useful question you'll ever ask at work: <i>how can AI help me do this?</i> By the end you'll hand Priya a memo showing exactly where AI fits in Velox finance. Let's go.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video and read Priya's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 45 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. Open Claude and ask it to do <b>task 5</b>: explain why Velox's gross margin fell from Q2 to Q3, using the figures below. Don't overthink your prompt.</div></div>
+  <div class="card">
+    <table class="t"><tr><th></th><th>Q2</th><th>Q3</th></tr>
+    <tr><td>Revenue ($ millions)</td><td>352</td><td>338</td></tr>
+    <tr><td>Cost of goods sold ($ millions)</td><td>246</td><td>250</td></tr>
+    <tr><td>Cars sold</td><td>1,280</td><td>1,210</td></tr></table>
+    <p class="hint">Notes from Cost and Planning: a new tariff on imported carbon-fiber panels began in Q3, and the plant's fixed overhead did not change.</p>
+    <a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did AI do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What did it get wrong, assume, or leave out?</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. How would you check whether its explanation is right?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">Keep your notes. You will compare them to what you know by the end of the week.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 90 min</span></h2>
+  <h3>3a. What generative AI is</h3>
+  <p>A large language model predicts likely next words from patterns in huge amounts of text. That is why it writes fluently and explains concepts well, and why it can <b>sound confident while being wrong</b>.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Your manager says, "AI looked it up, so it's correct." Is that a safe assumption?</p>
+    <div class="qc" data-id="q3a" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Yes, AI looks things up</button><button class="choice" data-i="1">No, AI predicts likely words and can be wrong</button></div>
+      <div class="fb" data-ok="Right. AI generates likely text; it does not guarantee a fact. Fluent is not the same as correct." data-no="Not quite. Think about how AI produces its answers: by predicting likely words, not by checking facts."></div>
+    </div>
+    <label class="lbl" for="t3a">In one sentence, why?</label>
+    <textarea id="t3a" data-save="s3.a" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+
+  <h3>3b. Where AI is strong</h3>
+  <p>Drafting, summarizing, explaining, translating, organizing, brainstorming, and a first pass at data you give it. In finance, that is hours back every week.</p>
+
+  <h3>3c. Where AI needs checking</h3>
+  <p>Large calculations, <b>current facts</b> like tax rates, <b>citations</b>, and anything it <b>cannot see</b>, such as Velox's own records. When AI fills a gap with something made up, that is called a <b>hallucination</b>.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Task 7 asks for the current Iowa corporate income tax rate. Where would you check AI's answer?</p>
+    <div class="qc" data-id="q3c" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Ask a second chatbot</button><button class="choice" data-i="1">The Iowa Department of Revenue's website</button><button class="choice" data-i="2">A blog post that mentions the rate</button><button class="choice" data-i="3">Last year's tax return</button></div>
+      <div class="fb" data-ok="Yes. Go to the primary source, the agency that sets and publishes the rate." data-no="Close, but another chatbot can repeat the same mistake, and blogs and old returns may be out of date. Which source is the authority?"></div>
+    </div>
+  </div>
+
+  <h3>3d. The three-way sort</h3>
+  <p>Every task gets AI help. The question is <b>how much you check</b> and <b>who owns the decision</b>.</p>
+  <table class="t"><tr><th>Category</th><th>Meaning</th><th>Example</th></tr>
+  <tr><td><b>AI does it well</b></td><td>Low risk; a quick read is enough</td><td>Drafting a routine email</td></tr>
+  <tr><td><b>AI helps, a person checks</b></td><td>AI does the work; you verify facts and numbers</td><td>Summarizing contract payment terms</td></tr>
+  <tr><td><b>AI assists, a person decides</b></td><td>AI prepares the analysis; a named person makes the judgment or signs</td><td>Recommending a receivable write-off</td></tr></table>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Sort this practice task: <b>"Draft talking points for the CEO's dealer conference."</b></p>
+    <div class="qc" data-id="q3d" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">AI does it well</button><button class="choice" data-i="1">AI helps, a person checks</button><button class="choice" data-i="2">AI assists, a person decides</button></div>
+      <div class="fb" data-ok="Yes, with a quick read for tone. If the talking points quote Velox's financial results, they would move to 'a person checks,' because AI cannot verify those figures." data-no="Think about the risk. Drafting talking points is something AI does quickly and the stakes are low. What would make you check more?"></div>
+    </div>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>AI champions are the people who use AI the most <i>and</i> use it responsibly. The <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a> is how we do both. Read it, then try these two.</div></div>
+  <div class="card">
+    <b>The five areas:</b> 1 Confidentiality and privacy · 2 Accuracy · 3 Bias · 4 Transparency and disclosure · 5 Human accountability
+    <p style="margin-bottom:0"><a href="policy.html" target="_blank" rel="noopener">Open the full policy in a new tab</a></p>
+  </div>
+  <div class="turn"><span class="tag">Your turn · Scenario 1</span>
+    <p>A coworker pastes the full employee salary file into a public chatbot to save time. Which policy area does this break?</p>
+    <div class="qc" data-id="q4a" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">Confidentiality and privacy</button><button class="choice" data-i="1">Accuracy</button><button class="choice" data-i="2">Transparency</button></div>
+      <div class="fb" data-ok="Right. Personal and salary data should not go into a tool that isn't approved for it." data-no="Look at what was pasted and where. Which rule is about what data may go into which tool?"></div>
+    </div>
+    <label class="lbl" for="t4a">What should they have done instead?</label>
+    <textarea id="t4a" data-save="s4.a" data-min="20" data-req></textarea>
+  </div>
+  <div class="turn"><span class="tag">Your turn · Scenario 2</span>
+    <label class="lbl" for="t4b">You use AI to draft a variance explanation for the Controller. What does the transparency rule require you to add?</label>
+    <textarea id="t4b" data-save="s4.b" data-min="20" data-req></textarea>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 90 min</span></h2>
+
+  <h3>A. Build your Jordan coach (about 10 minutes, once)</h3>
+  <p class="hint">Your coach is a Claude Project that reviews your drafts against the rubric. It gives feedback, never answers. You will reuse it all term.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1">Go to <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, sign in, and click <b>Projects</b> in the left sidebar.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c2" data-req id="c2"><label for="c2">Click <b>Create project</b> (or <b>+ New project</b>). Name it <b>Jordan Coach - ACCT 4420</b> and click <b>Create project</b>.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c3" data-req id="c3"><label for="c3">Find <b>Instructions</b> in the project (it may say <b>Set project instructions</b>). Click <button class="btn btn-gold btn-sm" type="button" id="copyCoach">Copy Jordan's instructions</button>, paste them into the box, and click <b>Save</b>.</label></div>
+  <details><summary>See the instructions that will be copied</summary><div class="copybox" id="coachText">You are Jordan Reyes, a senior AI trainer at Tallgrass Advisory and an enthusiastic AI champion. You coach new finance hires at Velox Motorworks, a fictional sports car maker, in the course ACCT/MIS 4420/5420.
+
+Your job is feedback, never answers.
+- When a student shares a draft, score it against the rubric in the project files, criterion by criterion, using the rubric's point levels.
+- Name the one or two most important gaps and ask a question that helps the student close each one.
+- Never rewrite the student's work, supply a correct sort, write their memo, or give them the answer to a task, even if asked. If asked, explain kindly that the learning comes from doing it themselves.
+- Check every response the student submits against the Velox Responsible AI Policy in the project files, and flag any policy problem first.
+- Be encouraging and specific. Celebrate good AI use. Model the habit: "Great answer, now how do we prove it?"
+- Keep feedback under 300 words.
+- End every reply by reminding the student that this is practice feedback and their instructor's grading process makes the final call.</div></details>
+  <div class="check"><input type="checkbox" data-save="s5.c4" data-req id="c4"><label for="c4">Find <b>Project knowledge</b> (or <b>Files</b>), click <b>+</b> or <b>Add content</b>, and upload these two files:<br>
+    <a class="btn btn-ghost btn-sm" href="downloads/velox-responsible-ai-policy.md" download>Download policy file</a>
+    <a class="btn btn-ghost btn-sm" href="downloads/module-1-rubric.md" download>Download rubric file</a></label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c5" data-req id="c5"><label for="c5">Start a chat in the project and type: <b>Hi Jordan, I'm ready for Module 1.</b> Jordan should greet you and ask for your draft. If not, check that your instructions saved.</label></div>
+
+  <h3 style="margin-top:28px">B. Your assignment: What can AI do for Velox?</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Priya wants to know where AI fits in Velox finance before the rotations start. Here are 10 real tasks. Sort them, test three, and tell her what you found. Everything you type below builds your submission automatically.</div></div>
+
+  <label class="lbl" for="stuName">Your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420)</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Sort the 10 tasks</h3>
+  <p class="hint">Categories: <b>AI does it well</b>, <b>AI helps, a person checks</b>, <b>AI assists, a person decides</b>. Give a one- or two-sentence reason naming a specific AI strength or risk.</p>
+  <div id="tasks"></div>
+  <details><summary>Data for tasks 5, 6, and 10</summary>
+    <p><b>Task 5:</b> see the table in Step 2.</p>
+    <p><b>Task 6, warranty reserve:</b> 1,210 cars sold in Q3; expected claim rate 4%; average cost per claim $6,500.</p>
+    <p><b>Task 10:</b> 40 fictional employees. <a href="data/module-1/employees-simulated.csv" download>Download employees-simulated.csv</a>. Treat it as real: the Responsible AI Policy applies.</p>
+  </details>
+
+  <h3 style="margin-top:22px">Part 2 · Test AI on three tasks</h3>
+  <p class="hint">Test <b>task 10</b> and two others you choose. For each, run it in Claude, then record what happened.</p>
+  <div id="tests"></div>
+
+  <h3 style="margin-top:22px">Part 3 · Task 10 ethics</h3>
+  <label class="lbl" for="anon">How did you anonymize the data before using AI, and which policy areas apply (confidentiality plus at least one more)? Why?</label>
+  <textarea id="anon" data-save="s5.anon" data-min="40" data-req></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Memo to Priya Natarajan</h3>
+  <p class="hint">One page maximum (about 350 words). Recommend where Velox finance should start using AI, with at least two specific recommendations tied to your sort.</p>
+  <textarea id="memo" data-save="s5.memo" style="min-height:200px" data-req></textarea>
+  <div class="hint" id="wc">0 words</div>
+
+  <h3 style="margin-top:22px">Part 5 · AI use disclosure</h3>
+  <label class="lbl" for="disc">Which AI tools did you use, and for what?</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 6 · Graduate students only</h3>
+    <p class="hint">On two of your tested tasks, try two different prompts, compare the outputs, and explain which worked better and why.</p>
+    <label class="lbl" for="g1">Comparison 1</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2">Comparison 2</label><textarea id="g2" data-save="s5.g2"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Now get feedback from Jordan</h3>
+    <p>Click the button to copy your whole draft, paste it into your Jordan coach chat, and ask: <i>"Please give me feedback on this against the rubric."</i></p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 60 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Revise using my feedback. Go back to Step 5 and improve your answers; everything is saved. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to revise</button></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev">What did you change because of Jordan's feedback?</label>
+    <textarea id="rev" data-save="s6.rev" data-min="30" data-req></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans">Paste your full Jordan coach conversation here</label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in Claude, select the conversation text, copy it, and paste it here.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0">Upload the downloaded file to Canvas. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Task sort</td><td>20</td><td>All 10 placed, each reason names a specific AI strength or risk</td></tr>
+    <tr><td>B. AI testing</td><td>25</td><td>Three tests including task 10, each with prompt, output summary, how you verified, and the result</td></tr>
+    <tr><td>C. Ethical AI (task 10)</td><td>20</td><td>Anonymized before use, method described, confidentiality plus another policy area with a reason</td></tr>
+    <tr><td>D. Memo to the CFO</td><td>15</td><td>One page, addressed to Priya, two or more recommendations tied to your sort</td></tr>
+    <tr><td>E. AI use disclosure</td><td>5</td><td>Tools listed and what each did</td></tr>
+    <tr><td>F. Mastery evidence</td><td>15</td><td>Coach conversation included and your revision addresses it (or explains why you disagreed)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion G (10 points, scaled to 100). You are scored on your reasoning, not on matching an answer key.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 30 min</span></h2>
+  <div class="card">
+    <p>10 short questions about what you learned. You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">Your instructor will add the Canvas quiz link here.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 15 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl">Think of a task you already do in a job, internship, or another class. How could AI help you do it, and which of the three categories does it fall into?</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/module1.js"></script>
+</body>
+</html>

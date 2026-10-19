@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>ACCT/MIS 4420: Generative AI in Business Decision-Making</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main">
+    <a href="index.html" aria-current="page">Home</a>
+    <a href="module-1.html">Module 1</a>
+    <a href="policy.html">AI Policy</a>
+  </nav>
+</div></header>
+
+<section class="hero"><div class="wrap">
+  <span class="eyebrow">Iowa State University · Spring 2027</span>
+  <h1>When you face a task, ask: "How can AI help me do this?"</h1>
+  <p>You are a new hire at Velox Motorworks. Over 12 weeks you will learn to work with AI like a pro, and to prove it is right before you rely on it.</p>
+  <a id="startBtn" class="btn btn-gold" href="module-1.html">Start Module 1</a>
+  <span id="resumeNote" class="hint" style="color:#fde9ec;margin-left:12px"></span>
+</div></section>
+
+<main><div class="wrap">
+
+<h2 style="margin-top:0">Your story</h2>
+<div class="card">
+  <p>Velox Motorworks is a publicly traded maker of high-performance sports cars in Des Moines, Iowa. Its CFO, Priya Natarajan, just launched an AI-first finance program, and <b>you are in the first hire class</b>.</p>
+  <p>Your guide is <b>Jordan Reyes</b> from Tallgrass Advisory, the AI consulting firm Velox hired. Jordan is a fictional character, and the videos use an AI avatar.</p>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan says</b>Great answer? Now let's prove it. That is the habit I will help you build all term.</div></div>
+</div>
+
+<h2>Your journey</h2>
+<ol class="path" id="path">
+  <li><span class="num">1</span><div><div class="t">AI as a Capability</div><div class="s">Week 1 · Tallgrass training · What AI can and cannot do</div></div><a class="btn btn-red btn-sm go" href="module-1.html">Open</a></li>
+  <li class="locked"><span class="num">2</span><div><div class="t">Communicating with AI in Context</div><div class="s">Week 2 · Tallgrass training</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">3</span><div><div class="t">Thinking Through Work with AI</div><div class="s">Week 3 · Tallgrass training</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">4</span><div><div class="t">AI in Financial Accounting</div><div class="s">Week 4 · Velox Controller's Office</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">5</span><div><div class="t">AI in Management Accounting</div><div class="s">Week 5 · Velox South Carolina plant</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">6</span><div><div class="t">AI in Auditing</div><div class="s">Week 6 · Velox South Carolina plant</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">7</span><div><div class="t">AI in Taxation</div><div class="s">Week 7 · Velox South Carolina plant</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">8</span><div><div class="t">From Pieces to Workflows</div><div class="s">Week 8 · Velox, with Tallgrass</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">9</span><div><div class="t">Agents with Human Oversight</div><div class="s">Week 9 · Velox, with Tallgrass</div></div><span class="pill go">Coming soon</span></li>
+  <li class="locked"><span class="num">10</span><div><div class="t">Final Project: How Can AI Help Me Do This?</div><div class="s">Weeks 10 to 12 · A Tallgrass client</div></div><span class="pill go">Coming soon</span></li>
+</ol>
+
+<h2>How every module works</h2>
+<div class="grid g3">
+  <div class="card"><h3>1 · Try it first</h3>Use AI on a real Velox task before anyone teaches you.</div>
+  <div class="card"><h3>2 · Think it through</h3>Short lessons with questions you answer. You move on when you have thought it through.</div>
+  <div class="card"><h3>3 · Get feedback</h3>Your own Jordan coach reviews your draft, then you improve it.</div>
+  <div class="card"><h3>4 · Show mastery</h3>Submit your improved version. That is the one that counts.</div>
+  <div class="card"><h3>5 · Stay responsible</h3>Every module practices the Velox Responsible AI Policy.</div>
+  <div class="card"><h3>6 · About 7 hours</h3>A week, at most. Your progress saves on this device automatically.</div>
+</div>
+
+<div class="card" style="background:var(--gold-soft);border-color:#ecd48f">
+  <b>Privacy.</b> Everything you type here is saved only in your own browser. Nothing is sent anywhere until you upload your submission in Canvas. Use only the simulated data in this course.
+</div>
+</div></main>
+
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. Jordan Reyes is a fictional character presented by an AI avatar.</div></footer>
+<script src="assets/common.js"></script>
+<script>
+(function(){
+  const step = store.get("m1.step", 1), done = store.get("m1.done", false);
+  const b = document.getElementById("startBtn"), n = document.getElementById("resumeNote");
+  if(done){ b.textContent="Review Module 1"; n.textContent="Module 1 complete"; }
+  else if(step>1){ b.textContent="Continue Module 1"; n.textContent="You are on step "+step+" of 8"; }
+})();
+</script>
+</body>
+</html>

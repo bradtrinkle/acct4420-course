@@ -1,6 +1,5 @@
----
-title: Velox Responsible AI Policy
----
+# Velox Responsible AI Policy
+
 
 
 Every Velox employee who uses AI follows these five rules. They are consistent with the AICPA Code of Professional Conduct principles of integrity, objectivity, due care, and confidentiality.
