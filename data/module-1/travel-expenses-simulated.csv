@@ -1,0 +1,301 @@
+expense_id,date,employee,department,category,purpose,amount_usd
+X2001,2026-09-27,Ximena Whitlock,Quality Control,Hotel,Customer demo,1016.22
+X2002,2026-09-19,Harriet Sutherland,Engineering,Ground transport,Dealer conference,297.55
+X2003,2026-09-29,Dana Pemberton,Finance,Conference fees,Training,1796.62
+X2004,2026-09-28,Silas Orchard,Quality Control,Meals,Dealer conference,114.72
+X2005,2026-09-23,Zara Abernathy,Sales Support,Meals,Plant audit,206.59
+X2006,2026-09-26,Owen Zimmer,IT,Meals,Trade show,87.99
+X2007,2026-09-02,Lena Ironside,IT,Hotel,Plant audit,354.84
+X2008,2026-09-05,Jasmine Garrison,Quality Control,Conference fees,Trade show,1518.33
+X2009,2026-09-10,Ximena Whitlock,Quality Control,Airfare,Dealer conference,1755.65
+X2010,2026-09-16,Tamsin Northcott,Finance,Hotel,Customer demo,237.95
+X2011,2026-09-10,Delphine Jessup,Supply Chain,Airfare,Customer demo,9800.0
+X2012,2026-09-04,Quentin Bellamy,IT,Meals,Plant audit,111.72
+X2013,2026-09-12,Malik Quillan,IT,Airfare,Plant audit,2039.71
+X2014,2026-09-04,Gideon Ashcroft,IT,Hotel,Supplier visit,989.65
+X2015,2026-09-04,Idris Kendrick,Supply Chain,Conference fees,Dealer conference,1776.9
+X2016,2026-09-04,Gideon Ashcroft,Finance,Airfare,Dealer conference,1972.73
+X2017,2026-09-02,Tamsin Northcott,Finance,Ground transport,Dealer conference,224.45
+X2018,2026-09-10,Dana Pemberton,Engineering,Meals,Plant audit,76.92
+X2019,2026-09-26,Emeka Eastwood,Finance,Hotel,Dealer conference,831.69
+X2020,2026-09-21,Hana Lockhart,Finance,Conference fees,Dealer conference,2529.78
+X2021,2026-09-03,Rosa Overton,Sales Support,Hotel,Training,888.32
+X2022,2026-09-12,Elliot Jarrow,Sales Support,Hotel,Training,614.33
+X2023,2026-09-17,Rosa Overton,Quality Control,Hotel,Plant audit,1727.4
+X2024,2026-09-13,Jasmine Garrison,Sales Support,Meals,Trade show,149.11
+X2025,2026-09-04,Gideon Ashcroft,Quality Control,Meals,Dealer conference,144.53
+X2026,2026-09-30,Nora Radcliffe,IT,Conference fees,Plant audit,892.29
+X2027,2026-09-09,Elliot Jarrow,Finance,Meals,Training,210.17
+X2028,2026-09-28,Bianca Kimball,Finance,Conference fees,Dealer conference,7200.0
+X2029,2026-09-21,Quentin Bellamy,Supply Chain,Airfare,Training,1172.73
+X2030,2026-09-19,Elliot Jarrow,Quality Control,Hotel,Customer demo,152.91
+X2031,2026-09-23,Jasmine Garrison,Supply Chain,Meals,Plant audit,207.63
+X2032,2026-09-10,Zara Abernathy,Supply Chain,Hotel,Customer demo,607.52
+X2033,2026-09-14,Bianca Kimball,Quality Control,Ground transport,Plant audit,339.56
+X2034,2026-09-15,Kasper Falkner,Sales Support,Ground transport,Supplier visit,267.9
+X2035,2026-09-20,Cyrus Ingram,Supply Chain,Hotel,Customer demo,641.79
+X2036,2026-09-30,Lena Ironside,Supply Chain,Hotel,Supplier visit,541.0
+X2037,2026-09-19,Silas Orchard,IT,Hotel,Trade show,1199.74
+X2038,2026-09-25,Yusuf Mercer,IT,Ground transport,Supplier visit,280.83
+X2039,2026-09-18,Priscilla Holloway,Quality Control,Airfare,Plant audit,2322.9
+X2040,2026-09-21,Isaac Nettleton,IT,Airfare,Customer demo,611.03
+X2041,2026-09-25,Kofi Larkin,Finance,Conference fees,Supplier visit,2296.32
+X2042,2026-09-06,Gideon Ashcroft,IT,Airfare,Plant audit,1833.7
+X2043,2026-09-12,Vera Hartwell,IT,Hotel,Trade show,902.54
+X2044,2026-09-05,Kasper Falkner,Engineering,Airfare,Supplier visit,1677.55
+X2045,2026-09-17,Priscilla Holloway,Engineering,Hotel,Plant audit,6150.0
+X2046,2026-09-08,Uriel Vandermeer,Sales Support,Meals,Training,79.86
+X2047,2026-09-07,Dana Pemberton,IT,Hotel,Customer demo,1565.79
+X2048,2026-09-11,Odalys Bannister,Engineering,Conference fees,Training,1317.07
+X2049,2026-09-09,Caleb Fairbanks,Quality Control,Hotel,Plant audit,616.91
+X2050,2026-09-17,Harriet Sutherland,Finance,Ground transport,Plant audit,346.97
+X2051,2026-09-23,Elliot Jarrow,Supply Chain,Hotel,Supplier visit,897.87
+X2052,2026-09-01,Yusuf Mercer,Sales Support,Airfare,Supplier visit,1474.96
+X2053,2026-09-18,Aiden Yardley,Engineering,Airfare,Dealer conference,1569.42
+X2054,2026-09-12,Caleb Fairbanks,Engineering,Airfare,Plant audit,1950.0
+X2055,2026-09-28,Yusuf Mercer,Sales Support,Conference fees,Dealer conference,1193.98
+X2056,2026-09-02,Tamsin Northcott,Finance,Hotel,Training,365.61
+X2057,2026-09-26,Kofi Larkin,Sales Support,Airfare,Customer demo,1173.15
+X2058,2026-09-13,Odalys Bannister,Supply Chain,Conference fees,Dealer conference,762.71
+X2059,2026-09-14,Freya Thorne,IT,Hotel,Plant audit,1725.5
+X2060,2026-09-27,Quentin Bellamy,IT,Ground transport,Trade show,264.22
+X2061,2026-09-15,Gideon Ashcroft,IT,Ground transport,Customer demo,288.84
+X2062,2026-09-17,Priscilla Holloway,Engineering,Hotel,Dealer conference,6150.0
+X2063,2026-09-05,Aiden Yardley,Quality Control,Airfare,Dealer conference,1595.79
+X2064,2026-09-23,Gideon Ashcroft,Finance,Hotel,Trade show,1139.13
+X2065,2026-09-30,Vera Hartwell,IT,Airfare,Supplier visit,2049.5
+X2066,2026-09-11,Kofi Larkin,IT,Meals,Trade show,134.19
+X2067,2026-09-06,Priscilla Holloway,Finance,Conference fees,Customer demo,1985.16
+X2068,2026-09-16,Vera Hartwell,IT,Meals,Plant audit,118.54
+X2069,2026-09-01,Hana Lockhart,Supply Chain,Meals,Trade show,122.73
+X2070,2026-09-14,Gideon Ashcroft,Engineering,Hotel,Customer demo,1176.23
+X2071,2026-09-06,Cyrus Ingram,IT,Hotel,Customer demo,1188.27
+X2072,2026-09-26,Caleb Fairbanks,Engineering,Meals,Trade show,120.72
+X2073,2026-09-20,Harriet Sutherland,Supply Chain,Meals,Plant audit,167.05
+X2074,2026-09-11,Jasmine Garrison,Supply Chain,Conference fees,Trade show,2841.58
+X2075,2026-09-04,Gideon Ashcroft,Engineering,Meals,Customer demo,105.74
+X2076,2026-09-06,Junia Castellan,Sales Support,Airfare,Plant audit,1112.83
+X2077,2026-09-28,Silas Orchard,Sales Support,Hotel,Customer demo,772.95
+X2078,2026-09-16,Bianca Kimball,Supply Chain,Airfare,Dealer conference,966.27
+X2079,2026-09-30,Tamsin Northcott,Engineering,Airfare,Supplier visit,5800.0
+X2080,2026-09-22,Caleb Fairbanks,Quality Control,Airfare,Supplier visit,862.58
+X2081,2026-09-26,Uriel Vandermeer,Supply Chain,Airfare,Training,1625.63
+X2082,2026-09-26,Cyrus Ingram,Supply Chain,Meals,Supplier visit,198.57
+X2083,2026-09-23,Hana Lockhart,Finance,Conference fees,Customer demo,2536.0
+X2084,2026-09-30,Dana Pemberton,Quality Control,Ground transport,Training,233.22
+X2085,2026-09-07,Farah Underhill,Quality Control,Ground transport,Trade show,313.15
+X2086,2026-09-19,Emeka Eastwood,Sales Support,Meals,Trade show,91.64
+X2087,2026-09-08,Isaac Nettleton,Finance,Ground transport,Customer demo,167.07
+X2088,2026-09-24,Freya Thorne,Engineering,Conference fees,Plant audit,328.91
+X2089,2026-09-30,Freya Thorne,IT,Airfare,Customer demo,1340.96
+X2090,2026-09-17,Junia Castellan,Quality Control,Meals,Dealer conference,90.56
+X2091,2026-09-28,Caleb Fairbanks,Engineering,Ground transport,Trade show,170.49
+X2092,2026-09-27,Rosa Overton,Supply Chain,Airfare,Dealer conference,1172.36
+X2093,2026-09-26,Yusuf Mercer,Supply Chain,Meals,Training,105.93
+X2094,2026-09-24,Delphine Jessup,Finance,Airfare,Trade show,1186.47
+X2095,2026-09-05,Anders Ellery,IT,Meals,Trade show,109.92
+X2096,2026-09-21,Uriel Vandermeer,IT,Conference fees,Trade show,5450.0
+X2097,2026-09-17,Farah Underhill,Finance,Ground transport,Supplier visit,102.21
+X2098,2026-09-26,Emeka Eastwood,Engineering,Ground transport,Plant audit,287.94
+X2099,2026-09-02,Gareth Corwin,IT,Hotel,Customer demo,561.95
+X2100,2026-09-10,Odalys Bannister,Engineering,Airfare,Training,397.19
+X2101,2026-09-16,Gareth Corwin,Sales Support,Ground transport,Customer demo,43.94
+X2102,2026-09-05,Junia Castellan,Sales Support,Hotel,Dealer conference,1017.37
+X2103,2026-09-30,Mateo Marlowe,Quality Control,Ground transport,Supplier visit,78.39
+X2104,2026-09-26,Hana Lockhart,IT,Hotel,Training,404.74
+X2105,2026-09-09,Mateo Marlowe,Sales Support,Ground transport,Trade show,34.87
+X2106,2026-09-08,Delphine Jessup,Engineering,Ground transport,Plant audit,351.1
+X2107,2026-09-11,Vera Hartwell,Engineering,Ground transport,Training,156.17
+X2108,2026-09-25,Owen Zimmer,Finance,Hotel,Customer demo,766.06
+X2109,2026-09-16,Kofi Larkin,Supply Chain,Conference fees,Supplier visit,2695.78
+X2110,2026-09-30,Owen Zimmer,Finance,Hotel,Dealer conference,848.58
+X2111,2026-09-29,Beatrix Dunmore,Engineering,Airfare,Training,749.63
+X2112,2026-09-23,Delphine Jessup,Quality Control,Conference fees,Customer demo,1532.32
+X2113,2026-09-17,Anders Ellery,Quality Control,Hotel,Supplier visit,5320.0
+X2114,2026-09-21,Lena Ironside,IT,Ground transport,Dealer conference,165.6
+X2115,2026-09-04,Yusuf Mercer,Engineering,Hotel,Training,686.57
+X2116,2026-09-03,Odalys Bannister,Sales Support,Conference fees,Dealer conference,297.25
+X2117,2026-09-17,Kofi Larkin,Finance,Ground transport,Supplier visit,266.11
+X2118,2026-09-08,Owen Zimmer,Finance,Meals,Trade show,17.12
+X2119,2026-09-19,Kofi Larkin,IT,Meals,Supplier visit,95.77
+X2120,2026-09-22,Aiden Yardley,Quality Control,Meals,Customer demo,181.44
+X2121,2026-09-22,Isaac Nettleton,Supply Chain,Meals,Training,217.23
+X2122,2026-09-15,Ximena Whitlock,Finance,Hotel,Supplier visit,1142.84
+X2123,2026-09-05,Uriel Vandermeer,Supply Chain,Airfare,Dealer conference,1554.39
+X2124,2026-09-23,Silas Orchard,Supply Chain,Meals,Training,177.99
+X2125,2026-09-28,Yusuf Mercer,IT,Hotel,Customer demo,1596.41
+X2126,2026-09-24,Malik Quillan,Quality Control,Ground transport,Supplier visit,185.39
+X2127,2026-09-01,Rosa Overton,Finance,Hotel,Customer demo,506.44
+X2128,2026-09-07,Tamsin Northcott,Quality Control,Meals,Dealer conference,129.27
+X2129,2026-09-01,Emeka Eastwood,Finance,Meals,Trade show,189.9
+X2130,2026-09-11,Vera Hartwell,Engineering,Airfare,Training,5275.0
+X2131,2026-09-09,Nora Radcliffe,Engineering,Conference fees,Training,1942.19
+X2132,2026-09-25,Rosa Overton,Finance,Ground transport,Plant audit,171.95
+X2133,2026-09-28,Emeka Eastwood,Quality Control,Hotel,Customer demo,1796.11
+X2134,2026-09-04,Kofi Larkin,Engineering,Meals,Plant audit,75.59
+X2135,2026-09-25,Junia Castellan,Finance,Airfare,Training,720.88
+X2136,2026-09-28,Kofi Larkin,Engineering,Conference fees,Supplier visit,2511.8
+X2137,2026-09-28,Harriet Sutherland,Quality Control,Conference fees,Customer demo,1583.33
+X2138,2026-09-23,Hana Lockhart,Supply Chain,Hotel,Customer demo,1612.05
+X2139,2026-09-16,Emeka Eastwood,Quality Control,Conference fees,Customer demo,2208.25
+X2140,2026-09-21,Cyrus Ingram,Quality Control,Meals,Plant audit,78.82
+X2141,2026-09-22,Caleb Fairbanks,Engineering,Airfare,Supplier visit,1784.63
+X2142,2026-09-23,Odalys Bannister,Finance,Ground transport,Trade show,318.63
+X2143,2026-09-13,Harriet Sutherland,Engineering,Hotel,Plant audit,1179.21
+X2144,2026-09-22,Ximena Whitlock,Quality Control,Ground transport,Supplier visit,177.23
+X2145,2026-09-23,Farah Underhill,Sales Support,Conference fees,Dealer conference,1916.91
+X2146,2026-09-19,Delphine Jessup,Supply Chain,Conference fees,Customer demo,2638.62
+X2147,2026-09-09,Rosa Overton,Supply Chain,Conference fees,Trade show,6900.0
+X2148,2026-09-17,Wesley Gresham,Finance,Hotel,Trade show,838.61
+X2149,2026-09-04,Junia Castellan,Sales Support,Meals,Training,115.89
+X2150,2026-09-17,Linnea Drummond,Sales Support,Airfare,Training,1152.91
+X2151,2026-09-19,Nora Radcliffe,Engineering,Hotel,Customer demo,997.37
+X2152,2026-09-29,Idris Kendrick,Sales Support,Hotel,Supplier visit,1719.29
+X2153,2026-09-16,Tamsin Northcott,Sales Support,Conference fees,Trade show,2307.94
+X2154,2026-09-09,Kasper Falkner,Supply Chain,Hotel,Supplier visit,1664.85
+X2155,2026-09-14,Aiden Yardley,Quality Control,Hotel,Customer demo,376.95
+X2156,2026-09-07,Linnea Drummond,Supply Chain,Ground transport,Customer demo,258.22
+X2157,2026-09-10,Gareth Corwin,Sales Support,Airfare,Training,828.81
+X2158,2026-09-09,Uriel Vandermeer,IT,Ground transport,Trade show,171.16
+X2159,2026-09-27,Quentin Bellamy,Finance,Hotel,Customer demo,493.87
+X2160,2026-09-26,Dana Pemberton,Supply Chain,Hotel,Customer demo,1338.66
+X2161,2026-09-08,Malik Quillan,Supply Chain,Meals,Trade show,84.02
+X2162,2026-09-05,Vera Hartwell,Finance,Airfare,Training,2145.92
+X2163,2026-09-23,Kofi Larkin,Quality Control,Airfare,Trade show,1332.28
+X2164,2026-09-14,Gideon Ashcroft,Engineering,Airfare,Supplier visit,5110.0
+X2165,2026-09-01,Linnea Drummond,Finance,Hotel,Trade show,1390.28
+X2166,2026-09-02,Gideon Ashcroft,Supply Chain,Conference fees,Trade show,264.9
+X2167,2026-09-01,Dana Pemberton,Sales Support,Conference fees,Customer demo,1911.61
+X2168,2026-09-17,Odalys Bannister,Quality Control,Conference fees,Customer demo,2695.56
+X2169,2026-09-08,Malik Quillan,IT,Ground transport,Trade show,163.84
+X2170,2026-09-10,Harriet Sutherland,Supply Chain,Hotel,Supplier visit,1325.38
+X2171,2026-09-02,Hana Lockhart,Supply Chain,Meals,Plant audit,89.35
+X2172,2026-09-21,Wesley Gresham,Sales Support,Conference fees,Dealer conference,570.19
+X2173,2026-09-09,Bianca Kimball,Supply Chain,Hotel,Dealer conference,1421.68
+X2174,2026-09-09,Owen Zimmer,Engineering,Conference fees,Trade show,1702.14
+X2175,2026-09-19,Kasper Falkner,Engineering,Conference fees,Trade show,2437.63
+X2176,2026-09-14,Delphine Jessup,Engineering,Airfare,Plant audit,2121.5
+X2177,2026-09-01,Quentin Bellamy,IT,Airfare,Dealer conference,1948.79
+X2178,2026-09-25,Ximena Whitlock,IT,Airfare,Training,680.89
+X2179,2026-09-01,Elliot Jarrow,Supply Chain,Hotel,Dealer conference,1774.64
+X2180,2026-09-29,Freya Thorne,Supply Chain,Hotel,Trade show,972.43
+X2181,2026-09-11,Vera Hartwell,Quality Control,Hotel,Customer demo,5640.0
+X2182,2026-09-18,Rosa Overton,Finance,Ground transport,Dealer conference,385.91
+X2183,2026-09-21,Gareth Corwin,Quality Control,Conference fees,Customer demo,1553.81
+X2184,2026-09-14,Silas Orchard,Engineering,Ground transport,Training,143.56
+X2185,2026-09-18,Silas Orchard,Finance,Meals,Dealer conference,182.45
+X2186,2026-09-03,Bianca Kimball,Engineering,Airfare,Training,1524.65
+X2187,2026-09-19,Idris Kendrick,Finance,Ground transport,Plant audit,64.88
+X2188,2026-09-06,Jasmine Garrison,Sales Support,Ground transport,Supplier visit,261.13
+X2189,2026-09-17,Malik Quillan,Finance,Ground transport,Dealer conference,311.98
+X2190,2026-09-02,Malik Quillan,Supply Chain,Airfare,Dealer conference,1837.96
+X2191,2026-09-15,Odalys Bannister,Engineering,Hotel,Dealer conference,1704.57
+X2192,2026-09-14,Bianca Kimball,Supply Chain,Airfare,Dealer conference,1404.66
+X2193,2026-09-04,Uriel Vandermeer,Engineering,Meals,Training,126.95
+X2194,2026-09-08,Zara Abernathy,Sales Support,Meals,Trade show,93.96
+X2195,2026-09-13,Odalys Bannister,Sales Support,Airfare,Plant audit,1745.45
+X2196,2026-09-14,Zara Abernathy,Quality Control,Conference fees,Plant audit,748.35
+X2197,2026-09-25,Odalys Bannister,IT,Airfare,Customer demo,2398.43
+X2198,2026-09-30,Vera Hartwell,Supply Chain,Conference fees,Customer demo,5025.0
+X2199,2026-09-14,Anders Ellery,Sales Support,Ground transport,Supplier visit,156.66
+X2200,2026-09-15,Kasper Falkner,Finance,Meals,Dealer conference,87.76
+X2201,2026-09-08,Gideon Ashcroft,Supply Chain,Conference fees,Trade show,2283.5
+X2202,2026-09-24,Quentin Bellamy,Quality Control,Conference fees,Plant audit,1887.27
+X2203,2026-09-18,Linnea Drummond,Quality Control,Conference fees,Supplier visit,2332.82
+X2204,2026-09-16,Cyrus Ingram,IT,Ground transport,Training,176.77
+X2205,2026-09-29,Rosa Overton,Engineering,Conference fees,Supplier visit,2755.55
+X2206,2026-09-22,Ximena Whitlock,Finance,Conference fees,Dealer conference,680.05
+X2207,2026-09-17,Rosa Overton,Quality Control,Hotel,Training,728.74
+X2208,2026-09-28,Quentin Bellamy,Engineering,Ground transport,Dealer conference,101.45
+X2209,2026-09-16,Dana Pemberton,Engineering,Conference fees,Dealer conference,623.2
+X2210,2026-09-13,Malik Quillan,Engineering,Conference fees,Dealer conference,1673.0
+X2211,2026-09-30,Zara Abernathy,IT,Meals,Plant audit,197.46
+X2212,2026-09-17,Zara Abernathy,Finance,Hotel,Dealer conference,988.31
+X2213,2026-09-19,Emeka Eastwood,Supply Chain,Conference fees,Training,2320.27
+X2214,2026-09-20,Emeka Eastwood,Finance,Hotel,Trade show,1651.12
+X2215,2026-09-13,Caleb Fairbanks,Quality Control,Airfare,Dealer conference,8350.0
+X2216,2026-09-24,Uriel Vandermeer,Quality Control,Conference fees,Plant audit,2675.47
+X2217,2026-09-07,Yusuf Mercer,Supply Chain,Meals,Plant audit,81.54
+X2218,2026-09-27,Kofi Larkin,Finance,Conference fees,Trade show,2141.3
+X2219,2026-09-30,Kofi Larkin,Quality Control,Conference fees,Plant audit,2287.14
+X2220,2026-09-30,Beatrix Dunmore,Supply Chain,Meals,Dealer conference,138.76
+X2221,2026-09-25,Uriel Vandermeer,IT,Hotel,Supplier visit,1203.92
+X2222,2026-09-02,Idris Kendrick,Finance,Meals,Training,166.42
+X2223,2026-09-21,Cyrus Ingram,Sales Support,Ground transport,Dealer conference,375.84
+X2224,2026-09-14,Owen Zimmer,Finance,Airfare,Plant audit,1405.85
+X2225,2026-09-14,Odalys Bannister,Sales Support,Meals,Trade show,184.59
+X2226,2026-09-02,Rosa Overton,Quality Control,Conference fees,Trade show,1184.78
+X2227,2026-09-15,Beatrix Dunmore,Sales Support,Ground transport,Training,244.54
+X2228,2026-09-13,Junia Castellan,Supply Chain,Ground transport,Training,250.81
+X2229,2026-09-11,Nora Radcliffe,Engineering,Airfare,Dealer conference,1889.26
+X2230,2026-09-03,Elliot Jarrow,IT,Hotel,Customer demo,391.45
+X2231,2026-09-19,Uriel Vandermeer,Engineering,Meals,Supplier visit,90.52
+X2232,2026-09-12,Linnea Drummond,IT,Hotel,Customer demo,5900.0
+X2233,2026-09-21,Junia Castellan,Finance,Meals,Training,100.25
+X2234,2026-09-22,Quentin Bellamy,Finance,Hotel,Customer demo,1495.39
+X2235,2026-09-29,Emeka Eastwood,Sales Support,Conference fees,Dealer conference,2661.35
+X2236,2026-09-09,Odalys Bannister,Supply Chain,Conference fees,Dealer conference,1509.35
+X2237,2026-09-19,Kofi Larkin,Supply Chain,Airfare,Training,1775.49
+X2238,2026-09-19,Lena Ironside,Sales Support,Ground transport,Customer demo,56.31
+X2239,2026-09-01,Owen Zimmer,IT,Hotel,Plant audit,434.48
+X2240,2026-09-30,Idris Kendrick,Sales Support,Ground transport,Dealer conference,78.65
+X2241,2026-09-29,Zara Abernathy,IT,Conference fees,Supplier visit,1515.62
+X2242,2026-09-30,Junia Castellan,IT,Conference fees,Dealer conference,2167.79
+X2243,2026-09-11,Malik Quillan,IT,Conference fees,Dealer conference,2641.25
+X2244,2026-09-02,Freya Thorne,Quality Control,Meals,Customer demo,21.46
+X2245,2026-09-17,Harriet Sutherland,IT,Ground transport,Supplier visit,310.76
+X2246,2026-09-06,Kofi Larkin,Engineering,Meals,Trade show,74.76
+X2247,2026-09-13,Linnea Drummond,Engineering,Conference fees,Customer demo,2511.24
+X2248,2026-09-28,Kasper Falkner,Finance,Airfare,Supplier visit,1157.36
+X2249,2026-09-15,Elliot Jarrow,Finance,Conference fees,Dealer conference,5000.0
+X2250,2026-09-30,Hana Lockhart,Sales Support,Airfare,Plant audit,2098.21
+X2251,2026-09-12,Vera Hartwell,IT,Meals,Customer demo,160.56
+X2252,2026-09-28,Gideon Ashcroft,Supply Chain,Hotel,Training,370.91
+X2253,2026-09-09,Delphine Jessup,Supply Chain,Airfare,Customer demo,1548.01
+X2254,2026-09-16,Emeka Eastwood,Quality Control,Conference fees,Customer demo,1424.32
+X2255,2026-09-03,Gareth Corwin,IT,Conference fees,Customer demo,2610.6
+X2256,2026-09-08,Freya Thorne,Supply Chain,Conference fees,Supplier visit,2316.2
+X2257,2026-09-29,Idris Kendrick,Supply Chain,Ground transport,Customer demo,164.3
+X2258,2026-09-10,Tamsin Northcott,Sales Support,Meals,Dealer conference,131.68
+X2259,2026-09-24,Wesley Gresham,Quality Control,Hotel,Supplier visit,498.28
+X2260,2026-09-12,Farah Underhill,Sales Support,Meals,Training,57.8
+X2261,2026-09-05,Freya Thorne,Sales Support,Hotel,Dealer conference,1087.68
+X2262,2026-09-24,Yusuf Mercer,IT,Conference fees,Supplier visit,693.4
+X2263,2026-09-18,Bianca Kimball,Quality Control,Conference fees,Dealer conference,2393.34
+X2264,2026-09-27,Isaac Nettleton,Sales Support,Airfare,Supplier visit,618.43
+X2265,2026-09-06,Bianca Kimball,IT,Airfare,Supplier visit,2084.8
+X2266,2026-09-09,Farah Underhill,Sales Support,Airfare,Training,1052.99
+X2267,2026-09-07,Malik Quillan,Engineering,Airfare,Training,1210.42
+X2268,2026-09-01,Junia Castellan,Sales Support,Ground transport,Customer demo,174.09
+X2269,2026-09-12,Owen Zimmer,Sales Support,Airfare,Training,1498.4
+X2270,2026-09-12,Elliot Jarrow,IT,Airfare,Dealer conference,651.79
+X2271,2026-09-23,Ximena Whitlock,Supply Chain,Airfare,Plant audit,452.26
+X2272,2026-09-22,Zara Abernathy,Sales Support,Hotel,Dealer conference,1320.06
+X2273,2026-09-14,Mateo Marlowe,Quality Control,Conference fees,Plant audit,704.42
+X2274,2026-09-14,Farah Underhill,Supply Chain,Hotel,Training,372.81
+X2275,2026-09-16,Jasmine Garrison,Finance,Ground transport,Customer demo,103.55
+X2276,2026-09-10,Silas Orchard,Supply Chain,Hotel,Supplier visit,839.72
+X2277,2026-09-08,Malik Quillan,Quality Control,Hotel,Customer demo,1032.1
+X2278,2026-09-19,Farah Underhill,Finance,Airfare,Customer demo,668.7
+X2279,2026-09-16,Freya Thorne,Sales Support,Airfare,Supplier visit,1913.54
+X2280,2026-09-02,Gareth Corwin,Finance,Hotel,Customer demo,1158.46
+X2281,2026-09-28,Priscilla Holloway,Finance,Hotel,Training,837.6
+X2282,2026-09-22,Anders Ellery,Engineering,Ground transport,Customer demo,394.56
+X2283,2026-09-14,Elliot Jarrow,Supply Chain,Meals,Supplier visit,133.98
+X2284,2026-09-06,Vera Hartwell,IT,Conference fees,Training,1751.39
+X2285,2026-09-29,Harriet Sutherland,Quality Control,Hotel,Dealer conference,761.8
+X2286,2026-09-17,Vera Hartwell,IT,Meals,Dealer conference,156.17
+X2287,2026-09-28,Delphine Jessup,Supply Chain,Meals,Customer demo,53.93
+X2288,2026-09-02,Anders Ellery,Engineering,Hotel,Plant audit,1603.36
+X2289,2026-09-22,Ximena Whitlock,Quality Control,Ground transport,Dealer conference,167.5
+X2290,2026-09-18,Lena Ironside,Finance,Conference fees,Dealer conference,707.08
+X2291,2026-09-27,Isaac Nettleton,Finance,Hotel,Dealer conference,1771.84
+X2292,2026-09-07,Malik Quillan,Sales Support,Conference fees,Dealer conference,2355.95
+X2293,2026-09-11,Lena Ironside,IT,Airfare,Supplier visit,455.19
+X2294,2026-09-04,Hana Lockhart,IT,Ground transport,Plant audit,164.37
+X2295,2026-09-03,Gareth Corwin,IT,Airfare,Trade show,1511.42
+X2296,2026-09-27,Harriet Sutherland,IT,Conference fees,Supplier visit,765.51
+X2297,2026-09-06,Linnea Drummond,Finance,Meals,Training,72.49
+X2298,2026-09-30,Odalys Bannister,Finance,Meals,Supplier visit,209.0
+X2299,2026-09-16,Harriet Sutherland,IT,Conference fees,Training,1237.2
+X2300,2026-09-24,Delphine Jessup,Sales Support,Airfare,Plant audit,1849.0

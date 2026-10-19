@@ -1,0 +1,8 @@
+title: "ACCT/MIS 4420/5420: Generative AI in Business Decision-Making"
+description: "Student course site. Spring 2027."
+theme: minima
+plugins:
+  - jekyll-relative-links
+relative_links:
+  enabled: true
+  collections: false

@@ -1,0 +1,41 @@
+employee_id,name,department,age,years_at_velox,annual_salary,performance_rating_1_to_5
+V1001,Rosa Overton,Paint and Finish,51,7,121000,3
+V1002,Jasmine Garrison,Finance,24,1,131000,3
+V1003,Anders Ellery,Engineering,56,2,69000,2
+V1004,Harriet Sutherland,Sales Support,26,3,52000,4
+V1005,Idris Kendrick,Sales Support,45,19,48000,4
+V1006,Elliot Jarrow,Quality Control,28,3,113000,3
+V1007,Beatrix Dunmore,Engineering,41,8,129000,4
+V1008,Priscilla Holloway,Finance,57,30,106000,4
+V1009,Silas Orchard,Engineering,34,10,88000,3
+V1010,Zara Abernathy,Engineering,43,5,101000,4
+V1011,Vera Hartwell,Supply Chain,38,8,64500,1
+V1012,Owen Zimmer,Finance,36,9,90500,5
+V1013,Lena Ironside,Sales Support,37,3,127500,3
+V1014,Dana Pemberton,Assembly,36,5,68000,3
+V1015,Tamsin Northcott,IT,32,5,121500,4
+V1016,Delphine Jessup,Finance,52,6,104500,5
+V1017,Cyrus Ingram,Finance,30,3,57000,2
+V1018,Mateo Marlowe,Quality Control,39,4,87000,2
+V1019,Nora Radcliffe,Sales Support,58,30,126500,1
+V1020,Odalys Bannister,Finance,55,30,93000,5
+V1021,Freya Thorne,Sales Support,54,19,76500,2
+V1022,Gideon Ashcroft,Assembly,44,4,113000,3
+V1023,Ximena Whitlock,Paint and Finish,34,9,124500,3
+V1024,Aiden Yardley,Quality Control,33,3,80000,3
+V1025,Emeka Eastwood,Assembly,44,12,53000,2
+V1026,Isaac Nettleton,Quality Control,49,3,71000,3
+V1027,Wesley Gresham,Quality Control,46,6,60000,4
+V1028,Malik Quillan,Quality Control,59,16,85000,5
+V1029,Bianca Kimball,Assembly,48,21,113500,5
+V1030,Junia Castellan,Paint and Finish,55,13,78500,4
+V1031,Caleb Fairbanks,IT,60,30,133000,3
+V1032,Kasper Falkner,Sales Support,30,1,66500,3
+V1033,Hana Lockhart,Sales Support,44,19,75000,3
+V1034,Farah Underhill,IT,63,30,103000,2
+V1035,Gareth Corwin,Assembly,63,30,86500,3
+V1036,Yusuf Mercer,Supply Chain,45,15,101500,1
+V1037,Linnea Drummond,Supply Chain,52,20,101000,3
+V1038,Kofi Larkin,Paint and Finish,62,21,48500,4
+V1039,Uriel Vandermeer,Quality Control,28,1,68000,2
+V1040,Quentin Bellamy,Paint and Finish,37,6,129000,3
