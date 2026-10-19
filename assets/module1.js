@@ -189,7 +189,7 @@ ${d.grad?`<h2>G. Graduate students only</h2><p><b>Comparison 1</b></p>${p(d.g1)}
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href),2000);
     toast("Downloaded. Upload it to Canvas.");
   }
-  $$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{ copyText($(b.dataset.copy).textContent); const o=b.textContent; b.textContent="Copied!"; setTimeout(()=>b.textContent=o,1500); }));
+  $$("[data-copy]").forEach(b=>b.addEventListener("click",()=>{ copyText($(b.dataset.copy).textContent.trim()).then(ok=>{ if(!ok) return; const o=b.dataset.label||b.textContent; b.dataset.label=o; b.textContent="Copied!"; setTimeout(()=>b.textContent=o,1500); }); }));
   $("#copyCoach").addEventListener("click",()=>copyText($("#coachText").textContent));
   $("#copyDraft").addEventListener("click",()=>{
     const left = unmet(steps[4]).filter(el=>!el.closest("[data-step]")||true);

@@ -10,13 +10,29 @@
     t.textContent = msg; t.classList.add("show");
     clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 2200);
   };
+  function manualCopy(text){
+    let m = document.getElementById("copyFallback");
+    if(m) m.remove();
+    m = document.createElement("div"); m.id = "copyFallback"; m.setAttribute("role","dialog"); m.setAttribute("aria-label","Copy this text");
+    m.style.cssText = "position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9999;display:flex;align-items:center;justify-content:center;padding:16px";
+    m.innerHTML = '<div style="background:#fff;border-radius:14px;max-width:640px;width:100%;padding:18px"><p style="margin:0 0 8px"><b>Your browser blocked automatic copying.</b> The text below is already selected. Press <b>Ctrl+C</b> (Windows) or <b>Cmd+C</b> (Mac), or on a phone touch and hold it and choose Copy. Then close this box.</p><textarea readonly style="width:100%;height:240px;font:14px/1.4 monospace"></textarea><p style="margin:10px 0 0;text-align:right"><button type="button" class="btn btn-red btn-sm">Close</button></p></div>';
+    document.body.appendChild(m);
+    const ta = m.querySelector("textarea"); ta.value = text; ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+    m.querySelector("button").addEventListener("click", ()=>m.remove());
+  }
+  // Returns true if copied, false if the manual-copy box was shown.
   window.copyText = async function(text){
-    try{ await navigator.clipboard.writeText(text); toast("Copied!"); }
-    catch(e){
-      const ta = document.createElement("textarea"); ta.value = text; document.body.appendChild(ta); ta.select();
-      try{ document.execCommand("copy"); toast("Copied!"); }catch(_){ toast("Select the text and copy it"); }
-      ta.remove();
-    }
+    try{
+      if(navigator.clipboard && window.isSecureContext){ await navigator.clipboard.writeText(text); toast("Copied!"); return true; }
+    }catch(e){}
+    try{
+      const ta = document.createElement("textarea"); ta.value = text; ta.setAttribute("readonly","");
+      ta.style.cssText = "position:fixed;top:0;left:0;opacity:0"; document.body.appendChild(ta);
+      ta.focus(); ta.select(); ta.setSelectionRange(0, text.length);
+      const ok = document.execCommand("copy"); ta.remove();
+      if(ok){ toast("Copied!"); return true; }
+    }catch(_){}
+    manualCopy(text); return false;
   };
   window.confetti = function(){
     const c = document.createElement("canvas"); c.id="confetti"; document.body.appendChild(c);
