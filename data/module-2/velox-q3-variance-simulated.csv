@@ -1,0 +1,14 @@
+line_item,q3_budget_thousands,q3_actual_thousands,variance_thousands,favorable_or_unfavorable,internal_notes
+Revenue,345000,338000,-7000,Unfavorable,"Cars sold: 1,210 versus 1,265 in the budget. Pricing team note: a planned 4% dealer price increase takes effect in January; dealers have not been told."
+Cost of goods sold,243000,250000,7000,Unfavorable,"A new tariff on imported carbon-fiber panels added about $3,800 thousand. Supplier Vexa Composites prices panel sets at $4,150 each under contract VC-2291."
+Gross profit,102000,88000,-14000,Unfavorable,
+Warranty expense,3800,3300,-500,Favorable,
+Freight-out,2600,2900,300,Unfavorable,Expedited air freight to dealers for the launch cars.
+Marketing,6900,6500,-400,Favorable,
+Research and development,9500,9500,0,On budget,
+Depreciation,5200,5200,0,On budget,
+"Selling, general and administrative",11800,12100,300,Unfavorable,"Legal fees for a supplier dispute. The estimated settlement of $1,250 thousand is under negotiation and is not public."
+Incentive compensation,2800,2600,-200,Favorable,Includes a $410 thousand retention bonus for the VP of Engineering.
+Severance accrual,0,3100,3100,Unfavorable,Restructuring plan for 62 employees at the South Carolina plant. Not yet announced to employees.
+Total operating expenses,42600,45200,2600,Unfavorable,
+Operating income,59400,42800,-16600,Unfavorable,

@@ -207,10 +207,10 @@ ${d.grad?`<h2>G. Graduate students only</h2><p><b>Comparison 1</b></p>${p(d.g1)}
     $("#finishBox").innerHTML = `<div class="card done-card"><h2>Module 1 complete!</h2>
       <p>You sorted ${d.sorts.length} tasks, tested AI three times, wrote a ${words(d.memo)}-word memo to the CFO, and practiced the Responsible AI Policy. That is the habit: <b>how can AI help me do this, and how do I know it is right?</b></p>
       <p><button class="btn btn-red" id="dl2" type="button">Download my submission (.doc)</button></p>
-      <p class="hint">Upload it to Canvas. Module 2 opens soon.</p>
+      <p class="hint">Upload it to Canvas. <a href="module-2.html">Continue to Module 2</a> when your instructor opens it.</p>
       <p><button class="btn btn-ghost btn-sm" id="reset" type="button">Clear my saved answers on this device</button></p></div>`;
     $("#dl2").addEventListener("click",download);
-    $("#reset").addEventListener("click",()=>{ if(confirm("This erases everything you typed in Module 1 on this device. Continue?")){ Object.keys(localStorage).filter(k=>k.startsWith("velox.")).forEach(k=>localStorage.removeItem(k)); location.reload(); }});
+    $("#reset").addEventListener("click",()=>{ if(confirm("This erases everything you typed in Module 1 on this device. Continue?")){ Object.keys(localStorage).filter(k=>k.startsWith("velox.m1.")).forEach(k=>localStorage.removeItem(k)); location.reload(); }});
   }
   function finish(){ store.set("m1.done",true); finishCard(); confetti(); render(); window.scrollTo({top:document.body.scrollHeight,behavior:"smooth"}); }
   if(store.get("m1.done",false)) finishCard();

@@ -108,3 +108,5 @@ footer a{color:#fff}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 
 .steps-list{margin:8px 0 8px 22px;padding:0}.steps-list li{margin:0 0 10px}
+
+.tech{background:var(--gold-soft);border-left:6px solid var(--gold);border-radius:0 12px 12px 0;padding:10px 16px;margin:14px 0}.tech p{margin:4px 0}

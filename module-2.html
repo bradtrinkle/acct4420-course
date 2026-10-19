@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 2: Communicating with AI in Context</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html" aria-current="page">Module 2</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><path d="M26 8h10c1 0 2 0 3 1l3 3H22z" fill="#F1BE48"/><circle cx="18" cy="23" r="5" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="5" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 2 · Week 2 · Tallgrass Advisory training</span>
+<h1 style="margin:10px 0 4px">Communicating with AI in Context</h1>
+<p class="hint">You will be able to write a clear, structured request to AI, ground it in your own data, show it an example, let it ask you questions first, check what comes back, and keep confidential information out. Plan for about 6.5 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 15 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 2 video from your instructor</b><br><span class="hint" style="color:#ddd">The video will appear here. If it does not, tell your instructor and keep going; Walt's message below covers the key points.</span></div></div>
+  <div class="cfo"><b>From the Controller, Walt Brenner</b><br>Priya (our CFO) tells me AI can write my team's monthly variance summary. A variance summary is a one-page note for the executives that shows where our actual results differed from the budget, and why. We spend about three hours on it every month, and it has to be right, because executives act on it. I have seen AI make things up. I am not against it, but I am not convinced either. Show me a way to use it that I can trust and that my team can repeat.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Last week you learned what AI can do. This week you learn how to ask. The quality of what comes back depends on what you tell it. By the end you will hand Walt a reusable "Prompt Playbook" he can trust. Let's go.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <div class="card">
+    <h3>Module 2 at a glance</h3>
+    <p><b>Who is who:</b> Velox Motorworks is a fictional sports car maker. Walt Brenner is its Controller (the senior accountant in charge of its books and reports). Priya Natarajan is its CFO. You are a new hire at Tallgrass Advisory, the consulting firm training Velox's finance team, and Jordan Reyes is your mentor there. All names, companies, and numbers in this course are fictional.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your Step 4 confidentiality decisions, a before-and-after comparison of two prompts, a check of three claims against the data, your <b>Prompt Playbook</b> (the reusable prompt template you write in Step 5, Part 6) with a short note to Walt, a list of the AI tools you used, and your coach conversation and revision notes.</p>
+    <p><b>What you need:</b> your own paid Claude account (claude.ai), Excel or Google Sheets, your Jordan Coach project from Module 1, and your Canvas login. Use the same browser and device each time, and do not use a private or incognito window, because your progress saves in this browser only. You can click <b>Download my submission</b> in Step 6 at any time to keep a backup copy.</p>
+    <p><b>The 8 steps:</b> 1 Mission brief (15 min, including a video of about 7 minutes) · 2 Try it first (30) · 3 Learn (45) · 4 Ethics checkpoint (30) · 5 First attempt and coach feedback (170) · 6 Mastery attempt (50) · 7 Quiz (25) · 8 Reflection (15). Total: 380 minutes, about 6.3 hours. Graduate students add about 20 minutes for Part 8 (it appears in Step 5 after you tick the graduate box). If you did not finish Module 1, building your Jordan Coach adds about 20 minutes.</p>
+  </div>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video and read Walt's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. <b>Open Claude and ask it for the one-page summary Walt's team writes every month:</b> Q3 results versus budget, for the executive meeting. <b>Write your own request</b> in your own words and don't overthink it. The button below copies only the data. (Walt's real file also has private notes next to the numbers. We left them out of this version on purpose; Step 4 explains why.)</div></div>
+  <p class="hint">All Velox numbers in this course are fictional, made up for teaching, so it is fine to put them into your own Claude account.</p>
+  <div class="card">
+    <table class="t"><tr><th>Line item ($ thousands)</th><th>Q3 budget</th><th>Q3 actual</th><th>Variance</th></tr>
+    <tr><td>Revenue</td><td>345,000</td><td>338,000</td><td>-7,000</td></tr>
+    <tr><td>Cost of goods sold</td><td>243,000</td><td>250,000</td><td>7,000</td></tr>
+    <tr><td>Gross profit</td><td>102,000</td><td>88,000</td><td>-14,000</td></tr>
+    <tr><td>Warranty expense</td><td>3,800</td><td>3,300</td><td>-500</td></tr>
+    <tr><td>Freight-out</td><td>2,600</td><td>2,900</td><td>300</td></tr>
+    <tr><td>Marketing</td><td>6,900</td><td>6,500</td><td>-400</td></tr>
+    <tr><td>Research and development</td><td>9,500</td><td>9,500</td><td>0</td></tr>
+    <tr><td>Depreciation</td><td>5,200</td><td>5,200</td><td>0</td></tr>
+    <tr><td>Selling, general and administrative</td><td>11,800</td><td>12,100</td><td>300</td></tr>
+    <tr><td>Incentive compensation</td><td>2,800</td><td>2,600</td><td>-200</td></tr>
+    <tr><td>Severance accrual</td><td>0</td><td>3,100</td><td>3,100</td></tr>
+    <tr><td>Total operating expenses</td><td>42,600</td><td>45,200</td><td>2,600</td></tr>
+    <tr><td><b>Operating income</b></td><td><b>59,400</b></td><td><b>42,800</b></td><td><b>-16,600</b></td></tr></table>
+    <p class="hint"><b>Variance</b> = actual minus budget. A <b>favorable</b> variance helps profit (revenue above budget or a cost below budget). An <b>unfavorable</b> one hurts profit.</p>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open Claude</b> in a new tab (the button just below), <b>sign in</b> with your own Claude account, and click <b>New chat</b>. Do not use your Jordan Coach project for this.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li><b>Click Copy the data.</b> Claude cannot see this page, so the numbers must go into your message.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the data</button></li>
+      <li>In the Claude chat box, <b>type your own request in your own words</b> (the task: write the one-page Q3 results versus budget summary for the executive meeting). Then <b>press Shift+Enter</b> for a new line, <b>paste the data</b> (Ctrl+V on Windows, Cmd+V on Mac), and <b>press Enter</b> to send.</li>
+      <li><b>Read the answer</b>, then <b>answer the three questions below</b> in your own words. You will reuse these answers in Step 5, Part 1.</li>
+      <li><b>Save your work for Step 5:</b> copy your request and Claude's answer into a note on your computer (Notepad, Notes, or a Word document). In Step 5, Part 1 you will paste your request and summarize the answer. Keeping this Claude chat open is helpful but not required.</li>
+    </ol>
+    <details><summary>See what will be copied</summary><div class="copybox" id="p2text">Data (dollar amounts in thousands; variance = actual minus budget):
+Revenue: budget 345,000; actual 338,000; variance -7,000
+Cost of goods sold: budget 243,000; actual 250,000; variance 7,000
+Gross profit: budget 102,000; actual 88,000; variance -14,000
+Warranty expense: budget 3,800; actual 3,300; variance -500
+Freight-out: budget 2,600; actual 2,900; variance 300
+Marketing: budget 6,900; actual 6,500; variance -400
+Research and development: budget 9,500; actual 9,500; variance 0
+Depreciation: budget 5,200; actual 5,200; variance 0
+Selling, general and administrative: budget 11,800; actual 12,100; variance 300
+Incentive compensation: budget 2,800; actual 2,600; variance -200
+Severance accrual: budget 0; actual 3,100; variance 3,100
+Total operating expenses: budget 42,600; actual 45,200; variance 2,600
+Operating income: budget 59,400; actual 42,800; variance -16,600</div></details>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did AI do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What did it leave out, guess, or assume? (Look for any reasons it gave for why the numbers moved. Did your data say why?)</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. If Walt's team sent this summary to the executives today, what would worry you?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">These answers are saved on this device and are not graded on their own. They are your starting point for Step 5, where you will build a better request and compare.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 45 min</span></h2>
+
+  <p class="hint">Steps 3a to 3f are reading and quick checks. You apply every technique yourself in Step 5.</p>
+  <h3>3a. Why the first answer felt generic</h3>
+  <p>AI cannot see your situation. When you leave details out, it fills the gaps with a guess about the average case. The more relevant context you give, the less it has to guess. That context is the difference between a generic answer and a useful one.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Imagine you typed a request like "Write a summary of Q3 results" and the answer was generic. Why?</p>
+    <div class="qc" data-id="q3a" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">AI is broken</button><button class="choice" data-i="1">AI was not told the audience, the format, or what the summary was for</button><button class="choice" data-i="2">AI is not allowed to write summaries</button><button class="choice" data-i="3">The data was too long</button></div>
+      <div class="fb" data-ok="Right. Without the audience, goal, and format, AI guesses." data-no="Not quite. Think about what the request did not say."></div>
+    </div>
+  </div>
+
+  <h3>3b. The five parts of a clear request</h3>
+  <p>Most good requests have five parts. You do not need fancy wording, just clear answers to these five questions. (In this module, "part" in Step 3 means one of these five. The assignment sections in Step 5 are called "Part 1" to "Part 8" and are a different thing.)</p>
+
+  <table class="t"><tr><th>Part</th><th>The question it answers</th><th>Example</th></tr>
+  <tr><td><b>Role</b></td><td>Who should AI act as?</td><td>"You are a quality analyst at an auto manufacturer."</td></tr>
+  <tr><td><b>Goal</b></td><td>What should it produce, and why?</td><td>"Draft a one-page summary of last month's warranty claims so the plant manager can decide where to add inspections."</td></tr>
+  <tr><td><b>Audience</b></td><td>Who will read it?</td><td>"A plant manager with ten minutes between meetings."</td></tr>
+  <tr><td><b>Format</b></td><td>What shape should it take?</td><td>"A short paragraph, then a table of the top three causes."</td></tr>
+  <tr><td><b>Constraints</b></td><td>What rules must it follow?</td><td>"Use only the numbers I attach. Stay under 250 words."</td></tr></table>
+  <p class="hint">These examples are for a different task (a warranty-claims report for a plant manager). You will write your own five parts for Walt's summary in Step 5.</p>
+  <div class="tech"><p><b>Technique:</b> Structured prompting (the five-part request)</p><p><b>Why it helps:</b> It removes the guessing. Each part answers a question AI would otherwise have to guess, so the first draft is closer to what you need and you spend less time fixing it.</p></div>
+  <div class="tech"><p><b>Technique:</b> Role prompting (the Role part)</p><p><b>Why it helps:</b> Telling AI who it is acting as sets its vocabulary, level of detail, and point of view, so the answer sounds like the person you would hire for the job.</p></div>
+  <div class="tech"><p><b>Technique:</b> Structured output (the Format part)</p><p><b>Why it helps:</b> Asking for a specific shape, such as a headline and three bullets or a table, makes the answer easy to scan and easy to check, and keeps every run consistent.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Here is a request: <i>"You are a plant analyst. Summarize the attached downtime log for the plant manager, who reads for two minutes. Use hours, not minutes, and no speculation."</i> Which of the five parts is missing?</p>
+    <div class="qc" data-id="q3b" data-correct="3" data-req>
+      <div class="choices"><button class="choice" data-i="0">Role</button><button class="choice" data-i="1">Audience</button><button class="choice" data-i="2">Constraints</button><button class="choice" data-i="3">Format</button></div>
+      <div class="fb" data-ok="Yes. It has a role (plant analyst), a goal (summarize the downtime log), an audience (the plant manager), and constraints, but it never says what shape the summary should take." data-no="Check each part against the request: who is the role, what is the goal, who is the audience, what are the constraints? One is not there."></div>
+    </div>
+  </div>
+
+  <h3>3c. Ground it in your own data</h3>
+  <p>Give AI the facts it should use (attach them or paste them), and tell it, in your own words, two things: to rely only on those facts, and what to do when the facts do not explain something (say so instead of guessing). This matters because, as you learned in Module 1, AI can fill a gap with something made up (a hallucination). A grounding sentence gives it a safe way to say "I don't know."</p>
+  <div class="tech"><p><b>Technique:</b> Grounding  (also called source-grounded prompting)</p><p><b>Why it helps:</b> AI answers from the facts you gave it instead of from memory. That cuts invented numbers and reasons, and it makes every claim checkable against a source you can point to.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Which instruction best keeps AI from making things up?</p>
+    <div class="qc" data-id="q3c" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Tell it to be accurate</button><button class="choice" data-i="1">Tell it to rely only on the data you gave it, and to say so when the data does not explain something</button><button class="choice" data-i="2">Tell it to think carefully</button><button class="choice" data-i="3">Tell it not to make mistakes</button></div>
+      <div class="fb" data-ok="Yes. It points AI to the facts and gives it a way to admit a gap." data-no="Those words ask for good behavior but give AI nothing to rely on. Which option names the source and what to do when the source is silent?"></div>
+    </div>
+  </div>
+
+  <h3>3d. Show an example</h3>
+  <p>One good example teaches style faster than a paragraph of rules. Attach or paste a past summary, then tell AI, in your own words, to copy its style and structure but to take every number only from the new data. The second half matters, because AI can copy the example's numbers by mistake.</p>
+  <div class="tech"><p><b>Technique:</b> Few-shot prompting (giving AI examples; with exactly one example it is called one-shot)</p><p><b>Why it helps:</b> An example shows tone, length, and layout faster than any list of rules. It is the quickest way to make AI match your team's house style.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>You paste last quarter's summary as an example. What should you add to your request?</p>
+    <div class="qc" data-id="q3d" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Tell it to reuse the numbers from the example</button><button class="choice" data-i="1">Tell it to match the example's style and structure but take the numbers only from this quarter's data</button><button class="choice" data-i="2">Nothing, AI will figure it out</button><button class="choice" data-i="3">Tell it to ignore the new data</button></div>
+      <div class="fb" data-ok="Right. The example sets the style; the data supplies the facts." data-no="The example is for style only. What should supply the numbers?"></div>
+    </div>
+  </div>
+
+  <h3>3e. Let AI ask you questions first (clarifying questions)</h3>
+  <p>Add one line, in your own words, asking AI to put a few questions to you (up to three works well) before it writes anything, and to wait for your answers. AI will often ask about things you forgot, such as who signs the summary or what threshold counts as material. You are still in charge: you decide how to answer.</p>
+  <div class="tech"><p><b>Technique:</b> Clarifying questions (also called interview-style prompting: letting AI ask before it answers)</p><p><b>Why it helps:</b> AI finds the gaps in your request before it writes, so you fix them once instead of redoing the whole draft. It is also a good habit for you: if AI needs the answer, a human reader probably does too.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>What is the main benefit of letting AI ask questions first?</p>
+    <div class="qc" data-id="q3e" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">It makes AI faster</button><button class="choice" data-i="1">It shows you what AI needs to know that you did not think to say</button><button class="choice" data-i="2">It removes the need to check the output</button><button class="choice" data-i="3">It guarantees correct numbers</button></div>
+      <div class="fb" data-ok="Yes. It surfaces missing context. You still check the output." data-no="Questions help with context, but they do not make AI faster or guarantee anything. What do they reveal?"></div>
+    </div>
+  </div>
+
+  <h3>3f. Check the answer against the source (a check, not a prompt)</h3>
+  <p>A clear request raises the odds of a good answer. It does not guarantee one. Pick <b>three specific claims</b> in the output (numbers or reasons) and find each one in your data. A reason that is not in your data is <b>unsupported</b>, no matter how reasonable it sounds. Remove it, or confirm it with the person who knows.</p>
+  <div class="tech"><p><b>Technique:</b> Verification against the source (checking claims, sometimes called fact-checking the output). It is something you do after any prompt technique.</p><p><b>Why it helps:</b> Tracing three claims to the data catches the errors that matter before they reach an executive.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>AI's summary says, "Marketing came in under budget because the dealer event moved to next quarter." Nothing in the data you pasted explains marketing. What do you do?</p>
+    <div class="qc" data-id="q3f" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Keep it, it sounds reasonable</button><button class="choice" data-i="1">Mark it unsupported (in Step 5 you will choose "Not in the data") and remove it, or confirm the reason with Cost and Planning (the Velox team that owns the budget)</button><button class="choice" data-i="2">Ask AI to sound more confident</button><button class="choice" data-i="3">Assume it came from the data</button></div>
+      <div class="fb" data-ok="Right. If it is not in the data, it needs a human to confirm it." data-no="Sounding reasonable is not evidence. Where would the support have to come from?"></div>
+    </div>
+    <label class="lbl" for="t3f">In one sentence, which of the five parts of a request do you think will improve your results the most, and why? (This is saved for you. It is not graded and is not in your submission.)</label>
+    <textarea id="t3f" data-save="s3.f" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint: confidentiality <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>The more context you give AI, the better the answer. The risk is that context can include things that should never leave Velox. That is area 1 of the <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a>: <b>Confidentiality and privacy</b>. Good judgment means giving AI what it needs and nothing more.</div></div>
+  <div class="card">
+    <b>The rule:</b> never put confidential, personal, or nonpublic data (information the company has not released to the public) into an AI tool unless it is approved for that data, and anonymize first (remove or replace anything that identifies a person, customer, or supplier). <b>In this course, treat your own Claude account as a tool Velox has not approved for nonpublic information.</b>
+    <p style="margin-bottom:0"><a href="policy.html" target="_blank" rel="noopener">Open the full policy in a new tab</a> (optional: it lists all five policy areas; this module covers area 1 only)</p>
+    <p class="hint" style="margin-bottom:0">Velox and its numbers are fictional and cleared for this course, so the budget numbers you used in Step 2 are fine to use. Pretend the eight notes below are real. At a real company, even the numbers would need approval before going into an AI tool.</p>
+  </div>
+  <p>Walt's real file has an <code>internal_notes</code> column next to the variance numbers (you will download it in Step 5, Part 2). Below are eight notes from it, each with the row it sits in. <b>For each one, choose what to do before using the data with AI:</b></p>
+  <ul>
+    <li><b>Keep</b>: use it as written. It is needed for the summary and does not expose anyone or anything sensitive.</li>
+    <li><b>Generalize</b>: replace it with general words. For example, change a named customer to "a large dealer group".</li>
+    <li><b>Remove</b>: leave it out completely.</li>
+  </ul>
+  <p class="hint">Ask yourself two questions: <b>Does the summary need it?</b> and <b>Would it cause harm if it leaked?</b> There can be more than one defensible answer. <b>Give a reason for each.</b> In your reasons, describe a note in general words (for example, "the bonus note"); do not copy the sensitive details, because Step 5 sends your draft to Claude.</p>
+  <div id="items"></div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 170 min</span></h2>
+
+  <p class="hint">In this step, "Part 1" to "Part 8" are the sections of the assignment. They are not the five parts of a request from Step 3. The grading table (rubric) is at the bottom of Step 6; the file you upload to Jordan in the Setup section just below has the same table, so you can read it first.</p>
+  <h3>Setup: update your Jordan Coach (about 10 minutes)</h3>
+  <p class="hint">You built your Jordan Coach project in Module 1. If you did not, go to <a href="module-1.html">Module 1</a>, Step 5, and build it first (about 20 minutes extra, including uploading its two files, <code>velox-responsible-ai-policy.md</code> and <code>module-1-rubric.md</code>), then come back here. If you did build it, also check that those two files are still listed under Project knowledge.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1">On this page, click <button class="btn btn-gold btn-sm" type="button" id="copyCoach">Copy Jordan's updated instructions</button>. <br>Then <b>open your Jordan Coach project</b> in Claude and <b>find Instructions</b> (it may say <b>Set project instructions</b>). <b>Click in the box</b>, <b>select all of the old text</b> (Ctrl+A on Windows, Cmd+A on Mac), <b>paste</b> over it (Ctrl+V or Cmd+V), and click <b>Save</b>.</label></div>
+  <details><summary>See the updated instructions that will be copied (you do not need to read them closely)</summary><div class="copybox" id="coachText">You are Jordan Reyes, a senior AI trainer at Tallgrass Advisory and an enthusiastic AI champion. You coach new finance hires at Velox Motorworks, a fictional sports car maker, in the course ACCT/MIS 4420/5420.
+
+Your job is feedback, never answers.
+- The student will tell you which module they are working on. Score their draft against that module's rubric in the project files (named module-1-rubric, module-2-rubric, and so on). If they do not say which module, ask.
+- When a student shares a draft, score it criterion by criterion, using the rubric's point levels.
+- Name the one or two most important gaps and ask a question that helps the student close each one.
+- Never rewrite the student's work, write their prompt or memo, supply a correct answer, or give them the answer to a task, even if asked. If asked, explain kindly that the learning comes from doing it themselves.
+- Check every response the student submits against the Velox Responsible AI Policy in the project files, and flag any policy problem first.
+- Be encouraging and specific. Celebrate good AI use. Model the habit: "Great answer, now how do we prove it?"
+- Keep feedback under 300 words.
+- End every reply by reminding the student that this is practice feedback and their instructor's grading process makes the final call.</div></details>
+  <div class="check"><input type="checkbox" data-save="s5.c2" data-req id="c2"><label for="c2"><b>Download the Module 2 rubric</b> to your computer: <a class="btn btn-ghost btn-sm" href="downloads/module-2-rubric.md" download>Download module-2-rubric.md</a> (If it opens in the browser, right-click the button and choose <b>Save link as</b>.)<br>Then, in your Jordan Coach project, <b>find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload</b> the file. Leave the Module 1 files there.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c3" data-req id="c3"><label for="c3"><b>Optional quick check that the coach works</b> (not part of your assignment): <b>start a new chat inside the Jordan Coach project</b> and say hello to Jordan, mentioning that you are working on Module 2. Jordan should greet you and ask for your draft. If not, reopen the instructions to confirm the text saved, and confirm the Module 2 rubric is listed under Project knowledge.</label></div>
+
+  <h3 style="margin-top:28px">Assignment: The Prompt Playbook</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Walt wants a method his team can repeat. <b>Run your Step 2 request again the better way, compare the two, check what AI says against the data, and turn what you learned into a reusable template.</b> Everything you type below saves in this browser and builds your submission automatically, so use the same browser and device.</div></div>
+
+  <label class="lbl" for="stuName"><b>Type</b> your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420). Check this only if you are in 5420. Part 8 will appear after Part 7 once you tick this box (about 20 extra minutes), where you compare Claude's answers with and without a grounding instruction.</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Record Round 1 (your Step 2 attempt) · about 10 min</h3>
+  <label class="lbl" for="r1p"><b>Paste your Step 2 request</b> from the note you saved (just your request, not the data)</label>
+  <textarea id="r1p" data-save="s5.r1p" data-min="15" data-req></textarea>
+  <label class="lbl" for="r1o"><b>Summarize what AI gave you</b> in two or three sentences</label>
+  <textarea id="r1o" data-save="s5.r1o" data-min="30" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="r1w"><b>Name two weaknesses</b> in that output (for example, something unsupported, missing, or off-target for executives)</label>
+  <textarea id="r1w" data-save="s5.r1w" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 2 · Make a prompt-safe data file · about 20 min</h3>
+  <p class="hint">Use your Step 4 decisions. You will give Claude this safe file, never the original. Each of the eight Step 4 notes sits in the <code>internal_notes</code> cell of the row named under it in Step 4.</p>
+  <ol class="steps-list">
+    <li><b>Download</b> <a href="data/module-2/velox-q3-variance-simulated.csv" download>velox-q3-variance-simulated.csv</a> and <b>open it</b> (Excel: File, Open, then widen the <code>internal_notes</code> column or turn on Wrap Text so you can read it. Google Sheets: start a new blank spreadsheet, then File, Import, Upload, then Replace spreadsheet). It has the same numbers as Step 2, plus an <code>internal_notes</code> column.</li>
+    <li>Go through <b>every cell</b> in the <code>internal_notes</code> column. <b>Keep</b> the notes you decided to keep, <b>rewrite</b> the ones you decided to generalize in general words, and <b>delete</b> the ones you decided to remove. A cell can hold more than one note (the Revenue row holds notes 1 and 5, for example), and your decisions may differ, so edit only the sentence you are changing. The eight notes appear word for word as in Step 4; any other sentence is ordinary context, so leave it as it is.</li>
+    <li><b>Save it as a new file</b> named <code>velox-q3-variance-safe.csv</code> (Excel: <b>File, Save As</b>, type the name, choose <b>CSV UTF-8 (Comma delimited)</b> as the type. Google Sheets: <b>File, Download, Comma-separated values (.csv)</b>, then rename the downloaded file). Do not overwrite the original. <b>Never upload the original.</b></li>
+  </ol>
+  <label class="check"><input type="checkbox" data-save="s5.safechk" data-req id="safechk"> <span>I checked every cell of <code>internal_notes</code> before using the file.</span></label>
+  <label class="lbl" for="safedesc"><b>Describe what you changed</b> in the notes and what stayed, using your Step 4 decisions</label>
+  <textarea id="safedesc" data-save="s5.safedesc" data-min="40" data-req></textarea>
+
+  <h3 style="margin-top:22px">Part 3 · Run Round 2 (the structured way) · about 40 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open a new chat</b> in Claude (not in your Jordan Coach project). <b>Download</b> <a href="data/module-2/q2-variance-summary-example.txt" download>q2-variance-summary-example.txt</a>. This is a past summary in Walt's style, to use as your example.</li>
+      <li>In the chat, <b>click the + (attach) button</b>, choose the option to add or upload files (the exact wording varies), and <b>attach</b> both your <code>velox-q3-variance-safe.csv</code> and the example file.</li>
+      <li><b>Write your own request in your own words.</b> It must include: <b>(1)</b> all five parts of a request (role, goal, audience, format, constraints); <b>(2)</b> a grounding statement that makes Claude rely only on the attached data and handle gaps honestly; <b>(3)</b> an instruction about the example file (what to copy and what not to copy); and <b>(4)</b> a line asking Claude to ask you up to three questions first and wait for your answers. Refer to the attached files by name.</li>
+      <li><b>Send it.</b> When Claude asks its questions, <b>answer them</b> using only your safe file, the example, and what you know from this module. If you do not know an answer, say so, and never put back anything you removed in Part 2. If Claude does not ask any questions, tell it to ask before it writes. Then let it write the summary. Use the default model with web search off. If Claude puts the summary in a document panel instead of the chat, copy its text.</li>
+      <li><b>Come back here</b> and fill in the three boxes below.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="r2p"><b>Paste the request you sent</b> (not the files)</label>
+  <textarea id="r2p" data-save="s5.r2p" data-min="150" data-req style="min-height:160px"></textarea>
+  <label class="lbl" for="r2q"><b>Paste the questions Claude asked and your answers</b></label>
+  <textarea id="r2q" data-save="s5.r2q" data-min="40" data-req></textarea>
+  <label class="lbl" for="r2o"><b>Paste the final summary</b> Claude wrote</label>
+  <textarea id="r2o" data-save="s5.r2o" data-min="100" data-req style="min-height:180px"></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Check three claims against the data · about 20 min</h3>
+  <p class="hint"><b>Pick three specific claims</b> in the final summary (a number or a reason). For each, find it in your safe file and record what you found. Recompute any number yourself: a figure Claude calculated counts as "Matches" only if your own calculation agrees. A reason that appears only in the Q2 example file, or in neither file, is "Not in the data".</p>
+  <div id="vrows"></div>
+
+  <h3 style="margin-top:22px">Part 5 · Compare Round 1 and Round 2 · about 10 min</h3>
+  <label class="lbl" for="cmp"><b>Name at least two specific differences</b> you can see between your Round 1 output and your Round 2 output, and say which piece of your request (role, goal, audience, format, constraints, grounding statement, example instruction, or questions-first line) or which added file caused each one</label>
+  <textarea id="cmp" data-save="s5.cmp" data-min="60" data-req></textarea>
+
+  <h3 style="margin-top:22px">Part 6 · The Prompt Playbook and your note to Walt · about 25 min</h3>
+  <label class="lbl" for="tpl"><b>Turn your Round 2 request into a reusable template.</b> Put square brackets where details change each time (for example [QUARTER] and [DATA FILE]). Keep all five parts, the grounding statement, the example instruction, and the questions-first line.</label>
+  <textarea id="tpl" data-save="s5.tpl" data-min="150" data-req style="min-height:160px"></textarea>
+  <label class="lbl" for="wnote"><b>Write a note to Walt</b> (150 words or fewer): explain why he can trust this method. Mention the check step and which kinds of information stay out of the prompt (the confidential notes).</label>
+  <textarea id="wnote" data-save="s5.wnote" data-req style="min-height:120px"></textarea>
+  <div class="hint" id="wc">0 words (150 or fewer)</div>
+
+  <h3 style="margin-top:22px">Part 7 · AI use disclosure · about 5 min</h3>
+  <label class="lbl" for="disc">List every AI tool you used in this module (Claude in Step 2, your Round 2 chat, your Jordan coach, and any others) and what each did.</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 8 · Graduate students only</h3>
+    <p class="hint">Use your safe file in a new chat. <b>Ask Claude a question the data cannot answer</b>, such as "Why did marketing spend come in under budget?" Ask it twice: once with no instruction about relying on the data, and once with your own instruction (in your own words) to rely only on the data and say so when it is not there. Compare, then repeat with a second unanswerable question (for example, "Will Q4 revenue beat budget?").</p>
+    <label class="lbl" for="g1">Comparison 1: what changed between the two answers, and why?</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2">Comparison 2: what changed between the two answers, and why?</label><textarea id="g2" data-save="s5.g2"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Everyone: now get feedback from Jordan (about 30 min)</h3>
+    <p><b>Click the button</b> to copy your whole draft. <b>Open a chat inside your Jordan Coach project</b> (use the same chat for every round of feedback), <b>paste it</b>, and <b>ask Jordan for feedback</b> against the Module 2 rubric, in your own words.</p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+    <p class="hint" style="margin-bottom:0"><b>Read Jordan's feedback</b>, then continue to Step 6.</p>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 50 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b><b>Revise using my feedback.</b> <b>Go back to Step 5, improve your answers</b> (everything you typed is still there), then <b>return to Step 6</b>. To get another round of feedback, click <b>Copy my draft for Jordan</b> in Step 5 again and paste it into the same Jordan chat. You can do this as many times as you like. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to revise</button></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev">What did you change because of Jordan's feedback?</label>
+    <textarea id="rev" data-save="s6.rev" data-min="30" data-req></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans"><b>Paste your full Jordan Coach conversation here</b> </label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in your Jordan Coach chat, <b>click in the conversation</b>, <b>press Ctrl+A</b> (Cmd+A on Mac), <b>copy</b>, and <b>paste here</b>. Then <b>delete</b> any menu or sidebar text before your first message to Jordan or after the last reply. It will be long, and that is fine. If it is very long, you may delete repeated copies of your draft and keep Jordan's feedback and your replies.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0"><b>Open the downloaded file in Word</b> and check that every section has your text. (If Word warns about the file format, choose <b>Yes</b> or <b>Open</b>; that is expected.) Then <b>upload it to the Module 2 assignment, "The Prompt Playbook," in Canvas</b>. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Structured prompt and process</td><td>25</td><td>Five items, 5 points each: (1) Round 2 request has all five parts, (2) a grounding statement, (3) an instruction about the example file, (4) a questions-first line, and (5) Claude's questions are shown with your answers</td></tr>
+    <tr><td>B. Verification</td><td>15</td><td>Three specific claims, each traced to the data with a correct verdict and an action taken</td></tr>
+    <tr><td>C. Ethical AI: confidentiality</td><td>20</td><td>All eight Step 4 notes sorted with a reason, at least six reasonable, plus a described method for building the safe file</td></tr>
+    <tr><td>D. Comparison and Playbook</td><td>20</td><td>Two or more specific differences tied to parts of the request, a reusable template with brackets and all required parts, and a note to Walt of 150 words or fewer</td></tr>
+    <tr><td>E. AI use disclosure</td><td>5</td><td>Tools listed and what each did</td></tr>
+    <tr><td>F. Mastery evidence</td><td>15</td><td>Coach conversation included and your revision addresses it (or explains why you disagreed)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion G, the two grounding comparisons in Part 8 (the two comparisons of Claude's answers with and without a grounding instruction; 10 extra points; graduate scores are scaled to 100). You are scored on your reasoning, not on matching an answer key.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 25 min</span></h2>
+  <div class="card">
+    <p>10 short questions about Steps 3 and 4 (the five parts of a request, grounding, examples, questions first, checking output, and confidentiality). You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">If no button appears here, your instructor has not posted the link yet. Find the quiz in your Canvas course, in the Module 2 section, or ask your instructor.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 15 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl"><b>First look back at your Step 2 request and your Prompt Playbook template.</b> Then think of a task you do at work, in an internship, or in another class. Which parts of the Playbook would you reuse, and what would you keep out of the prompt? <b>Write 3 to 5 sentences.</b> This is not part of your Canvas submission; it is for you.</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/module2.js"></script>
+</body>
+</html>
