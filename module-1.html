@@ -45,7 +45,23 @@
     <tr><td>Cars sold</td><td>1,280</td><td>1,210</td></tr></table>
     <p class="hint"><b>Gross margin</b> = (revenue − cost of goods sold) ÷ revenue. It shows how much of each sales dollar is left after the direct cost of making the cars.</p>
     <p class="hint">Notes from Cost and Planning: a new tariff on imported carbon-fiber panels began in Q3, and the plant's fixed overhead did not change.</p>
-    <a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li>Click <b>Open Claude</b> below. Sign in and click <b>New chat</b>.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li>Click <b>Copy the prompt and data</b>. It copies the question <i>and</i> the numbers together, because Claude cannot see this page.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the prompt and data</button></li>
+      <li>Paste it into the Claude chat box (Ctrl+V on Windows, Cmd+V on Mac) and press Enter.</li>
+      <li>Read the answer, then answer the three questions below in your own words.</li>
+    </ol>
+    <details><summary>See what will be copied</summary><div class="copybox" id="p2text">Explain why Velox Motorworks' gross margin fell from Q2 to Q3.
+
+Data:
+- Revenue: Q2 $352 million, Q3 $338 million
+- Cost of goods sold: Q2 $246 million, Q3 $250 million
+- Cars sold: Q2 1,280, Q3 1,210
+
+Notes from Cost and Planning: a new tariff on imported carbon-fiber panels began in Q3, and the plant's fixed overhead did not change.</div></details>
   </div>
   <div class="turn"><span class="tag">Your turn</span>
     <label class="lbl" for="t2a">1. What did AI do well?</label>
@@ -158,17 +174,44 @@ Your job is feedback, never answers.
   <h3 style="margin-top:22px">Part 1 · Sort the 10 tasks</h3>
   <p class="hint">Categories: <b>AI does it well</b>, <b>AI helps, a person checks</b>, <b>AI assists, a person decides</b>. Give a one- or two-sentence reason naming a specific AI strength or risk.</p>
   <div id="tasks"></div>
-  <details><summary>Data for tasks 5, 6, and 10</summary>
-    <p><b>Task 5, gross margin:</b> use the Q2 and Q3 table from Step 2 (revenue, cost of goods sold, cars sold, and the notes from Cost and Planning).</p>
-    <p><b>Task 6, warranty reserve:</b> 1,210 cars sold in Q3; expected claim rate 4%; average cost per claim $6,500.</p>
-    <p><b>Task 10:</b> 40 fictional employees. <a href="data/module-1/employees-simulated.csv" download>Download employees-simulated.csv</a>. Treat it as real: the Responsible AI Policy applies.</p>
+  <details><summary>Data you will need for tasks 5, 6, and 10 (open this before testing)</summary>
+    <p><b>Task 5, gross margin:</b> the same data you used in Step 2. <button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the task 5 prompt and data</button></p>
+    <p><b>Task 6, warranty reserve:</b> <button class="btn btn-gold btn-sm" type="button" data-copy="#p6text">Copy the task 6 prompt and data</button></p>
+    <div class="copybox" id="p6text">Calculate the Q3 warranty reserve for Velox Motorworks and show your steps.
+
+Data:
+- Cars sold in Q3: 1,210
+- Expected warranty claim rate: 4% of cars sold
+- Average cost per claim: $6,500</div>
+    <p><b>Task 10, layoff analysis:</b> 40 fictional employees in a spreadsheet. <a href="data/module-1/employees-simulated.csv" download>Download employees-simulated.csv</a>. Treat it as real employee data: the Responsible AI Policy applies. <b>Do not give it to Claude until you have anonymized it</b> (see Part 3 below for how).</p>
   </details>
 
   <h3 style="margin-top:22px">Part 2 · Test AI on three tasks</h3>
-  <p class="hint">Test <b>task 10</b> and two others you choose. For each, run it in Claude, then record what happened. Tasks 5, 6, and 10 come with data (open the "Data for tasks 5, 6, and 10" box above). For any other task you pick, ask Claude to create a short fictional sample first (for example, a made-up supplier contract), and then test with that.</p>
+  <div class="card">
+    <h3>How to run a test (do this for each of your three tests)</h3>
+    <ol class="steps-list">
+      <li>Open a <b>new chat</b> in Claude (claude.ai, then <b>New chat</b>).</li>
+      <li><b>Give Claude the task and all of its data in the same message.</b> Claude cannot see this page, so anything it needs (numbers, a file, a document) must be pasted or attached in the chat. For tasks 5 and 6, use the copy buttons in the data box above. For task 10, follow Part 3 below.</li>
+      <li>For any other task you choose (1, 2, 3, 4, 7, 8, or 9), first ask Claude: <i>"Create a short, realistic, fictional sample I can use for this task: [paste the task]."</i> Then give Claude the task <i>and</i> that sample together.</li>
+      <li>Read the answer. <b>Check it yourself</b>: redo the math, look up facts at the original source, compare against the data.</li>
+      <li>Record your prompt, a summary of what AI gave you, what you checked, and the result in the boxes below.</li>
+    </ol>
+  </div>
+  <p class="hint">Test <b>task 10</b> and two other tasks you choose.</p>
   <div id="tests"></div>
 
   <h3 style="margin-top:22px">Part 3 · Task 10 ethics</h3>
+  <div class="card">
+    <h3>How to anonymize and test task 10</h3>
+    <ol class="steps-list">
+      <li>Download <a href="data/module-1/employees-simulated.csv" download>employees-simulated.csv</a> and open it in Excel or Google Sheets.</li>
+      <li><b>Delete the <code>name</code> column</b>. Keep the others (department, age, years at Velox, salary, performance rating). The employee_id column can stay as a code, but tell Claude nothing about who the people are.</li>
+      <li>Save the file as a new file, for example <code>employees-anonymized.csv</code>. Never upload the original.</li>
+      <li>In a new Claude chat, click the <b>+</b> (attach) button, choose <b>Upload a file</b>, and pick your anonymized file. Or select all the cells, copy them, and paste them into the chat.</li>
+      <li>In the same message, type your request, for example: <i>"This is an anonymized HR file for Velox Motorworks. Analyze it to support planning a workforce reduction and tell me what you find."</i></li>
+      <li>Read the answer. Look for anything unfair or risky (for example, a pattern based on age) and check any numbers yourself.</li>
+    </ol>
+  </div>
   <label class="lbl" for="anon">How did you anonymize the data before using AI, and which policy areas apply (confidentiality plus at least one more)? Why?</label>
   <textarea id="anon" data-save="s5.anon" data-min="40" data-req></textarea>
 

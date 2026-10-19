@@ -106,3 +106,5 @@ footer a{color:#fff}
 .toast{position:fixed;left:50%;bottom:22px;transform:translateX(-50%);background:#222;color:#fff;border-radius:999px;padding:10px 18px;z-index:60;display:none}
 .toast.show{display:block}
 @media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+
+.steps-list{margin:8px 0 8px 22px;padding:0}.steps-list li{margin:0 0 10px}
