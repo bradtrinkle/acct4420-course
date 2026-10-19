@@ -33,7 +33,7 @@
   <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
   <div class="card">
     <h3>Module 1 at a glance</h3>
-    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains a sort of 10 Velox tasks, three tests of AI, an ethics answer, a one-page memo to Priya, and a list of the AI tools you used.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your sort of the 10 Velox tasks, three tests of AI, an ethics answer, a one-page memo to Priya, and a list of the AI tools you used.</p>
     <p><b>What you need:</b> your own paid Claude account (claude.ai), Excel or Google Sheets, and your Canvas login. Use the same browser and device each time so your progress is still here.</p>
     <p><b>The 8 steps:</b> 1 Mission brief (20 min) · 2 Try it first (45) · 3 Learn (75) · 4 Ethics checkpoint (30) · 5 First attempt and coach feedback (135) · 6 Mastery attempt (45) · 7 Quiz (25) · 8 Reflection (15). Total: 390 minutes, about 6.5 hours.</p>
   </div>
@@ -43,13 +43,13 @@
 <!-- STEP 2 -->
 <section class="step" data-step="2" aria-labelledby="h2s">
   <h2 id="h2s">Step 2 · Try it first <span class="time">· 45 min</span></h2>
-  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. Open Claude and ask it to do this one: <b>explain why Velox's gross margin fell from Q2 to Q3, using the figures below</b>. You do not need to write a prompt: the button below gives you one. (This is one of the 10 tasks you will sort in Step 5, so what you learn here will help you later.)</div></div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. Open Claude and ask it to do this one: <b>explain why Velox's gross margin fell from Q2 to Q3, using the figures below</b>. Write your own request to Claude (a prompt). Don't overthink it; the point is to see what happens. The button below copies only the data. (This is one of the 10 tasks you will sort in Step 5, so what you learn here will help you later.)</div></div>
   <div class="card">
     <table class="t"><tr><th></th><th>Q2</th><th>Q3</th></tr>
     <tr><td>Revenue ($ millions)</td><td>352</td><td>338</td></tr>
     <tr><td>Cost of goods sold ($ millions)</td><td>246</td><td>250</td></tr>
     <tr><td>Cars sold</td><td>1,280</td><td>1,210</td></tr></table>
-    <p class="hint">Do not retype these numbers. Use the copy button in the steps below.</p>
+    
     <p class="hint"><b>Gross margin</b> = (revenue − cost of goods sold) ÷ revenue. It shows how much of each sales dollar is left after the direct cost of making the cars.</p>
     <p class="hint">Notes from Cost and Planning (the Velox team that tracks what cars cost to build): a new tariff (a tax on imports) on imported carbon-fiber panels began in Q3, and the plant's fixed overhead (costs like plant rent that do not change with the number of cars built) did not change.</p>
   </div>
@@ -57,13 +57,11 @@
     <h3>How to do this</h3>
     <ol class="steps-list">
       <li>Click <b>Open Claude in a new tab</b> (the button just below). Sign in with your own Claude account and click <b>New chat</b>.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
-      <li>Click <b>Copy the prompt and data</b>. It copies the question <i>and</i> the numbers together, because Claude cannot see this page.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the prompt and data</button></li>
-      <li>Paste it into the Claude chat box (Ctrl+V on Windows, Cmd+V on Mac) and press Enter.</li>
+      <li>Click <b>Copy the data</b>. Claude cannot see this page, so the numbers must go into your message.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the data</button></li>
+      <li>In the Claude chat box, type your own request in your own words (the task: explain why Velox's gross margin fell from Q2 to Q3). Then press Shift+Enter for a new line, paste the data (Ctrl+V on Windows, Cmd+V on Mac), and press Enter to send.</li>
       <li>Read the answer, then answer the three questions below in your own words.</li>
     </ol>
-    <details><summary>See what will be copied</summary><div class="copybox" id="p2text">Explain why Velox Motorworks' gross margin fell from Q2 to Q3.
-
-Data:
+    <details><summary>See what will be copied</summary><div class="copybox" id="p2text">Data:
 - Revenue: Q2 $352 million, Q3 $338 million
 - Cost of goods sold: Q2 $246 million, Q3 $250 million
 - Cars sold: Q2 1,280, Q3 1,210
@@ -78,7 +76,7 @@ Notes from Cost and Planning: a new tariff on imported carbon-fiber panels began
     <label class="lbl" for="t2c">3. How would you check whether its explanation is right?</label>
     <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
   </div>
-  <p class="hint">These answers are saved on this device and are not graded on their own. They are your starting point: in Step 3 you will learn the checks that answer question 3, and in Step 8 you will use them to reflect. Hint for question 2: work out the gross margin percentage for each quarter yourself (Q2 is 30.1%, Q3 is 26.0%) and see whether Claude's explanation accounts for the whole drop.</p>
+  <p class="hint">These answers are saved on this device and are not graded on their own. They are your starting point: in Step 3 you will learn the checks that answer question 3, and in Step 8 you will use them to reflect. Hint for question 2: work out the gross margin percentage for each quarter yourself then compare with these: Q2 is 30.1%, Q3 is 26.0%. See whether Claude's explanation accounts for the whole drop.</p>
 </section>
 
 <!-- STEP 3 -->
@@ -183,11 +181,9 @@ Your job is feedback, never answers.
   <p class="hint">There are exactly three categories (the commas are part of the names):<br>1. <b>AI does it well</b><br>2. <b>AI helps, a person checks</b><br>3. <b>AI assists, a person decides</b><br>Choose one for each task and give a one- or two-sentence reason that names a specific AI strength (Step 3b) or risk (Step 3c). For task 5, use what you learned in Step 2. You are graded on your reasoning, not on matching an answer key.</p>
   <div id="tasks"></div>
   <details><summary>Data you will need for tasks 5, 6, and 10 (open this before testing)</summary>
-    <p><b>Task 5, gross margin:</b> the same data you used in Step 2. <button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the task 5 prompt and data</button></p>
-    <p><b>Task 6, warranty reserve:</b> <button class="btn btn-gold btn-sm" type="button" data-copy="#p6text">Copy the task 6 prompt and data</button></p>
-    <div class="copybox" id="p6text">Calculate the Q3 warranty reserve for Velox Motorworks and show your steps.
-
-Data:
+    <p><b>Task 5, gross margin:</b> the same data you used in Step 2. <button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the task 5 data</button></p>
+    <p><b>Task 6, warranty reserve:</b> the task is to calculate the Q3 warranty reserve and show the steps. Write your request, then paste the data under it. <button class="btn btn-gold btn-sm" type="button" data-copy="#p6text">Copy the task 6 data</button></p>
+    <div class="copybox" id="p6text">Data:
 - Cars sold in Q3: 1,210
 - Expected warranty claim rate: 4% of cars sold
 - Average cost per claim: $6,500</div>
@@ -199,13 +195,13 @@ Data:
     <h3>How to run a test (do this for each of your three tests)</h3>
     <ol class="steps-list">
       <li>Open a <b>new chat</b> in Claude (claude.ai, then <b>New chat</b>). Do <b>not</b> use your Jordan Coach project for tests; use a regular chat outside the project.</li>
-      <li><b>Give Claude the task and all of its data in the same message.</b> Claude cannot see this page, so anything it needs (numbers, a file, a document) must be pasted or attached in the chat. For tasks 5 and 6, use the copy buttons in the data box above. For task 10, do the steps in Part 3 below first, then return here.</li>
-      <li>For any other task you choose (1, 2, 3, 4, 7, 8, or 9), first ask Claude: <i>"Create a short, realistic, fictional sample I can use for this task: [paste the task]."</i> Then, in the same chat, give Claude the task <i>and</i> that sample together. Type the actual task, not the square brackets. Task 7 (a fact lookup) needs no sample. For a made-up sample there is no outside source, so your check is whether the answer is consistent with the sample and makes sense.</li>
+      <li><b>Give Claude the task and all of its data in the same message</b> (tasks that use a made-up sample are the exception; see the next step). Claude cannot see this page, so anything it needs (numbers, a file, a document) must be pasted or attached in the chat. Write your own request in your own words, then paste the data under it. For tasks 5 and 6, use the copy-data buttons in the data box above. For task 10, do the steps in Part 3 below first, then return here.</li>
+      <li>For task 1, 2, 3, 4, 8, or 9, first ask Claude: <i>"Create a short, realistic, fictional sample I can use for this task: [paste the task]."</i> Copy the task wording from Part 1 into the brackets. Then, in the same chat, send a second message: your own request for the task, with the sample pasted under it. Task 7 is a fact lookup and needs no sample: just write your request. For a made-up sample there is no outside source, so your check is whether the answer is consistent with the sample and makes sense.</li>
       <li>Read the answer. <b>Check it yourself</b>: redo the math, look up facts at the original source, compare against the data.</li>
-      <li>Only after the test is done, come back and record it in the boxes below. For the prompt box, paste just your request, not the data. "Result" means whether the AI's output held up after your check.</li>
+      <li>Only after the test is done, come back and record it in the boxes below. For the prompt box, paste just your request, not the data. If you used a made-up sample, paste only your second request (the one asking Claude to do the task), not the sample-creating request and not the sample. "Result" means whether the AI's output held up after your check.</li>
     </ol>
   </div>
-  <p class="hint">Test <b>task 10</b> and two other tasks you choose. <b>Start with the anonymizing steps in Part 3 below, then fill in Test 1.</b></p>
+  <p class="hint">Test <b>task 10</b> and two other tasks you choose.</p>
   <div id="tests"></div>
 
   <h3 style="margin-top:22px">Part 3 · Task 10 ethics</h3>
@@ -214,9 +210,9 @@ Data:
     <ol class="steps-list">
       <li>Download <a href="data/module-1/employees-simulated.csv" download>employees-simulated.csv</a> and open it in Excel or Google Sheets.</li>
       <li>The file has these columns: employee_id, name, department, age, years_at_velox, annual_salary, performance_rating_1_to_5. <b>Delete the <code>name</code> and <code>employee_id</code> columns</b>, because they identify people. Keep the other five.</li>
-      <li>Save it as a new file named <code>employees-anonymized.csv</code> (in Excel choose <b>File, Save As, CSV</b>; in Google Sheets choose <b>File, Download, CSV</b>). Never upload the original.</li>
+      <li>Save it as a new file named <code>employees-anonymized.csv</code> (in Excel choose <b>File, Save As, CSV</b>; in Google Sheets choose <b>File, Download, CSV</b>, then rename the downloaded file). Never upload the original.</li>
       <li>In a new Claude chat, click the <b>+</b> (attach) button, choose <b>Upload a file</b>, and pick your anonymized file. Uploading is best; pasting cells can scramble the columns.</li>
-      <li>In the same message, type your request, type this request: <i>"This is an anonymized HR file for Velox Motorworks. Analyze it to support planning a workforce reduction and tell me what you find."</i> Claude may push back or add cautions; report that in your test.</li>
+      <li>In the same message, write your own request in your own words, then attach or paste the file. A good request says who you are helping (the context), what you want done (the task), and that the file is attached. Claude may push back or add cautions; report that in your test.</li>
       <li>Read the answer. Look for anything unfair or risky (for example, a pattern that treats people differently by age, which is a bias risk under the policy) and check any numbers yourself, such as an average salary by department, using Excel or Sheets.</li>
     </ol>
   </div>
