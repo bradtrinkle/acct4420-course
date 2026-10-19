@@ -1,0 +1,38 @@
+date,reference,description,receipts,payments,running_balance
+2026-08-31,,Beginning balance (agrees with bank on Aug 31),,,1846300.00
+2026-09-01,CHK40201,Check - Vexa Composites (panel sets),,87250.00,1759050.00
+2026-09-02,CHK40202,Check - Delmar Tooling,,41800.00,1717250.00
+2026-09-02,DEP0902,Dealer remittance - Prairie State Motors,318450.00,,2035700.00
+2026-09-03,ACH7701,ACH - Midwest Energy (utilities),,23415.60,2012284.40
+2026-09-03,CHK40203,Check - Great Plains Steel,,64320.00,1947964.40
+2026-09-04,WIRE5521,Wire receipt - Capital City Auto Group,402900.00,,2350864.40
+2026-09-05,CHK40204,Check - Kestrel Wheel Co.,,15000.00,2335864.40
+2026-09-07,CHK40205,Check - Pioneer Logistics (freight),,38940.00,2296924.40
+2026-09-08,CHK40206,Check - Ames Paint Systems,,27600.00,2269324.40
+2026-09-08,DEP0908,Dealer remittance - Northwoods Performance,276115.00,,2545439.40
+2026-09-09,ACH7702,ACH - Iowa Dept of Revenue (sales tax),,52180.00,2493259.40
+2026-09-10,CHK40207,Check - Cedar Valley Staffing,,19865.50,2473393.90
+2026-09-11,DEP0911,Dealer remittance - Blue Gate Motors,195600.00,,2668993.90
+2026-09-12,CHK40208,Check - Heartland Packaging,,9420.00,2659573.90
+2026-09-13,CHK40209,Check - Midwest Fasteners,,12450.00,2647123.90
+2026-09-14,CHK40210,Check - Red Oak Machining,,73110.00,2574013.90
+2026-09-15,CHK40211,Check - Dallas Center Electric,,11275.25,2562738.65
+2026-09-15,DEP0915,Dealer remittance - Summit Auto Group,28900.00,,2591638.65
+2026-09-16,CHK40212,Check - Sioux Rapids Glass,,15000.00,2576638.65
+2026-09-17,WIRE5588,Wire receipt - Heartland Motors,451230.00,,3027868.65
+2026-09-18,CHK40213,Check - Western Tire Supply,,58930.00,2968938.65
+2026-09-19,ACH7703,ACH - Employee benefits provider,,96400.00,2872538.65
+2026-09-21,CHK40214,Check - Mason City Fabrication,,34705.00,2837833.65
+2026-09-22,CHK40215,Check - Prairie Insurance Group,,44000.00,2793833.65
+2026-09-23,DEP0923,Dealer remittance - Tri-County Sports Cars,233780.00,,3027613.65
+2026-09-24,CHK40216,Check - Boone Valley Software,,18250.00,3009363.65
+2026-09-25,DEP0925,Dealer remittance - Ironwood Dealers,167420.00,,3176783.65
+2026-09-26,CHK40217,Check - Winterset Interiors,,29840.00,3146943.65
+2026-09-26,CHK40218,Check - Delmar Tooling,,48750.00,3098193.65
+2026-09-27,CHK40219,Check - Clear Lake Electronics,,66275.00,3031918.65
+2026-09-28,ACH7704,ACH - Midwest Energy (utilities),,24102.80,3007815.85
+2026-09-29,CHK40220,Check - Pioneer Logistics (freight),,31200.00,2976615.85
+2026-09-29,DEP0929,Dealer remittance - Lakeview Auto,309050.00,,3285665.85
+2026-09-30,ACH7705,ACH - Payroll clearing,,512600.00,2773065.85
+2026-09-30,CHK40221,Check - Cedar Valley Staffing,,19865.50,2753200.35
+2026-09-30,DEP0930,Dealer remittance - Lakeshore Motors,263400.00,,3016600.35

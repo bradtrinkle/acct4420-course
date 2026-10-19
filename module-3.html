@@ -1,0 +1,482 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 3: Thinking Through Work with AI</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html">Module 2</a><a href="module-3.html" aria-current="page">Module 3</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><path d="M26 8h10c1 0 2 0 3 1l3 3H22z" fill="#F1BE48"/><circle cx="18" cy="23" r="5" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="5" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 3 · Week 3 · Tallgrass Advisory training</span>
+<h1 style="margin:10px 0 4px">Thinking Through Work with AI</h1>
+<p class="hint">You will be able to break a multi-step job into smaller steps, make AI show its reasoning and assumptions, have AI challenge its own answer, run a task twice and compare, and check the result against the source. Plan for about 6.8 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 15 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 3 video from your instructor</b><br><span class="hint" style="color:#ddd">The video will appear here. If it does not, tell your instructor and keep going; Walt's message below covers the key points.</span></div></div>
+  <div class="cfo"><b>From the Controller, Walt Brenner</b><br>Every month my staff accountant spends most of a day reconciling our main bank account at Prairie National Bank. A reconciliation explains why the bank's number and our books' number for the same cash are different, and proves that once every difference is explained, both end up at the same true balance. At September 30 our books say $3,016,600.35 and the bank says $2,896,663.23. Priya (our CFO) wants AI to do the grunt work. I am willing to try, but a reconciliation is exactly the kind of work where a wrong answer can look right. Show me a way to use AI on a job with many steps that lets me see how it got there and catch its mistakes.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Last week you learned to give AI the right context. This week the job is bigger, and big jobs go wrong when you ask for everything in one go. You will split the work into steps, make AI show its reasoning, have it challenge itself, run it twice, and check it against the source. Let's go.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <div class="card">
+    <h3>Module 3 at a glance</h3>
+    <p><b>Who is who:</b> Velox Motorworks is a fictional sports car maker. Walt Brenner is its Controller (the senior accountant in charge of its books and reports). Priya Natarajan is its CFO. You are a new hire at Tallgrass Advisory, the consulting firm training Velox's finance team, and Jordan Reyes is your mentor there. All names, companies, and numbers in this course are fictional.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your Step 4 accuracy review, the four prompts you chained together, a check of AI's reconciliation against the source files, a comparison of two runs, your final reconciliation, your <b>Reconciliation Chain Template</b> (the reusable set of prompts you write in Step 5, Part 6) with a short note to Walt, a list of the AI tools you used, and your coach conversation and revision notes.</p>
+    <p><b>What you need:</b> your own paid Claude account (claude.ai), Excel or Google Sheets, your Jordan Coach project from Module 1, and your Canvas login. Use the same browser and device each time, and do not use a private or incognito window, because your progress saves in this browser only. You can click <b>Download my submission</b> in Step 6 at any time to keep a backup copy.</p>
+    <p><b>The 8 steps:</b> 1 Mission brief (15 min, including a video of about 7 minutes) · 2 Try it first (35) · 3 Learn (45) · 4 Ethics checkpoint (30) · 5 First attempt and coach feedback (210) · 6 Mastery attempt (45) · 7 Quiz (20) · 8 Reflection (10). Total: 410 minutes, about 6.8 hours. Graduate students add about 20 minutes for Part 8.</p>
+  </div>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video and read Walt's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 35 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. <b>Open Claude and ask it to do Walt's September bank reconciliation in one request.</b> <b>Write your own request</b> in your own words and don't overthink it. You will compare this first try with a better method later.</div></div>
+  <div class="card">
+    <h3>Words you need</h3>
+    <p>A <b>bank reconciliation</b> compares two records of the same cash: Velox's own books (called the <b>book balance</b>) and the bank's statement (the <b>bank balance</b>). The two numbers usually differ for ordinary reasons. You find each reason, adjust whichever balance needs it, and show that both sides end at the same <b>adjusted balance</b> (the balance for that side after you apply its adjustments). Here are the usual reasons:</p>
+    <table class="t"><tr><th>Item</th><th>What it is</th><th>Which balance you adjust</th></tr>
+    <tr><td><b>Deposit in transit</b></td><td>Velox recorded a deposit, but the bank had not yet added it by month-end.</td><td>Bank balance goes <b>up</b></td></tr>
+    <tr><td><b>Outstanding check</b></td><td>Velox wrote and recorded a check that has not yet cleared the bank.</td><td>Bank balance goes <b>down</b></td></tr>
+    <tr><td><b>Bank error</b></td><td>The bank made a mistake, such as charging Velox for another customer's check.</td><td>Bank balance goes <b>up</b> if the bank wrongly took money out, <b>down</b> if it wrongly added money</td></tr>
+    <tr><td><b>Bank service charge</b></td><td>A fee the bank took that Velox has not recorded yet.</td><td>Book balance goes <b>down</b></td></tr>
+    <tr><td><b>Interest earned</b></td><td>Interest the bank paid that Velox has not recorded yet.</td><td>Book balance goes <b>up</b></td></tr>
+    <tr><td><b>NSF check</b></td><td>A customer's check Velox deposited bounced ("not sufficient funds"), so the bank took the money back.</td><td>Book balance goes <b>down</b></td></tr>
+    <tr><td><b>Electronic deposit not yet recorded</b></td><td>A customer paid electronically straight into the bank, and Velox has not recorded it yet.</td><td>Book balance goes <b>up</b></td></tr>
+    <tr><td><b>Book error</b></td><td>Velox recorded the wrong amount (for example two digits swapped).</td><td>Book balance goes <b>down</b> if Velox recorded a payment too small (or a receipt too large), <b>up</b> if the reverse</td></tr></table>
+    <p class="hint"><b>More words:</b> A <b>reconciling item</b> is any difference between the two records that you find and explain. <b>ACH</b> is an electronic bank-to-bank payment, a <b>wire</b> is a same-day electronic transfer, a <b>dealer remittance</b> is a payment from a car dealer, and <b>CSV</b> is a plain spreadsheet file you can open in Excel. </p>
+    <p class="hint">Rule of thumb: timing items (Velox knows, the bank does not yet) change the <b>bank</b> balance. Items only the bank has recorded change the <b>book</b> balance. An error is fixed on the side that made the mistake.</p>
+  </div>
+  <div class="card">
+    <h3>What you know</h3>
+    <ul>
+      <li>Account: Velox's main operating account at Prairie National Bank. Month: September 2026.</li>
+      <li>On August 31 the bank and the books agreed exactly, with no outstanding items.</li>
+      <li>At September 30, the <b>book balance</b> is <b>$3,016,600.35</b> and the <b>bank balance</b> is <b>$2,896,663.23</b>.</li>
+      <li>All Velox check numbers start with 40. Walt called the bank, and they confirmed that one item on the statement does not belong to Velox. He did not say which.</li>
+      <li>Velox's accounts payable team confirms that every Velox check that appears on the bank statement cleared for the correct invoice amount. A check that is not on the statement has simply not cleared yet. Cedar Valley Staffing, Velox's temporary-staffing vendor, is paid the same amount on the 10th and the 30th of every month.</li>
+      <li>The two files list every September transaction, one line each, with a running balance. All amounts are in dollars.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open Claude</b> in a new tab (the button just below), <b>sign in</b> with your own Claude account, and click <b>New chat</b>. Do not use your Jordan Coach project for this.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li><b>Download both files</b> to your computer: <a href="data/module-3/velox-gl-cash-september-simulated.csv" download>velox-gl-cash-september-simulated.csv</a> (Velox's books, called the general ledger or GL) and <a href="data/module-3/velox-bank-statement-september-simulated.csv" download>velox-bank-statement-september-simulated.csv</a> (the bank's statement).</li>
+      <li>In the chat, <b>click the + (attach) button</b>, choose the option to add or upload files (the exact wording varies), and <b>attach both files</b>. (If you cannot attach files, use the copy button in the next step instead.)</li>
+      <li><b>Type your own request in your own words.</b> Ask Claude to reconcile the two records and explain every difference, and give it whatever facts you think it needs from "What you know" above. <i>If you could not attach files:</i> after typing, <b>press Shift+Enter</b> for a new line, <b>click Copy both files as text</b> (it copies to your clipboard), <b>click in Claude's message box</b>, and <b>paste</b> (Ctrl+V on Windows, Cmd+V on Mac).<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy both files as text</button><br><b>Send it.</b></li>
+      <li><b>Read the answer</b>, then <b>answer the three questions below</b> in your own words. Copy your answer to question 2 into the third box of Part 1 in Step 5 when you get there.</li>
+      <li><b>Save your work for Step 5:</b> copy your request and Claude's answer into a note on your computer (Notepad, Notes, or a Word document). Keeping this Claude chat open is helpful but not required.</li>
+    </ol>
+    <details><summary>See what "Copy both files as text" will copy</summary><div class="copybox" id="p2text">FILE 1: velox-gl-cash-september-simulated.csv (Velox&#x27;s books, the general ledger cash report)
+date,reference,description,receipts,payments,running_balance
+2026-08-31,,Beginning balance (agrees with bank on Aug 31),,,1846300.00
+2026-09-01,CHK40201,Check - Vexa Composites (panel sets),,87250.00,1759050.00
+2026-09-02,CHK40202,Check - Delmar Tooling,,41800.00,1717250.00
+2026-09-02,DEP0902,Dealer remittance - Prairie State Motors,318450.00,,2035700.00
+2026-09-03,ACH7701,ACH - Midwest Energy (utilities),,23415.60,2012284.40
+2026-09-03,CHK40203,Check - Great Plains Steel,,64320.00,1947964.40
+2026-09-04,WIRE5521,Wire receipt - Capital City Auto Group,402900.00,,2350864.40
+2026-09-05,CHK40204,Check - Kestrel Wheel Co.,,15000.00,2335864.40
+2026-09-07,CHK40205,Check - Pioneer Logistics (freight),,38940.00,2296924.40
+2026-09-08,CHK40206,Check - Ames Paint Systems,,27600.00,2269324.40
+2026-09-08,DEP0908,Dealer remittance - Northwoods Performance,276115.00,,2545439.40
+2026-09-09,ACH7702,ACH - Iowa Dept of Revenue (sales tax),,52180.00,2493259.40
+2026-09-10,CHK40207,Check - Cedar Valley Staffing,,19865.50,2473393.90
+2026-09-11,DEP0911,Dealer remittance - Blue Gate Motors,195600.00,,2668993.90
+2026-09-12,CHK40208,Check - Heartland Packaging,,9420.00,2659573.90
+2026-09-13,CHK40209,Check - Midwest Fasteners,,12450.00,2647123.90
+2026-09-14,CHK40210,Check - Red Oak Machining,,73110.00,2574013.90
+2026-09-15,CHK40211,Check - Dallas Center Electric,,11275.25,2562738.65
+2026-09-15,DEP0915,Dealer remittance - Summit Auto Group,28900.00,,2591638.65
+2026-09-16,CHK40212,Check - Sioux Rapids Glass,,15000.00,2576638.65
+2026-09-17,WIRE5588,Wire receipt - Heartland Motors,451230.00,,3027868.65
+2026-09-18,CHK40213,Check - Western Tire Supply,,58930.00,2968938.65
+2026-09-19,ACH7703,ACH - Employee benefits provider,,96400.00,2872538.65
+2026-09-21,CHK40214,Check - Mason City Fabrication,,34705.00,2837833.65
+2026-09-22,CHK40215,Check - Prairie Insurance Group,,44000.00,2793833.65
+2026-09-23,DEP0923,Dealer remittance - Tri-County Sports Cars,233780.00,,3027613.65
+2026-09-24,CHK40216,Check - Boone Valley Software,,18250.00,3009363.65
+2026-09-25,DEP0925,Dealer remittance - Ironwood Dealers,167420.00,,3176783.65
+2026-09-26,CHK40217,Check - Winterset Interiors,,29840.00,3146943.65
+2026-09-26,CHK40218,Check - Delmar Tooling,,48750.00,3098193.65
+2026-09-27,CHK40219,Check - Clear Lake Electronics,,66275.00,3031918.65
+2026-09-28,ACH7704,ACH - Midwest Energy (utilities),,24102.80,3007815.85
+2026-09-29,CHK40220,Check - Pioneer Logistics (freight),,31200.00,2976615.85
+2026-09-29,DEP0929,Dealer remittance - Lakeview Auto,309050.00,,3285665.85
+2026-09-30,ACH7705,ACH - Payroll clearing,,512600.00,2773065.85
+2026-09-30,CHK40221,Check - Cedar Valley Staffing,,19865.50,2753200.35
+2026-09-30,DEP0930,Dealer remittance - Lakeshore Motors,263400.00,,3016600.35
+
+FILE 2: velox-bank-statement-september-simulated.csv (the bank statement)
+date,reference,description,deposits,withdrawals,running_balance
+2026-08-31,,Beginning balance (agrees with books on Aug 31),,,1846300.00
+2026-09-03,CHECK 40201,CHECK,,87250.00,1759050.00
+2026-09-03,DEP0902,DEPOSIT,318450.00,,2077500.00
+2026-09-04,ACH 7701,ACH DEBIT MIDWEST ENERGY,,23415.60,2054084.40
+2026-09-04,WIRE5521,WIRE IN CAPITAL CITY AUTO,402900.00,,2456984.40
+2026-09-05,CHECK 40202,CHECK,,41800.00,2415184.40
+2026-09-06,CHECK 40203,CHECK,,64320.00,2350864.40
+2026-09-09,CHECK 40204,CHECK,,15000.00,2335864.40
+2026-09-09,DEP0908,DEPOSIT,276115.00,,2611979.40
+2026-09-10,ACH 7702,ACH DEBIT IA DEPT REVENUE,,52180.00,2559799.40
+2026-09-10,CHECK 40205,CHECK,,38940.00,2520859.40
+2026-09-11,CHECK 40206,CHECK,,27600.00,2493259.40
+2026-09-12,DEP0911,DEPOSIT,195600.00,,2688859.40
+2026-09-15,CHECK 40207,CHECK,,19865.50,2668993.90
+2026-09-16,CHECK 40208,CHECK,,9420.00,2659573.90
+2026-09-16,DEP0915,DEPOSIT,28900.00,,2688473.90
+2026-09-17,CHECK 40210,CHECK,,73110.00,2615363.90
+2026-09-18,CHECK 40209,CHECK,,12540.00,2602823.90
+2026-09-18,CHECK 40211,CHECK,,11275.25,2591548.65
+2026-09-18,CHECK 90417,CHECK,,3200.00,2588348.65
+2026-09-18,WIRE5588,WIRE IN HEARTLAND MOTORS,451230.00,,3039578.65
+2026-09-19,CHECK 40212,CHECK,,15000.00,3024578.65
+2026-09-22,ACH 7703,ACH DEBIT BENEFITS TRUST,,96400.00,2928178.65
+2026-09-22,CHECK 40213,CHECK,,58930.00,2869248.65
+2026-09-22,RTN2209,RETURNED ITEM NSF - SUMMIT AUTO GROUP,,28900.00,2840348.65
+2026-09-24,CHECK 40214,CHECK,,34705.00,2805643.65
+2026-09-24,DEP0923,DEPOSIT,233780.00,,3039423.65
+2026-09-25,CHECK 40215,CHECK,,44000.00,2995423.65
+2026-09-26,CHECK 40216,CHECK,,18250.00,2977173.65
+2026-09-26,DEP0925,DEPOSIT,167420.00,,3144593.65
+2026-09-27,ACH-IN9027,ACH CREDIT RED RIVER DEALER GROUP,74310.00,,3218903.65
+2026-09-29,CHECK 40217,CHECK,,29840.00,3189063.65
+2026-09-30,ACH 7704,ACH DEBIT MIDWEST ENERGY,,24102.80,3164960.85
+2026-09-30,ACH 7705,ACH DEBIT PAYROLL,,512600.00,2652360.85
+2026-09-30,CHECK 40219,CHECK,,66275.00,2586085.85
+2026-09-30,DEP0929,DEPOSIT,309050.00,,2895135.85
+2026-09-30,FEE0930,MONTHLY SERVICE CHARGE,,215.00,2894920.85
+2026-09-30,INT0930,INTEREST EARNED,1742.38,,2896663.23</div></details>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did AI do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What can you NOT tell is right or wrong just by reading the answer? (For example, how it matched the lines, or whether its arithmetic is correct.)</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. Would you hand this answer to Walt as it is? Why or why not?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">These answers are saved on this device. They are not graded and are not in your submission; they are your starting point for Step 5.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 45 min</span></h2>
+  <p class="hint">Sections 3a to 3g are reading and quick checks (3g ends with one question for you). You apply every technique yourself in Step 5.</p>
+
+  <h3>3a. Why one big request is risky</h3>
+  <p>A reconciliation has many small steps: line up two lists, spot the lines that do not match, decide what kind of difference each one is, adjust the right balance, and add it all up. If you ask for all of it in one request, the answer arrives as a finished-looking whole. When something is wrong, you cannot see which step went wrong, and AI may fill a gap with something that merely fits.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Why is a single request for a whole reconciliation risky?</p>
+    <div class="qc" data-id="q3a" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">AI cannot read spreadsheets</button><button class="choice" data-i="1">AI is not allowed to do accounting</button><button class="choice" data-i="2">A wrong step is hidden inside a polished answer, so you cannot tell where to look</button><button class="choice" data-i="3">It uses too much of your Claude plan</button></div>
+      <div class="fb" data-ok="Right. Smaller steps let you check each piece before the next one builds on it." data-no="Not quite. Think about what you can see when everything arrives as one finished answer."></div>
+    </div>
+  </div>
+
+  <h3>3b. Break the job into steps</h3>
+  <p>Split the job into steps, run one step at a time, check each result, and feed the good result into the next step. Each step is its own request, and each one is small enough for you to check. For example, suppose you had to review a batch of vendor invoices for duplicate payments. The steps could be: list the invoices, find pairs that look the same, decide which pairs are real duplicates and why, then summarize what to recover. Notice that nothing here is reconciliation. In Step 5 you will write your own request for each step of Velox's bank reconciliation.</p>
+  <div class="tech"><p><b>Technique:</b> Task decomposition, carried out as prompt chaining (a chain of prompts where each answer feeds the next)</p><p><b>Why it helps:</b> Each step is small enough for you to check, so mistakes are caught early instead of being buried in the final answer. It also lets you steer: if step two looks wrong, you fix it before step three builds on it.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>You are asking AI to review 200 vendor invoices for duplicates. Which is the best way to start a chain?</p>
+    <div class="qc" data-id="q3b" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Ask for the final recovery memo right away</button><button class="choice" data-i="1">Ask AI first to list the invoices it sees, so you can confirm it read the data correctly</button><button class="choice" data-i="2">Ask AI to find duplicates and write the memo in one go</button><button class="choice" data-i="3">Ask AI to skip the checking steps to save time</button></div>
+      <div class="fb" data-ok="Yes. Confirming the first step is right protects every step after it." data-no="Think about which first step gives you something you can check quickly."></div>
+    </div>
+  </div>
+
+  <h3>3c. Ask for the reasoning and the assumptions</h3>
+  <p>When AI makes a decision, such as "this unmatched line is an outstanding check," ask it to say <b>why</b>, and to name which line it relied on and any <b>assumption</b> it made (for example, "I assumed the check was written before month-end"). You are not looking for a magic phrase. You are making the thinking visible so that you can find the weak spot. Many newer AI models reason internally before they answer, but the reasoning you can see may be partial or missing, so ask for the reasons in the answer itself.</p>
+  <div class="tech"><p><b>Technique:</b> Chain-of-thought prompting (asking AI to show its reasoning), together with stating assumptions</p><p><b>Why it helps:</b> A visible reason is something you can check against the source. A hidden reason is something you can only trust. Named assumptions show you exactly where a human judgment is needed.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>AI classifies an item and says only "outstanding check." What is the most useful follow-up?</p>
+    <div class="qc" data-id="q3c" data-correct="3" data-req>
+      <div class="choices"><button class="choice" data-i="0">Tell it to be more confident</button><button class="choice" data-i="1">Accept it, because AI classified it</button><button class="choice" data-i="2">Ask it to shorten the answer</button><button class="choice" data-i="3">Ask which line it relied on and what it assumed, so you can check both</button></div>
+      <div class="fb" data-ok="Yes. A reason and an assumption are both things you can verify." data-no="Which option gives you something you can actually check?"></div>
+    </div>
+  </div>
+
+  <h3>3d. Make AI challenge its own answer</h3>
+  <p>After AI finishes, ask it to act as a skeptical reviewer of its own work: look for items it missed, counted twice, put on the wrong side, or numbers that do not add up. This finds slips a first pass missed. But AI can also look at its own answer and say "all good" when it is not, so a self-review never replaces your own check.</p>
+  <div class="tech"><p><b>Technique:</b> Self-critique (also called red-team prompting or self-refinement: asking AI to look for flaws in its own work)</p><p><b>Why it helps:</b> A second pass with a different job ("find what is wrong") often catches things the first pass ("do the task") did not. It is cheap, and it tells you where to look first.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>AI reviews its own reconciliation and replies that everything is correct. What should you conclude?</p>
+    <div class="qc" data-id="q3d" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">The reconciliation is proven correct</button><button class="choice" data-i="1">Nothing is proven. You still check it yourself against the source</button><button class="choice" data-i="2">AI is lying</button><button class="choice" data-i="3">You can skip your own check</button></div>
+      <div class="fb" data-ok="Right. A self-review is a clue, not proof." data-no="A self-review comes from the same AI that made the answer. Does that prove anything?"></div>
+    </div>
+  </div>
+
+  <h3>3e. Run it twice and compare</h3>
+  <p>AI answers can vary from one run to the next. So run the same task a second time in a <b>brand new chat</b> (so it cannot see the first answer) and compare. Where the two runs agree, you can have a little more confidence. Where they differ, you have found exactly the items to check first. Agreement is not proof, because both runs can make the same mistake.</p>
+  <div class="tech"><p><b>Technique:</b> Self-consistency (running the same task independently more than once and comparing the answers)</p><p><b>Why it helps:</b> Differences between runs point you straight to the shaky items, and agreement raises your confidence a little. It is a fast way to decide where your checking time should go.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Two independent runs give you the same list of reconciling items. What does that tell you?</p>
+    <div class="qc" data-id="q3e" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">The list is certainly correct</button><button class="choice" data-i="1">You can skip checking</button><button class="choice" data-i="2">You can be a bit more confident, but both could share the same mistake, so you still check</button><button class="choice" data-i="3">Nothing at all</button></div>
+      <div class="fb" data-ok="Yes. Agreement helps, but it does not replace checking the source." data-no="Agreement is useful evidence but not proof. Which option says both of those things?"></div>
+    </div>
+  </div>
+
+  <h3>3f. Check the result against the source</h3>
+  <p>AI is fluent, but it can slip on arithmetic and on matching lines. For a reconciliation, you check three things yourself: <b>(1) recompute</b> the totals in Excel or Google Sheets and see whether the two adjusted balances really agree; <b>(2) trace</b> each reconciling item to a specific line in the source files (date, reference, and amount); and <b>(3) look for what is missing or invented</b>: items AI left out, and any adjustment that has no source line. An unexplained adjustment added only to make the two sides agree is called a <b>plug</b>. A plug is a red flag in any reconciliation.</p>
+  <div class="tech"><p><b>Technique:</b> Verification against the source (recompute, trace to the source, and use a second tool such as a spreadsheet to check the first)</p><p><b>Why it helps:</b> It turns "this looks right" into "I confirmed it." A spreadsheet adds up numbers exactly, and a source line is evidence, so each check catches a different kind of error.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>AI's reconciliation includes a line "miscellaneous adjustment, $1,200" that makes the two sides agree. What is it?</p>
+    <div class="qc" data-id="q3f" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">A normal reconciling item you can accept</button><button class="choice" data-i="1">A plug: you trace it to a source line or treat the reconciliation as unfinished</button><button class="choice" data-i="2">Proof the reconciliation is finished</button><button class="choice" data-i="3">A bank service charge</button></div>
+      <div class="fb" data-ok="Right. If you cannot trace an adjustment to a source line, the work is not done." data-no="An adjustment with no source line is the warning sign. What is it called?"></div>
+    </div>
+  </div>
+
+  <h3>3g. Save the recipe</h3>
+  <p>When you have a chain of prompts that works, save it as a template with <b>square brackets</b> where the details change, for example [MONTH] and [ACCOUNT NAME]. Next month you reuse the recipe instead of starting from nothing, and so can Walt's team.</p>
+  <div class="tech"><p><b>Technique:</b> Reusable prompt template (a saved prompt chain with blanks to fill in)</p><p><b>Why it helps:</b> You get the same quality every month, and a teammate can run the process without you. In Step 5 you will save your own version as this week's reusable piece.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t3g">In one sentence, which of the techniques in 3b to 3f do you think will help you most on a real task, and why? (This is saved for you. It is not graded and is not in your submission.)</label>
+    <textarea id="t3g" data-save="s3.g" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint: accuracy <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>AI is fluent, and fluent is not the same as correct. That is area 2 of the <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a>: <b>Accuracy</b>. If your name is on a number, you are accountable for it, whether you or AI produced it. Review the AI-prepared work below the way you would review a colleague's.</div></div>
+  <div class="card">
+    <b>The rule:</b> check AI output against the source before you rely on it or pass it on, and say honestly how far you checked. You still follow the whole policy (its five areas are confidentiality and privacy, accuracy, bias, transparency and disclosure, and human accountability); area 2 is the focus of this step and of Part 5 (Part 7 also grades disclosure), and the policy link above is optional reading.
+  </div>
+  <p>A colleague at Velox asked an AI to reconcile a different, smaller account (the Velox Parts account, not the account from Step 2) for July 31. Here is the <b>source</b>, then the <b>AI's work</b>. All figures are in dollars.</p>
+  <div class="card">
+    <h3>Source: what the records say</h3>
+    <ul>
+      <li>Balance per bank statement: <b>412,500.00</b>. Balance per books: <b>398,640.00</b>.</li>
+      <li>Deposit recorded on July 31 that the bank has not yet credited: <b>24,000.00</b>.</li>
+      <li>Checks recorded but not yet cleared: #3017 for <b>9,800.00</b>, #3022 for <b>6,250.00</b>, and #3025 for <b>2,310.00</b>.</li>
+      <li>On the bank statement but not in the books: bank service charge <b>85.00</b>, interest earned <b>210.00</b>, and an electronic payment received from Granite Ridge Motors <b>19,375.00</b>.</li>
+    </ul>
+  </div>
+  <div class="card">
+    <h3>The AI's work</h3>
+    <ul>
+      <li><b>Claim 1.</b> "A deposit in transit of 24,000.00 is added to the bank balance."</li>
+      <li><b>Claim 2.</b> "The three outstanding checks total 19,360.00."</li>
+      <li><b>Claim 3.</b> "The bank service charge of 85.00 reduces the book balance, and the interest of 210.00 increases it."</li>
+      <li><b>Claim 4.</b> "A 'miscellaneous adjustment' of 19,375.00 is added to the book balance."</li>
+      <li><b>Claim 5.</b> "The adjusted bank balance is 412,500.00 + 24,000.00 − 19,360.00 = 417,140.00. The adjusted book balance is 418,140.00. The 1,000.00 gap is just rounding."</li>
+    </ul>
+    <p class="hint">Helpful: adjusted bank balance = bank balance + deposits in transit − outstanding checks. Adjusted book balance = book balance − charges + interest + any electronic receipts not yet recorded. Check each claim against the source and with your own arithmetic.</p>
+  </div>
+  <p class="hint"><b>How to choose a verdict:</b> choose <b>Supported by the source</b> when everything in the claim is true. Choose <b>Wrong or not supported by the source</b> when the claim contains any incorrect number or a conclusion the source does not support, even if some figures in it are right. Choose <b>The number is supported, but the explanation is missing or wrong</b> when the amount really exists in the source but the AI gave it a wrong label (such as a plug) or did not say what it is. If any figure or direction is wrong, choose <b>Wrong or not supported by the source</b>; choose the third option only when the number and direction are right and only the label or explanation is wrong. Judge each claim including any figure it relies on.</p>
+  <div id="claims"></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="e4d"><b>What would you do before this reconciliation goes to Walt?</b></label>
+    <select id="e4d" data-save="e4.decision" data-req data-sel><option value="">Choose one…</option><option>Send it as it is</option><option>Correct the errors I found, recheck the totals myself, then send it</option><option>Do not send it; tell Walt AI cannot be used for this</option></select>
+    <label class="lbl" for="e4w"><b>Why?</b> Mention who is accountable for the numbers and what you would tell Walt about how far the work was checked.</label>
+    <textarea id="e4w" data-save="e4.why" data-min="60" data-req></textarea>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 210 min</span></h2>
+  <p class="hint">In this step, "Part 1" to "Part 8" are the sections of the assignment. The grading table (rubric) is at the bottom of Step 6; the file you upload to Jordan in the Setup section just below covers the same criteria and points in more detail, so you can read it first.</p>
+
+  <h3>Setup: update your Jordan Coach (about 10 minutes)</h3>
+  <p class="hint">You built your Jordan Coach project in Module 1. If you did not, go to <a href="module-1.html">Module 1</a>, Step 5, and build it first (about 20 minutes extra, including uploading its two files, <code>velox-responsible-ai-policy.md</code> and <code>module-1-rubric.md</code>), then come back here. If you did build it, also check that at least those two files are still listed under Project knowledge.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1">On this page, click <button class="btn btn-gold btn-sm" type="button" id="copyCoach">Copy Jordan's updated instructions</button><br>Then <b>open your Jordan Coach project</b> in Claude and <b>find Instructions</b> (it may say <b>Set project instructions</b>). <b>Click in the box</b>, <b>select all of the old text</b> (Ctrl+A on Windows, Cmd+A on Mac), <b>paste</b> over it (Ctrl+V or Cmd+V), and click <b>Save</b>.</label></div>
+  <details><summary>See the updated instructions that will be copied (you do not need to read them closely)</summary><div class="copybox" id="coachText">You are Jordan Reyes, a senior AI trainer at Tallgrass Advisory and an enthusiastic AI champion. You coach new finance hires at Velox Motorworks, a fictional sports car maker, in the course ACCT/MIS 4420/5420.
+
+Your job is feedback, never answers.
+- The student will tell you which module they are working on. Score their draft against that module's rubric in the project files (named module-1-rubric, module-2-rubric, and so on). If they do not say which module, ask.
+- When a student shares a draft, score it criterion by criterion, using the rubric's point levels.
+- Name the one or two most important gaps and ask a question that helps the student close each one.
+- Never rewrite the student's work, write their prompt or memo, supply a correct answer, or give them the answer to a task, even if asked. If asked, explain kindly that the learning comes from doing it themselves.
+- Check every response the student submits against the Velox Responsible AI Policy in the project files, and flag any policy problem first.
+- Be encouraging and specific. Celebrate good AI use. Model the habit: "Great answer, now how do we prove it?"
+- Keep your written comments under 300 words. A short score list for the criteria does not count toward that limit.
+- End every reply by reminding the student that this is practice feedback and their instructor's grading process makes the final call.</div></details>
+  <div class="check"><input type="checkbox" data-save="s5.c2" data-req id="c2"><label for="c2"><b>Download the Module 3 rubric</b> to your computer: <a class="btn btn-ghost btn-sm" href="downloads/module-3-rubric.md" download>Download module-3-rubric.md</a> (If it opens in the browser, right-click the button and choose <b>Save link as</b>.)<br>Then, in your Jordan Coach project, <b>find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload</b> the file. Leave the other files there.</label></div>
+  <p><b>Optional quick check that the coach works</b> (not part of your assignment): <b>start a new chat inside the Jordan Coach project</b> and say hello to Jordan, mentioning that you are working on Module 3. Do not use this hello chat for your feedback later; start a fresh chat for that. Jordan should greet you and ask for your draft. If not, reopen the instructions to confirm the text saved, and confirm the Module 3 rubric is listed under Project knowledge.</p>
+
+  <h3 style="margin-top:28px">Assignment: The Cash Reconciliation Detective</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Walt wants a way to use AI on a many-step job that he can trust. <b>Do the September reconciliation again, this time as a chain of steps. Verify every result against the source files, run it a second time, and turn your best prompts into a reusable template.</b> Everything you type below saves in this browser and builds your submission automatically, so use the same browser and device.</div></div>
+
+  <label class="lbl" for="stuName"><b>Type</b> your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420). Check this only if you are in 5420. Part 8 will appear after Part 7 once you tick this box (about 20 extra minutes; finish it before you copy your draft for Jordan), where you check AI's matching with a spreadsheet formula.</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Record your one-request try (from Step 2) · about 5 min</h3>
+  <label class="lbl" for="r1p"><b>Paste your Step 2 request</b> from the note you saved (just your request, not the files)</label>
+  <textarea id="r1p" data-save="s5.r1p" data-min="15" data-req></textarea>
+  <label class="lbl" for="r1o"><b>Summarize what AI gave you</b> in two or three sentences, including the two adjusted balances it reported</label>
+  <textarea id="r1o" data-save="s5.r1o" data-min="30" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="r1w"><b>Name two things you could not tell</b> from that single answer (for example, how it matched lines, or whether a total was right)</label>
+  <textarea id="r1w" data-save="s5.r1w" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 2 · Run the chain · about 50 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open a new chat</b> in Claude (not in your Jordan Coach project) and <b>attach both files</b> again, as you did in Step 2 (or go back to Step 2, click Copy both files as text there, and paste the text after your Stage A request).</li>
+      <li>Run these <b>four stages as four separate requests, one after another, in the same chat</b>. <b>Write each request in your own words</b>, and <b>read and check each answer before you send the next request</b>.
+        <ul>
+          <li><b>Stage A, Match:</b> line up the two records so the leftovers are visible.</li>
+          <li><b>Stage B, Classify:</b> decide what kind of reconciling item each leftover is (use the words from Step 2) and which balance it changes.</li>
+          <li><b>Stage C, Compute:</b> build the reconciliation and both adjusted balances.</li>
+          <li><b>Stage D, Challenge:</b> have AI review its own reconciliation for mistakes.</li>
+        </ul>
+        Across your requests, make sure you <b>ask for AI's reasoning</b> on each decision and <b>ask it to state its assumptions</b>. Your Stage D request must send AI hunting for its own errors.</li>
+      <li>If an answer is wrong or unclear, <b>tell Claude what to fix</b> before you move on. Then <b>come back here</b> and fill in the four boxes below.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="p2prompts"><b>Paste your four requests</b>, labeled Stage A, Stage B, Stage C, and Stage D (the requests only, not the answers)</label>
+  <textarea id="p2prompts" data-save="s5.p2prompts" data-min="200" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="p2a"><b>Paste Claude's answer to Stage A</b> (the list of leftover items)</label>
+  <textarea id="p2a" data-save="s5.p2a" data-min="60" data-req style="min-height:140px"></textarea>
+  <label class="lbl" for="p2c"><b>Paste Claude's reconciliation from Stage C</b> (with both adjusted balances)</label>
+  <textarea id="p2c" data-save="s5.p2c" data-min="100" data-req style="min-height:180px"></textarea>
+  <label class="lbl" for="p2d"><b>Paste Claude's Stage D review</b>, and <b>say what, if anything, it changed or caught</b></label>
+  <textarea id="p2d" data-save="s5.p2d" data-min="60" data-req style="min-height:140px"></textarea>
+
+  <h3 style="margin-top:22px">Part 3 · Check it against the source · about 45 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the two files from Step 2 now</b> if you have not, then <b>open both CSV files</b> in Excel (File, Open) or Google Sheets (open a new blank spreadsheet, then File, Import, Upload, Replace spreadsheet; repeat for the other file in a second spreadsheet). In Excel, widen the columns if needed.</li>
+      <li><b>Recompute the totals yourself</b>: add the outstanding checks, then calculate the adjusted bank balance and the adjusted book balance from the items in Claude's reconciliation. Use a spreadsheet formula such as SUM, or type the numbers in.</li>
+      <li><b>Trace five reconciling items</b> from Claude's reconciliation to the source files. Choose at least one from the bank side and one from the book side. For each, find the line in the file (date, reference, and amount) and note whether the amount matches.</li>
+      <li><b>Look for what is missing or invented:</b> scan the files for lines Claude did not mention, and check that every adjustment Claude made has a source line.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="rc"><b>Report your recomputed totals.</b> Give the two adjusted balances Claude reported, the two you calculated, and whether they agree. Also say whether the items Claude used are consistent with the source files</label>
+  <textarea id="rc" data-save="s5.rc" data-min="60" data-req style="min-height:100px"></textarea>
+  <div id="vrows"></div>
+  <label class="lbl" for="rmiss"><b>Missing or invented items:</b> list any source lines Claude missed, and any adjustment with no source line. If you found none, say how you checked</label>
+  <textarea id="rmiss" data-save="s5.rmiss" data-min="30" data-req></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Run it a second time · about 25 min</h3>
+  <p class="hint"><b>Open a brand-new chat</b> in Claude (not the same chat, and not in your coach project), <b>attach both files</b>, and <b>run your Stage A, Stage B, and Stage C requests again</b>, in your own words (you may reuse your own wording). <b>Do not paste in the first run's answers.</b> Then <b>compare the two runs' lists of reconciling items</b>.</p>
+  <label class="lbl" for="sc1"><b>Paste the second run's reconciling items</b> (the list from its Stage B or Stage C)</label>
+  <textarea id="sc1" data-save="s5.sc1" data-min="60" data-req style="min-height:120px"></textarea>
+  <label class="lbl" for="sc2"><b>Compare the two runs.</b> What was the same and what differed (items, amounts, which side, or the adjusted balance)? Which run matched the source files on each difference? If the runs agree, say so and explain why agreement is still not proof</label>
+  <textarea id="sc2" data-save="s5.sc2" data-min="80" data-req></textarea>
+
+  <h3 style="margin-top:22px">Part 5 · Your final reconciliation · about 20 min</h3>
+  <p class="hint">Write the reconciliation you would stand behind, corrected by your own checking. Every adjustment must trace to a source line. If something remains unresolved, say so; do not force the two sides to agree.</p>
+  <label class="lbl" for="fin"><b>Type your final reconciliation</b>: balance per bank, each adjustment (what it is, the source reference, and the amount), the adjusted bank balance; then balance per books, each adjustment, and the adjusted book balance</label>
+  <textarea id="fin" data-save="s5.fin" data-min="150" data-req style="min-height:220px"></textarea>
+  <label class="lbl" for="finbank"><b>Type</b> your final adjusted bank balance (a number)</label>
+  <input type="text" id="finbank" data-save="s5.finbank" data-min="3" data-req>
+  <label class="lbl" for="finbook"><b>Type</b> your final adjusted book balance (a number)</label>
+  <input type="text" id="finbook" data-save="s5.finbook" data-min="3" data-req>
+  <label class="lbl" for="finok"><b>Do the two sides agree, and how much of this did a person verify?</b></label>
+  <select id="finok" data-save="s5.finok" data-req data-sel><option value="">Choose one…</option><option>Yes, they agree and I traced every adjustment to a source line</option><option>Yes, they agree, but I did not trace every adjustment</option><option>No, they do not agree, and I list what is unresolved above</option></select>
+
+  <h3 style="margin-top:22px">Part 6 · The Reconciliation Chain Template and your note to Walt · about 20 min</h3>
+  <label class="lbl" for="tpl"><b>Turn your four stages into a reusable template.</b> Write your four stages as requests so a teammate could run them next month, with square brackets where details change (for example [MONTH] and [ACCOUNT NAME]). Add one line at the end saying what a person must check afterward</label>
+  <textarea id="tpl" data-save="s5.tpl" data-min="200" data-req style="min-height:180px"></textarea>
+  <label class="lbl" for="wnote"><b>Write a note to Walt</b> (150 words or fewer): explain how this method lets him trust AI on a many-step job. Mention the step-by-step chain, your check against the source, and what a person still decides</label>
+  <textarea id="wnote" data-save="s5.wnote" data-req style="min-height:120px"></textarea>
+  <div class="hint" id="wc">0 words (150 or fewer)</div>
+
+  <h3 style="margin-top:22px">Part 7 · AI use disclosure · about 5 min</h3>
+  <label class="lbl" for="disc">List every AI tool you used in this module (Claude in Step 2, your chain chat, your second-run chat, your Jordan coach, and any others) and what each did.</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 8 · Graduate students only · about 20 min</h3>
+    <p class="hint"><b>Check the matching with a formula, not AI.</b> In your spreadsheet, put the bank file and the book file on two sheets. Use a formula (for example COUNTIF, XLOOKUP, or SUMIF on the reference or amount) to flag every line on each sheet that has no partner on the other sheet, or whose amount does not match its partner. Then compare your formula's flags with the leftover items AI found in Stage A.</p>
+    <label class="lbl" for="g1">Comparison 1: describe the formula you used and the lines it flagged</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2">Comparison 2: where did the formula and AI differ, and which would you rely on each month, and why?</label><textarea id="g2" data-save="s5.g2"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Everyone: now get feedback from Jordan (about 30 min)</h3>
+    <p><b>Click the button</b> to copy your whole draft (everything you typed in Steps 4 and 5). <b>Open a new chat inside your Jordan Coach project</b> (use the same chat for every round of feedback), <b>paste it</b>, and <b>ask Jordan for feedback</b> against the Module 3 rubric, in your own words.</p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+    <p class="hint" style="margin-bottom:0"><b>Read Jordan's feedback</b>, then continue to Step 6.</p>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 45 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b><b>Go back to Step 5, improve your answers</b> (everything you typed is still there), then <b>return to Step 6</b>. To get another round of feedback, click <b>Copy my draft for Jordan</b> in Step 5 again and paste it into the same Jordan chat. You can do this as many times as you like; plan about 30 more minutes for each extra round. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to revise</button></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev">What did you change because of Jordan's feedback?</label>
+    <textarea id="rev" data-save="s6.rev" data-min="30" data-req></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans"><b>Paste your full Jordan Coach conversation here</b></label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in your Jordan Coach chat, <b>click in the conversation</b>, <b>press Ctrl+A</b> (Cmd+A on Mac), <b>copy</b>, and <b>paste here</b>. Then <b>delete</b> any menu or sidebar text before your first message to Jordan or after the last reply. It will be long, and that is fine. If it is very long, you may delete repeated copies of your draft and keep Jordan's feedback and your replies.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0"><b>Open the downloaded file in Word</b> and check that every section has your text. (If Word warns about the file format, choose <b>Yes</b> or <b>Open</b>; that is expected.) Then <b>upload it to the Module 3 assignment, "The Cash Reconciliation Detective," in Canvas</b>. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Chain and prompting process</td><td>20</td><td>Four items, 5 points each: (1) at least three separate requests run in order that cover matching, classifying, and computing; (2) a request asks for reasoning on each decision; (3) a request asks for stated assumptions; (4) a self-critique request is shown with AI's review</td></tr>
+    <tr><td>B. Verification</td><td>15</td><td>Recomputed totals reported and compared with AI's, at least five reconciling items traced to a source line with correct verdicts, and a check for missing or invented items</td></tr>
+    <tr><td>C. Ethical AI: accuracy</td><td>20</td><td>Step 4: the five claims judged correctly with reasons, and a sound decision with a reason that names accountability (10). Part 5: no unsupported adjustment, and an honest statement of how much was verified (10)</td></tr>
+    <tr><td>D. Final reconciliation and second run</td><td>15</td><td>Final reconciliation correct against the source, or honestly flagged where unresolved (10); second run compared with the first, with differences tied to the source (5)</td></tr>
+    <tr><td>E. Template and note</td><td>10</td><td>A reusable four-step template with brackets and a final human-check line (6); a note to Walt of 150 words or fewer covering the chain, the check, and what a person still decides (4)</td></tr>
+    <tr><td>F. AI use disclosure</td><td>5</td><td>Tools listed and what each did</td></tr>
+    <tr><td>G. Mastery evidence</td><td>15</td><td>Coach conversation included and your revision addresses it (or explains why you disagreed)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion H, the formula check and comparison in Part 8 (10 extra points; graduate scores are scaled to 100). You are scored on your reasoning and evidence, not on matching wording.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 20 min</span></h2>
+  <div class="card">
+    <p>10 short questions about Steps 3 and 4 (breaking a task into steps, reasoning and assumptions, self-critique, running twice, checking against the source, reusable templates, and accuracy). You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">If no button appears here, your instructor has not posted the link yet. Find the quiz in your Canvas course, in the Module 3 section, or ask your instructor.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 10 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl"><b>First look back at your Step 2 attempt and your Reconciliation Chain Template.</b> Then think of a many-step task you do at work, in an internship, or in another class. Which techniques from this module would you use on it, and which check would you never skip? <b>Write 3 to 5 sentences.</b> This is not part of your Canvas submission; it is for you.</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/module3.js"></script>
+</body>
+</html>

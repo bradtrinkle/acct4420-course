@@ -1,0 +1,17 @@
+# Module 3 rubric (100 points)
+
+Your mastery attempt is scored against this rubric. Every level describes something visible in your submission. Your Jordan coach uses the same rubric. The table below is the same one shown at the bottom of Step 6 of the Module 3 page.
+
+| Criterion | Full credit | Partial credit | No credit |
+| --- | --- | --- | --- |
+| A. Chain and prompting process (20) | Four items, 5 points each: (1) at least three separate requests, run in order, that cover matching, classifying, and computing; (2) a request asks AI for its reasoning on each decision; (3) a request asks AI to state its assumptions; (4) a self-critique request is shown together with AI's review (20) | Award 5 for each item that is present (5 to 15) | No chain shown, only one request (0) |
+| B. Verification (15) | The two adjusted balances from AI are compared with your own recomputed balances (5); at least five reconciling items are traced to a specific source line (file, date, reference) with a verdict that is correct against the source files, including at least one from each side (7); missing or invented items are checked and reported, or the student explains how they checked (3) | Some items traced, or verdicts not all correct, or no recomputation (7) | No verification shown (0) |
+| C. Ethical AI: accuracy (20) | Step 4: all five claims judged correctly, each with a check that shows arithmetic or a source reference (10); the decision is not "send it as it is", and the reason names who is accountable and how far the work was checked (included in the 10). Part 5: no adjustment without a source line (no plug), and an honest statement of how much a person verified (10) | Step 4 mostly right but a claim misjudged or reasons thin (5); Part 5 has an unsupported adjustment but admits it (5) | Sends unchecked AI numbers as final, forces the sides to agree with an unexplained adjustment, or hides what was not verified (0) |
+| D. Final reconciliation and second run (15) | The final reconciliation matches the source files, or clearly flags what remains unresolved and why (10); the second run in a separate chat is compared with the first, with differences tied to the source files (5) | Reconciliation has one or two errors, or the second run is described without being compared to the source (5 to 8) | No final reconciliation, or no second run (0) |
+| E. Template and note (10) | A reusable template of the four steps with square brackets for details that change and a closing line saying what a person must check (6); a note to Walt of 150 words or fewer covering the chain, the check, and what a person still decides (4) | Award the points for each part that is present | Missing (0) |
+| F. AI use disclosure (5) | Lists the tools used and what each did (5) | Tools listed without saying what they did (2) | Missing (0) |
+| G. Mastery evidence (15) | Coach transcript included, and the revision visibly addresses its main points or explains why feedback was rejected (15) | Transcript included, but no visible revision (7) | No transcript (0) |
+
+**Graduate students (5420):** criterion H adds 10 points and the total is scaled back to 100. Full credit means a spreadsheet formula used to flag unmatched or mismatched lines and described, plus a comparison with AI's list that explains the differences and says which approach to rely on each month (10); partial means a formula without a comparison, or the reverse (5).
+
+You are scored on your reasoning and evidence, not on matching wording. Your own words for each request are fine.
