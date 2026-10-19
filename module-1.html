@@ -37,12 +37,13 @@
 <!-- STEP 2 -->
 <section class="step" data-step="2" aria-labelledby="h2s">
   <h2 id="h2s">Step 2 · Try it first <span class="time">· 45 min</span></h2>
-  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. Open Claude and ask it to do <b>task 5</b>: explain why Velox's gross margin fell from Q2 to Q3, using the figures below. Don't overthink your prompt.</div></div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. Open Claude and ask it to do this one: <b>explain why Velox's gross margin fell from Q2 to Q3, using the figures below</b>. Don't overthink your prompt. (This is one of the 10 tasks you will sort in Step 5, so what you learn here will help you later.)</div></div>
   <div class="card">
     <table class="t"><tr><th></th><th>Q2</th><th>Q3</th></tr>
     <tr><td>Revenue ($ millions)</td><td>352</td><td>338</td></tr>
     <tr><td>Cost of goods sold ($ millions)</td><td>246</td><td>250</td></tr>
     <tr><td>Cars sold</td><td>1,280</td><td>1,210</td></tr></table>
+    <p class="hint"><b>Gross margin</b> = (revenue − cost of goods sold) ÷ revenue. It shows how much of each sales dollar is left after the direct cost of making the cars.</p>
     <p class="hint">Notes from Cost and Planning: a new tariff on imported carbon-fiber panels began in Q3, and the plant's fixed overhead did not change.</p>
     <a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a>
   </div>
@@ -78,7 +79,7 @@
   <h3>3c. Where AI needs checking</h3>
   <p>Large calculations, <b>current facts</b> like tax rates, <b>citations</b>, and anything it <b>cannot see</b>, such as Velox's own records. When AI fills a gap with something made up, that is called a <b>hallucination</b>.</p>
   <div class="turn"><span class="tag">Your turn</span>
-    <p>Task 7 asks for the current Iowa corporate income tax rate. Where would you check AI's answer?</p>
+    <p>Suppose you ask AI for the current Iowa corporate income tax rate. Where would you check its answer?</p>
     <div class="qc" data-id="q3c" data-correct="1" data-req>
       <div class="choices"><button class="choice" data-i="0">Ask a second chatbot</button><button class="choice" data-i="1">The Iowa Department of Revenue's website</button><button class="choice" data-i="2">A blog post that mentions the rate</button><button class="choice" data-i="3">Last year's tax return</button></div>
       <div class="fb" data-ok="Yes. Go to the primary source, the agency that sets and publishes the rate." data-no="Close, but another chatbot can repeat the same mistake, and blogs and old returns may be out of date. Which source is the authority?"></div>
@@ -158,13 +159,13 @@ Your job is feedback, never answers.
   <p class="hint">Categories: <b>AI does it well</b>, <b>AI helps, a person checks</b>, <b>AI assists, a person decides</b>. Give a one- or two-sentence reason naming a specific AI strength or risk.</p>
   <div id="tasks"></div>
   <details><summary>Data for tasks 5, 6, and 10</summary>
-    <p><b>Task 5:</b> see the table in Step 2.</p>
+    <p><b>Task 5, gross margin:</b> use the Q2 and Q3 table from Step 2 (revenue, cost of goods sold, cars sold, and the notes from Cost and Planning).</p>
     <p><b>Task 6, warranty reserve:</b> 1,210 cars sold in Q3; expected claim rate 4%; average cost per claim $6,500.</p>
     <p><b>Task 10:</b> 40 fictional employees. <a href="data/module-1/employees-simulated.csv" download>Download employees-simulated.csv</a>. Treat it as real: the Responsible AI Policy applies.</p>
   </details>
 
   <h3 style="margin-top:22px">Part 2 · Test AI on three tasks</h3>
-  <p class="hint">Test <b>task 10</b> and two others you choose. For each, run it in Claude, then record what happened.</p>
+  <p class="hint">Test <b>task 10</b> and two others you choose. For each, run it in Claude, then record what happened. Tasks 5, 6, and 10 come with data (open the "Data for tasks 5, 6, and 10" box above). For any other task you pick, ask Claude to create a short fictional sample first (for example, a made-up supplier contract), and then test with that.</p>
   <div id="tests"></div>
 
   <h3 style="margin-top:22px">Part 3 · Task 10 ethics</h3>
