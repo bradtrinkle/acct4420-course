@@ -1,0 +1,21 @@
+SIMULATED IRS LETTER (for course use only). Velox Motorworks is a fictional company, and this letter is not a real government document.
+
+Department of the Treasury, Internal Revenue Service (simulated)
+Letter date: October 8, 2026
+To: Velox Motorworks, Inc., Attention: Director of Tax
+Tax year: 2025 (calendar year; corporate income tax return filed September 15, 2026)
+Reference: VLX-2025-0417 (simulated)
+
+Subject: Request for information about first-year deductions for equipment
+
+We are reviewing your 2025 return. Your depreciation schedule lists 9 items of equipment at your South Carolina plant with a total cost of $40,423,400, and shows a first-year deduction equal to 100 percent of that cost.
+
+Please send us the following:
+
+1. For each item, the date you signed the contract to buy it, and a copy of the signed contract.
+2. For each item, the date it was placed in service.
+3. A written explanation of why you believe a 100 percent first-year deduction applies to each item, including the legal authority you rely on.
+
+Please respond by November 9, 2026. If we do not hear from you by that date, we may propose changes to your return.
+
+This letter asks for information. It does not propose any change to your return yet.

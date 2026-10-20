@@ -1,0 +1,426 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 7: AI in Taxation</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html">Module 2</a><a href="module-3.html">Module 3</a><a href="module-4.html">Module 4</a><a href="module-5.html">Module 5</a><a href="module-6.html">Module 6</a><a href="module-7.html" aria-current="page">Module 7</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><circle cx="18" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 7 · Week 7 · Rotation 4: Tax</span>
+<h1 style="margin:10px 0 4px">AI in Taxation: Show Me the Source</h1>
+<p class="hint">You will be able to have AI draft a tax research memo, make it list its sources, check them against documents you give it, calculate what is at stake with code, check two results yourself, and write a short memo that a tax director can act on, with a person accountable for what goes to the IRS. Plan for about 6.6 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 15 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 7 video from your instructor</b><br><span class="hint" style="color:#ddd">The video will appear here. If it does not, tell your instructor and keep going; Grace's message below covers the key points.</span></div></div>
+  <p class="hint" id="videoHelp">The video is not posted yet. Grace's message below covers the key points.</p>
+  <div class="cfo"><b>From the Director of Tax, Grace Lindqvist</b><br>Welcome to Tax. The IRS sent us a letter about our 2025 return. They question the 100 percent first-year deduction we took on nine pieces of equipment at the South Carolina plant, a total cost of about $40.4 million. I have the letter, our equipment schedule (the list of the nine items with their contract and in-service dates), and a short Source Packet our team put together (numbered notes on the rules, labeled S1 to S8). I need a short memo I can take to the CFO (our chief financial officer): what the rules say, whether we got it right, how much is at stake, and what we should tell the IRS. I decide what we send, and I sign it. Use AI to do the heavy lifting, but I will not put a source in front of the IRS that nobody has opened.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Welcome to your fourth rotation: Tax, working for Grace. This week you will have AI draft a tax research memo, make it show its sources, check those sources against documents you provide, check two results yourself, and keep a person accountable for what goes to the IRS. Let's go.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <div class="card">
+    <h3>Module 7 at a glance</h3>
+    <p><b>Who is who:</b> Velox Motorworks is a fictional, publicly traded sports car maker. Grace Lindqvist leads the Velox Tax Department. You are a new hire at Tallgrass Advisory, the consulting firm training Velox's finance team, and from this week you rotate through Velox departments. Jordan Reyes is your mentor at Tallgrass. All names, companies, and numbers in this course are fictional, and so is the IRS letter you will use: it is a simulated document written for this course. The tax rules in the Source Packet are paraphrased from real, published guidance as of October 2026, and are for a class exercise, not tax advice.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your Step 4 ethics answers, the <b>Research Memo Template</b> you write (this week's reusable piece), the results Claude produced for Velox, your own check of two of them, a short memo for Grace, the lens you choose, your own source checks plus your AI disclosure, and your coach conversation and revision notes.</p>
+    <p><b>What you need:</b> your own paid Claude account (claude.ai) that lets you attach files to a chat and run code on them, Excel or Google Sheets (you will check numbers yourself), your Jordan Coach project from Module 1, and your Canvas login. Use the same browser and device each time, and do not use a private or incognito window, because your progress saves in this browser only. If your Claude plan cannot attach files or run code, ask your instructor before you start Step 5. Once Steps 4 to 6 are complete, <b>Download my submission</b> in Step 6 gives you a copy of your work; until then, your answers are saved only in this browser.</p>
+    <p><b>How this page is organized:</b> the module has 8 <i>steps</i>. Step 5 is the assignment, and it is split into numbered <i>Parts</i> (Part 1 to Part 8, plus Part 9 for graduate students). In Part 7 you choose a <i>lens</i>: one of six options, each written from the point of view of a part of the business such as accounting or marketing.</p>
+    <p><b>The 8 steps:</b> 1 Mission brief (15 min, including a video of about 7 minutes) · 2 Try it first (30) · 3 Learn (45) · 4 Ethics checkpoint (30) · 5 First attempt and coach feedback (200) · 6 Mastery attempt (45) · 7 Quiz (20) · 8 Reflection (10). Total: 395 minutes, about 6.6 hours. Graduate students add about 25 minutes for Part 9.</p>
+  </div>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video (or it did not load) and read Grace's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. <b>Open Claude and ask whether Velox claimed the right deduction</b>, using only the IRS letter below. Write your own request in your own words, and ask Claude to answer as best it can and to say which rules it is relying on. The point is to see what AI does with only a letter and nothing else.</div></div>
+  <div class="card">
+    <h3>Words you need</h3>
+    <table class="t"><tr><th>Word</th><th>What it means here</th></tr>
+    <tr><td><b>IRS</b></td><td>The Internal Revenue Service, the U.S. agency that collects federal taxes. It sends letters called notices to ask questions about a tax return.</td></tr>
+    <tr><td><b>Deduction</b></td><td>An amount a company subtracts from its income before computing the tax it owes. A bigger deduction means less tax now.</td></tr>
+    <tr><td><b>Depreciation</b></td><td>Deducting the cost of equipment gradually over several years, not all at once.</td></tr>
+    <tr><td><b>Bonus depreciation</b></td><td>A rule that lets a company deduct a large part of the cost of equipment in the first year instead of spreading it over several years.</td></tr>
+    <tr><td><b>Placed in service</b></td><td>The date equipment is ready and available for use in the business.</td></tr>
+    <tr><td><b>Written binding contract</b></td><td>A signed purchase contract that can be enforced against the buyer. The tax rules use the date it was signed to decide when equipment was "acquired."</td></tr>
+    <tr><td><b>Authority</b></td><td>A source a tax professional can cite and anyone can open and read, such as the Internal Revenue Code (the federal tax law), a Treasury regulation, or an IRS notice.</td></tr>
+    <tr><td><b>Citation</b></td><td>The "address" of an authority, such as "Internal Revenue Code section 168" or "IRS Notice 2026-11."</td></tr>
+    <tr><td><b>IRC, §</b></td><td>The <i>Internal Revenue Code</i> (IRC) is the federal tax law. The sign § means "section," so "IRC §168" is section 168 of that law.</td></tr>
+    <tr><td><b>Public Law, section, return</b></td><td>A <i>Public Law</i> (for example P.L. 119-21) is a law passed by Congress. A <i>section</i> is one numbered part of the Internal Revenue Code, such as section 168. A <i>return</i> is the tax form a company files each year.</td></tr>
+    <tr><td><b>7-year property, half-year convention</b></td><td>The standard depreciation system (called MACRS) puts each kind of equipment into a class, such as "7-year property," and deducts its cost over that many years. The <i>half-year convention</i> is the standard first-year share for such property.</td></tr>
+    <tr><td><b>Section 179</b></td><td>A separate rule that lets a business deduct equipment costs in the first year, up to a dollar limit.</td></tr>
+    <tr><td><b>Source Packet</b></td><td>A short set of numbered source notes (S1 to S8) that your instructor wrote for this module. You get it in Step 5. You do not need it in this step.</td></tr>
+    <tr><td><b>Equipment schedule</b></td><td>(The IRS letter calls it the depreciation schedule; it is the same list.) The list of the nine equipment items with their cost, contract date, and in-service date. You get it in Step 5. You do not need it in this step.</td></tr></table>
+    <p class="hint">All amounts on this page are in dollars unless a line says otherwise.</p>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open Claude</b> in a new tab (the button just below), <b>sign in</b> with your own Claude account, and click <b>New chat</b>. Do not use your Jordan Coach project for this.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li>Click <b>Copy the letter</b>. Claude cannot see this page, so the letter must go into your message.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the letter</button></li>
+      <li>In the Claude chat box, <b>type your own request in your own words</b> (the task: did Velox claim the right deduction, and which rules does the answer rely on?). Then <b>press Shift+Enter</b> for a new line, <b>paste the letter</b> (Ctrl+V on Windows, Cmd+V on Mac), and <b>press Enter</b> to send.</li>
+      <li><b>Read the answer</b>, then <b>answer the three questions below</b> in your own words. You will reuse your answers in Step 5, Part 1.</li>
+      <li><b>Save your work for Step 5:</b> copy your request and Claude's answer into a note on your computer (Notepad, Notes, or a Word document). Keeping this chat open is helpful but not required.</li>
+    </ol>
+    <details><summary>See what "Copy the letter" will copy (a short version of the letter; the full letter comes in Step 5)</summary><div class="copybox" id="p2text">SIMULATED IRS LETTER (for course use only). Velox Motorworks is a fictional company.
+Letter date: October 8, 2026. To: Velox Motorworks, Inc., Attention: Director of Tax. Tax year: 2025.
+Subject: Request for information about first-year deductions for equipment.
+We are reviewing your 2025 return. Your depreciation schedule lists 9 items of equipment at your South Carolina plant with a total cost of $40,423,400, and shows a first-year deduction equal to 100 percent of that cost.
+Please send us: (1) for each item, the date you signed the contract to buy it, and a copy of the signed contract; (2) for each item, the date it was placed in service; (3) a written explanation of why you believe a 100 percent first-year deduction applies to each item, including the legal authority you rely on.
+Please respond by November 9, 2026. If we do not hear from you by that date, we may propose changes to your return. This letter asks for information. It does not propose any change to your return yet.</div></details>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did AI do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What could AI NOT tell you from the letter alone?</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. Which parts of Claude's answer would you want to see a written source for before you relied on them, and why?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">These answers are saved on this device. They are not graded and are not in your submission; they are your starting point for Step 5.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 45 min</span></h2>
+  <p class="hint">Sections 3a to 3h are reading and quick checks (3h ends with one question for you). The tax you need is short on purpose: your job is to get AI to do the drafting, checking, and calculating, check it, and decide. You apply every technique yourself in Step 5.</p>
+
+  <h3>3a. A research memo, and what counts as a source</h3>
+  <p>Tax professionals answer a question in a <b>research memo</b> with five parts: the <b>question</b>; the <b>facts</b> (what happened); the <b>rules</b> (the authorities that apply); the <b>analysis</b> (applying the rules to the facts); and the <b>conclusion</b> with a next step. The rules part is where sources matter. An <b>authority</b> is a source anyone can open and read: the Internal Revenue Code (the federal tax law), Treasury regulations, IRS notices, and court decisions. IRS publications are helpful guidance, but a tax professional prefers the notice or regulation behind them. A <b>citation</b> is the address of an authority. Articles by accounting firms are helpful commentary, but a tax professional relies on the authority itself, because commentary can be out of date or wrong.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Which of these would a tax professional cite as an authority in a memo to the IRS?</p>
+    <div class="qc" data-id="q3a" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">A blog post that summarizes the rule</button><button class="choice" data-i="1">An IRS notice that explains the rule, which anyone can open and read</button><button class="choice" data-i="2">What a colleague remembers about the rule</button><button class="choice" data-i="3">What an AI chat said when asked from memory</button></div>
+      <div class="fb" data-ok="Right. An authority is something you can open and read." data-no="Which one is a document anyone can open and read?"></div>
+    </div>
+  </div>
+
+  <h3>3b. AI and citations: a right answer you cannot check is not a citation</h3>
+  <p>AI writes text that sounds right. With citations, three things can go wrong: it can cite a real rule with the wrong section number, cite a rule that has since changed, or cite something that does not exist. Often an AI memo is mostly right and still cannot be relied on, because you cannot tell which parts are right without opening the sources. Asking "are you sure?" does not fix this, because AI will sound sure either way. What does help is to <b>give the AI the sources</b>, make it <b>quote them</b>, and then <b>open the ones that matter yourself</b>.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Claude drafts a memo with five citations, and the dollar figures all look reasonable. What does that tell you about the citations?</p>
+    <div class="qc" data-id="q3b" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">That they are accurate, because the numbers look reasonable</button><button class="choice" data-i="1">That they are invented, because AI cannot cite</button><button class="choice" data-i="2">Nothing yet. Each citation has to be checked against a source before anyone relies on it</button><button class="choice" data-i="3">That they are accurate if Claude says it is confident</button></div>
+      <div class="fb" data-ok="Yes. Reasonable-looking numbers say nothing about whether a citation is real or says what Claude claims." data-no="Can you tell from the numbers whether a citation says what Claude claims?"></div>
+    </div>
+  </div>
+
+  <h3>3c. Give AI the sources: source-grounded prompting</h3>
+  <p>When you attach the sources (here, the Source Packet) and tell Claude to <b>use only those sources</b>, to <b>quote the exact words and the label</b> of each source for every rule it relies on, and to <b>write "not in the sources"</b> when the sources do not answer, you can check every statement against text you hold. The "not in the sources" rule matters most: it turns a gap into a visible flag instead of an invented fill-in.</p>
+  <div class="tech"><p><b>Technique:</b> Source-grounded prompting (also called grounding, or open-book prompting; it is the idea behind retrieval-augmented generation, or RAG, where AI answers from documents it is given)</p><p><b>Why it helps:</b> Answers can be checked against text you can see, and gaps show up as "not in the sources" instead of guesses. In Step 5 you write your own template that does this.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Imagine you gave Claude a packet that never mentions state taxes. You ask whether state taxes apply. What is the best answer from a grounded Claude?</p>
+    <div class="qc" data-id="q3c" data-correct="3" data-req>
+      <div class="choices"><button class="choice" data-i="0">A confident answer from its general knowledge</button><button class="choice" data-i="1">A guess labeled as a guess, with no mention of the packet</button><button class="choice" data-i="2">"No, they do not apply."</button><button class="choice" data-i="3">"Not in the sources," plus a note that a tax professional should confirm</button></div>
+      <div class="fb" data-ok="Yes. A gap in the sources is reported as a gap." data-no="What does the 'not in the sources' rule tell Claude to do when the packet is silent?"></div>
+    </div>
+  </div>
+
+  <h3>3d. Have AI list its sources, then check them: citation tables and cite-checks</h3>
+  <p>Ask Claude for a <b>citation table</b>: one row per source with the citation, what it says that source supports, and the exact words relied on. Then ask Claude to <b>check each row against your Source Packet</b> and mark it <b>Supported</b> (the packet says it), <b>Different</b> (the packet says something else; say how), or <b>Not in the packet</b> (the packet cannot confirm it). "Not in the packet" does not mean wrong. It means a person must open the original or leave it out. ("Not in the packet" is the mark you put in a table; "not in the sources" says the same thing in a sentence.)</p>
+  <div class="tech"><p><b>Technique:</b> Structured extraction of claims, then verification prompting (also called self-verification or a cite-check: the AI compares its own statements against the sources)</p><p><b>Why it helps:</b> AI is good at comparing text against text, and the table turns a wall of prose into a list you can check line by line. But AI checking AI can still be wrong, so a person opens the two or three sources that matter most.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>In Claude's cite-check, one row says "Not in the packet." What does that tell you?</p>
+    <div class="qc" data-id="q3d" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">The citation is invented, so delete it and say so</button><button class="choice" data-i="1">The packet cannot confirm it, so a person must open the original source or leave it out</button><button class="choice" data-i="2">The citation is correct, because Claude found no conflict</button><button class="choice" data-i="3">The packet is wrong</button></div>
+      <div class="fb" data-ok="Right. It is a flag for a person, not a verdict." data-no="Does 'the packet does not contain it' show that it is false?"></div>
+    </div>
+  </div>
+
+  <h3>3e. Let AI calculate with code, and show its work</h3>
+  <p>AI counts and calculates best when it uses code (you used this in Module 6). The same goes for tax math: ask Claude to <b>use code</b>, to show each item's calculation, and to state the rate and rule it used for each line. Then recompute one item yourself in a spreadsheet. When a fact is missing (such as a contract date), ask for <b>both outcomes</b> instead of a guess.</p>
+  <p><b>A worked example of the two-part first-year deduction</b> (made-up item, not Velox's): an item that cost $100 and was acquired under the older rule gets a <b>40 percent</b> deduction first, which is $40.00. The <b>remaining $60</b> is then deducted over several years, and its first-year part is <b>14.29 percent</b> of $60, which is $8.57. The item's total first-year deduction is $48.57. An item acquired under the newer rule gets all $100 in the first year.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Claude gives a company's corrected deduction as one rounded figure with no calculation shown. What is the best next step?</p>
+    <div class="qc" data-id="q3e" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">Ask Claude to use code and show each item's calculation and rule, then recompute one item yourself</button><button class="choice" data-i="1">Use the figure, since it is close enough</button><button class="choice" data-i="2">Ask Claude "Are you sure?"</button><button class="choice" data-i="3">Ask Claude to explain why the figure is probably right</button></div>
+      <div class="fb" data-ok="Yes. Show the work, then check part of it yourself." data-no="Which step lets you see and check how the number was built?"></div>
+    </div>
+  </div>
+
+  <h3>3f. Let AI do the work: a real example</h3>
+  <p>Here is a made-up case at <b>Cedar Valley Brewing Co.</b>, an unrelated made-up company (not Velox, so this is not your answer). Cedar Valley got a similar IRS letter about four items of equipment it deducted at 100 percent in 2025. We gave Claude the letter and the equipment schedule, with no sources, and asked for a research memo and a table of every source it cited. Then we attached a Cedar Valley Source Packet (with its own notes S1 to S8, like the one you will get) and asked Claude to check its own table against the packet, redo the memo from the packet only, and calculate the corrected deduction with code. In its calculation Claude applied the older-rule items as 40 percent first, then 14.29 percent of the remaining 60 percent, as in the worked example above. <b>This is Claude's real output, condensed:</b></p>
+  <p><b>1. Claude's first memo, with no sources</b> (written from memory, as Claude itself said). Its conclusion: the 100 percent claim holds only for the bottling line (CV-2); the fermentation tanks (CV-1) and cold-storage racks (CV-3) were contracted before January 20, 2025, so they get 40 percent; the lab equipment (CV-4) has no contract date, so it cannot be decided; the net over-deduction is about $1.33 million. Its own warning: <i>"I drafted this from memory with no source access ... Verify each citation, subparagraph and dollar figure against the primary sources."</i> It also volunteered a Section 179 idea: <i>"An IRC §179 election could recover part of the excess. For 2025 the limit is $2.5 million ..."</i> Its citation table had five rows:</p>
+  <table class="t"><tr><th>Claude's citation</th><th>What it said it supports</th></tr>
+  <tr><td>IRC §168(k)(1), (k)(2)(A)</td><td>Bonus depreciation applies to property with a recovery period of 20 years or less</td></tr>
+  <tr><td>P.L. 119-21, §70301</td><td>100% for property acquired after January 19, 2025; 40% for earlier property in 2025</td></tr>
+  <tr><td>Treas. Reg. §1.168(k)-2(b)(5)</td><td>The acquisition date is the date of a written binding contract</td></tr>
+  <tr><td>IRC §179(b)(1)-(2)</td><td>2025 expensing limit ($2.5M) and phase-out ($4M)</td></tr>
+  <tr><td>IRC §168(b)(3), (d)</td><td>Regular depreciation on the rest, using the half-year convention</td></tr></table>
+  <p><b>2. Claude's cite-check against the Cedar Valley Source Packet.</b> Notice that "not in the packet" is a flag, not a verdict:</p>
+  <table class="t"><tr><th>Citation</th><th>Claude's verdict</th><th>Why, in Claude's words (condensed)</th></tr>
+  <tr><td>IRC §168(k)(1), (k)(2)(A)</td><td><b>Different</b></td><td>The packet cites only "section 168(k)" with no subparagraphs, and my quote is not the packet's wording. The substance is supported by S2.</td></tr>
+  <tr><td>P.L. 119-21, §70301</td><td><b>Different</b></td><td>The packet names P.L. 119-21 but never "§70301." I also left out that S1 requires the property be both acquired and placed in service after the date.</td></tr>
+  <tr><td>Treas. Reg. §1.168(k)-2(b)(5)</td><td><b>Not in the packet</b></td><td>The packet gets the binding-contract rule from IRS Notice 2026-11 (S4), not this regulation. The idea matches; the authority is different.</td></tr>
+  <tr><td>IRC §179(b)(1)-(2)</td><td><b>Not in the packet</b></td><td>S8 lists Section 179 as not covered. "I withdraw it."</td></tr>
+  <tr><td>IRC §168(b)(3), (d)</td><td><b>Not in the packet</b></td><td>These subsections are not in the packet. The substance is in S7 (14.29 percent, from IRS Publication 946).</td></tr></table>
+  <p><b>3. The memo redone from the packet only, and the calculation with code.</b> Claude quoted S1 to S5 and S7 with their labels, wrote "not in the sources" for Section 179, state tax, interest, and penalties, and then ran Python. <b>This is the code's real output:</b></p>
+  <table class="t"><tr><th>Item</th><th>Correct 2025 first-year deduction</th><th>Claimed</th><th>Over-claimed</th></tr>
+  <tr><td>CV-1 (contract Oct 5, 2024)</td><td>$1,020,054.00</td><td>$2,100,000</td><td><b>$1,079,946.00</b></td></tr>
+  <tr><td>CV-2 (contract Mar 2, 2025)</td><td>$1,350,000.00</td><td>$1,350,000</td><td>$0.00</td></tr>
+  <tr><td>CV-3 (contract Jan 10, 2025)</td><td>$233,155.20</td><td>$480,000</td><td><b>$246,844.80</b></td></tr>
+  <tr><td>CV-4, if signed on or after Jan 20, 2025</td><td>$95,000.00</td><td>$95,000</td><td>$0.00</td></tr>
+  <tr><td>CV-4, if signed on or before Jan 19, 2025</td><td>$46,145.30</td><td>$95,000</td><td>$48,854.70</td></tr>
+  <tr><td colspan="3"><b>Total over-claimed, and extra federal tax at 21%</b></td><td><b>$1,326,790.80 and $278,626.07 (first outcome), or $1,375,645.50 and $288,885.56 (second outcome)</b></td></tr></table>
+  <p>Claude did not guess CV-4's date: <i>"The extra tax is between $278,626.07 and $288,885.56, depending on that contract date."</i> It also noted that CV-3's contract date (January 10) is close to the cutoff and "worth verifying against the signed contract."</p>
+  <p><b>What to notice:</b> (1) The first memo was good, and it still could not be used: nobody could tell which citations and figures were reliable without sources. (2) Given the packet, Claude sorted its own citations honestly and <b>withdrew a point</b> (Section 179) that the packet does not support. (3) It used <b>code</b> and showed each item, with <b>both outcomes</b> for the missing date. (4) The result was only as good as the packet: Claude said "interest, penalties, state tax, and later-year effects are not in the sources." (5) Claude's cite-check is a draft too. A person still opens the sources the response will rely on. Your job is to get this kind of answer for Velox, and then to check it.</p>
+
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>In the example, why was Claude's first memo not good enough to send, even though its conclusion turned out to be right?</p>
+    <div class="qc" data-id="q3f" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Its conclusion was wrong, so none of it could be used</button><button class="choice" data-i="1">It was written from memory, so a person could not tell which citations and figures were reliable until they were compared with sources</button><button class="choice" data-i="2">Claude refused to give any conclusion without the sources</button><button class="choice" data-i="3">It left out the IRS letter's reference number</button></div>
+      <div class="fb" data-ok="Right. A conclusion can be right and still not be something you can stand behind." data-no="What did Claude itself say about where the memo came from?"></div>
+    </div>
+  </div>
+
+  <h3>3g. Write the memo for the reader</h3>
+  <p>Grace needs a short memo she can act on. Start with the most important sentence: <b>what you found, how big it is, and that it rests on the Source Packet only</b>. Then give the rules you relied on (with their packet labels), the numbers that matter, what is <b>not</b> known or <b>not in the sources</b>, and the next step for a person (such as finding the missing contract date). Say what a person must confirm before anything goes to the IRS.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Which opening sentence is best for a memo to the Director of Tax?</p>
+    <div class="qc" data-id="q3g" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">"The IRS letter raises several questions about equipment, and more research is needed."</button><button class="choice" data-i="1">"Velox clearly took too large a deduction and should pay what the IRS wants."</button><button class="choice" data-i="2">"Based only on the Source Packet, part of the claimed deduction appears to be too large, here is how large, and one missing fact must be confirmed by a person before we respond."</button><button class="choice" data-i="3">"AI found a tax problem."</button></div>
+      <div class="fb" data-ok="Yes. It gives the finding, its size, the limit of the sources, and what a person must still do." data-no="Which sentence tells Grace what to do and how far to trust it?"></div>
+    </div>
+  </div>
+
+  <h3>3h. Pick your technique</h3>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t3h">In one sentence, which of the techniques in 3c, 3d, and 3e do you think will help you most on a real task, and why? (This is saved for you. It is not graded and is not in your submission.)</label>
+    <textarea id="t3h" data-save="s3.h" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint: accuracy and sources <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>A wrong citation sent to the IRS costs real money and credibility. That is why area 2 of the <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a> says: <b>Accuracy</b>. Treat AI output as a draft, and verify facts, figures, and sources before you rely on them. And because the response goes out under a person's signature, area 5, human accountability, applies too. Judge the five suggestions below the way a careful tax professional would.</div></div>
+  <div class="card">
+    <b>The rule:</b> AI may draft, compare, and calculate. A <b>named person</b> checks the work, signs, and sends. Treat AI output as a draft and verify facts, figures, and sources before relying on them. In this scenario, Grace signs the response; you prepare the work. You still follow the whole policy (its five areas are confidentiality and privacy, accuracy, bias, transparency and disclosure, and human accountability); area 2 is the focus of this step and of Part 8, and the policy link in Jordan's note above is optional reading.
+  </div>
+  <p>Grace asked Claude what to do after the memo. Below are five things Claude suggested, with the facts about each. <b>Judge each one against the policy.</b></p>
+  <p class="hint"><b>How to choose a verdict:</b> choose <b>Meets the policy</b> only if the suggestion follows the rule above. An internal memo may carry a point that is clearly flagged as unverified; anything sent to the IRS may not. If the suggestion does not follow the rule, choose <b>Does not meet the policy</b> and say in your reason what is unverified or what a person must do.</p>
+  <div id="situations"></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="e4d"><b>What would you do with Claude's memo and its citations before anything goes to the IRS?</b></label>
+    <select id="e4d" data-save="e4.decision" data-req data-sel><option value="">Choose one…</option><option>Put Claude's citations in the response because Claude already checked them against the packet</option><option>Have a person open each source the response relies on, keep anything not confirmed out, show the arithmetic, and have Grace sign</option><option>Send Claude's draft now so the deadline is met, and fix any errors if the IRS replies</option></select>
+    <label class="lbl" for="e4w"><b>Why?</b> Name the person accountable for what goes to the IRS (a role; never the AI) and explain your choice.</label>
+    <textarea id="e4w" data-save="e4.why" data-min="60" data-req></textarea>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 200 min</span></h2>
+  <p class="hint">Every box needs a real answer: a box that is too short (for example, a pasted answer of only a few words) will not let you continue, and the message under the page tells you which box is still needed. In this step, "Part 1" to "Part 9" are the sections of the assignment. The grading table (rubric) is at the bottom of Step 6; the file you upload to Jordan in the Setup section just below covers the same criteria and points in more detail, so you can read it first.</p>
+
+  <h3>Setup: add the Module 7 rubric to your Jordan Coach, and check that Claude can run code (about 10 minutes)</h3>
+  <p class="hint"><b>A note on confidentiality:</b> the files in this module are simulated, so uploading them to your own Claude account is fine. At a real company you would not upload a real tax return, taxpayer ID, or IRS correspondence to a personal AI account; you would use only the tools your company has approved (policy area 1, confidentiality).</p>
+  <p class="hint">You built your Jordan Coach project in Module 1, and its instructions still work. If you did not build it, go to <a href="module-1.html">Module 1</a>, Step 5, and build it first (about 20 minutes extra), then come back here.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1"><b>Download the Module 7 rubric</b> to your computer: <a class="btn btn-ghost btn-sm" href="downloads/module-7-rubric.md" download>Download module-7-rubric.md</a> (If it opens in the browser, right-click the button and choose <b>Save link as</b>.)<br>Then, in your Jordan Coach project, <b>find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload</b> the file. Leave the other files there.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c3" data-req id="c3"><label for="c3"><b>Make sure Claude can run code on a file.</b> In Claude, <b>click your name</b> (bottom left), <b>choose Settings</b>, then <b>Capabilities</b>, and <b>turn on</b> the option for code execution and file creation. The wording of the setting may differ on your plan. To test it, <b>start a new chat</b>, <b>attach any small spreadsheet</b>, and <b>ask Claude: "Can you run code on this file to add up the numbers in one column?"</b> If it cannot, ask your instructor; in Part 4 you may instead work out the numbers in a spreadsheet and ask Claude to check them, which earns full credit.</label></div>
+
+  <h3 style="margin-top:28px">Assignment: Show Me the Source</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b>Write a reusable research memo template, have AI draft a memo with no sources and list what it cited, then give it the Source Packet and have it check those citations, redo the memo from the packet, and calculate the corrected deduction. Check two findings yourself, write Grace a short memo, and choose the lens that fits your major.</b> Everything you type below saves in this browser and builds your submission automatically, so use the same browser and device.</div></div>
+
+  <label class="lbl" for="stuName"><b>Type</b> your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420). Check this only if you are in 5420. Part 9 will appear after Part 8 once you tick this box (about 25 extra minutes; finish it before you copy your draft for Jordan), where you verify a third finding, do a check that does not use AI, and name an assumption or limitation.</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Record your first try (from Step 2) · about 5 min · practice, not graded</h3>
+  <p class="hint">If you skipped Step 2, go back and do it now (about 15 minutes) so you can fill these in.</p>
+  <label class="lbl" for="r1p"><b>Paste your Step 2 request</b> from the note you saved (just your request, not the letter)</label>
+  <textarea id="r1p" data-save="s5.r1p" data-min="15" data-req></textarea>
+  <label class="lbl" for="r1o"><b>Summarize what AI gave you</b> in two or three sentences</label>
+  <textarea id="r1o" data-save="s5.r1o" data-min="30" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="r1w"><b>Name two things you could not tell</b> from the letter alone or could not check in Claude's answer (for example, facts the letter does not contain, or whether a rule it named really exists)</label>
+  <textarea id="r1w" data-save="s5.r1w" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 2 · Write your Research Memo Template · about 15 min</h3>
+  <p class="hint">Write the template <b>before</b> you look at Velox's files, from what you learned in Step 3c and 3d. It is this week's reusable piece: Tax and Accounting teams answer questions like this all the time.</p>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Think about what you need from AI</b> when you give it a question and a set of sources (Step 3c and 3d): the question restated; a rule to use only the sources you attach; a way to show where each rule came from; a rule for gaps; and a table you can check.</li>
+      <li><b>Write your template in your own words</b> in the box below. It must have: a line telling the AI to <b>use only the Source Packet</b> you attach and nothing from memory; a rule that <b>every rule it relies on gets the packet label (like S3) and the packet's exact words in quotation marks</b>; a rule to <b>write "not in the sources" when the packet does not answer</b>, and not to fill the gap; a request to <b>keep three things apart</b> (what the sources say, the facts from the schedule, and the conclusion) and to <b>list its assumptions</b>; a <b>citation table</b> with columns for the packet label, what it supports, the exact quote, and a status (use the same three marks as Step 3d: Supported, Different, or Not in the packet); and a <b>final check line</b> saying a person must open the originals before anything goes to the IRS.</li>
+      <li>Do not copy the Cedar Valley example in 3f; it was a different case. <b>Paste your finished template</b> into the box.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="tpl"><b>Paste your Research Memo Template</b></label>
+  <textarea id="tpl" data-save="s5.tpl" data-min="400" data-req style="min-height:240px"></textarea>
+
+  <h3 style="margin-top:22px">Part 3 · Draft the memo with no sources · about 15 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the IRS letter and the equipment schedule</b> to your computer. If a file opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>:
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-7/velox-irs-letter-simulated.txt" download>IRS letter</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-7/velox-equipment-schedule-simulated.csv" download>Equipment schedule</a></div><br>The schedule has one row per item with these columns: asset_id, description, plant, cost, contract_signed_date, placed_in_service_date, recovery_class, first_year_deduction_claimed, and a note.</li>
+      <li><b>Start a new chat in Claude</b> (not your Jordan Coach), <b>click the + or paperclip</b> in the chat box, and <b>attach both files</b>. Do <b>not</b> attach the Source Packet yet.</li>
+      <li><b>Write your own request</b> asking Claude to draft a <b>short research memo</b> (about 300 words) that answers whether Velox claimed the right first-year deduction on its 2025 return, and then to <b>list every source it cited in a table</b> with three columns: the citation, what it says that source supports, and the exact words it relies on. Send it, and <b>keep this chat open</b>, because you will continue in it in Part 4.</li>
+      <li><b>Read the memo and the table</b>, and notice which parts Claude says come from memory. <b>Come back here</b> and fill in the boxes below.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="p3req"><b>Paste the request you sent</b> (the request only, not the answer)</label>
+  <textarea id="p3req" data-save="s5.p3req" data-min="100" data-req style="min-height:120px"></textarea>
+  <label class="lbl" for="p3res"><b>Paste Claude's memo and its citation table</b></label>
+  <textarea id="p3res" data-save="s5.p3res" data-min="300" data-req style="min-height:200px"></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Give Claude the Source Packet, check the citations, redo the memo, and calculate · about 50 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the Source Packet</b> to your computer. If it opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>:
+        <div class="dl-row"><a class="btn btn-ghost btn-sm" href="data/module-7/velox-tax-source-packet-simulated.txt" download>Source Packet (S1 to S8)</a></div></li>
+      <li><b>Go back to the same Claude chat from Part 3</b>, <b>click the + or paperclip</b>, and <b>attach the Source Packet</b>. (If you closed the chat, start a new one, attach all three files, and paste Claude's Part 3 table into your message.)</li>
+      <li><b>Write your own request</b> asking Claude to <b>check every citation in its table against the packet</b> and mark each one as supported by the packet, different from the packet (and how), or not in the packet, quoting the packet's words when it finds them. Ask it to check the <b>rules and quotes</b> against the packet, and the <b>dollar figures</b> against the schedule and the letter (the packet has rules, not Velox's dollar amounts), and any extra points in its memo the same way. Send it.</li>
+      <li><b>Paste your template</b> from Part 2 and ask Claude to <b>redo the memo using it</b>, with the packet as its only source (and to set aside its earlier memo). Send it.</li>
+      <li><b>Ask Claude to use code</b> to calculate, for each equipment item, what Velox's first-year deduction for 2025 should have been under the packet's rules, the total difference from what Velox claimed, and the extra federal tax at the rate in the packet. For any item with a missing contract date, ask for <b>both outcomes</b>, not a guess. Tell Claude to show each item's calculation and the rule it used. "Extra tax" here means extra tax due now for 2025; much of the difference is a matter of timing, because the remaining cost is deducted in later years, and interest and penalties are not in the sources. (If your Claude cannot run code, work out the numbers in a spreadsheet and ask Claude to check them; that earns full credit.)</li>
+      <li><b>Ask Claude to pull out of the IRS letter</b> what it asks Velox to send and by when, as a short checklist.</li>
+      <li><b>Come back here</b> and fill in the boxes below. You may send steps 3 to 6 as one message or as separate ones.</li>
+    </ol>
+  </div>
+  <div class="check"><input type="checkbox" data-save="s5.c2" data-req id="c2"><label for="c2"><b>Upload the three Velox tax files</b> (the IRS letter, the equipment schedule, and the Source Packet) to your Jordan Coach project, in the same way you uploaded the rubric (Project knowledge or Files, then + or Add content), so that Jordan can compare your work with them when you ask for feedback. Tick this box when you have done it. (Do your own check in Part 5 without Jordan first.)</label></div>
+  <label class="lbl" for="p4req"><b>Paste the requests you sent</b> (the requests only, not the answers)</label>
+  <textarea id="p4req" data-save="s5.p4req" data-min="200" data-req style="min-height:140px"></textarea>
+  <label class="lbl" for="p4tab"><b>Paste Claude's citation check</b> (each citation marked supported, different, or not in the packet) <b>and its redone memo</b></label>
+  <textarea id="p4tab" data-save="s5.p4tab" data-min="300" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="p4oth"><b>Paste Claude's calculation</b> (each item, the total difference, the extra tax, and both outcomes for the missing contract date) <b>and its checklist of what the letter asks for</b></label>
+  <textarea id="p4oth" data-save="s5.p4oth" data-min="300" data-req style="min-height:200px"></textarea>
+
+  <h3 style="margin-top:22px">Part 5 · Check two findings yourself · about 25 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Choose two findings</b> from Claude's answers in Part 3 or Part 4 (the final versions you pasted there) that matter most to Grace. A finding is a number or a claim, for example "the items with contract dates before a cutoff date add up to $1,000,000" (a made-up value, not Velox's) or "source S3 says the first-year share for older property is 40 percent." Choose two different findings, and make at least one of them a number.</li>
+      <li><b>Open the files</b>: the equipment schedule in Excel or Google Sheets, and the Source Packet in a text editor (use <b>Ctrl+F</b>, or <b>Cmd+F</b> on a Mac, to find words). <b>Do not ask AI to check them.</b></li>
+      <li>For each finding, <b>do the checking yourself</b>. For a number: <b>filter or sort</b> the schedule by contract date, use <b>SUMIF</b> to add up costs by contract date (for example, <b>=SUMIF(E2:E10,"<2025-01-20",D2:D10)</b> if your dates are real Excel dates compared with <b>DATE(2025,1,20)</b>, or just filter and add by eye), and compute the deduction by hand: 40 percent of the cost, plus 14.29 percent of the cost that remains. <b>The item with the blank contract date will not be counted either way</b>, so your totals will not add up to the full cost until you add it back yourself. For a claim about a source: <b>find the label in the packet</b> and read whether it says what Claude says it says. <b>Compare your result</b> with what Claude said. Then <b>decide what to do about it</b>.</li>
+    </ol>
+  </div>
+  <div id="vrows"></div>
+
+  <h3 style="margin-top:22px">Part 6 · Write the memo for Grace · about 20 min</h3>
+  <p class="hint">Write a short memo (60 to 300 words) that Grace could act on. Use AI to help, but you are accountable for every word and number, whoever drafted it. <b>Your first sentence must say what you found, how large it is, and that it rests on the Source Packet only.</b> Then give the rules you relied on with their packet labels (such as S3), the numbers that matter (say what "extra tax" means, and that interest and penalties are not in the sources), what is missing or not in the sources (including the contract date that was not recorded), and the next step for a person. You may refer to assets by their ID codes, and to Grace by her role. <b>Any of the three steps below is acceptable if your numbers and the packet notes support it.</b> Say which notes support your choice. Keep it to <b>at least 60 and at most 300 words</b>.</p>
+  <label class="lbl" for="dec"><b>Which step did you recommend Velox take?</b></label>
+  <select id="dec" data-save="s5.dec" data-req data-sel><option value="">Choose one…</option><option>Accept an adjustment on some items and defend the rest (deciding any item with a missing date once it is found)</option><option>Ask the IRS for more time, then decide after the missing contract date is found (whether and how to ask is not in the sources, so a person must confirm)</option><option>Defend the full 100 percent deduction on every item</option></select>
+  <label class="lbl" for="ppr"><b>Paste the request you used</b> to have AI help draft or improve your memo (it must tell AI who the reader is; if you wrote the memo without AI, type "I did not use AI for this piece; I wrote it myself.")</label>
+  <textarea id="ppr" data-save="s5.ppr" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="ppage"><b>Type or paste your final memo for Grace</b> (60 to 300 words; pasting text that AI helped edit is fine as long as you disclose that in Part 8; do not include the disclosure line here, you write it in Part 8)</label>
+  <textarea id="ppage" data-save="s5.ppage" data-req style="min-height:240px"></textarea>
+  <div class="hint" id="wc">0 words (60 to 300)</div>
+
+  <h3 style="margin-top:22px">Part 7 · Choose your lens · about 20 min</h3>
+  <p class="hint">Grace wants a second piece, written from the point of view of the part of the business you care about. <b>Pick one of the six options below.</b> They are equal in effort and are graded with the same criteria. Each option has its own length. Whatever you choose: <b>show the request you used</b>, make <b>every number traceable</b> to the files, <b>name no individuals</b> (roles such as "Director of Tax" are fine; your own name appears only in your Part 8 disclosure line), and include <b>at least one "not in the sources" item or limitation</b>.</p>
+  <div id="angleCards"></div>
+  <label class="lbl" for="angle"><b>Which option did you choose?</b></label>
+  <select id="angle" data-save="s5.angle" data-req data-sel></select>
+  <label class="lbl" for="angreq"><b>Paste the request you used</b> to have AI help with this piece (or type "I did not use AI for this piece; I wrote it myself.", which earns the request points)</label>
+  <textarea id="angreq" data-save="s5.angreq" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="angtext"><b>Type your final piece</b> (use the length given for your option)</label>
+  <textarea id="angtext" data-save="s5.angtext" data-min="300" data-req style="min-height:220px"></textarea>
+
+  <h3 style="margin-top:22px">Part 8 · Sources you checked and how AI contributed · about 10 min</h3>
+  <label class="lbl" for="acc"><b>Name the two sources (or two citations) that mattered most</b> in your work, and for each one <b>say how you checked it yourself</b> (for example, you found the label in the packet and read the sentence, or you opened the original on the website listed in the packet). Then <b>describe one thing Claude said that did not hold up, was not in the sources, or that you changed</b>, and what you did about it. Finally, <b>say which person is accountable for what goes to the IRS</b> (a role such as the Director of Tax is fine; never the AI).</label>
+  <textarea id="acc" data-save="s5.acc" data-min="100" data-req style="min-height:120px"></textarea>
+  <label class="lbl" for="foot"><b>Type your disclosure line</b> for your memo to Grace and your Part 7 piece. It must say AI helped, name a real person as reviewer, and be truthful about how far you checked. <b>Name yourself as the reviewer</b>, because you are the real person who checked it. Do not name Grace or any other character: they are fictional and have not seen your work. Say exactly what you checked. Example wording, to use <b>only if it is true for you</b>: "I recomputed 2 of the findings in a spreadsheet and read the packet sentences behind them; the other citations were not independently checked." <b>One line covers both pieces</b> and appears in section F of your submission.</label>
+  <textarea id="foot" data-save="s5.foot" data-min="40" data-req style="min-height:70px"></textarea>
+  <label class="lbl" for="disc"><b>List every AI tool you used</b> in this module (Claude in Step 2, Claude for the memo and the calculation, your Jordan coach, and any others) and what each did.</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 9 · Graduate students only · about 25 min</h3>
+    <p class="hint">As a graduate student you do three things beyond the undergraduate work: verify a <b>third finding</b>, do a <b>check that does not use AI</b>, and name an <b>assumption or limitation</b>. In Part 5 you checked two findings. The check in the second box is separate from your third finding.</p>
+    <label class="lbl" for="g1"><b>Third finding:</b> choose a third number or claim from Claude's answers (not one you used in Part 5). Say what Claude reported, where in the files you looked, your own arithmetic or reading of the source, and whether it matches</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2"><b>Check without AI:</b> check one more thing with a method that does not use AI, and use <b>at least one source outside the packet</b> (outside sources are for your own check; do not give them to Claude). For example, open IRS Notice 2026-11 or section 168 at the web address at the end of the packet and compare what you read with packet notes S3 and S4, or rebuild the whole deduction calculation in a spreadsheet and compare it with Claude's. Describe what you did and what you found</label><textarea id="g2" data-save="s5.g2"></textarea>
+    <label class="lbl" for="g3"><b>Assumption or limitation:</b> name at least one assumption or limitation that affects your recommendation (for example, that the packet is a paraphrase written for a class exercise, that the standard first-year rate of 14.29 percent is assumed for every item, or that the missing contract date could move the answer) and explain how it could change what Grace should do</label><textarea id="g3" data-save="s5.g3"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Everyone: now get feedback from Jordan (about 30 min)</h3>
+    <p><b>Click the button</b> to copy your whole draft (everything you typed in Steps 4 and 5). <b>Open a new chat inside your Jordan Coach project</b> (use the same chat for every round of feedback), <b>paste it</b>, and <b>ask Jordan for feedback</b> against the Module 7 rubric, in your own words.</p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+    <p class="hint" style="margin-bottom:0"><b>Read Jordan's feedback</b>, then continue to Step 6.</p>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 45 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b><b>Go back to Step 5, improve your answers</b> (everything you typed is still there), then <b>return to Step 6</b>. To get another round of feedback, click <b>Copy my draft for Jordan</b> in Step 5 again and paste it into the same Jordan chat. You can do this as many times as you like; plan about 30 more minutes for each extra round. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to revise</button></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev">What did you change because of Jordan's feedback?</label>
+    <textarea id="rev" data-save="s6.rev" data-min="30" data-req></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans"><b>Paste your full Jordan Coach conversation here</b></label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in your Jordan Coach chat, <b>click in the conversation</b>, <b>press Ctrl+A</b> (Cmd+A on Mac), <b>copy</b>, and <b>paste here</b>. Then <b>delete</b> any menu or sidebar text before your first message to Jordan or after the last reply. It will be long, and that is fine. If it is very long, you may delete repeated copies of your draft and keep Jordan's feedback and your replies.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0"><b>Open the downloaded file in Word</b> and check that every section has your text. (If Word warns about the file format, choose <b>Yes</b> or <b>Open</b>; that is expected.) Canvas accepts this file type. Then <b>upload it to the Module 7 assignment, "Show Me the Source," in Canvas</b>. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Research Memo Template</td><td>10</td><td>A rule to use only the attached Source Packet (2); every rule gets the packet label and the exact words quoted (2); a rule to write "not in the sources" instead of filling gaps (2); a citation table with a status column (Supported, Different, or Not in the packet), and a request to keep sources, facts, and conclusion apart and list assumptions (2); a final check line saying a person must open the originals (2)</td></tr>
+    <tr><td>B. Running the analysis</td><td>15</td><td>The first memo with no sources and its citation table pasted (3); Claude's citation check of that table against the packet, with each row marked (4); the memo redone from the packet with labels and quotes (3); the deduction calculated with code or a spreadsheet, item by item, showing both outcomes for the missing contract date (3); the checklist of what the letter asks for (2)</td></tr>
+    <tr><td>C. Verification</td><td>20</td><td>Two findings, 10 points each: the finding quoted (2), your own arithmetic or reading of the source shown (4), a verdict that is correct against the files (3), and what you did about it (1)</td></tr>
+    <tr><td>D. Memo for Grace</td><td>15</td><td>60 to 300 words; first sentence gives the finding, its size, and that it rests on the packet only (3); the numbers that drive it, accurate and traceable, with packet labels for the rules (4); what is missing or not in the sources, including the unrecorded contract date (3); a next step for a person and what must be confirmed before anything goes to the IRS (3); written for Grace, roles and asset IDs only, nobody blamed (2). Defending the full deduction on every item earns at most partial credit, because no packet note supports it, unless the memo points to one that does</td></tr>
+    <tr><td>E. Your lens</td><td>10</td><td>Option chosen, request shown (3); content correct and every number traceable (4); fits the format, names nobody, and includes a "not in the sources" item or limitation (3)</td></tr>
+    <tr><td>F. Ethical AI: accuracy and sources</td><td>15</td><td>Step 4: five suggestions judged correctly with a reason that says what is unverified or what a person must do (1 point each, 5), and a sound decision that names who is accountable (3). Part 8: two sources you checked yourself and how, one thing Claude said that did not hold up or was not in the sources and what you did about it, and who is accountable (4); one disclosure line that says AI helped, names a real person as reviewer (you, not a fictional character and never the tool), and is truthful about the checking, with tools listed and what each did (3)</td></tr>
+    <tr><td>G. Mastery evidence</td><td>15</td><td>Coach conversation included and your revision addresses it (or explains why you disagreed)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion H, the third verified finding, a check without AI that uses at least one source outside the packet, and an assumption or limitation in Part 9 (10 extra points: third finding 3, check without AI 4, assumption or limitation 3; graduate scores are scaled to 100). The quiz in Step 7 is graded separately in Canvas, and Part 1 and Step 8 are practice and reflection that are outside these 100 points. You are scored on your reasoning and evidence, not on matching wording.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 20 min</span></h2>
+  <div class="card">
+    <p>10 short questions about Steps 3 and 4 (research memos and authorities, AI and citations, source-grounded prompting, citation tables and cite-checks, calculating with code, writing for the reader, and accuracy and accountability). You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">If no button appears here, your instructor has not posted the link yet. Find the quiz in your Canvas course, in the Module 7 section, or ask your instructor.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 10 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl"><b>First look back at your Step 2 attempt and your Research Memo Template.</b> Then think of a question at work, in an internship, or in another class where you would need a reliable source (a policy, a regulation, a contract, a textbook). How would you get AI to help while keeping every claim tied to a source, and which source would you always open yourself before relying on it? <b>Write 3 to 5 sentences.</b> This is not part of your Canvas submission; it is for you.</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/module7.js"></script>
+</body>
+</html>

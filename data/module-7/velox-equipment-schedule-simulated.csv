@@ -1,0 +1,10 @@
+asset_id,description,plant,cost,contract_signed_date,placed_in_service_date,recovery_class,first_year_deduction_claimed,note
+EQ-25-01,Robotic body-welding line,South Carolina plant,18240000.00,2024-12-09,2025-08-18,7-year,18240000.00,
+EQ-25-02,Paint and finishing system,South Carolina plant,12615000.00,2025-03-14,2025-09-30,7-year,12615000.00,
+EQ-25-03,Final-assembly conveyor,South Carolina plant,2830000.00,2025-02-03,2025-07-21,7-year,2830000.00,
+EQ-25-04,Stamping press,South Carolina plant,2410000.00,2024-11-18,2025-06-10,7-year,2410000.00,
+EQ-25-05,Quality-inspection cameras,South Carolina plant,1148500.00,2025-04-22,2025-08-05,7-year,1148500.00,
+EQ-25-06,Battery test chambers,South Carolina plant,1020000.00,2025-05-12,2025-10-02,7-year,1020000.00,
+EQ-25-07,Engine dynamometers,South Carolina plant,905000.00,,2025-09-15,7-year,905000.00,contract date not recorded in the fixed-asset system
+EQ-25-08,Tool-crib CNC mill,South Carolina plant,742500.00,2025-01-17,2025-05-20,7-year,742500.00,
+EQ-25-09,Parts-delivery robot carts,South Carolina plant,512400.00,2025-01-21,2025-04-08,7-year,512400.00,
