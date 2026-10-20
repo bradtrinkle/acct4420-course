@@ -1,0 +1,11 @@
+VELOX MOTORWORKS | SPECIAL ORDER OFFER (simulated for teaching)
+
+From: the Sales team, for the Cost & Planning group at the South Carolina plant.
+
+1. Customer: a luxury rental-car fleet company (fictional). The customer's name is withheld in this file.
+2. Quantity: 120 cars of the standard Velox model.
+3. Price: $240,000 per car. The average regular selling price is about $279,000, so this is about 14 percent lower.
+4. Delivery: all 120 cars delivered to the customer by December 15, 2026. Velox pays the delivery freight.
+5. Payment: due 90 days after delivery. Regular dealers pay in 30 days.
+6. The customer agrees not to resell the cars for 12 months. Both sides agree not to disclose the price.
+7. The offer expires October 30, 2026.

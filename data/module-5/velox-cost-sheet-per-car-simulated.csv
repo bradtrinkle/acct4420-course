@@ -1,0 +1,11 @@
+line_item,dollars_per_car,how_it_behaves
+"Carbon-fiber panels (the tariff, about 3,140 per car, is already included in this amount)",31000,Changes with the number of cars built
+Other materials,95000,Changes with the number of cars built
+Direct labor,22000,Changes with the number of cars built
+Variable overhead,14000,Changes with the number of cars built
+Freight-out to the customer,2400,Changes with the number of cars built
+Warranty reserve,2700,Changes with the number of cars built
+Fixed overhead allocated,44600,Allocation only: the plant's total fixed overhead does not change with this order
+"Average regular selling price (this is a price, not a cost)",279000,About the average dealer price in 2026
+Overtime labor premium,11000,Extra cost per car built beyond regular-time capacity
+"Expedited carbon-fiber panels, extra cost",3000,Extra cost per car that needs panels bought on the rush schedule

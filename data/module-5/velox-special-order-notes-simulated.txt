@@ -1,0 +1,21 @@
+VELOX MOTORWORKS | SPECIAL ORDER NOTES FROM COST & PLANNING (simulated for teaching)
+
+Prepared by Marcus Delacroix's team, South Carolina plant. Dollar amounts are in dollars unless a line says otherwise.
+
+1. Fixed overhead: the cost sheet shows 44,600 of fixed overhead per car. That is an allocation for reporting. The plant's total fixed overhead (supervisors, depreciation, utilities) does not change if we build these cars.
+
+2. Overtime: the overtime premium applies only to cars built beyond regular-time capacity. Cars that fit inside the unused regular-time capacity carry no premium.
+
+3. Panels: the extra carbon-fiber panels on hand would otherwise be used in the first quarter of 2027, so count them as a normal material cost. Any car that needs more panels than we have on hand needs the rush purchase.
+
+4. Dealers: Sales believes that if dealers learn about this price, they may ask for about 1 percent lower prices on regular sales in Q1 2027. One similar special order two years ago became known to dealers within a quarter. There is no estimate of the chance that this one will.
+
+5. Cost of money: Velox's cost of borrowing is about 8 percent per year. The extra 60 days of payment time (90 days instead of 30) ties up cash, and the cost of that is a real cost of the order. To compute it, use a 365-day year and the total amount the customer owes (cars x price): amount x 8% x 60 / 365.
+
+6. Confidentiality: the customer's name is withheld here, and the price must not be shared with dealers or plant staff. Refer to it as "a fleet customer" in everything you write.
+
+7. Staffing: the plant has about 310 assembly workers on two shifts. Overtime is voluntary under the labor agreement, which assigns voluntary overtime by seniority. The plant manager will own the overtime plan, and no plan has been written yet.
+
+8. Taxes are ignored in this analysis.
+
+WHAT THESE NOTES DO NOT SAY: how likely a leak is; what happens with dealers beyond Q1 2027; whether the customer would reorder; the customer's credit standing; Q4 demand beyond the regular sales plan; whether the regular-time capacity is spread evenly across the quarter.

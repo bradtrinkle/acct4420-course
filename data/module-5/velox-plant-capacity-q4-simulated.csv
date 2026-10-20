@@ -1,0 +1,8 @@
+item,value,unit_or_note
+"Regular-time capacity, Q4 2026",1300,cars per quarter
+"Regular sales plan, Q4 2026 (all will be sold)",1250,cars per quarter
+"Most cars the plant can add on overtime, Q4 2026",100,cars
+Extra carbon-fiber panels on hand beyond the regular plan,45,cars' worth of panels
+"Lead time for more panels, standard",8,weeks (too late for a December 15 delivery)
+"Lead time for more panels, expedited",5,weeks (in time only if ordered by October 30)
+"Regular sales plan, Q1 2027",1150,cars per quarter

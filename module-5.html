@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 5: AI in Management Accounting</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html">Module 2</a><a href="module-3.html">Module 3</a><a href="module-4.html">Module 4</a><a href="module-5.html" aria-current="page">Module 5</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><circle cx="18" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 5 · Week 5 · Rotation 2: South Carolina Plant, Cost &amp; Planning</span>
+<h1 style="margin:10px 0 4px">AI in Management Accounting: Making the Call</h1>
+<p class="hint">You will be able to have AI analyze a business decision, ask it to show its work under best, base, and worst cases, check its results yourself, and make and defend the decision. Plan for about 6.5 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 15 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 5 video from your instructor</b><br><span class="hint" style="color:#ddd">The video has not been posted yet. Keep going: Marcus's message below covers the key points.</span></div></div>
+  <p class="hint" id="videoHelp">The video for this module is not posted yet. Marcus's message below covers what you need to start.</p>
+  <div class="cfo"><b>From the Cost &amp; Planning manager, Marcus Delacroix</b><br>Welcome to the South Carolina plant. This week I need a decision, and I need it before October 30. A rental-car fleet company has offered to buy 120 of our cars at $240,000 each, about 14 percent below our usual price. The cars would go out by December 15. Our plant is nearly full in the fourth quarter, so some of these cars would be built on overtime. Sales wants to say yes. I do not want to say yes or no until I know what it does to our profit, and what it could do to our relationship with our dealers. Use AI to do the heavy lifting, but I am the one who signs the answer, so I need numbers I can trust and a clear recommendation.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Welcome to your second rotation: the South Carolina plant, working for Marcus. This week you will build a reusable analysis template, have AI work out what Marcus's decision would do under different assumptions, check the results yourself, and then make the call. You will also pick the angle that fits your own major. Let's go.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <div class="card">
+    <h3>Module 5 at a glance</h3>
+    <p><b>Who is who:</b> Velox Motorworks is a fictional, publicly traded sports car maker. Marcus Delacroix manages Cost &amp; Planning at the plant in South Carolina (his team figures out what things cost and plans production). You are a new hire at Tallgrass Advisory, the consulting firm training Velox's finance team, and from this week you rotate through Velox departments. Jordan Reyes is your mentor at Tallgrass. All names, companies, and numbers in this course are fictional.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your Step 4 ethics answers, the <b>Special Order Analysis Template</b> you write (this week's reusable piece), the results Claude produced for Velox, your own check of two of them, a one-page recommendation for Marcus, the angle you choose, how you checked for bias and disclosed AI's role, and your coach conversation and revision notes.</p>
+    <p><b>What you need:</b> your own paid Claude account (claude.ai) that lets you attach files to a chat, Excel or Google Sheets (or a calculator), your Jordan Coach project from Module 1, and your Canvas login. Use the same browser and device each time, and do not use a private or incognito window, because your progress saves in this browser only. Once Steps 4 to 6 are complete, <b>Download my submission</b> in Step 6 gives you a copy of your work; until then, your answers are saved only in this browser.</p>
+    <p><b>The 8 steps:</b> 1 Mission brief (15 min, including a video of about 7 minutes) · 2 Try it first (30) · 3 Learn (50) · 4 Ethics checkpoint (30) · 5 First attempt and coach feedback (190) · 6 Mastery attempt (45) · 7 Quiz (20) · 8 Reflection (10). Total: 390 minutes, about 6.5 hours. Graduate students add about 25 minutes for Part 8.</p>
+  </div>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video (if one is posted) and read Marcus's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. <b>Open Claude and ask it whether Velox should accept this order</b>, using only the offer below. Write your own request in your own words, and don't overthink it. This is just to see what AI does with the offer alone.</div></div>
+  <div class="card">
+    <h3>Words you need</h3>
+    <p>A <b>special order</b> is a one-time offer to buy at a price lower than usual. Management accountants help decide whether to take it. Four words from the offer:</p>
+    <table class="t"><tr><th>Word</th><th>What it means here</th></tr>
+    <tr><td><b>Capacity</b></td><td>The most cars the plant can build in a period working normal hours.</td></tr>
+    <tr><td><b>Overtime</b></td><td>Extra hours worked beyond normal hours to build more cars. It costs more per car.</td></tr>
+    <tr><td><b>Payment terms</b></td><td>How soon the customer must pay. "Due in 90 days" means Velox waits three months for its money; regular dealers pay in 30 days.</td></tr>
+    <tr><td><b>Dealers</b></td><td>The independent businesses that buy Velox cars and sell them to the public at the regular price.</td></tr></table>
+    <p class="hint">All amounts on this page are in dollars (not thousands) unless a line says otherwise.</p>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open Claude</b> in a new tab (the button just below), <b>sign in</b> with your own Claude account, and click <b>New chat</b>. Do not use your Jordan Coach project for this.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li>Click <b>Copy the offer</b>. Claude cannot see this page, so the offer must go into your message.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the offer</button></li>
+      <li>In the Claude chat box, <b>type your own request in your own words</b> (the task: should Velox accept this order?). Then <b>press Shift+Enter</b> for a new line, <b>paste the offer</b> (Ctrl+V on Windows, Cmd+V on Mac), and <b>press Enter</b> to send.</li>
+      <li><b>Read the answer</b>, then <b>answer the three questions below</b> in your own words. You will reuse your answers in Step 5, Part 1.</li>
+      <li><b>Save your work for Step 5:</b> copy your request and Claude's answer into a note on your computer (Notepad, Notes, or a Word document). Keeping this chat open is helpful but not required.</li>
+    </ol>
+    <details><summary>See what "Copy the offer" will copy</summary><div class="copybox" id="p2text">Velox Motorworks special order offer (simulated).
+Customer: a luxury rental-car fleet company.
+Quantity: 120 cars of the standard Velox model.
+Price: $240,000 per car. The average regular selling price is about $279,000, so this is about 14 percent lower.
+Delivery: all 120 cars delivered to the customer by December 15, 2026. Velox pays the delivery freight.
+Payment: due 90 days after delivery. Regular dealers pay in 30 days.
+The customer agrees not to resell the cars for 12 months. Both sides agree not to disclose the price.
+The offer expires October 30, 2026.</div></details>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did AI do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What could AI NOT tell you from the offer alone? (For example, what the cars cost to build, or whether the plant has room.)</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. If you were Marcus, what would you want to know before saying yes or no?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">These answers are saved on this device. They are not graded and are not in your submission; they are your starting point for Step 5.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 50 min</span></h2>
+  <p class="hint">Sections 3a to 3g are reading and quick checks (3g ends with one question for you). The accounting you need is in 3a and 3b and is short on purpose: your job is to get AI to do the calculating, check it, and decide. You apply every technique yourself in Step 5.</p>
+
+  <h3>3a. Which costs matter for a decision?</h3>
+  <p>The question is: <b>will Velox be better off with the order than without it?</b> To answer it, compare what the order adds (the money received) with what it adds in cost. Only costs that <b>change because of the decision</b> count. Accountants call these <b>relevant costs</b>. A cost that is the same whether or not Velox takes the order is not relevant.</p>
+  <ul>
+    <li><b>Variable costs</b> rise with each extra car: materials, assembly labor, delivery freight, the warranty reserve. They are relevant.</li>
+    <li><b>Fixed overhead</b> is the plant's costs that do not change with a few more cars: supervisors, depreciation on equipment, utilities. Reports often spread it over the cars built (this is called <b>allocating</b> it), so each car seems to carry, for example, 44,600 of it. But the plant pays the same total either way, so it is <b>not relevant</b> to this decision.</li>
+  </ul>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>The cost sheet shows 44,600 of fixed overhead per car. Should it count against the special order?</p>
+    <div class="qc" data-id="q3a" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Yes, because every car should carry its share of overhead</button><button class="choice" data-i="1">No, because the plant's total fixed overhead is the same whether or not it takes the order</button><button class="choice" data-i="2">Yes, because overhead is always a variable cost</button><button class="choice" data-i="3">It does not matter</button></div>
+      <div class="fb" data-ok="Right. Only costs that change with the decision count." data-no="Think about what the plant pays if it says no. Does the overhead total change?"></div>
+    </div>
+  </div>
+
+  <h3>3b. What each car adds, and how many cars fit</h3>
+  <p>Take the price of a car and subtract the variable costs of building and delivering it. What is left is the <b>contribution margin</b>: what each extra car adds toward the plant's fixed costs and profit. If the contribution margin is positive, each car helps. Two more things change the answer:</p>
+  <ul>
+    <li><b>Capacity.</b> Cars built inside unused regular-time capacity cost only the variable costs. Cars beyond that need overtime, which adds an extra cost per car. So the number of cars that fit in regular time matters.</li>
+    <li><b>Side effects.</b> Slower payment ties up cash, which has a cost. And a low price offered to one customer can leak and make regular customers ask for lower prices too. These are part of the real cost of the order even though they are not on the cost sheet.</li>
+  </ul>
+  <p><b>The cost of waiting for money.</b> If a customer owes you $100,000 and pays 60 days later than usual, and you borrow at 8 percent a year to cover the wait, the wait costs 100,000 × 8% × 60 ÷ 365 = about $1,315. (Use 365 days in a year.)</p>
+  <p><b>Break-even</b> means the point where the order adds exactly nothing, for example the lowest price per car at which the order is worth accepting. In this module, find it before counting the dealer-price risk, and show it both before and after the cost of the extra payment days. AI can find it for you.</p>
+  <p><b>Inputs a special order needs:</b> the number of cars; the price per car; the variable cost per car; the cars that fit in regular time; the overtime limit and the overtime extra cost per car; the extra cost of any rush parts and how many cars need them; the payment days and the borrowing rate; and the size of the price-leak risk. You will use a list like this to write your template in Step 5.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>A special order adds 100 in contribution per unit built in spare regular-time capacity, but only 60 per unit built on overtime. What does that tell you?</p>
+    <div class="qc" data-id="q3b" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">Overtime units should be left out of the analysis</button><button class="choice" data-i="1">All units add the same amount</button><button class="choice" data-i="2">How many units fit in regular time changes the total, so capacity matters</button><button class="choice" data-i="3">The price must be wrong</button></div>
+      <div class="fb" data-ok="Yes. Units beyond regular-time capacity cost more, so the split matters." data-no="Which units are cheaper to build? What decides how many of each there are?"></div>
+    </div>
+  </div>
+
+  <h3>3c. Let AI do the work: a real example</h3>
+  <p>Here is a made-up decision at <b>Prairie Tool &amp; Die</b>, a small Velox supplier (not Velox itself, so this is not your answer). Prairie has been offered a special order of 1,000 steel brackets at $38.00 each, due this month. Its regular price is $52.00. Each bracket costs $22 in materials, $6 in labor, and $3 in variable overhead to build ($31 in all), plus $9 of allocated fixed overhead that does not change. Regular customers buy about 4,300 brackets a month, so the plant's fixed overhead is $38,700 a month ($9 × 4,300). Regular time has room for 700 more brackets; the other 300 would need overtime at $5 extra each. A manager worries regular customers may ask for a 2% price cut if they learn of the $38 price. We gave Claude these facts and asked it to explain three options and three cases. <b>This is Claude's real output, condensed:</b></p>
+  <table class="t"><tr><th>Option</th><th>How Claude worked it out</th><th>Result</th></tr>
+  <tr><td><b>1. Accept as offered ($38)</b></td><td>700 regular-time brackets: ($38 − $31) × 700 = $4,900. 300 overtime brackets: ($38 − $36) × 300 = $600.</td><td><b>+$5,500</b></td></tr>
+  <tr><td><b>2. Decline</b></td><td>No sale, so no added revenue or cost.</td><td><b>$0</b></td></tr>
+  <tr><td><b>3. Counter at $41 for all 1,000</b></td><td>700 × ($41 − $31) = $7,000. 300 × ($41 − $36) = $1,500. If the customer refuses, the result is $0.</td><td><b>+$8,500 if accepted</b></td></tr></table>
+  <table class="t"><tr><th>Case (accepting as offered)</th><th>What happens</th><th>Result</th></tr>
+  <tr><td><b>Best and base</b></td><td>Regular customers never ask for a cut. Claude said the files give no basis for a better outcome, so best and base are the same.</td><td>+$5,500</td></tr>
+  <tr><td><b>Worst</b></td><td>Regular customers get a 2% cut: $52 × 2% = $1.04 on all 4,300 regular brackets = $4,472 lost.</td><td>$5,500 − $4,472 = <b>+$1,028</b></td></tr></table>
+  <p><b>What to notice:</b> (1) Claude kept the $9 of fixed overhead out and explained that counting it would make the order look like a $2 loss per bracket, which is misleading because the $9 does not change. (2) For every number it gave the formula, the numbers it used, and a check. (3) It also found the break-even price cut (about 2.5% of the regular price) and listed what is <b>not in the files</b>, such as how likely a leak is and whether the customer would accept $41. It did not invent a better best case. Your job is to get this kind of answer for Velox, and then to check it.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>In the example, why did Claude leave the $9 of fixed overhead out of the decision?</p>
+    <div class="qc" data-id="q3c" data-correct="3" data-req>
+      <div class="choices"><button class="choice" data-i="0">It made a mistake</button><button class="choice" data-i="1">Fixed overhead is always zero</button><button class="choice" data-i="2">It wanted the order to look better</button><button class="choice" data-i="3">The total fixed overhead is paid whether or not Prairie takes the order, so it is not a relevant cost</button></div>
+      <div class="fb" data-ok="Right. Only costs that change with the decision count." data-no="Look at the example text: does the $38,700 total change if Prairie takes the order?"></div>
+    </div>
+  </div>
+
+  <h3>3d. Write the request once: a template with defined inputs</h3>
+  <p>The next special order will have different numbers but the same questions. Instead of retyping a request each time, write it once as a <b>template</b>: a request with named blanks for the things that change. Each blank is an <b>input</b> with a name in square brackets, a unit, and a note on where to find it. Here is a short example for a <i>different</i> job, checking a month's travel expenses:</p>
+  <div class="copybox" style="user-select:text">Check these travel expenses against the policy.
+Inputs:
+[EMPLOYEE NAME] (text, from the expense report)
+[TOTAL CLAIMED] (dollars, from the expense report total line)
+[DAILY LIMIT] (dollars per day, from the travel policy)
+[TRIP DAYS] (number of days, from the trip dates)
+Show the formula, the numbers used, and the result. List anything you could not check. A person must confirm the total before it is paid.</div>
+  <div class="tech"><p><b>Technique:</b> Prompt template with defined inputs (also called a parameterized prompt: a request with variables)</p><p><b>Why it helps:</b> The next time, you only change the inputs, so the request does not get shorter or sloppier. Defining each input (name, unit, source) also tells you exactly which numbers to look up and check. In Step 5 you write your own template for special orders.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>What is the main benefit of marking [TOTAL CLAIMED] with its unit and where to find it?</p>
+    <div class="qc" data-id="q3d" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">You know exactly what to enter and can check it against the source</button><button class="choice" data-i="1">It makes the AI faster</button><button class="choice" data-i="2">It removes the need to check the answer</button><button class="choice" data-i="3">It makes the request longer on purpose</button></div>
+      <div class="fb" data-ok="Yes. Defined inputs make the request repeatable and checkable." data-no="Think about what you need to type in and where you would check it."></div>
+    </div>
+  </div>
+
+  <h3>3e. Ask "what if": best, base, and worst</h3>
+  <p>A single answer hides the risk. <b>Ask AI to run the decision under different assumptions</b>: a <b>base case</b> (the facts as given), a <b>best case</b>, and a <b>worst case</b>. Then ask where the answer flips: for example, how big a price cut by regular customers would erase the profit. If the files do not support a different case, AI should say so, as Claude did in the example. And have AI list its <b>assumptions</b> and what is <b>not in the data</b>.</p>
+  <div class="tech"><p><b>Technique:</b> Scenario analysis and sensitivity analysis (what-if prompting, finding the break-even point), together with listing assumptions</p><p><b>Why it helps:</b> A decision maker needs to know not just the expected result but how wrong it could go and what would change the answer. AI can run many what-ifs in seconds, and you can check one or two of them by hand.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>AI says accepting adds 5,500 in the base case and 1,028 in the worst case. What does the worst case tell the manager?</p>
+    <div class="qc" data-id="q3e" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">The order will definitely add 1,028</button><button class="choice" data-i="1">Even if the main risk happens, the order is still slightly positive, so the risk alone does not decide it</button><button class="choice" data-i="2">The base case is wrong</button><button class="choice" data-i="3">The order should always be declined</button></div>
+      <div class="fb" data-ok="Right. The worst case shows how much cushion there is." data-no="What does a positive result in the worst case mean about the risk?"></div>
+    </div>
+  </div>
+
+  <h3>3f. AI analyzes. You decide.</h3>
+  <p>AI can calculate options and explain their results. It cannot decide, because it does not own the consequences. When you recommend, write it so that the reader can act on it: start with the <b>recommendation</b> (accept, decline, or counter-offer on stated terms), give the <b>few numbers that drive it</b>, say what <b>conditions or events would change your mind</b>, and list <b>what you do not know</b>. A person signs the decision; the AI's work is an input.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Which opening sentence of a recommendation is best for a busy manager?</p>
+    <div class="qc" data-id="q3f" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">"There are many factors to consider in this complex decision."</button><button class="choice" data-i="1">"AI says the order is probably fine."</button><button class="choice" data-i="2">"I recommend accepting only if payment is due in 60 days, because the order adds about 40,000 even after the price-cut risk."</button><button class="choice" data-i="3">"The numbers are in the attached tables."</button></div>
+      <div class="fb" data-ok="Yes. A clear recommendation, a condition, and the number behind it." data-no="Which sentence tells Marcus what to do and why, right away?"></div>
+    </div>
+  </div>
+
+  <h3>3g. Pick your technique</h3>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t3g">In one sentence, which of the techniques in 3d and 3e do you think will help you most on a real task, and why? (This is saved for you. It is not graded and is not in your submission.)</label>
+    <textarea id="t3g" data-save="s3.g" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint: bias <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>If Velox accepts the order, about 70 cars would be built on overtime, and someone has to decide <i>who</i> works that overtime. That is exactly the kind of job where AI can quietly treat people unfairly. Area 3 of the <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a> says: <b>Bias</b>. Ask whether the data or the AI's answer could treat a group unfairly, and test for it. Judge the five suggestions below the way a fair-minded manager would.</div></div>
+  <div class="card">
+    <b>The rule:</b> a plan that decides who gets an opportunity must not depend on age, health, medical or family leave, or any other personal trait, <b>or on a stand-in for one</b> (a <b>proxy</b>: a measure that quietly stands in for something you must not use, such as attendance records standing in for health), and it must not rely on data that <b>leaves a group out</b>. A rule set by the labor agreement, such as seniority, is allowed. The plan must also be <b>checked by a person</b> for patterns in who actually gets the opportunity: reviewing the results by group is how a person checks for bias; it does not mean using the trait to decide. A <b>named person</b> must be accountable for the plan, never the AI. You still follow the whole policy (its five areas are confidentiality and privacy, accuracy, bias, transparency and disclosure, and human accountability); area 3 is the focus of this step and of Part 7, and the policy link above is optional reading.
+  </div>
+  <p>Marcus asked Claude for suggestions on how to staff the overtime and where to buy the rush panels. There are about 310 assembly workers on two shifts, and overtime is voluntary under the labor agreement. Below are five suggestions Claude made, with the facts about each. <b>Judge each one against the policy.</b></p>
+  <div id="situations"></div>
+  <p class="hint"><b>How to choose a verdict:</b> choose <b>Meets the policy</b> only if the suggestion does not depend on a personal trait or a proxy for one, does not rely on data that leaves a group out, and a person checks the results for patterns. If either is missing, choose <b>Does not meet the policy</b> and say in your reason what the suggestion relies on or what is missing.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="e4d"><b>What would you do with Claude's overtime and supplier suggestions?</b></label>
+    <select id="e4d" data-save="e4.decision" data-req data-sel><option value="">Choose one…</option><option>Use the AI's ranking because it is based on data</option><option>Use a written rule that does not depend on age, health, leave, or similar traits, keep overtime voluntary, and have a person review who got overtime each month</option><option>Skip the review because overtime is voluntary</option></select>
+    <label class="lbl" for="e4w"><b>Why?</b> Mention which person is accountable for the overtime plan (for example, the plant manager, who owns it, or a named reviewer; never the AI) and what you would check before it is used.</label>
+    <textarea id="e4w" data-save="e4.why" data-min="60" data-req></textarea>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 190 min</span></h2>
+  <p class="hint">Every box needs a real answer: a box that is too short (for example, a pasted answer of only a few words) will not let you continue, and the message under the page tells you which box is still needed. In this step, "Part 1" to "Part 8" are the sections of the assignment. The grading table (rubric) is at the bottom of Step 6; the file you upload to Jordan in the Setup section just below covers the same criteria and points in more detail, so you can read it first.</p>
+
+  <h3>Setup: add the Module 5 rubric and data to your Jordan Coach (about 10 minutes)</h3>
+  <p class="hint">You built your Jordan Coach project in Module 1, and its instructions still work. If you did not build it, go to <a href="module-1.html">Module 1</a>, Step 5, and build it first (about 20 minutes extra), then come back here.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1"><b>Download the Module 5 rubric</b> to your computer: <a class="btn btn-ghost btn-sm" href="downloads/module-5-rubric.md" download>Download module-5-rubric.md</a> (If it opens in the browser, right-click the button and choose <b>Save link as</b>.)<br>Then, in your Jordan Coach project, <b>find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload</b> the file. Leave the other files there.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c2" data-req id="c2"><label for="c2"><b>Also upload the four Velox special-order files</b> to your Jordan Coach project, in the same way, so that Jordan can compare your work with them when you ask for feedback. (Do your own check in Part 4 without Jordan first.) You can download them from the links in Part 3 below.</label></div>
+
+  <h3 style="margin-top:28px">Assignment: Making the Call</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Marcus needs a decision on the fleet order. <b>Write a reusable analysis template, use it to have AI work out three options and three cases, check two results yourself, then make the call in a one-page recommendation for Marcus and choose the angle that fits your major.</b> Everything you type below saves in this browser and builds your submission automatically, so use the same browser and device.</div></div>
+
+  <label class="lbl" for="stuName"><b>Type</b> your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420). Check this only if you are in 5420. Part 8 will appear after Part 7 once you tick this box (about 25 extra minutes; finish it before you copy your draft for Jordan), where you verify a third finding, do a check that does not use AI, and name an assumption or limitation.</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Record your offer-only try (from Step 2) · about 5 min · practice, not graded</h3>
+  <label class="lbl" for="r1p"><b>Paste your Step 2 request</b> from the note you saved (just your request, not the offer)</label>
+  <textarea id="r1p" data-save="s5.r1p" data-min="15" data-req></textarea>
+  <label class="lbl" for="r1o"><b>Summarize what AI gave you</b> in two or three sentences</label>
+  <textarea id="r1o" data-save="s5.r1o" data-min="30" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="r1w"><b>Name two things you could not tell</b> from the offer alone (for example, what the cars cost to build, or whether the plant has room)</label>
+  <textarea id="r1w" data-save="s5.r1w" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 2 · Write your Special Order Analysis Template · about 30 min</h3>
+  <p class="hint">Write the template <b>before</b> you look at Velox's files, from what you learned in Step 3. It is this week's reusable piece: Velox will have another special order next year.</p>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Think about what any special-order decision needs</b>: use the list of inputs at the end of Step 3b, and what you learned in 3a. You have not opened Velox's files yet, so name each source in general terms (for example "the cost sheet" or "the plant capacity file"); you will find the exact lines in Part 3.</li>
+      <li><b>Write your template in your own words</b> in the box below. It must have: <b>at least six inputs</b>, each with a name in square brackets, a unit, and where to find it; a rule that Claude <b>shows the formula, the numbers used, and the result</b> for every calculation; a request to <b>explain what happens under three options</b> (accept as offered, decline, counter-offer) <b>and under best, base, and worst cases</b>; a rule to <b>list assumptions and anything "not in the data"</b>; and a <b>final check line</b> saying what a person must check before relying on the answer.</li>
+      <li>Do not copy the travel-expense example; it is a different job. <b>Paste your finished template</b> into the box.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="tpl"><b>Paste your Special Order Analysis Template</b></label>
+  <textarea id="tpl" data-save="s5.tpl" data-min="400" data-req style="min-height:240px"></textarea>
+
+  <h3 style="margin-top:22px">Part 3 · Run the analysis for Velox · about 30 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the four Velox files</b> to your computer. If a file opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>:
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-5/velox-special-order-terms-simulated.txt" download>Order terms</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-5/velox-cost-sheet-per-car-simulated.csv" download>Cost sheet per car</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-5/velox-plant-capacity-q4-simulated.csv" download>Plant capacity</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-5/velox-special-order-notes-simulated.txt" download>Notes from Cost &amp; Planning</a></div></li>
+      <li><b>Start a new chat in Claude</b> (not your Jordan Coach), <b>click the + or paperclip</b> in the chat box, and <b>attach all four files</b>.</li>
+      <li><b>Paste your template</b> into the chat with <b>every input filled in</b> from the files. Look up each input yourself, because you will have to defend them. If your template is missing an input the files make necessary, add it (or fix one) and keep a copy of the version you actually sent. Send it.</li>
+      <li><b>Read the answer.</b> If something looks wrong or unclear, <b>tell Claude what to fix</b>. The answers you paste below should be Claude's final versions after any fixes.</li>
+      <li><b>Send a follow-up</b> asking for the <b>break-even price</b>: the lowest price per car at which the order adds nothing to Velox's profit. Tell Claude to work out the cost of the extra payment days on the offered $240,000 price, to give the break-even price both before and after that cost, and to leave out the dealer-price risk.</li>
+      <li><b>Send one more follow-up</b> asking Claude to <b>argue the opposite of your leaning</b>: the strongest case for the choice you currently like least. Note what changed and what did not. You will use this in Part 7.</li>
+      <li><b>Come back here</b> and fill in the boxes below.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="p3req"><b>Paste the request you sent</b> (your template with the inputs filled in, and your follow-ups about the break-even price and the opposite case; the requests only, not the answers)</label>
+  <textarea id="p3req" data-save="s5.p3req" data-min="200" data-req style="min-height:140px"></textarea>
+  <label class="lbl" for="p3res"><b>Paste Claude's analysis of the three options</b> (accept, decline, counter-offer) with the formulas and numbers it showed</label>
+  <textarea id="p3res" data-save="s5.p3res" data-min="200" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="p3scen"><b>Paste Claude's best, base, and worst cases</b> and its break-even price (before and after the payment-days cost)</label>
+  <textarea id="p3scen" data-save="s5.p3scen" data-min="150" data-req style="min-height:160px"></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Check two findings yourself · about 30 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Choose two findings</b> from Claude's answers in Part 3 (the final versions you pasted there) that matter most for Marcus's decision. A finding is a number or a claim, for example "the contribution per car is 90,000" (a made-up value, not Velox's) or "the order needs no overtime". Choose two different findings.</li>
+      <li><b>Open the files</b> in Excel or Google Sheets (or read them in a text editor). <b>Do not ask AI to check them.</b></li>
+      <li>For each finding, <b>find the inputs</b> in the files, <b>do the arithmetic yourself</b> (a spreadsheet formula or a calculator), and <b>compare your result</b> with what Claude said. Then <b>decide what to do about it</b>.</li>
+    </ol>
+  </div>
+  <div id="vrows"></div>
+
+  <h3 style="margin-top:22px">Part 5 · Make the call: a recommendation for Marcus · about 20 min</h3>
+  <p class="hint">Write a one-page recommendation that Marcus could sign off on. Use AI to help, but you are accountable for every word and number, whoever drafted it. <b>Your first sentence must state your recommendation</b> (accept, decline, or counter-offer, with the terms). Then give the few numbers that drive it, the conditions or events that would change the decision, and what we do not know. Use only the files. <b>Any of the three decisions is acceptable if your numbers support it.</b> A decision to decline must name the risk that, in your judgment, outweighs the worst-case result Claude found. A counter-offer must say it has to be settled by October 30, or the rush panels will not arrive in time. Write the page as if it could be forwarded: never name the customer (the files call it "a fleet customer"). Keep it to <b>at least 60 and at most 300 words</b>.</p>
+  <label class="lbl" for="dec"><b>Which did you recommend?</b></label>
+  <select id="dec" data-save="s5.dec" data-req data-sel><option value="">Choose one…</option><option>Accept as offered</option><option>Decline</option><option>Counter-offer (on terms I state in the memo)</option></select>
+  <label class="lbl" for="ppr"><b>Paste the request you used</b> to have AI help draft or improve your memo (it must tell AI who the reader is)</label>
+  <textarea id="ppr" data-save="s5.ppr" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="ppage"><b>Type or paste your final recommendation for Marcus</b> (60 to 300 words; pasting text that AI helped edit is fine as long as you disclose that in Part 7; do not include the disclosure line here, you write it in Part 7)</label>
+  <textarea id="ppage" data-save="s5.ppage" data-req style="min-height:240px"></textarea>
+  <div class="hint" id="wc">0 words (60 to 300)</div>
+
+  <h3 style="margin-top:22px">Part 6 · Choose your lens · about 25 min</h3>
+  <p class="hint">Marcus wants a second piece, written from the point of view of the part of the business you care about. <b>Pick one of the six options below.</b> They are equal in effort and are graded with the same criteria. Each option has its own length. Whatever you choose: <b>show the request you used</b>, make <b>every number traceable</b> to the files, and include <b>at least one "not in the data" item or limitation</b>. Never name the customer in this piece either (the files call it "a fleet customer").</p>
+  <div id="angleCards"></div>
+  <label class="lbl" for="angle"><b>Which option did you choose?</b></label>
+  <select id="angle" data-save="s5.angle" data-req data-sel></select>
+  <label class="lbl" for="angreq"><b>Paste the request you used</b> to have AI help with this piece</label>
+  <textarea id="angreq" data-save="s5.angreq" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="angtext"><b>Type your final piece</b> (use the length given for your option)</label>
+  <textarea id="angtext" data-save="s5.angtext" data-min="300" data-req style="min-height:220px"></textarea>
+
+  <h3 style="margin-top:22px">Part 7 · Bias check and how AI contributed · about 10 min</h3>
+  <label class="lbl" for="bchk"><b>Describe one check for bias</b> that you actually made on Claude's analysis or on your own recommendation, and what you found. For example: the opposite-case follow-up you sent in Part 3 (what changed?), checked whether the files cover every cost and every group affected (the customer, dealers, plant workers), or checked who would be affected by the staffing of the overtime. If you found nothing, say what you looked for.</label>
+  <textarea id="bchk" data-save="s5.bchk" data-min="60" data-req style="min-height:90px"></textarea>
+  <label class="lbl" for="foot"><b>Type your disclosure line</b> for your recommendation to Marcus and your Part 6 piece. It must say AI helped, name a real person as reviewer, and be truthful about how far you checked. <b>Name yourself as the reviewer</b>, because you are the real person who checked it. Do not name Marcus or any other character: they are fictional and have not seen your work. Say exactly what you checked. Example wording, to use <b>only if it is true for you</b>: "I recomputed 2 of the findings; the rest were not independently checked." <b>One line covers both pieces</b> and appears in section F of your submission.</label>
+  <textarea id="foot" data-save="s5.foot" data-min="40" data-req style="min-height:70px"></textarea>
+  <label class="lbl" for="disc"><b>List every AI tool you used</b> in this module (Claude in Step 2, Claude for your analysis, your Jordan coach, and any others) and what each did.</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 8 · Graduate students only · about 25 min</h3>
+    <p class="hint">As a graduate student you do three things beyond the undergraduate work: verify a <b>third finding</b>, do a <b>check that does not use AI</b>, and name an <b>assumption or limitation</b>. In Part 4 you checked two findings. The check in the second box is separate from your third finding.</p>
+    <label class="lbl" for="g1"><b>Third finding:</b> choose a third number or claim from Claude's answers (not one you used in Part 4). Say what Claude reported, the inputs you found in the files, your own arithmetic, and whether it matches</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2"><b>Check without AI:</b> check one more thing with a method that does not use AI. For example, rebuild the whole order in a spreadsheet, start to finish, from the files (price, variable costs, the regular-time and overtime split, the rush-panel cost, and the cost of the extra payment days) and compare your total with Claude's base case. Describe what you did and what you found</label><textarea id="g2" data-save="s5.g2"></textarea>
+    <label class="lbl" for="g3"><b>Assumption or limitation:</b> name at least one assumption or limitation that affects your decision (for example, that a leak would cut Q1 prices by only 1 percent while no one has estimated how likely a leak is, or that Q4 demand stays at the plan) and explain how it could change what Marcus should do</label><textarea id="g3" data-save="s5.g3"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Everyone: now get feedback from Jordan (about 30 min)</h3>
+    <p><b>Click the button</b> to copy your whole draft (everything you typed in Steps 4 and 5). <b>Open a new chat inside your Jordan Coach project</b> (use the same chat for every round of feedback), <b>paste it</b>, and <b>ask Jordan for feedback</b> against the Module 5 rubric, in your own words.</p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+    <p class="hint" style="margin-bottom:0"><b>Read Jordan's feedback</b>, then continue to Step 6.</p>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 45 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b><b>Go back to Step 5, improve your answers</b> (everything you typed is still there), then <b>return to Step 6</b>. To get another round of feedback, click <b>Copy my draft for Jordan</b> in Step 5 again and paste it into the same Jordan chat. You can do this as many times as you like; plan about 30 more minutes for each extra round. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to revise</button></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev">What did you change because of Jordan's feedback?</label>
+    <textarea id="rev" data-save="s6.rev" data-min="30" data-req></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans"><b>Paste your full Jordan Coach conversation here</b></label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in your Jordan Coach chat, <b>click in the conversation</b>, <b>press Ctrl+A</b> (Cmd+A on Mac), <b>copy</b>, and <b>paste here</b>. Then <b>delete</b> any menu or sidebar text before your first message to Jordan or after the last reply. It will be long, and that is fine. If it is very long, you may delete repeated copies of your draft and keep Jordan's feedback and your replies.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0"><b>Open the downloaded file in Word</b> and check that every section has your text. (If Word warns about the file format, choose <b>Yes</b> or <b>Open</b>; that is expected.) Canvas accepts this file type. Then <b>upload it to the Module 5 assignment, "Making the Call," in Canvas</b>. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Analysis Template</td><td>10</td><td>At least six inputs, each with a name, unit, and source (3); a rule to show the formula, numbers, and result (2); a request for three options and best, base, and worst cases (2); a rule to list assumptions and "not in the data" (2); a final check line saying what a person must check (1)</td></tr>
+    <tr><td>B. Running the analysis</td><td>15</td><td>Inputs filled in correctly from the files (5); results show contribution per car, the regular-time and overtime split, and what happens under each option (5); scenarios include the dealer-price risk and payment-terms cost from the notes (3); a break-even price asked for and shown (2)</td></tr>
+    <tr><td>C. Verification</td><td>20</td><td>Two findings, 10 points each: the finding quoted (2), your own arithmetic from the files shown (4), a verdict that is correct against the files (3), and what you did about it (1)</td></tr>
+    <tr><td>D. Decision memo for Marcus</td><td>15</td><td>60 to 300 words; any of the three decisions earns credit if the numbers support it, and a decline names the risk that outweighs the worst case; recommendation in the first sentence (3); the numbers that drive it, accurate and traceable (4); conditions that would change the decision (3); what we do not know (2); written for Marcus, and the request names him (3)</td></tr>
+    <tr><td>E. Your lens</td><td>10</td><td>Option chosen, request shown (3); content correct and every number traceable (4); fits the format and includes a "not in the data" item or limitation (3)</td></tr>
+    <tr><td>F. Ethical AI: bias</td><td>15</td><td>Step 4: five suggestions judged correctly with a reason that names what the suggestion relies on or what is missing (1 point each, 5), and a sound decision that names who is accountable (3). Part 7: a bias check you actually made, with what you found (4); one disclosure line that says AI helped, names a real person as reviewer (you, not a fictional character and never the tool), and is truthful about the checking, with tools listed and what each did (3)</td></tr>
+    <tr><td>G. Mastery evidence</td><td>15</td><td>Coach conversation included and your revision addresses it (or explains why you disagreed)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion H, the third verified finding, a check without AI, and an assumption or limitation in Part 8 (10 extra points: third finding 3, check without AI 4, assumption or limitation 3; graduate scores are scaled to 100). The quiz in Step 7 is graded separately in Canvas, and Part 1 and Step 8 are practice and reflection that are outside these 100 points. You are scored on your reasoning and evidence, not on matching wording.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 20 min</span></h2>
+  <div class="card">
+    <p>10 short questions about Steps 3 and 4 (which costs matter, contribution and capacity, what AI should show, templates with defined inputs, scenarios, writing a recommendation, and bias). You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">If no button appears here, your instructor has not posted the link yet. Find the quiz in your Canvas course, in the Module 5 section, or ask your instructor.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 10 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl"><b>First look back at your Step 2 attempt and your Special Order Analysis Template.</b> Then think of a decision you have to make at work, in an internship, or in another class (a purchase, a price, a plan). How would you get AI to analyze it, and which check would you never skip before deciding? <b>Write 3 to 5 sentences.</b> This is not part of your Canvas submission; it is for you.</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/module5.js"></script>
+</body>
+</html>
