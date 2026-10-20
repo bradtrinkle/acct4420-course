@@ -1,0 +1,17 @@
+VELOX MOTORWORKS | INTERNAL AUDIT NOTES (simulated for teaching)
+
+Prepared by Nadia Ferreira, Internal Audit. Dollar amounts are in dollars. People are identified only by ID (A-xxx for approvers, E-xxxx for employees). Refer to people by ID only.
+
+1. Approval limit: a payment of $5,000.00 or more needs a second approver. A payment under $5,000.00 needs one approver.
+2. Normal buying process: a purchase order (PO), proof the goods arrived, and the vendor's invoice should match before a payment is made. This is called a three-way match. Small recurring payments to long-standing vendors may be paid on an approved invoice.
+3. The tip: an anonymous caller to the ethics hotline said "something is not right with a vendor that was set up very fast in Purchasing." The caller gave no names and no vendor.
+4. New vendors: a new vendor needs a signed tax form (a W-9) and a manager's approval. The vendor list shows the date added and the user ID that added each vendor.
+5. Bank check by IT: the last four digits of the bank account for vendor V-3318 match the last four digits of the payroll direct-deposit account of one employee, E-4471. Only the last four digits were compared. The full numbers have not been compared. Velox has about 3,500 employees.
+6. Heartland Facility Services (V-1042) is paid a fixed monthly fee of 3,450.00 for each of 24 sites under contract HF-2025-07.
+7. Great Plains Steel (V-1008): a credit memo, CM-2210, for 18,640.00 was issued on October 2, 2026. The refund has not yet been received.
+8. Report wording: Internal Audit reports describe indicators that need follow-up by a person. They do not state that anyone committed fraud, and they do not name individuals.
+
+BENFORD'S LAW: expected share of payments whose first digit is each of 1 to 9 in many natural sets of money amounts:
+1: 30.1%   2: 17.6%   3: 12.5%   4: 9.7%   5: 7.9%   6: 6.7%   7: 5.8%   8: 5.1%   9: 4.6%
+
+WHAT THESE NOTES DO NOT SAY: whether goods or services were received from any vendor; whether E-4471 and A-212 know each other; who in Purchasing requested any purchase; anything about payments before July 1, 2026; the contract documents; the full bank account numbers; how this vendor was found.

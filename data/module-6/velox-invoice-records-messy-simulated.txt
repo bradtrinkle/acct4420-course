@@ -1,0 +1,98 @@
+VELOX MOTORWORKS | ACCOUNTS PAYABLE INVOICE RECORDS, 14 ITEMS (simulated for teaching)
+
+These are copies of invoices and emails exactly as they arrived. They are messy on purpose: dates, amounts, and names are written in different ways.
+
+=== RECORD 1 ===
+From: orders@brightline-ind-supply.example
+To: ap@velox.example
+Date: Wed, Jul 22
+Subject: RE: urgent - please pay today
+
+Hi AP team, attaching invoice BI-1019 for the shop floor gloves and wipes we rushed over. total due $4,785.50. Sorry there's no PO yet, A-212 OK'd it by phone this morning. If you can release payment tomorrow that would be great. Thx! - Brightline Industrial Supply LLC
+
+=== RECORD 2 ===
+HEARTLAND FACILITY SERVICES                         INVOICE
+Invoice no.: HF-0901-04          Invoice date: 09/01/2026
+Bill to: Velox Motorworks, Site 04
+Service: monthly cleaning and grounds, September 2026
+Contract: HF-2025-07       Amount due: 3,450.00 USD       Terms: net 30
+Approved: A-109
+
+=== RECORD 3 ===
+Great Plains Steel Inc.   -   Invoice GP-88213
+Date of invoice: July 29, 2026       Your PO: 4500123987
+Item: rolled steel coil, 2 shipments        Total: $18,640.00
+Terms: net 30       Approved for payment by A-148 (second approval on file)
+
+=== RECORD 4 ===
+INVOICE (scanned copy, hand-signed)
+Brightline Industrial Supply LLC, PO Box 1187, Altoona IA
+Inv # BI-1020      Date 7/22/26
+Bill to: Velox Purchasing
+Safety supplies (misc)                      $4,630.00
+Terms net 10. No PO number on file. Approved A-212
+
+=== RECORD 5 ===
+From: billing@cedarvalleypaper.example
+Date: 6 Aug 2026
+Subject: Invoice CV-30412
+
+Please find invoice CV-30412 attached. Printer paper and packaging film, PO 4500123552. Amount: $2,310.45, terms net 30. Thank you for your business! Approved by A-131 on receipt.
+
+=== RECORD 6 ===
+From: orders@brightline-ind-supply.example
+Date: 11 Aug 2026
+Subject: invoice BI-1044
+
+Invoice BI-1044 dated 8/11/26 is for four thousand nine hundred forty dollars ($4,940.00 even) for the pallet of shop supplies. No PO again, sorry! A-212 approved. Payment terms are net 10, thanks.
+
+=== RECORD 7 ===
+Midland Electric Motors, Inc.                 INVOICE ME-5521
+Invoice date 18-AUG-2026       Customer PO 4500124008
+Motor assemblies, 6 units                     27,450.00
+Terms: 2/10 net 30 (2% discount if paid within 10 days)
+Approved: A-166, second approval A-104
+
+=== RECORD 8 ===
+Invoice BI-1058 dated 8/27/26 from Brightline Industrial Supply LLC. Items: industrial supplies, assorted. Total due: see attached statement. Net 10. No PO. Approved: A-212.
+
+=== RECORD 9 ===
+From: ar@greatplainssteel.example
+Date: Aug 12, 2026
+Subject: duplicate payment on GP-88213
+
+We received two payments of $18,640.00 from you for invoice GP-88213, one on 7/31 and one on 8/11. We will issue a credit memo. Please let us know if you want a refund or want to apply it to the next order. Regards, Great Plains Steel accounts receivable.
+
+=== RECORD 10 ===
+HEARTLAND FACILITY SERVICES                         INVOICE
+Invoice no.: HF-0901-11          Invoice date: 09/01/2026
+Bill to: Velox Motorworks, Site 11
+Service: monthly cleaning and grounds, September 2026
+Contract: HF-2025-07       Amount due: $3,450.00       Terms: net 30
+Approved: A-109
+
+=== RECORD 11 ===
+Northfield Logistics - freight invoice NL-20931
+Dated 09/22/2026. Truckload shipments, Des Moines to Spartanburg, Sept. 14-19. PO 4500124377. Amount due: $6,915.00. Net 30.
+Approved by A-173; second approver A-205.
+
+=== RECORD 12 ===
+---------- Forwarded message ----------
+From: Purchasing intake
+Date: Aug 3, 2026
+Subject: FW: Brightline invoice BI-1033
+
+Forwarding, see below. I still do not have a W-9 (tax form) on file for this vendor. Invoice BI-1033 dated 8/3/2026 is $4,455.20. A-212 says it is fine to pay.
+
+=== RECORD 13 ===
+Ames Safety Equipment | Invoice AS-7714 | 09/09/2026
+Ref PO 4500124162 | Eye protection and gloves, 40 cases
+Subtotal 1,284.60   Tax 0.00   TOTAL DUE $1,284.60   Net 30
+Approved A-190
+
+=== RECORD 14 ===
+From: orders@brightline-ind-supply.example
+Date: Sep 14
+Subject: Sept invoice BI-1077
+
+Invoice BI-1077, 9/14/2026, total $4,880.40 for maintenance supplies. Still no PO on our end, A-212 knows about it. Please pay within 10 days. Thanks - Brightline
