@@ -1,37 +1,46 @@
-VELOX TAX SOURCE PACKET (simulated study material)
+VELOX TAX SOURCE PACKET (excerpts from IRS documents, plus company facts)
 Last updated: October 2026
 
-What this is: a short set of numbered source notes (S1 to S8) that your instructor wrote for this course, paraphrasing published tax guidance. Use only these notes as the sources you give Claude in this module. They are written for a class exercise, are not tax advice, and tax law changes, so a real tax professional would read the original documents (see the end of this packet). The notes are labeled S1 to S8 so you can cite them.
+What this is: a short set of numbered source notes (S1 to S8) for a class exercise. S1 to S6 are word-for-word excerpts from official IRS documents: IRS Notice 2026-11, "Interim Guidance on Additional First Year Depreciation Deduction under Section 168(k)", and IRS Publication 946 (2025), "How To Depreciate Property". The excerpts are exact; only the numbering and the headings are ours, and a few phrases are shortened where marked with "...". S7 gives facts about Velox, and S8 lists what this packet does not cover. This is a class exercise and not tax advice. Tax law changes, and a real tax professional would read the full original documents (listed at the end). Use only these notes as the sources you give Claude in this module, and cite them by label (S1 to S8).
 
-S1. The 100 percent rule (Internal Revenue Code section 168(k), as amended by Public Law 119-21, enacted July 4, 2025)
-"Bonus depreciation" lets a business deduct part of the cost of qualifying property in the first year, instead of spreading the deduction over several years. For qualifying property that a business acquires after January 19, 2025 and places in service after January 19, 2025, the part that can be deducted in the first year is 100 percent, and this rule is permanent.
+Short names used in the excerpts: "OBBBA" is the Notice's short name for Public Law 119-21 (enacted July 4, 2025; Publication 946 calls it "commonly known as the One Big Beautiful Bill Act"). "TCJA" is the Tax Cuts and Jobs Act, the earlier law. "Section" or "§" means a section of the Internal Revenue Code. "Additional first year depreciation deduction" and "special depreciation allowance" are other names for bonus depreciation.
 
-S2. Which property qualifies
-Qualifying property includes tangible property that has a recovery period of 20 years or less under the standard depreciation system (called MACRS), plus a few other kinds, such as certain computer software. Velox's depreciation schedule treats all nine items of equipment in this exercise as 7-year property (see S7).
+S1. The 100 percent rule (Notice 2026-11, section 2.02(1))
+"Section 70301 of the OBBBA (OBBBA § 70301) made several amendments to § 168(k) to provide taxpayers with a permanent 100 percent additional first year depreciation deduction for qualified property acquired and placed in service, and specified plants planted or grafted, after January 19, 2025."
+"OBBBA § 70301(c) provides that, except as otherwise provided in that subsection, the amendments made by OBBBA § 70301 apply to property acquired, or specified plants planted or grafted, after January 19, 2025."
 
-S3. Property acquired before January 20, 2025
-Property that a business acquired before January 20, 2025 is still under the earlier phase-down: the part deductible in the first year is 40 percent for property placed in service in 2025 and 20 percent for property placed in service in 2026. (This is a lower percentage than the 100 percent in S1.)
+S2. Property acquired before January 20, 2025 (Notice 2026-11, section 2.01; Publication 946, "What's New for 2025")
+Notice 2026-11, section 2.01: "Pursuant to TCJA § 168(k)(6), the applicable percentage is (i) 40 percent for qualified property placed in service during 2025 (60 percent for certain property having longer production periods or certain aircraft) ..."
+Publication 946, "What's New for 2025": "Phase down of special depreciation allowance for qualified property acquired before January 20, 2025 ..." and "The special depreciation allowance is limited to 40% for certain qualified property acquired after September 27, 2017, and placed in service after December 31, 2024, and before January 1, 2026 (other than certain property with a long production period and certain aircraft)."
 
-S4. When is property "acquired"? (IRS Notice 2026-11, interim guidance issued in January 2026)
-The notice says property is acquired on the date the buyer enters into a written binding contract to buy it. A written binding contract is one that can be enforced against the buyer under state law without limiting damages to a set amount (a simplified statement for this exercise; the notice has more detail, see S8). (For property a business builds for itself, different tests apply. Not relevant here, because Velox bought these items.) The notice also says that the January 19 and January 20, 2025 dates in S1 and S3 apply: a contract signed on or before January 19, 2025 means acquired before January 20, 2025.
+S3. How to tell whether property was acquired after January 19, 2025 (Notice 2026-11, section 3.03)
+"In determining whether depreciable property is acquired after January 19, 2025, for purposes of OBBBA § 70301(c), taxpayers apply rules consistent with § 1.168(k)-2(b)(5) and 1.1502-68(a) through (d), by substituting "January 19, 2025" for "September 27, 2017" each place it appears, and by substituting "January 20, 2025" for "September 28, 2017" each place it appears."
 
-S5. Elections
-A business may elect to take 40 percent instead of 100 percent for its first tax year ending after January 19, 2025, and may elect out of bonus depreciation for a whole class of property. An election is made on a timely filed return with an attached statement. Velox's 2025 return made neither election.
+S4. Written binding contracts (Notice 2026-11, section 2.03(2), which describes Treasury Regulation section 1.168(k)-2(b)(5))
+"Under § 13201(h) of the TCJA, property is not treated as acquired after the date on which a written binding contract is entered into for such acquisition."
+"... the acquisition date of property that the taxpayer acquired pursuant to a written binding contract is the later of: (i) the date the contract was entered into; (ii) the date the contract is enforceable under State law; (iii) if the contract has one or more cancellation periods, the date all cancellation periods end; or (iv) if the contract has one or more contingency clauses, the date all conditions subject to such clauses are satisfied."
+"... a written binding contract ... as a contract enforceable under State law against the taxpayer or a predecessor that does not limit damages to a specified amount (for example, by use of a liquidated damages provision)."
 
-S6. Qualified production property (section 168(n))
-This is a separate rule that allows a 100 percent deduction for certain nonresidential real property (buildings) used in manufacturing, if construction begins after January 19, 2025 and before January 1, 2029, and the building is placed in service before January 1, 2031. It covers buildings, not equipment. When this packet was written, the most recent guidance the writer had read (January 2026) did not address it, so check for newer guidance.
+S5. Elections (Notice 2026-11, sections 2.02(1) and 2.05)
+Section 2.02(1): "Additionally, OBBBA § 70301 amended § 168(k)(10) to allow taxpayers to elect to deduct 40 percent (60 percent for certain property having longer production periods or certain aircraft), instead of 100 percent, additional first year depreciation for qualified property placed in service, or specified plants planted or grafted, during the first taxable year ending after January 19, 2025."
+Section 2.05: "Section 168(k)(7) (which the OBBBA does not amend) allows a taxpayer to make an election not to deduct additional first year depreciation for any class of property (a term defined in § 1.168(k)-2(f)(1)(ii)) that is qualified property placed in service during the taxable year."
+
+S6. A different rule: qualified production property (Publication 946, "What's New for 2025")
+"Special depreciation allowance for qualified production property. P.L. 119-21 added new section 168(n) which allows an elective special depreciation allowance for qualified production property. Qualified production property placed in service after July 4, 2025, the construction of which began or that was acquired after January 19, 2025, is eligible for a 100% special depreciation allowance."
+(This packet does not say what "qualified production property" means. Notice 2026-11 does not mention it.)
 
 S7. Facts about Velox (from the Velox Tax Department)
-- Velox is a calendar-year corporation and the federal corporate income tax rate is 21 percent (Internal Revenue Code section 11(b)).
-- All nine items of equipment on the schedule are 7-year property.
-- Property that does not get all of its cost deducted in the first year is deducted over several years. For 7-year property, the first-year deduction under the standard method (the half-year convention) is 14.29 percent of the cost that remains after any bonus deduction (IRS Publication 946, Table A-1).
-- On the 2025 return Velox deducted 100 percent of the cost of all nine items in 2025.
-- The schedule you were given lists the date the purchase contract was signed and the date the item was placed in service for each item. For one item (EQ-25-07), the contract date is blank because it was not recorded.
+- Velox is a calendar-year corporation, and its federal corporate income tax rate is 21 percent.
+- The Tax Department treats all 9 items of equipment on the schedule as qualified property and as 7-year property.
+- Property that does not get all of its cost deducted in the first year is deducted over several years. For 7-year property, Velox's depreciation schedule uses 14.29 percent as the first-year deduction under the standard method (the half-year convention), applied to the cost that remains after any bonus deduction.
+- On the 2025 return, Velox deducted 100 percent of the cost of all 9 items of equipment in 2025. The return made neither election described in S5.
+- The schedule you were given lists the date the purchase contract was signed and the date the item was placed in service for each item. For one item (EQ-25-07), the contract date is blank because it was not recorded. The schedule says nothing about cancellation periods or contingency clauses in the contracts.
 
 S8. What this packet does NOT cover
-Section 179 expensing; state (South Carolina) tax rules; interest and penalties; the test that can change the depreciation convention when much of a year's property is placed in service late in the year; contracts that can be cancelled or that limit damages; and what happens in an appeal. If a question depends on one of these, say "not in the sources."
+The text of the Internal Revenue Code itself (the excerpts are from IRS guidance); the definition of "qualified property"; Section 179 expensing; state (South Carolina) tax rules; interest and penalties; the depreciation percentage tables themselves; the test that can change the depreciation convention when much of a year's property is placed in service late in the year; whether any contract had cancellation periods or contingency clauses (see S4); and what happens in an appeal. If a question depends on one of these, say "not in the sources."
 
-WHERE TO READ THE ORIGINALS (free, for the optional independent check)
-- Internal Revenue Code section 168: https://www.law.cornell.edu/uscode/text/26/168
+WHERE TO READ THE ORIGINALS (free; for your own optional check)
 - IRS Notice 2026-11: https://www.irs.gov/pub/irs-drop/n-26-11.pdf
-- IRS Publication 946, How to Depreciate Property: https://www.irs.gov/publications/p946
+- IRS Publication 946, How To Depreciate Property: https://www.irs.gov/publications/p946
+- Internal Revenue Code section 168: https://www.law.cornell.edu/uscode/text/26/168
+- Treasury Regulation section 1.168(k)-2: https://www.ecfr.gov/current/title-26/section-1.168(k)-2
