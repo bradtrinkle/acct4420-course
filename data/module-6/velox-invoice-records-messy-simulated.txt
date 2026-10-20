@@ -1,6 +1,6 @@
-VELOX MOTORWORKS | ACCOUNTS PAYABLE INVOICE RECORDS, 14 ITEMS (simulated for teaching)
+VELOX MOTORWORKS | ACCOUNTS PAYABLE RECORDS, 14 ITEMS (simulated for teaching)
 
-These are copies of invoices and emails exactly as they arrived. They are messy on purpose: dates, amounts, and names are written in different ways.
+These are copies of invoices and emails about invoices exactly as they arrived (one or two are other messages). They are messy on purpose: dates, amounts, and names are written in different ways.
 
 === RECORD 1 ===
 From: orders@brightline-ind-supply.example

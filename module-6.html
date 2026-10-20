@@ -1,0 +1,410 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 6: AI in Auditing</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html">Module 2</a><a href="module-3.html">Module 3</a><a href="module-4.html">Module 4</a><a href="module-5.html">Module 5</a><a href="module-6.html" aria-current="page">Module 6</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><circle cx="18" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 6 · Week 6 · Rotation 3: Internal Audit</span>
+<h1 style="margin:10px 0 4px">AI in Auditing: Follow the Money</h1>
+<p class="hint">You will be able to have AI pull facts out of messy records, test about two thousand payments for unusual patterns (including Benford's Law), check what it finds yourself, and report indicators to the person who owns an investigation without accusing anyone. Plan for about 6.7 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 15 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 6 video from your instructor</b><br><span class="hint" style="color:#ddd">The video will appear here. If it does not, tell your instructor and keep going; Nadia's message below covers the key points.</span></div></div>
+  <p class="hint" id="videoHelp">The video for this module is not posted yet. Nadia's message below covers what you need to start.</p>
+  <div class="cfo"><b>From the head of Internal Audit, Nadia Ferreira</b><br>Welcome to Internal Audit. The ethics hotline recently took an anonymous tip: something is not right with a vendor that was set up very fast in Purchasing. The caller gave no names. I have the third-quarter payments ledger (about 2,000 payments), the vendor list, 14 records (mostly invoices and emails about invoices) exactly as they arrived, and my own notes. I need to know whether anything in these records needs follow-up. I decide what happens next, and I will not put anyone's name in a report on the strength of a pattern. Use AI to do the heavy lifting, but I need leads I can trust, and a report that does not accuse someone who may be innocent.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Welcome to your third rotation: Internal Audit, working for Nadia. This week you will have AI pull facts out of messy records and test a large set of payments for unusual patterns, check what it finds yourself, and report what you found as indicators, never as accusations. Let's go.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <div class="card">
+    <h3>Module 6 at a glance</h3>
+    <p><b>Who is who:</b> Velox Motorworks is a fictional, publicly traded sports car maker. Nadia Ferreira leads Internal Audit (the team that checks whether Velox's money and records are handled correctly). You are a new hire at Tallgrass Advisory, the consulting firm training Velox's finance team, and from this week you rotate through Velox departments. Jordan Reyes is your mentor at Tallgrass. All names, companies, and numbers in this course are fictional. People at Velox appear only as ID codes (for example, an approver might be A-100 and an employee E-2000), and your report will use only those codes.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your Step 4 ethics answers, the <b>Audit Extraction Template</b> you write (this week's reusable piece), the results Claude produced for Velox, your own check of two of them, a one-page report for Nadia, the lens you choose, who is accountable for what plus your AI disclosure, and your coach conversation and revision notes.</p>
+    <p><b>What you need:</b> your own paid Claude account (claude.ai) that lets you attach files to a chat and run code on them, Excel or Google Sheets (you will count things yourself), your Jordan Coach project from Module 1, and your Canvas login. Use the same browser and device each time, and do not use a private or incognito window, because your progress saves in this browser only. Once Steps 4 to 6 are complete, <b>Download my submission</b> in Step 6 gives you a copy of your work; until then, your answers are saved only in this browser.</p>
+    <p><b>The 8 steps:</b> 1 Mission brief (15 min, including a video of about 7 minutes) · 2 Try it first (30) · 3 Learn (50) · 4 Ethics checkpoint (30) · 5 First attempt and coach feedback (200) · 6 Mastery attempt (45) · 7 Quiz (20) · 8 Reflection (10). Total: 400 minutes, about 6.7 hours. Graduate students add about 25 minutes for Part 9.</p>
+  </div>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video (or it did not load) and read Nadia's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. <b>Open Claude and ask it whether there is fraud at Velox and who is doing it</b>, using only the tip below. Write your own request in your own words. This is just to see what AI does with a tip and nothing else.</div></div>
+  <div class="card">
+    <h3>Words you need</h3>
+    <table class="t"><tr><th>Word</th><th>What it means here</th></tr>
+    <tr><td><b>Fraud</b></td><td>Deliberately deceiving someone to take money or something of value.</td></tr>
+    <tr><td><b>Indicator</b></td><td>A sign that something may be wrong and needs follow-up by a person. It is a lead, not proof.</td></tr>
+    <tr><td><b>Vendor</b></td><td>A company that sells things or services to Velox. Velox pays it.</td></tr>
+    <tr><td><b>Invoice</b></td><td>The bill a vendor sends to ask for payment.</td></tr>
+    <tr><td><b>Purchase order (PO)</b></td><td>Velox's written approval to buy something, with a number, created before the buying happens.</td></tr>
+    <tr><td><b>Approval limit</b></td><td>The amount at which a second person must approve a payment. At Velox, a payment of $5,000.00 or more needs a second approver.</td></tr>
+    <tr><td><b>Ledger</b></td><td>A list of every payment: dates, vendor, invoice number, amount, who approved it, and whether a second approver signed (the column says "not required" when a payment is under the limit).</td></tr>
+    <tr><td><b>Net 30</b></td><td>Payment is due 30 days after the invoice date. Net 10 means 10 days.</td></tr>
+    <tr><td><b>Credit memo</b></td><td>A note from a vendor that reduces what you owe, for example after Velox paid an invoice twice.</td></tr>
+    <tr><td><b>Audit committee</b></td><td>The group on the company's board that oversees audits and receives serious findings.</td></tr>
+    <tr><td><b>Three-way match</b></td><td>Checking that the purchase order, proof the goods arrived, and the invoice agree before paying.</td></tr></table>
+    <p class="hint">All amounts on this page are in dollars unless a line says otherwise.</p>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open Claude</b> in a new tab (the button just below), <b>sign in</b> with your own Claude account, and click <b>New chat</b>. Do not use your Jordan Coach project for this.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li>Click <b>Copy the tip</b>. Claude cannot see this page, so the tip must go into your message.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the tip</button></li>
+      <li>In the Claude chat box, <b>type your own request in your own words</b> (the task: is there fraud, and who is doing it?). Then <b>press Shift+Enter</b> for a new line, <b>paste the tip</b> (Ctrl+V on Windows, Cmd+V on Mac), and <b>press Enter</b> to send.</li>
+      <li><b>Read the answer</b>, then <b>answer the three questions below</b> in your own words. You will reuse your answers in Step 5, Part 1.</li>
+      <li><b>Save your work for Step 5:</b> copy your request and Claude's answer into a note on your computer (Notepad, Notes, or a Word document). Keeping this chat open is helpful but not required.</li>
+    </ol>
+    <details><summary>See what "Copy the tip" will copy</summary><div class="copybox" id="p2text">Velox Motorworks ethics hotline tip (simulated).
+Received September 30, 2026. Caller: anonymous.
+"Something is not right with a vendor that was set up very fast in Purchasing. I do not want to give any names. Please look at the payments."</div></details>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did AI do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What could AI NOT tell you from the tip alone? (For example, which vendor, and whether anything is actually wrong.)</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. If you were Nadia, what records would you want to look at first?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">These answers are saved on this device. They are not graded and are not in your submission; they are your starting point for Step 5.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 50 min</span></h2>
+  <p class="hint">Sections 3a to 3h are reading and quick checks (3h ends with one question for you). The auditing you need is in 3a and 3b and is short on purpose: your job is to get AI to do the extracting and counting, check it, and report carefully. You apply every technique yourself in Step 5.</p>
+
+  <h3>3a. Indicators are leads, not proof</h3>
+  <p>One common kind of fraud is a <b>fake vendor</b>: a company that exists only on paper, set up so that payments go to the person who created it. Auditors look for signs, which they call <b>indicators</b> (some people say "red flags"). Examples: invoices that sit just under an approval limit, so no second person has to approve; several invoices on the same day that together would pass the limit; payments with no purchase order (you can see this only in the invoice records, not in the ledger); urgent "pay today" requests; a vendor set up recently; or payments approved by the same person who set the vendor up.</p>
+  <p>The rule that matters most: <b>an indicator is not proof.</b> Some clues are also weak: two account numbers that match only in their last four digits are a small match, because many unrelated accounts end in the same four digits. Each indicator has innocent explanations, and fraud is decided by people who gather documents and hear from the people involved, not by a pattern in a spreadsheet. Wrongly accusing someone harms a real person. So your job is to find the leads, test them, and report them honestly.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Most of one vendor's invoices are just under the $5,000 approval limit. What does that show?</p>
+    <div class="qc" data-id="q3a" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">That the vendor is committing fraud</button><button class="choice" data-i="1">Nothing at all</button><button class="choice" data-i="2">An indicator that a person should follow up on, since there may also be an innocent explanation</button><button class="choice" data-i="3">That the approval limit is too low</button></div>
+      <div class="fb" data-ok="Right. It is a lead, and a person decides what it means." data-no="Does the pattern tell you why the amounts look that way?"></div>
+    </div>
+  </div>
+
+  <h3>3b. Benford's Law: a way to test thousands of amounts</h3>
+  <p>In many real sets of money amounts (payments, invoices, expenses), the <b>first digit</b> is not equally likely to be 1 through 9. About 30 percent of amounts start with 1, and the share falls steadily to under 5 percent for 9. This pattern is called <b>Benford's Law</b>. Here is the expected share for each first digit:</p>
+  <table class="t"><tr><th>First digit</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+  <tr><td>Expected share</td><td>30.1%</td><td>17.6%</td><td>12.5%</td><td>9.7%</td><td>7.9%</td><td>6.7%</td><td>5.8%</td><td>5.1%</td><td>4.6%</td></tr></table>
+  <p>Why auditors like it: people who invent amounts, or keep them just under a limit, usually do not follow the pattern. A big gap between the expected and the actual share of a digit is a reason to look closer. A gap is not proof either. Honest data breaks the pattern too, for example a vendor paid the <b>same fixed fee</b> every month (every payment starts with the same digit), or amounts that stay in a narrow range. The test also needs a lot of amounts (hundreds or more) to be meaningful. The practical rule: <b>count first digits, find the digits that are off by about 2 percentage points or more (too high or too low), then find which vendors cause each gap.</b></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>A landscaping company is paid exactly 7,200.00 each month at 10 sites. Digit 7 comes out too high. What is the best conclusion?</p>
+    <div class="qc" data-id="q3b" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">The landscaping company is committing fraud</button><button class="choice" data-i="1">A fixed fee makes every payment start with 3, so this is a gap with a likely innocent explanation that a person should confirm in the contract</button><button class="choice" data-i="2">Benford's Law is wrong</button><button class="choice" data-i="3">The payments should be deleted</button></div>
+      <div class="fb" data-ok="Yes. Find the cause of each gap before drawing any conclusion." data-no="What would a fixed monthly fee do to the first digit of every payment?"></div>
+    </div>
+  </div>
+
+  <h3>3c. Let AI do the work: a real example</h3>
+  <p>Here is a made-up case at <b>Maple Ridge Dairy Co-op</b>, a small Velox supplier (not Velox itself, so this is not your answer). We gave Claude three invoice records and a ledger of 1,106 payments for one quarter. We asked it to extract the records into a table, then to run a Benford test with code, trace each gap to vendors, and give likely innocent explanations. <b>This is Claude's real output, condensed:</b></p>
+  <table class="t"><tr><th>Record</th><th>Vendor</th><th>Invoice date</th><th>Amount</th><th>PO number</th></tr>
+  <tr><td>1</td><td>Northstar Dairy Equipment</td><td>not stated ("May 14", no year)</td><td>6,880 ("total $6,880 even")</td><td>not stated ("no PO number yet")</td></tr>
+  <tr><td>2</td><td>Co-op Trucking Lease</td><td>not stated (written "05/04/2026"; order of month and day unclear)</td><td>2,450.00</td><td>not stated (contract number only)</td></tr>
+  <tr><td>3</td><td>Hartwell Veterinary Supply</td><td>2026-06-09</td><td>not stated (only "about $3.2k", final invoice to follow)</td><td>88104</td></tr></table>
+  <table class="t"><tr><th>First digit</th><th>Count</th><th>Observed share</th><th>Expected share</th><th>Gap</th></tr>
+  <tr><td><b>2</b></td><td>244</td><td>22.1%</td><td>17.6%</td><td><b>+4.5 points</b></td></tr>
+  <tr><td><b>6</b></td><td>100</td><td>9.0%</td><td>6.7%</td><td><b>+2.3 points</b></td></tr>
+  <tr><td>other digits</td><td colspan="2">all within 2 points</td><td></td><td>between −1.7 and −0.1</td></tr></table>
+  <table class="t"><tr><th>Digit</th><th>What Claude found</th><th>Likely innocent explanation and what a person should check</th></tr>
+  <tr><td>2</td><td>One vendor, Co-op Trucking Lease: all 60 payments are exactly 2,450.00. Without it, digit 2 is 17.6% of the other payments, exactly as expected.</td><td>A fixed monthly lease for about 20 trucks. Check the lease contract and a list of leased trucks.</td></tr>
+  <tr><td>6</td><td>One vendor, Northstar Dairy Equipment: all 46 payments are between 6,152.84 and 6,959.71, all approved by the same approver. Without it and the lease, the rest fit the pattern.</td><td>A narrow price band from repeat orders, or one approver who owns the account. Check purchase orders and receiving records; the earlier record said "no PO yet".</td></tr></table>
+  <p><b>What to notice:</b> (1) Claude counted with code and showed observed versus expected for every digit, so you can check any row. (2) It wrote <b>"not stated"</b> instead of guessing when a record left out a year, a PO number, or a final amount. (3) It did not stop at the flag. It traced each gap to one vendor, offered an innocent explanation for each, and said what a person would need to see to check it. (4) It listed what it could <b>not</b> tell, such as why the amounts look that way, and wrote: "Nothing here says anyone committed fraud." Your job is to get this kind of answer for Velox, and then to check it.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>In the example, why did Claude say the trucking lease probably has an innocent explanation?</p>
+    <div class="qc" data-id="q3c" data-correct="3" data-req>
+      <div class="choices"><button class="choice" data-i="0">It made a mistake in counting the payments for that vendor</button><button class="choice" data-i="1">Leases are never fraud, so the vendor needed no further look</button><button class="choice" data-i="2">It wanted to ignore the vendor because the amounts were small</button><button class="choice" data-i="3">Every payment was exactly 2,450.00, which looks like a fixed lease fee, and a fixed fee makes every payment start with the same digit</button></div>
+      <div class="fb" data-ok="Right. A fixed amount explains the gap, and a person still confirms it in the contract." data-no="Look at the example: what do all 60 trucking payments have in common?"></div>
+    </div>
+  </div>
+
+  <h3>3d. Turn messy records into a table: structured extraction</h3>
+  <p>Records arrive as emails, scans, and forms, written in different ways. To count or compare anything, first put the facts in a table. Ask AI to do it, and tell it exactly what table you want: the <b>columns</b> (each with a name and a format, such as a date as YYYY-MM-DD), what to write when a fact is <b>missing</b> ("not stated", never a guess), and to <b>quote the words</b> it used for the key fact so you can check it in seconds.</p>
+  <div class="tech"><p><b>Technique:</b> Structured extraction (also called schema-based or information extraction: you give the AI a fixed set of fields to fill from messy text)</p><p><b>Why it helps:</b> It turns text you cannot sort or count into a table you can. The "not stated" rule keeps AI from guessing, and the quoted words let you spot-check any row. In Step 5 you write your own extraction template.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>A record says only "total due: see attached statement." What should a good extraction table show for the amount?</p>
+    <div class="qc" data-id="q3d" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">The most common amount from the other records</button><button class="choice" data-i="1">"not stated"</button><button class="choice" data-i="2">Zero</button><button class="choice" data-i="3">A reasonable guess</button></div>
+      <div class="fb" data-ok="Yes. A missing fact is written as missing, never filled in." data-no="What does the rule 'not stated instead of guessing' tell you?"></div>
+    </div>
+  </div>
+
+  <h3>3e. Let AI count with code</h3>
+  <p>Counting first digits across two thousand rows by reading them is exactly what AI does badly: it can sound sure and be off by dozens. Instead, ask Claude to <b>use code</b> on the attached file (Claude has a built-in tool for this; on paid plans it is a setting you can switch on). Code counts exactly. You then check one or two of the counts yourself in a spreadsheet.</p>
+  <div class="tech"><p><b>Technique:</b> Tool use, specifically code execution (asking the AI to run a program on your file instead of estimating by reading)</p><p><b>Why it helps:</b> Counting and totaling by code is exact and repeatable, and the code can be shown to you. AI that "eyeballs" a large file can be confidently wrong.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>You attach a ledger of 2,000 payments. What is the best way to get first-digit counts?</p>
+    <div class="qc" data-id="q3e" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">Ask Claude to use code on the file to count and show the table, then check one count yourself</button><button class="choice" data-i="1">Ask Claude to look at the file and tell you roughly how many</button><button class="choice" data-i="2">Paste 50 rows into the chat and extend the result</button><button class="choice" data-i="3">Skip the counts and ask who the fraudster is</button></div>
+      <div class="fb" data-ok="Yes. Code for the counting, you for the checking." data-no="Which method gives an exact count you can reproduce?"></div>
+    </div>
+  </div>
+
+  <h3>3f. Ask for the innocent explanations</h3>
+  <p>When AI flags something, ask it the opposite question too: <b>"What are the most likely innocent explanations for each flag, and what would I need to see to check them?"</b> A good answer, like Claude's in 3c, gives a reason a person can test. This keeps you from treating every flag as guilt and keeps the report fair.</p>
+  <div class="tech"><p><b>Technique:</b> Alternative-explanations prompting (a form of devil's-advocate or red-team prompting: asking the AI to argue against its own flag)</p><p><b>Why it helps:</b> The first answer from AI tends to follow the question's framing. Asking for the other side shows you which flags are likely harmless and which need a person's attention.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Claude flags a vendor. What is the best follow-up?</p>
+    <div class="qc" data-id="q3f" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">"Draft a letter to the vendor accusing them."</button><button class="choice" data-i="1">"Delete the flag, it is probably fine."</button><button class="choice" data-i="2">"What are the most likely innocent explanations for this flag, and what would I need to see to check them?"</button><button class="choice" data-i="3">"Are you sure?"</button></div>
+      <div class="fb" data-ok="Yes. Ask for the other side, and for what to check." data-no="Which question gives you something a person can actually test?"></div>
+    </div>
+  </div>
+
+  <h3>3g. Report indicators for a person to act on</h3>
+  <p>An audit report says what the data show, how strong each lead is, what is <b>not</b> known, and what a person should do next. It refers to people only by ID, never accuses anyone, and never says "committed fraud." Start with the most important sentence: <b>what the data show and that they are indicators for follow-up</b>. Then give the few numbers that matter, the innocent explanations you considered, what you do not know, and the next step for a person (such as getting documents). The person who owns the investigation decides what happens next.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Which opening sentence is best for a report to the head of Internal Audit?</p>
+    <div class="qc" data-id="q3g" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">"Approver A-100 committed fraud through vendor V-9999, based on the payment pattern."</button><button class="choice" data-i="1">"There are many things to look at in the data, and more work is needed."</button><button class="choice" data-i="2">"The payments to one vendor show several indicators that need follow-up by a person; they do not show who, if anyone, did something wrong."</button><button class="choice" data-i="3">"AI found a suspicious vendor."</button></div>
+      <div class="fb" data-ok="Yes. It says what the data show, calls them indicators, and leaves the decision to a person." data-no="Which sentence would still be fair if the vendor turns out to be innocent?"></div>
+    </div>
+  </div>
+
+  <h3>3h. Pick your technique</h3>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t3h">In one sentence, which of the techniques in 3d, 3e, and 3f do you think will help you most on a real task, and why? (This is saved for you. It is not graded and is not in your submission.)</label>
+    <textarea id="t3h" data-save="s3.h" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint: human accountability <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>An audit finding can end a career. That is why area 5 of the <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a> says: <b>Human accountability</b>. A person owns every decision and every signature, and AI never signs off. At Velox the preparer and reviewer are named people, not a tool. Judge the five suggestions below the way a careful auditor would.</div></div>
+  <div class="card">
+    <b>The rule:</b> AI may find patterns, draft text, and suggest next steps. It must not <b>decide</b> that someone is guilty, <b>accuse</b> or name a person in a report, <b>sign</b> or send a report, or quietly drop a finding. A <b>named person</b> reviews and signs the report, decides which flags to keep and why, and decides who sees information about individuals, which goes only to the person who owns the investigation. In this scenario, Nadia owns the investigation and signs Internal Audit's report; you prepare it. You still follow the whole policy (its five areas are confidentiality and privacy, accuracy, bias, transparency and disclosure, and human accountability); area 5 is the focus of this step and of Part 8, and the policy link above is optional reading.
+  </div>
+  <p>Nadia asked Claude what to do after the analysis. Below are five things Claude suggested, with the facts about each. <b>Judge each one against the policy.</b></p>
+  <div id="situations"></div>
+  <p class="hint"><b>How to choose a verdict:</b> choose <b>Meets the policy</b> only if the suggestion keeps the decision, the signature, and the sharing of information about individuals with a named person and does not have AI accuse anyone. If not, choose <b>Does not meet the policy</b> and say in your reason what the suggestion has AI do that a person must do.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="e4d"><b>What would you do with Claude's report drafts and next steps?</b></label>
+    <select id="e4d" data-save="e4.decision" data-req data-sel><option value="">Choose one…</option><option>Send Claude's drafts straight to the managers because they are based on data and managers know the business best</option><option>Have a named person review and sign a report that calls the findings indicators, keep the AI out of the signature, and share names only with the person who owns the investigation</option><option>Let Claude decide which flags are important enough to report, since it can compare every payment quickly</option></select>
+    <label class="lbl" for="e4w"><b>Why?</b> Mention which person is accountable for the report and for the decision about what happens next (for example, the head of Internal Audit, or a named reviewer; never the AI), and what that person should check before the report goes anywhere.</label>
+    <textarea id="e4w" data-save="e4.why" data-min="60" data-req></textarea>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 200 min</span></h2>
+  <p class="hint">Every box needs a real answer: a box that is too short (for example, a pasted answer of only a few words) will not let you continue, and the message under the page tells you which box is still needed. In this step, "Part 1" to "Part 9" are the sections of the assignment. The grading table (rubric) is at the bottom of Step 6; the file you upload to Jordan in the Setup section just below covers the same criteria and points in more detail, so you can read it first.</p>
+
+  <h3>Setup: add the Module 6 rubric to your Jordan Coach, and check that Claude can run code (about 10 minutes)</h3>
+  <p class="hint"><b>A note on confidentiality:</b> the files in this module are simulated, so uploading them to your own Claude account is fine. At a real company you would not upload real payment, payroll, bank, or hotline information to a personal AI account; you would use only the tools your company has approved (policy area 1, confidentiality).</p>
+  <p class="hint">You built your Jordan Coach project in Module 1, and its instructions still work. If you did not build it, go to <a href="module-1.html">Module 1</a>, Step 5, and build it first (about 20 minutes extra), then come back here.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1"><b>Download the Module 6 rubric</b> to your computer: <a class="btn btn-ghost btn-sm" href="downloads/module-6-rubric.md" download>Download module-6-rubric.md</a> (If it opens in the browser, right-click the button and choose <b>Save link as</b>.)<br>Then, in your Jordan Coach project, <b>find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload</b> the file. Leave the other files there.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c2" data-req id="c2"><label for="c2"><b>After you finish Part 4, also upload the four Velox audit files</b> (the records, the ledger, the vendor list, and Nadia's notes) to your Jordan Coach project, in the same way, so that Jordan can compare your work with them when you ask for feedback. Tick this box when you have done it. (Do your own check in Part 5 without Jordan first.) You download the files in Parts 3 and 4 below.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c3" data-req id="c3"><label for="c3"><b>Make sure Claude can run code on a file.</b> In Claude, <b>click your name</b> (bottom left), <b>choose Settings</b>, then <b>Capabilities</b>, and <b>turn on</b> the option for code execution and file creation. The wording of the setting may differ on your plan. To test it, <b>start a new chat</b>, <b>attach any small spreadsheet</b>, and <b>ask Claude: "Can you run code on this file to add up the numbers in one column?"</b> If it cannot, ask your instructor; in Part 4 you may instead build the first-digit table yourself in a spreadsheet and ask Claude to interpret it, which earns full credit.</label></div>
+
+  <h3 style="margin-top:28px">Assignment: Follow the Money</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b>Write a reusable extraction template, use it to have AI pull the facts from 14 messy records, have AI test the payment ledger for unusual patterns, check two findings yourself, then write Nadia a one-page report of indicators and choose the lens that fits your major.</b> Everything you type below saves in this browser and builds your submission automatically, so use the same browser and device.</div></div>
+
+  <label class="lbl" for="stuName"><b>Type</b> your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420). Check this only if you are in 5420. Part 9 will appear after Part 8 once you tick this box (about 25 extra minutes; finish it before you copy your draft for Jordan), where you verify a third finding, do a check that does not use AI, and name an assumption or limitation.</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Record your tip-only try (from Step 2) · about 5 min · practice, not graded</h3>
+  <label class="lbl" for="r1p"><b>Paste your Step 2 request</b> from the note you saved (just your request, not the tip)</label>
+  <textarea id="r1p" data-save="s5.r1p" data-min="15" data-req></textarea>
+  <label class="lbl" for="r1o"><b>Summarize what AI gave you</b> in two or three sentences</label>
+  <textarea id="r1o" data-save="s5.r1o" data-min="30" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="r1w"><b>Name two things you could not tell</b> from the tip alone (for example, which vendor, and whether anything is actually wrong)</label>
+  <textarea id="r1w" data-save="s5.r1w" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 2 · Write your Audit Extraction Template · about 25 min</h3>
+  <p class="hint">Write the template <b>before</b> you look at Velox's records, from what you learned in Step 3d. It is this week's reusable piece: Internal Audit receives messy records all the time.</p>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Think about what an auditor needs from an invoice record</b> (Step 3d): who sent it, which invoice, when, how much, whether there was a purchase order, who approved it, and anything unusual. You have not opened Velox's records yet, so describe where each fact would appear in general terms (for example "in the email text or the invoice header").</li>
+      <li><b>Write your template in your own words</b> in the box below. It must have: <b>at least six fields (columns)</b>, each with a name, a format (for example, "date as YYYY-MM-DD" or "amount in dollars"), and where in the record it appears; a rule to <b>write "not stated" when a fact is missing instead of guessing</b>, and <b>not to do any math or correct anything</b>; a request for the result as a <b>table</b>, with the <b>exact words the AI used for the amount</b>; and a <b>final check line</b> saying what a person must check before relying on the table.</li>
+      <li>Do not copy the example in 3c; it was a different case. <b>Paste your finished template</b> into the box.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="tpl"><b>Paste your Audit Extraction Template</b></label>
+  <textarea id="tpl" data-save="s5.tpl" data-min="400" data-req style="min-height:240px"></textarea>
+
+  <h3 style="margin-top:22px">Part 3 · Extract the 14 records · about 25 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the 14 records</b> to your computer. Most are invoices or emails about invoices, and one or two are other messages, so write "not stated" for fields that do not apply. If it opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>:
+        <div class="dl-row"><a class="btn btn-ghost btn-sm" href="data/module-6/velox-invoice-records-messy-simulated.txt" download>14 invoice records</a></div></li>
+      <li><b>Start a new chat in Claude</b> (not your Jordan Coach), <b>click the + or paperclip</b> in the chat box, and <b>attach the file</b>.</li>
+      <li><b>Paste your template</b> into the chat and send it.</li>
+      <li><b>Read the table.</b> <b>Compare at least three rows with the records yourself</b>. If a row is wrong or unclear, <b>tell Claude what to fix</b>. Then <b>send a follow-up</b> asking Claude to list every vendor that appears in more than one record and any pattern across the records (for example, missing purchase orders or who approved them).</li>
+      <li><b>Come back here</b> and fill in the boxes below.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="p3req"><b>Paste the requests you sent</b> (your template and your follow-up; the requests only, not the answers)</label>
+  <textarea id="p3req" data-save="s5.p3req" data-min="200" data-req style="min-height:140px"></textarea>
+  <label class="lbl" for="p3res"><b>Paste Claude's final table</b> (after any fixes) and what it said about patterns across the records</label>
+  <textarea id="p3res" data-save="s5.p3res" data-min="300" data-req style="min-height:200px"></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Test the ledger · about 30 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the three other files</b> to your computer. If a file opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>:
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-6/velox-payments-q3-2026-simulated.csv" download>Payments ledger (Q3)</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-6/velox-vendor-list-simulated.csv" download>Vendor list</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-6/velox-audit-notes-simulated.txt" download>Nadia's audit notes</a></div></li>
+      <li><b>Start a new chat in Claude</b> (not your Jordan Coach), <b>click the + or paperclip</b>, and <b>attach all three files</b>.</li>
+      <li><b>Write your own request</b> asking Claude to <b>use code</b> to run a <b>Benford's Law first-digit test</b> on the amount column: a <b>table</b> of observed and expected counts and percentages for digits 1 to 9, the <b>digits that are off by more than about 2 percentage points</b>, and <b>which vendors drive each gap</b>. The digits that count are the ones off by about 2 points or more, too high or too low. Send it.</li>
+      <li><b>Send a second request</b> asking Claude to check three more things: <b>payments just under the approval limit</b> (the limit is in Nadia's notes; you choose what counts as "just under", for example within 10 percent of the limit, and tell Claude), by vendor, showing the top three vendors; <b>any invoice number paid more than once</b>; and <b>vendors added to the vendor list in 2026</b> and who added them.</li>
+      <li><b>Send a third request</b> asking for the <b>most likely innocent explanations</b> for each of the top vendors it flagged (no more than four), <b>what you would need to see to check them</b>, and <b>what it could not tell from the data</b>. Tell it not to say anyone committed fraud.</li>
+      <li><b>Come back here</b> and fill in the boxes below.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="p4req"><b>Paste the requests you sent</b> (the requests only, not the answers)</label>
+  <textarea id="p4req" data-save="s5.p4req" data-min="200" data-req style="min-height:140px"></textarea>
+  <label class="lbl" for="p4tab"><b>Paste Claude's Benford table</b> (digits 1 to 9, observed and expected) and its answer about the digits that are off and the vendors that drive them</label>
+  <textarea id="p4tab" data-save="s5.p4tab" data-min="300" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="p4oth"><b>Paste Claude's answers</b> to the three other checks and to the innocent-explanations request</label>
+  <textarea id="p4oth" data-save="s5.p4oth" data-min="300" data-req style="min-height:200px"></textarea>
+
+  <h3 style="margin-top:22px">Part 5 · Check two findings yourself · about 25 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Choose two findings</b> from Claude's answers in Part 3 or Part 4 (the final versions you pasted there) that matter most to Nadia. A finding is a number or a claim, for example "the ledger has 500 payments from vendor V-9999" (a made-up value, not Velox's) or "record 7 says there is no purchase order". Choose two different findings.</li>
+      <li><b>Open the files</b> in Excel or Google Sheets (or a text editor for the records). <b>Do not ask AI to check them.</b></li>
+      <li>For each finding, <b>do the counting or arithmetic yourself</b>. Useful spreadsheet tools: a <b>filter</b> on a column to count rows (the count shows at the bottom), <b>COUNTIF</b> or <b>SUMIF</b>, and a helper column with <b>=LEFT(G2,1)</b> to get a payment's first digit (G is the amount column), which you can then count. <b>Compare your result</b> with what Claude said. Then <b>decide what to do about it</b>.</li>
+    </ol>
+  </div>
+  <div id="vrows"></div>
+
+  <h3 style="margin-top:22px">Part 6 · Write the report for Nadia · about 20 min</h3>
+  <p class="hint">Write a short report (60 to 300 words) that Nadia could act on. Use AI to help, but you are accountable for every word and number, whoever drafted it. <b>Your first sentence must say that the data show indicators for a person to follow up, not proof.</b> Then give the few numbers that matter, the innocent explanations you considered (including for any vendor whose pattern is probably harmless), what you do not know, and the next step for a person. Refer to people <b>only by ID</b> (the report goes to Nadia, so IDs and the vendor's name are fine here); never accuse or name anyone, and never say that anyone committed fraud. <b>Any of the three next steps below is acceptable if your numbers support it</b>; choosing "no follow-up" means saying why the indicators are not enough. Keep it to <b>at least 60 and at most 300 words</b>.</p>
+  <label class="lbl" for="dec"><b>Which next step did you recommend to the person who owns the investigation?</b></label>
+  <select id="dec" data-save="s5.dec" data-req data-sel><option value="">Choose one…</option><option>Open a formal investigation of the vendor or vendors with the strongest indicators</option><option>Request more records first (such as contracts, receiving reports, and full bank details), then decide</option><option>No follow-up</option></select>
+  <label class="lbl" for="ppr"><b>Paste the request you used</b> to have AI help draft or improve your report (it must tell AI who the reader is; if you wrote the report without AI, type "I did not use AI for this piece; I wrote it myself.")</label>
+  <textarea id="ppr" data-save="s5.ppr" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="ppage"><b>Type or paste your final report for Nadia</b> (60 to 300 words; pasting text that AI helped edit is fine as long as you disclose that in Part 8; do not include the disclosure line here, you write it in Part 8)</label>
+  <textarea id="ppage" data-save="s5.ppage" data-req style="min-height:240px"></textarea>
+  <div class="hint" id="wc">0 words (60 to 300)</div>
+
+  <h3 style="margin-top:22px">Part 7 · Choose your lens · about 20 min</h3>
+  <p class="hint">Nadia wants a second piece, written from the point of view of the part of the business you care about. <b>Pick one of the six options below.</b> They are equal in effort and are graded with the same criteria. Each option has its own length. Whatever you choose: <b>show the request you used</b>, make <b>every number traceable</b> to the files, <b>name nobody</b>, and include <b>at least one "not in the data" item or limitation</b>. Options 1, 2, 5, and 6 are for Internal Audit or finance, so they may use ID codes and the vendor's name for facts; options 3 and 4 reach wider audiences, so use no ID codes and no vendor name there. Never accuse anyone.</p>
+  <div id="angleCards"></div>
+  <label class="lbl" for="angle"><b>Which option did you choose?</b></label>
+  <select id="angle" data-save="s5.angle" data-req data-sel></select>
+  <label class="lbl" for="angreq"><b>Paste the request you used</b> to have AI help with this piece (or type "I did not use AI for this piece; I wrote it myself.")</label>
+  <textarea id="angreq" data-save="s5.angreq" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="angtext"><b>Type your final piece</b> (use the length given for your option)</label>
+  <textarea id="angtext" data-save="s5.angtext" data-min="300" data-req style="min-height:220px"></textarea>
+
+  <h3 style="margin-top:22px">Part 8 · Accountability and how AI contributed · about 10 min</h3>
+  <label class="lbl" for="acc"><b>Name two decisions you left to a person</b> in this work (for example: whether to open an investigation, who sees the findings, which flags to keep), and <b>say which person is accountable for each</b> (a role such as the head of Internal Audit is fine; never the AI). Then <b>describe one check you actually made</b> that a flag was only an indicator (for example, asking Claude for innocent explanations, or finding the fixed-fee contract) and what you found.</label>
+  <textarea id="acc" data-save="s5.acc" data-min="100" data-req style="min-height:120px"></textarea>
+  <label class="lbl" for="foot"><b>Type your disclosure line</b> for your report to Nadia and your Part 7 piece. It must say AI helped, name a real person as reviewer, and be truthful about how far you checked. <b>Name yourself as the reviewer</b>, because you are the real person who checked it. Do not name Nadia or any other character: they are fictional and have not seen your work. Say exactly what you checked. Example wording, to use <b>only if it is true for you</b>: "I recounted 2 of the findings in a spreadsheet; the rest were not independently checked." <b>One line covers both pieces</b> and appears in section F of your submission.</label>
+  <textarea id="foot" data-save="s5.foot" data-min="40" data-req style="min-height:70px"></textarea>
+  <label class="lbl" for="disc"><b>List every AI tool you used</b> in this module (Claude in Step 2, Claude for the extraction and the ledger, your Jordan coach, and any others) and what each did.</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 9 · Graduate students only · about 25 min</h3>
+    <p class="hint">As a graduate student you do three things beyond the undergraduate work: verify a <b>third finding</b>, do a <b>check that does not use AI</b>, and name an <b>assumption or limitation</b>. In Part 5 you checked two findings. The check in the second box is separate from your third finding.</p>
+    <label class="lbl" for="g1"><b>Third finding:</b> choose a third number or claim from Claude's answers (not one you used in Part 5). Say what Claude reported, where in the files you looked, your own counting or arithmetic, and whether it matches</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2"><b>Check without AI:</b> check one more thing with a method that does not use AI. For example, rebuild the whole first-digit test in a spreadsheet (a helper column with the first digit, then a count for each digit and its percentage) and compare your table with Claude's. Describe what you did and what you found</label><textarea id="g2" data-save="s5.g2"></textarea>
+    <label class="lbl" for="g3"><b>Assumption or limitation:</b> name at least one assumption or limitation that affects your recommendation (for example, that the notes compare only the last four digits of a bank account, which many unrelated people share, or that the ledger covers only one quarter) and explain how it could change what the investigation owner should do</label><textarea id="g3" data-save="s5.g3"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Everyone: now get feedback from Jordan (about 30 min)</h3>
+    <p><b>Click the button</b> to copy your whole draft (everything you typed in Steps 4 and 5). <b>Open a new chat inside your Jordan Coach project</b> (use the same chat for every round of feedback), <b>paste it</b>, and <b>ask Jordan for feedback</b> against the Module 6 rubric, in your own words.</p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+    <p class="hint" style="margin-bottom:0"><b>Read Jordan's feedback</b>, then continue to Step 6.</p>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 45 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b><b>Go back to Step 5, improve your answers</b> (everything you typed is still there), then <b>return to Step 6</b>. To get another round of feedback, click <b>Copy my draft for Jordan</b> in Step 5 again and paste it into the same Jordan chat. You can do this as many times as you like; plan about 30 more minutes for each extra round. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to revise</button></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev">What did you change because of Jordan's feedback?</label>
+    <textarea id="rev" data-save="s6.rev" data-min="30" data-req></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans"><b>Paste your full Jordan Coach conversation here</b></label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in your Jordan Coach chat, <b>click in the conversation</b>, <b>press Ctrl+A</b> (Cmd+A on Mac), <b>copy</b>, and <b>paste here</b>. Then <b>delete</b> any menu or sidebar text before your first message to Jordan or after the last reply. It will be long, and that is fine. If it is very long, you may delete repeated copies of your draft and keep Jordan's feedback and your replies.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0"><b>Open the downloaded file in Word</b> and check that every section has your text. (If Word warns about the file format, choose <b>Yes</b> or <b>Open</b>; that is expected.) Canvas accepts this file type. Then <b>upload it to the Module 6 assignment, "Follow the Money," in Canvas</b>. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Audit Extraction Template</td><td>10</td><td>At least six fields, each with a name, format, and where it appears (3); a rule to write "not stated" instead of guessing and not to do math or correct anything (2); a request for a table and the exact words used for the amount (3); a final check line saying what a person must check (2)</td></tr>
+    <tr><td>B. Running the analysis</td><td>15</td><td>Extraction run on all 14 records with the table pasted (4); the Benford test run with code (or built in a spreadsheet and interpreted by Claude), showing observed and expected for digits 1 to 9 (4); vendors that drive each gap named, plus the three other checks (4); innocent explanations asked for and shown (3)</td></tr>
+    <tr><td>C. Verification</td><td>20</td><td>Two findings, 10 points each: the finding quoted (2), your own counting or arithmetic from the files shown (4), a verdict that is correct against the files (3), and what you did about it (1)</td></tr>
+    <tr><td>D. Report for Nadia</td><td>15</td><td>60 to 300 words; any of the three next steps earns credit if the numbers support it, and "no follow-up" says why the indicators are not enough; first sentence says the data show indicators for a person to follow up, not proof (3); the numbers that drive it, accurate and traceable (4); innocent explanations considered, including for the fixed-fee vendor (3); what is not known and the next steps for a person (3); IDs only, nobody accused or named, written for Nadia (2)</td></tr>
+    <tr><td>E. Your lens</td><td>10</td><td>Option chosen, request shown (3); content correct and every number traceable (4); fits the format, names nobody, and includes a "not in the data" item or limitation (3)</td></tr>
+    <tr><td>F. Ethical AI: human accountability</td><td>15</td><td>Step 4: five suggestions judged correctly with a reason that says what the suggestion does or what makes it acceptable (1 point each, 5), and a sound decision that names who is accountable (3). Part 8: decisions left to a person with who is accountable, and a check you actually made that a flag was only an indicator (4); one disclosure line that says AI helped, names a real person as reviewer (you, not a fictional character and never the tool), and is truthful about the checking, with tools listed and what each did (3)</td></tr>
+    <tr><td>G. Mastery evidence</td><td>15</td><td>Coach conversation included and your revision addresses it (or explains why you disagreed)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion H, the third verified finding, a check without AI, and an assumption or limitation in Part 9 (10 extra points: third finding 3, check without AI 4, assumption or limitation 3; graduate scores are scaled to 100). The quiz in Step 7 is graded separately in Canvas, and Part 1 and Step 8 are practice and reflection that are outside these 100 points. You are scored on your reasoning and evidence, not on matching wording.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 20 min</span></h2>
+  <div class="card">
+    <p>10 short questions about Steps 3 and 4 (indicators and proof, Benford's Law, extraction from messy records, counting with code, innocent explanations, writing a careful report, and human accountability). You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">If no button appears here, your instructor has not posted the link yet. Find the quiz in your Canvas course, in the Module 6 section, or ask your instructor.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 10 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl"><b>First look back at your Step 2 attempt and your Audit Extraction Template.</b> Then think of a pile of messy information you have to deal with at work, in an internship, or in another class (emails, receipts, survey answers, notes). How would you get AI to organize or test it, and which check would you never skip before reporting what it found? <b>Write 3 to 5 sentences.</b> This is not part of your Canvas submission; it is for you.</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/module6.js"></script>
+</body>
+</html>

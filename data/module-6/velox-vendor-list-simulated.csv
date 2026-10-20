@@ -1,34 +1,34 @@
 vendor_id,vendor_name,city_state,date_added,added_by,bank_last4,payment_terms
-V-1001,Cedar Valley Paper Co.,"Omaha, NE",2018-02-12,A-212,6923,Net 30
-V-1002,Ames Safety Equipment,"Cedar Rapids, IA",2015-06-14,A-226,3188,Net 45
-V-1003,Hawkeye Office Supply,"Minneapolis, MN",2023-05-07,A-205,6079,2/10 Net 30
-V-1004,Linn County Packaging,"West Des Moines, IA",2013-03-06,A-148,8436,Net 45
-V-1005,Raccoon River Janitorial Goods,"Kansas City, MO",2015-11-30,A-190,8196,2/10 Net 30
-V-1006,Story City Printing,"Davenport, IA",2013-05-12,A-212,7643,Net 30
-V-1007,Boone Tool Crib,"West Des Moines, IA",2023-08-28,A-131,9095,2/10 Net 30
-V-1008,Great Plains Steel,"Chicago, IL",2023-09-05,A-109,0648,Net 30
-V-1009,Midland Electric Motors,"Ankeny, IA",2019-01-04,A-104,8120,2/10 Net 30
-V-1010,Northfield Logistics,"Ankeny, IA",2020-06-23,A-212,4310,Net 30
-V-1011,Heritage Wire & Cable,"Ankeny, IA",2019-06-13,A-190,3834,Net 45
-V-1012,Missouri Valley Castings,"Davenport, IA",2014-06-24,A-148,1672,Net 45
-V-1013,Cornerstone Fasteners,"Cedar Rapids, IA",2018-05-06,A-104,6169,Net 30
-V-1014,Prairie Wind Hydraulics,"Ames, IA",2016-09-08,A-166,4521,2/10 Net 30
-V-1015,Capital City Plastics,"Omaha, NE",2023-03-20,A-190,4284,Net 30
-V-1016,Squaw Creek Coatings,"Davenport, IA",2023-06-03,A-212,1443,Net 30
-V-1017,Big Sioux Machining,"Omaha, NE",2023-11-23,A-104,1718,Net 30
-V-1018,Iowa Power & Light,"Des Moines, IA",2014-08-07,A-131,3177,2/10 Net 30
-V-1019,Des Moines Water Works,"Cedar Rapids, IA",2019-03-01,A-173,4348,2/10 Net 30
-V-1020,Tri-State Freight,"Ames, IA",2023-02-09,A-173,7097,Net 45
-V-1021,Summit Engineering Services,"Sioux City, IA",2022-05-05,A-104,1774,Net 30
-V-1022,Lakeland IT Consulting,"Davenport, IA",2012-09-30,A-104,0181,Net 30
-V-1023,Brookside Testing Labs,"Des Moines, IA",2019-06-02,A-148,3574,Net 45
-V-1024,Westbrook Insurance Brokers,"Madison, WI",2022-07-10,A-166,2292,Net 30
-V-1025,Highland Staffing,"Kansas City, MO",2014-04-23,A-131,5101,Net 30
-V-1026,Crossroads Training Partners,"Ankeny, IA",2012-10-07,A-205,1737,Net 30
-V-1027,Meridian Tooling Group,"Minneapolis, MN",2019-08-13,A-205,9989,Net 30
-V-1028,Redwood Automation,"Ames, IA",2023-04-08,A-117,0140,2/10 Net 30
-V-1029,Keystone Calibration,"Sioux City, IA",2016-03-05,A-104,9156,Net 30
-V-1030,Ridgeline Packaging Systems,"Davenport, IA",2022-04-04,A-219,3533,Net 30
-V-1031,Blue Earth Chemical,"Cedar Rapids, IA",2013-02-25,A-109,5050,Net 45
+V-1001,Cedar Valley Paper Co.,"Omaha, NE",2018-02-12,A-212,7923,Net 30
+V-1002,Ames Safety Equipment,"Cedar Rapids, IA",2015-06-14,A-226,4188,Net 45
+V-1003,Hawkeye Office Supply,"Minneapolis, MN",2023-05-07,A-205,7079,2/10 Net 30
+V-1004,Linn County Packaging,"West Des Moines, IA",2013-03-06,A-148,9436,Net 45
+V-1005,Raccoon River Janitorial Goods,"Kansas City, MO",2015-11-30,A-190,9196,2/10 Net 30
+V-1006,Story City Printing,"Davenport, IA",2013-05-12,A-212,8643,Net 30
+V-1007,Boone Tool Crib,"West Des Moines, IA",2023-08-28,A-131,8733,Net 30
+V-1008,Great Plains Steel,"Des Moines, IA",2014-03-02,A-109,6120,Net 30
+V-1009,Midland Electric Motors,"Minneapolis, MN",2021-03-30,A-109,7193,Net 45
+V-1010,Northfield Logistics,"Des Moines, IA",2013-07-15,A-166,8973,Net 30
+V-1011,Heritage Wire & Cable,"Omaha, NE",2014-06-24,A-148,2672,Net 45
+V-1012,Missouri Valley Castings,"Cedar Rapids, IA",2018-05-06,A-104,7169,Net 30
+V-1013,Cornerstone Fasteners,"Ames, IA",2016-09-08,A-166,5521,2/10 Net 30
+V-1014,Prairie Wind Hydraulics,"Omaha, NE",2023-03-20,A-190,5284,Net 30
+V-1015,Capital City Plastics,"Davenport, IA",2023-06-03,A-212,2443,Net 30
+V-1016,Squaw Creek Coatings,"Omaha, NE",2023-11-23,A-104,2718,Net 30
+V-1017,Big Sioux Machining,"Des Moines, IA",2014-08-07,A-131,4177,2/10 Net 30
+V-1018,Iowa Power & Light,"Cedar Rapids, IA",2019-03-01,A-173,5348,2/10 Net 30
+V-1019,Des Moines Water Works,"Ames, IA",2023-02-09,A-173,8097,Net 45
+V-1020,Tri-State Freight,"Sioux City, IA",2022-05-05,A-104,2774,Net 30
+V-1021,Summit Engineering Services,"Davenport, IA",2012-09-30,A-104,1181,Net 30
+V-1022,Lakeland IT Consulting,"Des Moines, IA",2019-06-02,A-148,4574,Net 45
+V-1023,Brookside Testing Labs,"Madison, WI",2022-07-10,A-166,3292,Net 30
+V-1024,Westbrook Insurance Brokers,"Kansas City, MO",2014-04-23,A-131,6101,Net 30
+V-1025,Highland Staffing,"Ankeny, IA",2012-10-07,A-205,2737,Net 30
+V-1026,Crossroads Training Partners,"Minneapolis, MN",2019-08-13,A-205,1940,Net 45
+V-1027,Meridian Tooling Group,"Davenport, IA",2023-04-08,A-117,1140,2/10 Net 30
+V-1028,Redwood Automation,"Sioux City, IA",2016-03-05,A-104,2240,2/10 Net 30
+V-1029,Keystone Calibration,"Sioux City, IA",2016-11-01,A-109,4845,Net 30
+V-1030,Ridgeline Packaging Systems,"Ankeny, IA",2018-11-30,A-226,6679,Net 45
+V-1031,Blue Earth Chemical,"Ames, IA",2020-02-26,A-117,1602,Net 45
 V-1042,Heartland Facility Services,"Ankeny, IA",2019-03-11,A-131,5306,Net 30
 V-3318,Brightline Industrial Supply LLC,"PO Box 1187, Altoona, IA",2026-06-18,A-212,7741,Net 10
