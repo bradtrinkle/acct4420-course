@@ -60,6 +60,7 @@
   /* ---------- config-driven bits ---------- */
   const C = window.COURSE || {};
   if(C.videoUrl && C.videoUrl[4]) $("#videoBox").innerHTML = videoHtml(C.videoUrl[4], "Module 4 video");
+  else { const h=$("#videoHelp"); if(h) h.textContent = "The video is not posted yet. You can read the transcript or follow along with the slides using the buttons below."; }
   if(C.quizUrl && C.quizUrl[4]){ const q=$("#quizLink"); q.href=C.quizUrl[4]; q.style.display="inline-block"; $("#quizNone").style.display="none"; }
   if(C.submitUrl && C.submitUrl[4]){ const s=$("#submitLink"); s.href=C.submitUrl[4]; s.style.display="inline"; }
 
