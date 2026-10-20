@@ -1,0 +1,15 @@
+line_no,line_item,oct_budget_thousands,oct_actual_thousands,variance_thousands,favorable_or_unfavorable,internal_notes
+L01,Revenue,115000,111200,-3800,Unfavorable,"Cars sold: 1,022 versus 1,058 in the budget."
+L02,Cost of goods sold,81000,84900,3900,Unfavorable,Carbon-fiber panel tariff continues; steel prices steady.
+L03,Gross profit,34000,26300,-7700,Unfavorable,
+L04,Warranty expense,1300,1720,420,Unfavorable,Two service campaigns on 2025-model cars (brake caliper bolts and a software update).
+L05,Freight-out,900,985,85,Unfavorable,Some dealer shipments went by expedited truck.
+L06,Marketing,2300,1880,-420,Favorable,The spring dealer event was moved to November; spending will show then.
+L07,Research and development,3200,3200,0,On budget,
+L08,Depreciation,1750,1750,0,On budget,
+L09,"Selling, general and administrative",4000,4090,90,Unfavorable,
+L10,Incentive compensation,950,720,-230,Favorable,Quarterly bonus pool accrued below plan.
+L11,Equipment lease expense,0,640,640,Unfavorable,New paint-line equipment leased from Prairie Capital starting October 1; not in the budget.
+L12,Legal and professional fees,0,0,0,On budget,
+L13,Total operating expenses,14400,14805,405,Unfavorable,
+L14,Operating income,19600,11495,-8105,Unfavorable,

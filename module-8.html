@@ -1,0 +1,522 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 8: From Pieces to Workflows</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html">Module 2</a><a href="module-3.html">Module 3</a><a href="module-4.html">Module 4</a><a href="module-5.html">Module 5</a><a href="module-6.html">Module 6</a><a href="module-7.html">Module 7</a><a href="module-8.html" aria-current="page">Module 8</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><circle cx="18" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 8 · Week 8 · Tallgrass becomes Velox's AI implementation partner</span>
+<h1 style="margin:10px 0 4px">From Pieces to Workflows: The Month-End Machine</h1>
+<p class="hint">You will be able to chain the reusable pieces you built in weeks 2 to 7 into one workflow that runs the same three checks every month, stops twice for a person, and writes a short memo; test it on months you have not seen; and document what it can and cannot be trusted to do. Plan for about 6.9 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 15 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 8 video from your instructor</b><br><span class="hint" style="color:#ddd">The video will appear here. If it does not, tell your instructor and keep going; Walt's message below covers the key points.</span></div></div>
+  <p class="hint" id="videoHelp">Click the <b>play</b> button on the video to watch it. Prefer to read, or want to follow along? Use the buttons below.</p>
+  <p class="dl-row">
+    <a class="btn btn-ghost btn-sm" href="downloads/module-8-video-transcript.pdf" download id="dlTranscript" style="display:none">Download the video transcript (PDF)</a>
+    <a class="btn btn-ghost btn-sm" href="downloads/module-8-slides.pptx" download id="dlSlides" style="display:none">Download the slides (PowerPoint)</a>
+  </p>
+  <div class="cfo"><b>From the Velox Controller, Walt Brenner</b><br>Every month my team closes the books the same way: reconcile the bank account, check the variance report, scan the payments, and write me a memo. It takes days, and the checks are the same every time. Tallgrass says AI can run it. I have heard that before. Here is my deal. You build me a machine out of the pieces you have made, and I will test it on a month you have not seen, with problems I planted myself. October is your practice month. November is my test, and I will not tell you what is in it. If your machine catches what my people would catch, tells me what it cannot decide, and does not cry wolf, we will talk about letting it do the first pass. A person still signs the memo. I will not sign something nobody read.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>For seven weeks you were a rotation student, learning one department at a time. This week Tallgrass becomes Velox's AI implementation partner, and you become a builder. You already own the parts: a prompt template, a reconciliation chain, a reporting project, an analysis template, a set of payment checks, and a source-grounded memo template. Now you wire them together, and then Walt tries to break it.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <div class="card">
+    <h3>Module 8 at a glance</h3>
+    <p><b>Who is who:</b> Velox Motorworks is a fictional, publicly traded sports car maker. Walt Brenner is the Velox Controller (the executive who runs accounting and approves the monthly close). You are a new hire at Tallgrass Advisory, the consulting firm training Velox's finance team. Jordan Reyes is your mentor at Tallgrass. All names, companies, and numbers in this course are fictional, and the bank, ledger, budget, and payment files you will use are simulated for this course.</p>
+    <p><b>Two words to know before you start.</b> A <b>machine</b>, in this module, is a Claude Project (the kind you built in Modules 1 and 4) that runs the same fixed stages in the same order every month. A <b>gate</b> is a point where the machine must stop and wait for a person to read its work and approve it before it goes on.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your Step 4 ethics answers, the instructions for your own Velox Close Machine, your practice run, the results of Walt's test month, your own check of two findings, a one-page description of your machine (what it does, how it was tested, what it cannot do), a short idea note for your final project, and your coach conversation and revision notes.</p>
+    <p><b>What you need:</b> your own paid Claude account (claude.ai) that lets you create Projects, attach files to a chat, and run code on them; Excel or Google Sheets (you will check numbers yourself); your Jordan Coach project from Module 1; the pieces you saved in earlier weeks (open them when Part 2 asks); and your Canvas login. Use the same browser and device each time, and do not use a private or incognito window, because your progress saves in this browser only. If your Claude plan cannot attach files or run code, ask your instructor before you start Step 5. Once Steps 4 to 6 are complete, <b>Download my submission</b> in Step 6 gives you a copy of your work; until then, your answers are saved only in this browser.</p>
+    <p><b>How this page is organized:</b> the module has 8 <i>steps</i>. Step 5 is the assignment, and it is split into numbered <i>Parts</i> (Part 1 to Part 9, plus Part 10 for graduate students). In Part 8 you choose a <i>lens</i>: one of six options, each written from the point of view of a part of the business such as accounting or marketing. You will test your machine on three months of Velox files: <b>October</b> (practice), <b>November</b> (Walt's test, "the Gauntlet"), and <b>December</b> (your mastery test in Step 6).</p>
+    <p><b>The 8 steps:</b> 1 Mission brief (15 min, including a video of about 8 minutes) · 2 Try it first (30) · 3 Learn (40) · 4 Ethics checkpoint (25) · 5 First attempt and coach feedback (255, including 10 minutes of setup and 30 minutes with Jordan) · 6 Mastery attempt (65) · 7 Quiz (20) · 8 Reflection (10). Total: 460 minutes, about 7.7 hours. Graduate students add about 60 minutes for Part 10.</p>
+  </div>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video (or it did not load) and read Walt's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before you build anything, see what plain Claude does with a month-end close when you give it <b>one message and no rules</b>. <b>Open a new Claude chat, attach the five October files below, and ask Claude to do the October close and tell you what is wrong</b>, in your own words, in a single message. Do not help it. The point is to learn what a machine has to fix. (If your Claude plan cannot attach files, ask your instructor before you start.)</div></div>
+  <div class="card">
+    <h3>Words you need</h3>
+    <table class="t"><tr><th>Word</th><th>What it means here</th></tr>
+    <tr><td><b>Month-end close</b></td><td>The set of checks a finance team runs after a month ends, to make sure the books are right before reporting them.</td></tr>
+    <tr><td><b>Bank statement</b></td><td>The bank's record of every deposit and withdrawal in the company's account this month (what the bank says happened).</td></tr>
+    <tr><td><b>Cash ledger (GL cash)</b></td><td>The company's own record of the same account (what the books say happened). GL stands for general ledger, the main book of accounts.</td></tr>
+    <tr><td><b>Reconcile</b></td><td>Compare the bank statement with the cash ledger item by item and explain every difference, so that both end at the same true cash balance.</td></tr>
+    <tr><td><b>Variance report</b></td><td>A table of budget versus actual for each line of the income statement, with the difference (the variance) and a short internal note. Amounts are in thousands of dollars ("300" means $300,000).</td></tr>
+    <tr><td><b>Payment register</b></td><td>The list of payments the company made to its suppliers this month: who was paid, which invoice, how much, and who approved it.</td></tr>
+    <tr><td><b>Approved Vendor List</b></td><td>The list of suppliers the company has approved to be paid.</td></tr>
+    <tr><td><b>Adjusted (true) cash balance</b></td><td>The cash balance both sides agree on after every difference between the bank statement and the cash ledger is explained. Each side starts from its own ending balance and ends at this one number.</td></tr>
+    <tr><td><b>Deposit in transit, outstanding check</b></td><td>Normal timing differences: a <i>deposit in transit</i> is in the books but not yet on the bank statement; an <i>outstanding check</i> is written in the books but not yet cashed.</td></tr>
+    <tr><td><b>NSF (returned) item</b></td><td>A customer's payment that the bank returned because the customer's account lacked funds ("not sufficient funds"). The deposit is taken back.</td></tr>
+    <tr><td><b>Subtotal</b></td><td>A line that adds or subtracts other lines (on the variance report: Gross profit, Total operating expenses, and Operating income).</td></tr>
+    <tr><td><b>Exception</b></td><td>Something that does not look right and needs a person to look at it.</td></tr></table>
+    <p class="hint">All amounts on this page are in dollars unless a line says otherwise.</p>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the five October files</b> to your computer. If a file opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>:
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-bank-statement-october-simulated.csv" download>Bank statement</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-gl-cash-october-simulated.csv" download>Cash ledger</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-october-variance-simulated.csv" download>Variance report</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-october-payments-simulated.csv" download>Payment register</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-vendor-list-approved-simulated.csv" download>Approved Vendor List</a></div>
+        What is in them: the bank statement has the columns date, reference, description, deposits, withdrawals, running_balance; the cash ledger has date, reference, description, receipts, payments, running_balance; the variance report has line_no (L01 to L14), line_item, three amount columns whose names carry the month (for October: oct_budget_thousands, oct_actual_thousands, variance_thousands), favorable_or_unfavorable, and internal_notes; the payment register has payment_id, payment_date, invoice_date, vendor_id, vendor_name, invoice_number, amount, approved_by, second_approval; the vendor list has vendor_id, vendor_name, city_state, payment_terms. People appear only as ID codes.</li>
+      <li><b>Open Claude</b> in a new tab, <b>sign in</b> with your own Claude account, and click <b>New chat</b>. Do not use a Project for this.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li><b>Click the + or paperclip</b> in the chat box and <b>attach all five files</b>.</li>
+      <li><b>Type your own request</b> in your own words, in one message: do the October month-end close on these files and tell me what is wrong. <b>Do not give it any rules or thresholds</b>; what you are testing is what Claude decides on its own. Press <b>Enter</b> to send.</li>
+      <li><b>Read the answer</b>, then <b>answer the three questions below</b> in your own words.</li>
+      <li><b>Save your work for Step 5:</b> copy your request and Claude's final answer into a note on your computer (Notepad, Notes, or a Word document). In Step 5, Part 4, you can score this answer with the scorer you will meet there. Walt's written rules (a file you download in Step 5, Part 3) are <b>not</b> used in this step.</li>
+    </ol>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did Claude do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What did Claude decide on its own that you did not tell it to (for example, a limit it chose, a check it skipped, a rule it invented, a place where it did not stop to ask you)?</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. Next month a different new hire sends the same message. What might come out differently, and how would anyone know whether the answer was right?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">These answers are saved on this device. They are not graded and are not in your submission; they are your starting point for Step 5.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 40 min</span></h2>
+  <p class="hint">Sections 3a to 3h are reading and quick checks (3h ends with one question for you). The accounting you need is short on purpose: Walt gives you the rules in a file. Your job is to build the machine, test it, and decide how far to trust it. You apply every technique yourself in Step 5.</p>
+
+  <h3>3a. A workflow is a fixed path; an agent chooses its own</h3>
+  <p>In Step 2, Claude chose what to check, what thresholds to use, and when to stop. That is flexible, and it is also why two runs can differ. A <b>workflow</b> is the opposite: <b>you</b> fix the steps, the order, and the places where a person must look, and the AI does the work inside each step. An <b>agent</b> (Module 9) is an AI that chooses its own steps. For a task that must be the same every month and that someone will sign, start with a workflow: it is predictable, and you can test it.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Walt wants the same three checks and the memo in the same order every month, with a person approving along the way. Which describes what he is asking for?</p>
+    <div class="qc" data-id="q3a" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">An agent that decides each month which checks to run</button><button class="choice" data-i="1">A workflow with fixed stages and fixed places where a person must approve</button><button class="choice" data-i="2">A single long prompt typed fresh each month</button><button class="choice" data-i="3">A chat where Claude decides when to ask for help</button></div>
+      <div class="fb" data-ok="Right. Fixed steps and fixed approvals make it predictable and testable." data-no="Who decides the steps and the approvals: you, or the AI?"></div>
+    </div>
+  </div>
+
+  <h3>3b. Chain the stages: each stage feeds the next</h3>
+  <p>Your machine runs four <b>stages</b>, each doing one job and handing a short, clear result to the next: <b>Stage 1</b> reconcile cash (the bank statement against the cash ledger, ending in one true cash balance); <b>Stage 2</b> explain the variances (the variance report); <b>Stage 3</b> scan the payments (the payment register and the vendor list); <b>Stage 4</b> write the close memo from what the first three found. Each stage reuses a piece you already made: your Module 3 reconciliation chain for Stage 1, your Module 2 variance template and Module 4 "numbers say what, notes say why" habit for Stage 2, your Module 6 payment checks and Module 7 "not in the sources" rule for Stage 3, and your Module 2 prompt constraints, Module 5 template with defined inputs, and Module 7 write-for-the-reader habit for Stage 4. The rules (thresholds, what counts as an exception) do <b>not</b> go inside the stages; Walt keeps them in one rules file, so he can change a rule without anyone rewriting the machine.</p>
+  <svg viewBox="0 0 720 150" role="img" aria-label="Four stages in a row: 1 Reconcile cash, Gate 1, 2 Explain variances, 3 Scan payments, Gate 2, 4 Close memo, then a person signs." style="width:100%;max-width:720px;height:auto;margin:6px 0">
+    <g font-family="system-ui,Arial,sans-serif" font-size="13" text-anchor="middle">
+      <rect x="6" y="40" width="116" height="56" rx="10" fill="#fff" stroke="#C8102E" stroke-width="2"/><text x="64" y="64" font-weight="700">Stage 1</text><text x="64" y="82">Reconcile cash</text>
+      <rect x="150" y="48" width="44" height="40" rx="8" fill="#F1BE48" stroke="#9B0C23" stroke-width="2"/><text x="172" y="72" font-weight="700" font-size="12">Gate 1</text>
+      <rect x="222" y="40" width="116" height="56" rx="10" fill="#fff" stroke="#C8102E" stroke-width="2"/><text x="280" y="64" font-weight="700">Stage 2</text><text x="280" y="82">Explain variances</text>
+      <rect x="366" y="40" width="116" height="56" rx="10" fill="#fff" stroke="#C8102E" stroke-width="2"/><text x="424" y="64" font-weight="700">Stage 3</text><text x="424" y="82">Scan payments</text>
+      <rect x="510" y="48" width="44" height="40" rx="8" fill="#F1BE48" stroke="#9B0C23" stroke-width="2"/><text x="532" y="72" font-weight="700" font-size="12">Gate 2</text>
+      <rect x="582" y="40" width="116" height="56" rx="10" fill="#fff" stroke="#C8102E" stroke-width="2"/><text x="640" y="64" font-weight="700">Stage 4</text><text x="640" y="82">Close memo</text>
+      <path d="M122 68h28M194 68h28M338 68h28M482 68h28M554 68h28" stroke="#5C5C66" stroke-width="2" fill="none"/>
+      <text x="640" y="128" fill="#9B0C23" font-weight="700">then a person signs</text>
+      <text x="64" y="128" fill="#5C5C66">Rules file and monthly files feed every stage</text>
+    </g>
+  </svg>
+  <div class="tech"><p><b>Technique:</b> Prompt chaining (also called a multi-step workflow or a pipeline: a task split into stages, where each stage's output is the next stage's input)</p><p><b>Why it helps:</b> Each stage is small enough to check, a mistake is easier to locate, and the same stages run the same way every month. In Step 5 you write the stages into your own instructions.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Why is it better to keep Walt's thresholds in a rules file than to write them inside each stage?</p>
+    <div class="qc" data-id="q3b" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">Because Claude cannot read thresholds inside instructions</button><button class="choice" data-i="1">Because rules files are always more accurate</button><button class="choice" data-i="2">Because Walt can change a rule in one place without anyone rewriting the machine</button><button class="choice" data-i="3">Because it makes the instructions longer</button></div>
+      <div class="fb" data-ok="Yes. The rules change more often than the procedure does." data-no="Which choice describes a benefit to the person who owns the rules?"></div>
+    </div>
+  </div>
+
+  <h3>3c. Gates: where a person must stop the machine</h3>
+  <p>Your machine has <b>two gates</b>. <b>Gate 1</b> comes after Stage 1, because the adjusted cash balance feeds the memo and a wrong number there spoils everything after it. <b>Gate 2</b> comes after Stage 3, just before the memo is written, because a person should decide which exceptions go in front of the Controller. At a gate the machine writes "GATE 1" or "GATE 2" and <b>stops and waits</b>. You then <b>read</b>, and approve, correct, or ask a question. A gate works only if the person actually reads. A gate approved without reading is a rubber stamp, not a control. Also remember that "nothing found" is not the same as "looked and found nothing": at a gate, check that the machine says <b>what it tested</b>, not only what it found.</p>
+  <div class="tech"><p><b>Technique:</b> Human-in-the-loop checkpoints (also called gates, approval steps, or human review)</p><p><b>Why it helps:</b> The AI does the heavy lifting; a person keeps the judgment and the accountability. The checkpoint sits where an error would be most costly or hardest to see later.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>At Gate 2 the machine reports "no payment exceptions found." What should the person do?</p>
+    <div class="qc" data-id="q3c" data-correct="3" data-req>
+      <div class="choices"><button class="choice" data-i="0">Approve at once, since there is nothing to review</button><button class="choice" data-i="1">Ask the machine "Are you sure?" and approve if it says yes</button><button class="choice" data-i="2">Delete the gate, because it never finds anything</button><button class="choice" data-i="3">Check that the machine states which tests it ran on which payments, and spot-check one test in the register before approving</button></div>
+      <div class="fb" data-ok="Right. A clean result is only worth something if the tests really ran." data-no="What would a skipped test look like in the machine's output?"></div>
+    </div>
+  </div>
+
+  <h3>3d. Instructions that make it a machine</h3>
+  <p>The machine lives in a Claude Project (you built one in Module 4). Three things go in it. The <b>rules file</b> and the Approved Vendor List are <b>knowledge files</b> (Claude reads them every run). The <b>instructions</b> say how to work: which files it uses, the four stages and what each must produce, where to stop, how to write the memo. And every month you attach the <b>monthly files</b> to a new chat. Good instructions also include <b>guardrails</b>: use only the files and write "not in the data" instead of guessing; name every item by its code exactly as it appears in the files; use code for every calculation and show the formula; <b>stop and tell the person if a file is missing or a required column is missing</b>; and never say or imply that anyone committed fraud or name an individual.</p>
+  <div class="tech"><p><b>Technique:</b> Standing instructions plus knowledge files (a system prompt with attached documents), tool use for calculations (code execution), and guardrails (a stop-if-something-is-wrong rule, sometimes called failing safe)</p><p><b>Why it helps:</b> The same rules and procedure apply to every run, whoever starts it. A machine that stops when something is wrong is safer than one that improvises.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Someone forgets to attach the cash ledger. What should the machine do?</p>
+    <div class="qc" data-id="q3d" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">Stop, say which file is missing, and wait; make up nothing</button><button class="choice" data-i="1">Estimate the cash ledger from the bank statement and carry on</button><button class="choice" data-i="2">Skip Stage 1 and run the other stages without saying so</button><button class="choice" data-i="3">Use last month's ledger</button></div>
+      <div class="fb" data-ok="Yes. A missing input is a stop, not a guess." data-no="Which choice avoids inventing numbers?"></div>
+    </div>
+  </div>
+
+  <h3>3e. Test it like a product: caught, missed, and false alarms</h3>
+  <p>How do you know the machine works? Do not judge it by how confident its memo sounds. <b>Test it on a month where you know the answers.</b> Walt plants problems in each month's files. You count how many your machine <b>caught</b> (found), how many it <b>missed</b>, and how many <b>false alarms</b> it raised (it flagged something that was fine). Practitioners call caught-out-of-planted <b>recall</b>, and flagged-items-that-were-real <b>precision</b>. A machine that flags everything has perfect recall and is useless, because a person must then check everything. You want both numbers high. Walt's scorer combines them in one number: <b>problems caught, divided by (problems planted + false alarms)</b>. Missing a problem and raising a false alarm each pull it down.</p>
+  <p>Use three kinds of month: a <b>practice month</b> (October) where you may see what you missed and fix your machine; a <b>hidden test month</b> (November) that you run once, as Walt's Gauntlet; and a <b>fresh month</b> (December) to see whether your fixes work on something new. This matters because of one rule: <b>fix the rule, not the practice month.</b> If the machine missed a duplicate payment, the fix is a general instruction ("test every payment against every other for the same vendor, invoice number, and amount"), never a note about the particular payment. A machine tuned to one month's answers can look perfect there and fail on the next one. Practitioners call that <b>overfitting</b>. And after you change anything, re-run an earlier month to check that you did not break what used to work (<b>regression testing</b>).</p>
+  <div class="tech"><p><b>Technique:</b> Evaluation against a test set (often called evals): known problems, caught versus missed versus false alarms (recall and precision), a held-out test month, and regression testing after changes</p><p><b>Why it helps:</b> It replaces "it sounds right" with a number you can compare from one version of the machine to the next, and it shows whether a fix works in general or only on the month you used.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>A test month has 12 planted problems. Your machine lists 10 items: 8 are planted problems and 2 are not. How would you describe the result?</p>
+    <div class="qc" data-id="q3e1" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">It caught 8 of 12 and raised 2 false alarms</button><button class="choice" data-i="1">It caught 10 of 12 and raised no false alarms</button><button class="choice" data-i="2">It caught 8 of 10, so it missed nothing</button><button class="choice" data-i="3">It was 80 percent accurate, so it is ready</button></div>
+      <div class="fb" data-ok="Right. Count the planted problems it found, the planted problems it did not, and the extras it flagged." data-no="Of the 12 planted problems, how many did it find? How many of its 10 items were not planted?"></div>
+    </div>
+    <p>The machine missed a payment that was paid twice in October. Which fix follows the rule "fix the rule, not the practice month"?</p>
+    <div class="qc" data-id="q3e2" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Add to the instructions: "Always flag payment P-900123"</button><button class="choice" data-i="1">Add to the instructions: "Compare every payment with every other payment for the same vendor, invoice number, and amount, and list each pair"</button><button class="choice" data-i="2">Re-run October until it finds it, then use that run</button><button class="choice" data-i="3">Tell the machine October has a duplicate</button></div>
+      <div class="fb" data-ok="Yes. A general instruction works next month too." data-no="Which fix would still help in a month where the duplicate is a different payment?"></div>
+    </div>
+  </div>
+
+    <h3>3f. Watch a machine work: a real example</h3>
+  <p>Here is a made-up company, <b>Lakeshore Marine Supply</b>, a boat-parts distributor (not Velox, so this is not your answer). We built its machine the way you will build yours: a Claude Project with a rules file (Lakeshore's own thresholds: variances of at least 5 percent and at least 100 thousand dollars, and a second approval for payments of $2,500.00 or more), the Approved Vendor List, and the four-stage instructions. Then we ran its August files. (Rule numbers in the output, such as Rule 1d or Rule 3b, refer to the rules file; you will download Velox's version, written the same way, in Step 5, Part 3. You do not need to know them yet.) <b>This is Claude's real output, condensed.</b></p>
+  <p><b>1. The first try: two files were missing.</b> We attached only the variance report, the payment register, and the vendor list. The machine's whole answer was:</p>
+  <p style="border-left:4px solid var(--gold);padding-left:12px"><i>"I can't start the close yet. Two of the files I work from are missing: the bank statement and the GL cash ledger. Stage 1 compares those two files item by item, so I can't do it without both. My instructions say that when a file is missing I stop and tell you rather than improvise. I haven't run any stage and haven't produced any numbers."</i></p>
+  <p><b>2. Stage 1 after we attached the files.</b> Claude matched 19 references, listed four routine items (a deposit in transit of $44,800.00, outstanding checks of $4,725.00 + $2,390.50 = $7,115.50, a $60.00 service charge, and $212.18 of interest) and three exceptions, then used Python to calculate both adjusted balances:</p>
+  <table class="t"><tr><th>Code</th><th>Rule</th><th>What Claude found</th></tr>
+  <tr><td><b>RTN0822</b></td><td>1c(i) returned item</td><td>$9,600.00 charged back by the bank (NSF), not in the books.</td></tr>
+  <tr><td><b>CHK51004</b></td><td>1c(ii) different amounts</td><td>Bank $6,180.00, books $6,810.00, a $630.00 difference. By Rule 1d it assumed the bank is right and corrected the books.</td></tr>
+  <tr><td><b>WIRE9025</b></td><td>1c(iii) not authorized</td><td>A $425.00 fee the bank itself calls "charged in error." By Rule 1e it came out of the bank side.</td></tr></table>
+  <p>Its calculation: <i>adjusted bank balance = 492,321.33 + 44,800.00 − 7,115.50 + 425.00 = 530,430.83; adjusted book balance = 539,248.65 + 630.00 − 9,600.00 − 60.00 + 212.18 = 530,430.83. Difference = $0.00.</i> Then it wrote <b>GATE 1</b> and waited.</p>
+  <p><b>3. Stage 2, the variance report.</b> Three lines met the 5 percent and 100 thousand test. Claude quoted each line's internal note, and for one of them it did something worth noticing:</p>
+  <table class="t"><tr><th>Line</th><th>Budget → actual</th><th>Claude's reading of the note</th></tr>
+  <tr><td>L01 Revenue</td><td>8,200 → 7,610</td><td>"Boat-show season ended early." <b>Explains it.</b></td></tr>
+  <tr><td>L02 Cost of goods sold</td><td>5,740 → 5,395</td><td>The note says "Fiberglass resin price up slightly." Claude: <i>"This does NOT explain it: a price increase would push cost up, but cost is $345 thousand under budget. The reason cost is lower is not in the data."</i></td></tr>
+  <tr><td>L06 Marketing</td><td>300 → 470</td><td>"Booth deposits paid in August; budget assumed September." <b>Explains it.</b></td></tr></table>
+  <p>It also checked the three subtotals (Gross profit, Total operating expenses, Operating income) and found no error. Claude did not accept a note just because a note existed.</p>
+  <p><b>4. Stage 3, the payments.</b> Claude tested every payment against every rule, then listed four exceptions: <b>P-700008 and P-700019</b> (the same vendor, invoice number PW-8841, and amount, $1,480.00, paid twice); <b>P-700012 and P-700013</b> (the same vendor, the same day, the same approver, $1,650.00 + $1,400.00 = $3,050.00, each under the $2,500.00 line but together over it); <b>P-700016</b> ($7,850.00 with the second approval recorded as "none"); and <b>P-700021</b> ($2,210.00 to vendor X-90, which is not on the Approved Vendor List). It also listed what it had checked and found nothing, such as the timing rule (no payment dated before its invoice). It wrote <b>GATE 2</b> and waited.</p>
+  <p><b>5. Stage 4, the memo.</b> After both gates, Claude wrote this. <b>Read it as Walt would:</b></p>
+  <div class="copybox" style="max-height:none">To: Controller
+Re: August 2026 close
+
+The adjusted cash balance is $530,430.83 (bank and books agree to the cent), and there are 8 exceptions.
+
+STAGE 1
+- RTN0822: returned NSF item, $9,600.00 (Rule 1c). Confirm collection or recovery with the customer; books reduced.
+- CHK51004: bank $6,180.00, books $6,810.00 (Rule 1c). Confirm the amount; books corrected by $630.00 per Rule 1d.
+- WIRE9025: $425.00 fee the bank itself calls charged in error (Rule 1c). Ask the bank to reverse it.
+
+STAGE 2
+- L01: investigated; note explains it.
+- L02: investigated; note does not explain it (it cites a resin price increase, yet cost is $345 thousand under budget).
+- L06: investigated; note explains it.
+- No subtotal errors.
+
+STAGE 3
+- P-700008 / P-700019: duplicate (same vendor, invoice number and amount, $1,480.00 each). Confirm and recover one.
+- P-700012 / P-700013: possible split ($1,650.00 + $1,400.00 = $3,050.00, same vendor, day and approver). Check the business reason.
+- P-700016: $7,850.00 with no second approval (Rule 3b). Obtain or review approval.
+- P-700021: vendor not on the Approved Vendor List, $2,210.00. Verify the vendor.
+
+NOT IN THE DATA
+Why cost of goods sold is under budget; whether the bank will reverse the fee; whether the NSF amount will be collected; whether register payments tie to the cash ledger checks.
+
+Reviewed by: ____ (a person must sign before this goes to the Controller)</div>
+  <p class="hint">For this demonstration we told the machine to treat both gates as approved so you could see all four stages in one place. You will not do that: you will stop and read at each gate.</p>
+  <p><b>What to notice:</b> (1) With a file missing, the machine <b>stopped</b> and invented nothing. (2) Every total was calculated with code, with the formula and inputs shown, and the two adjusted balances agree to the cent. (3) It applied Walt's rules, not its own: the bank's amount was assumed right, and the thresholds came from the rules file. (4) It said what the note <b>did not</b> explain and put that in the memo as an exception, instead of accepting a note that did not fit. (5) The memo uses codes only, names nobody, says "not in the data" where the files are silent, and ends with a line for a <b>person</b> to sign. (6) The machine is a very fast first pass, not the last word: a person still opens the files behind each exception.</p>
+
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>In the example, why did Claude list L02 as needing a person?</p>
+    <div class="qc" data-id="q3f" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Because the L02 variance was the biggest on the report</button><button class="choice" data-i="1">Because the note given for L02 did not explain the variance, and the files said nothing else</button><button class="choice" data-i="2">Because Claude suspected a mistake by a particular employee</button><button class="choice" data-i="3">Because every investigated line goes in the memo as an exception</button></div>
+      <div class="fb" data-ok="Right. The rule is to explain a line from its note, and to say 'not in the data' when the note does not fit." data-no="What does the rule say to do when the note does not explain the variance?"></div>
+    </div>
+  </div>
+
+
+
+  <h3>3g. Document the machine: what, how it was tested, and what it cannot do</h3>
+  <p>A machine nobody can describe cannot be trusted or handed over. Write a <b>one-page machine card</b> with four parts: <b>what it does and what it needs</b> (its purpose, the files it takes, the rules file it follows); <b>its stages and gates</b>; <b>how it was tested and the results</b> (which months, caught, missed, false alarms, using the real numbers); and <b>its limits and who signs</b> (what it could not decide, what you did not test, and the role of the person accountable for the memo). Be honest about the limits: a card that says only good things will not be believed.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Which sentence belongs in the testing part of a machine card?</p>
+    <div class="qc" data-id="q3g" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">"The machine is very accurate and ready for use."</button><button class="choice" data-i="1">"The machine was tested and works well."</button><button class="choice" data-i="2">"On a test month with 12 planted problems it caught 10, missed 2, and raised 1 false alarm; it has not been tested on a month with a missing file."</button><button class="choice" data-i="3">"Claude passed its own check."</button></div>
+      <div class="fb" data-ok="Yes. Real numbers, and a limit stated." data-no="Which sentence gives numbers and admits what was not tested?"></div>
+    </div>
+  </div>
+
+  <h3>3h. Pick your technique</h3>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t3h">In one sentence, which of the techniques in 3b, 3c, 3d, and 3e do you think will help you most on a real task, and why? (This is saved for you. It is not graded and is not in your submission.)</label>
+    <textarea id="t3h" data-save="s3.h" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint: human accountability <span class="time">· 25 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>The faster a machine works, the easier it is to stop looking at it. Area 5 of the <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a> says: <b>Human accountability</b>. AI may draft, check, and calculate, but a named person is responsible for the result, and a machine can never be that person. Judge the five suggestions below the way a careful controller would.</div></div>
+  <div class="card">
+    <b>The rule:</b> A <b>named person</b> (a role such as the Controller or an accountant on the close team, never the AI) reviews AI work and answers for it. A human check only counts if the person really reads the work and can open the evidence behind it. Nothing leaves the team on the strength of an AI's say-so. You still follow the whole policy (its five areas are confidentiality and privacy, accuracy, bias, transparency and disclosure, and human accountability); area 5 is the focus of this step and of Part 9, and the policy link in Jordan's note above is optional reading.
+  </div>
+  <p>Below are five suggestions about running the Month-End Machine, with the facts about each. <b>Judge each one against the policy.</b></p>
+  <p class="hint"><b>How to choose a verdict:</b> choose <b>Meets the policy</b> only if a named person still reads the work, can open the evidence, and answers for the result (for a change to the rules, a named person approves it and it is recorded and re-tested). If the suggestion takes that person out, or lets the machine's output stand without a real check, choose <b>Does not meet the policy</b> and say in your reason what a person must do instead.</p>
+  <div id="situations"></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="e4d"><b>Walt asks: "If the machine passes my tests, can it run the close by itself?" What do you recommend?</b></label>
+    <select id="e4d" data-save="e4.decision" data-req data-sel><option value="">Choose one…</option><option>Yes. Let the machine run the close and send the memo, because it passed the tests</option><option>Let the machine do the first pass (matching, checking, calculating, drafting), keep both gates, and have a named person open the evidence and sign</option><option>No. Never use AI for the close; do everything by hand</option></select>
+    <label class="lbl" for="e4w"><b>Why?</b> Name the person (a role; never the AI) who is accountable for the memo and explain your choice.</label>
+    <textarea id="e4w" data-save="e4.why" data-min="60" data-req></textarea>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 255 min</span></h2>
+  <p class="hint">Every box needs a real answer: a box that is too short (for example, a pasted answer of only a few words) will not let you continue, and the message under the page tells you which box is still needed. In this step, "Part 1" to "Part 10" are the sections of the assignment. The grading table (rubric) is at the bottom of Step 6; the file you upload to Jordan in the Setup section just below covers the same criteria and points in more detail, so you can read it first.</p>
+
+  <h3>Setup: add the Module 8 rubric to your Jordan Coach, and check that Claude can run code (about 10 minutes)</h3>
+  <p class="hint"><b>A note on confidentiality:</b> the files in this module are simulated, so uploading them to your own Claude account is fine. At a real company you would not upload a real bank statement, payment register, or vendor list to a personal AI account; you would use only the tools your company has approved (policy area 1, confidentiality).</p>
+  <p class="hint">You built your Jordan Coach project in Module 1, and its instructions still work. If you did not build it, go to <a href="module-1.html">Module 1</a>, Step 5, and build it first (about 20 minutes extra), then come back here.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1"><b>Download the Module 8 rubric</b> to your computer: <a class="btn btn-ghost btn-sm" href="downloads/module-8-rubric.md" download>Download module-8-rubric.md</a> (If it opens in the browser, right-click the button and choose <b>Save link as</b>.)<br>Then, in your Jordan Coach project, <b>find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload</b> the file. Leave the other files there.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c3" data-req id="c3"><label for="c3"><b>Make sure Claude can run code on a file.</b> In Claude, <b>click your name</b> (bottom left), <b>choose Settings</b>, then <b>Capabilities</b>, and <b>turn on</b> the option for code execution and file creation. The wording of the setting may differ on your plan. To test it, <b>start a new chat</b>, <b>attach any small spreadsheet</b>, and <b>ask Claude: "Can you run code on this file to add up the numbers in one column?"</b> If it cannot, ask your instructor before you continue; the machine depends on code for every calculation.</label></div>
+
+  <h3 style="margin-top:28px">Assignment: The Velox Close Machine</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b>Map your saved pieces to the four stages, write the instructions for your own Velox Close Machine and build it as a Claude Project, rehearse it on October, take Walt's Gauntlet on November, check two findings yourself, document the machine on one page, and choose the lens for your final-project idea.</b> Everything you type below saves in this browser and builds your submission automatically, so use the same browser and device.</div></div>
+
+  <label class="lbl" for="stuName"><b>Type</b> your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420). Check this only if you are in 5420. Part 10 will appear after Part 9 once you tick this box (about 60 extra minutes; finish it before you copy your draft for Jordan), where you build a second test scenario of your own, compare it with November, and explain an improvement.</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Record your first try (from Step 2) · about 5 min · practice, not graded</h3>
+  <p class="hint">This part is not graded, but Step 2 is required and these boxes must be filled in to continue. If you skipped Step 2, go back and do it now (about 30 minutes) so you can fill these in.</p>
+  <label class="lbl" for="r1p"><b>Paste your Step 2 request</b> from the note you saved (just your request, not the files)</label>
+  <textarea id="r1p" data-save="s5.r1p" data-min="15" data-req></textarea>
+  <label class="lbl" for="r1o"><b>Summarize what Claude gave you</b> in two or three sentences</label>
+  <textarea id="r1o" data-save="s5.r1o" data-min="30" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="r1w"><b>Name two things you could not rely on</b> in that answer (for example, a limit Claude chose by itself, a check it skipped, or a place where it did not stop for you)</label>
+  <textarea id="r1w" data-save="s5.r1w" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 2 · Map your saved pieces to the four stages · about 10 min</h3>
+  <p class="hint">A machine is built from parts you already own. <b>Open the pieces you saved</b> in earlier weeks (your Module 2 prompt template, Module 3 reconciliation chain, Module 4 reporting project instructions, Module 5 analysis template, Module 6 payment checks, Module 7 source-grounded research memo template). If you no longer have one, say so and write what you would do instead; that earns full credit. For each stage below, <b>name the piece you will reuse</b> (which module, and what it does) and <b>say what you will change</b> to fit this task. The point is to see what is reusable and what must change.</p>
+  <div id="pieces"></div>
+
+  <h3 style="margin-top:22px">Part 3 · Write the instructions and build your machine · about 45 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download Walt's two knowledge files</b> to your computer. The rules file is the same every month; <b>read it once</b> before you write anything (it is short). If a file opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>:
+        <div class="dl-row"><a class="btn btn-ghost btn-sm" href="data/module-8/velox-close-rules.txt" download>Walt's Close Rules (Rules 1 to 5)</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-vendor-list-approved-simulated.csv" download>Approved Vendor List</a></div></li>
+      <li><b>Write your instructions</b> in your own words in the box below. They must include these ten things: (1) who the machine is and who it works for, and that a person reviews everything it produces; (2) the files it works from (name the rules file, the four monthly files, and the vendor list) and that it uses <b>only</b> those files, writing "not in the data" instead of guessing; (3) <b>Stage 1</b>, reconcile cash, and what it must produce (item-by-item match, routine items, exceptions by code, both adjusted balances agreeing to the cent); (4) <b>Gate 1</b>: stop, write "GATE 1", and wait for a person; (5) <b>Stage 2</b>, explain the variances, and what it must produce; (6) <b>Stage 3</b>, scan the payments: apply every test to every payment, list the exceptions, and say which tests were run and found nothing; (7) <b>Gate 2</b>: stop, write "GATE 2", and wait before the memo; (8) <b>Stage 4</b>, the close memo, written exactly as Rule 5 says; (9) <b>use code for every calculation</b>, showing the formula, the inputs, and the result; (10) <b>guardrails</b>: name every item by its code exactly as in the files, <b>stop and tell the person if a file is missing or a required column is missing</b>, never say or imply that anyone committed fraud, and never name an individual. (The variance report's amount columns carry the month in their names, such as oct_ or nov_; that is expected, so do not let the machine stop for that.) <b>Do not copy the rules into your instructions.</b> Point to the rules file ("apply every rule in it") so the rules stay in one place.</li>
+      <li><b>Build the Project.</b> In Claude, <b>click Projects</b> in the left sidebar, then <b>New project</b> (or <b>Create project</b>), <b>name it "Velox Close Machine"</b>, and create it. <b>Find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload the rules file and the vendor list</b>. <b>Find the project instructions</b> (a button such as <b>Set project instructions</b> or <b>Instructions</b>), <b>paste your instructions</b>, and <b>save</b>. The wording of these buttons may differ on your plan. You do <b>not</b> upload the monthly files to the Project; they change every month, so you attach the four monthly files (bank statement, cash ledger, variance report, payment register) to a new chat each time. The Approved Vendor List is the same every month, so it stays in the Project (if the machine says it cannot find the vendor list, attach it to the chat too).</li>
+      <li><b>Test the stop rule.</b> <b>Start a new chat inside the Project</b>, attach <b>no</b> monthly files, and <b>type "Run the October close."</b> A good machine stops and says what is missing. <b>Copy its answer</b> and fill in the box below. If it does not stop, fix your instructions and try again.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="instr"><b>Paste your Velox Close Machine instructions</b> (the full text you saved in the Project)</label>
+  <textarea id="instr" data-save="s5.instr" data-min="700" data-req style="min-height:300px"></textarea>
+  <label class="lbl" for="stoptest"><b>Paste what the machine said</b> when you asked it to run the October close with no files attached</label>
+  <textarea id="stoptest" data-save="s5.stoptest" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Rehearse on October and score it · about 60 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the four October files</b> (or use the ones from Step 2):
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-bank-statement-october-simulated.csv" download>Bank statement</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-gl-cash-october-simulated.csv" download>Cash ledger</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-october-variance-simulated.csv" download>Variance report</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-october-payments-simulated.csv" download>Payment register</a></div></li>
+      <li><b>Start a new chat inside your Velox Close Machine project</b>, <b>attach the four October files</b>, and <b>type a short message</b> asking it to run the October close. Your instructions should do the rest.</li>
+      <li><b>At Gate 1, read what the machine wrote</b> (check, for example, that the two adjusted balances agree). Then <b>type your reply</b>: approve it, or point out a mistake <b>that you can show inside the machine's own output</b> (for example, two totals that disagree, or an item listed twice). Do not do the reconciliation or the checks yourself and feed the results in, and do not tell the machine what the answers are. <b>Do the same at Gate 2</b>: read, then reply.</li>
+      <li><b>Copy the memo</b> the machine writes at the end, and <b>paste only the memo</b> into the scorer below. It reads the codes in the memo and checks them against Walt's hidden answers for October. <b>Press Score this memo.</b> It tells you how many planted problems your memo caught in each stage, which codes were false alarms, whether the adjusted cash balance is right, and whether the memo is in the right format.</li>
+      <li><b>Optional baseline:</b> <b>paste your Step 2 answer</b> (the plain-Claude answer from Step 2) into the same scorer for October, <b>press Score</b>, and note the result in the box below. Comparing it with your machine's memo shows what the machine added.</li>
+      <li><b>Find the cause of anything missed or any false alarm</b> and <b>fix your instructions with a general rule</b>, not a note about October's items (fix the rule, not the practice month). You may re-run October as often as you like; the scorer logs each run. When you press <b>Reveal the October answers</b> below the scorer, you can see exactly what Walt planted in October.</li>
+    </ol>
+  </div>
+  <div class="scorer" data-scorer="s5oct" data-default="october" data-months="october"></div>
+  <label class="lbl" for="ooutp"><b>Paste your machine's Stage 1, Stage 2, and Stage 3 output</b> from your best October run, with the replies you typed at the two gates</label>
+  <textarea id="ooutp" data-save="s5.ooutp" data-min="300" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="omemo"><b>Paste the memo</b> from that run (the same text you scored)</label>
+  <textarea id="omemo" data-save="s5.omemo" data-min="150" data-req style="min-height:140px"></textarea>
+  <label class="lbl" for="obase"><b>Baseline comparison (optional but recommended):</b> what the scorer said about your Step 2 answer, in numbers, and one sentence on what the machine added</label>
+  <textarea id="obase" data-save="s5.obase" style="min-height:60px"></textarea>
+  <label class="lbl" for="ochg"><b>What did you change in your instructions because of October, and why?</b> Name one thing the machine missed, one false alarm, or one thing you were not happy with; say what caused it; and write the <b>general rule</b> you added or changed. If your first run was already perfect, say what you checked to be sure and what you would test next.</label>
+  <textarea id="ochg" data-save="s5.ochg" data-min="80" data-req style="min-height:100px"></textarea>
+
+  <h3 style="margin-top:22px">Part 5 · Walt's Gauntlet: November · about 35 min</h3>
+  <p class="hint">This is the test. Walt planted problems in November that you have not seen. <b>Run it once, cleanly.</b> Do not change your instructions in the middle of the run, and do not tell the machine what to find. At each gate you may approve, ask a question, or point out a mistake that you can show inside the machine's own output (not a finding you worked out yourself from the files). The memo you score should come from your first complete run; if you had to re-run because something technical failed, say so in the box about the gates below. You may re-run if something technical fails, but the scorer logs every run and your submission includes the log. <b>Only your first complete, scored November run counts for your grade, and the memo and stage output you paste below must come from that run.</b> A memo you edited afterward, or from a later run, is not scored.</p>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the four November files</b>:
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-bank-statement-november-simulated.csv" download>Bank statement</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-gl-cash-november-simulated.csv" download>Cash ledger</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-november-variance-simulated.csv" download>Variance report</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-november-payments-simulated.csv" download>Payment register</a></div></li>
+      <li><b>Start a new chat inside your Velox Close Machine project</b>, <b>attach the files</b>, and <b>ask it to run the November close</b>.</li>
+      <li><b>Read at Gate 1 and at Gate 2 and reply</b> as you did in October. <b>Copy the final memo.</b></li>
+      <li><b>Paste only the memo into the scorer below</b> and <b>press Score this memo.</b> The scorer shows counts and the false-alarm codes, but it does not name what you missed.</li>
+    </ol>
+  </div>
+  <div class="scorer" data-scorer="s5nov" data-default="november" data-months="november"></div>
+  <label class="lbl" for="noutp"><b>Paste your machine's Stage 1, Stage 2, and Stage 3 output</b> from the run you scored, with the replies you typed at the two gates</label>
+  <textarea id="noutp" data-save="s5.noutp" data-min="300" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="nmemo"><b>Paste the memo</b> from that run (the same text you scored)</label>
+  <textarea id="nmemo" data-save="s5.nmemo" data-min="150" data-req style="min-height:140px"></textarea>
+  <label class="lbl" for="ngate"><b>What did you check at each gate before you replied?</b> Name one specific thing you looked at in Gate 1 and one in Gate 2, and say what you would have done if it had been wrong.</label>
+  <textarea id="ngate" data-save="s5.ngate" data-min="60" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 6 · Check two findings yourself · about 25 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Choose two findings</b> from your machine's November output that matter most to Walt. A finding is a number or a claim, for example "the adjusted cash balance is X" or "payment P-… was made twice." Choose two different findings, and make at least one of them a number.</li>
+      <li><b>Open the November files</b> in Excel or Google Sheets (<b>File</b>, then <b>Open</b>, or double-click the downloaded file). <b>Do not ask AI to check them.</b></li>
+      <li>For each finding, <b>do the checking yourself</b>. For a balance: <b>find the ending balances</b> in the bank and ledger files (the last <b>running_balance</b> in each), apply the routine items and corrections the machine listed, and <b>compute the result with a formula in a cell</b>. Then <b>check the list itself</b>: <b>sort both files by reference code</b> and confirm that every reference that appears in only one file, or at two different amounts, is on the machine's list. For a payment finding: <b>sort the payment register</b> by vendor or invoice number (<b>Data</b>, then <b>Sort</b>) and <b>look at the rows</b>, or use <b>Ctrl+F</b> (<b>Cmd+F</b> on a Mac) to find the payment_id. <b>Compare your result</b> with what the machine said. Then <b>decide what to do about it</b>.</li>
+    </ol>
+  </div>
+  <div id="vrows"></div>
+
+  <h3 style="margin-top:22px">Part 7 · Write the machine card · about 10 min</h3>
+  <p class="hint">Write the one-page description of your machine described in Step 3g, in four short parts. <b>Use real numbers</b> from your scorer results for at least two months (use October and November now; Step 6 asks you to add December). Your page-built log is added to your submission, but quote the numbers you want a reader to notice. Name no other people.</p>
+  <label class="lbl" for="cd1"><b>1. What it does and what it needs:</b> its purpose, the files it takes, and the rules file it follows</label>
+  <textarea id="cd1" data-save="s5.cd1" data-min="60" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="cd2"><b>2. Its stages and gates:</b> the four stages in order, what each produces, and where it stops for a person</label>
+  <textarea id="cd2" data-save="s5.cd2" data-min="80" data-req style="min-height:90px"></textarea>
+  <label class="lbl" for="cd3"><b>3. How it was tested, and the results:</b> which months, how many planted problems it caught, missed, and false-alarmed on each (use your scorer numbers), and one thing the tests do not show</label>
+  <textarea id="cd3" data-save="s5.cd3" data-min="80" data-req style="min-height:90px"></textarea>
+  <label class="lbl" for="cd4"><b>4. Its limits and who signs:</b> at least two things the machine cannot decide or that you did not test, and the role of the person accountable for the memo</label>
+  <textarea id="cd4" data-save="s5.cd4" data-min="80" data-req style="min-height:90px"></textarea>
+
+  <h3 style="margin-top:22px">Part 8 · Choose your lens: a final-project idea · about 15 min</h3>
+  <p class="hint">In weeks 10 to 12 you will build a workflow like this one for a client. Your syllabus asks you to propose a topic now. <b>Pick one of the six options below.</b> They are equal in effort and are graded with the same criteria. Each is a short idea note of <b>150 to 250 words</b> (for the level of detail, a start might read: “Client: a regional bakery. Task: weekly invoice check. Stages: …”). This is not a commitment: you can change your idea in week 10. Whatever you choose: <b>name the client</b> (a made-up business, or a real one only with your instructor's approval and simulated data), the <b>recurring task</b> the machine would do, <b>three or four stages</b>, <b>where the gates are and who signs</b>, <b>three problems you would plant</b> in a test month, and <b>one thing the machine could not decide</b>. Name no individuals.</p>
+  <div id="angleCards"></div>
+  <label class="lbl" for="angle"><b>Which option did you choose?</b></label>
+  <select id="angle" data-save="s5.angle" data-req data-sel></select>
+  <label class="lbl" for="angreq"><b>Paste the request you used</b> to have AI help with this note (or type "I did not use AI for this piece; I wrote it myself.", which earns the request points)</label>
+  <textarea id="angreq" data-save="s5.angreq" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="angtext"><b>Type your idea note</b> (150 to 250 words)</label>
+  <textarea id="angtext" data-save="s5.angtext" data-req style="min-height:200px"></textarea>
+  <div class="hint" id="wc2">0 words (150 to 250)</div>
+
+  <h3 style="margin-top:22px">Part 9 · Accountability and how AI contributed · about 10 min</h3>
+  <label class="lbl" for="acc"><b>Name the person (a role such as the Controller; never the AI) who is accountable for the close memo</b> and say exactly what that person must open or check before signing. Then <b>describe one thing your machine got wrong, missed, or over-flagged</b> in any run, and what you did about it. (If nothing went wrong, say what you checked to be sure.)</label>
+  <textarea id="acc" data-save="s5.acc" data-min="100" data-req style="min-height:120px"></textarea>
+  <label class="lbl" for="foot"><b>Type your disclosure line</b> for your machine card and your idea note. It must say how AI helped (or truthfully say it did not help with a piece), name a real person as reviewer, and be truthful about how far you checked. <b>Name yourself as the reviewer</b>, because you are the real person who checked it. Do not name Walt or any other character: they are fictional and have not seen your work. Say exactly what you checked. Example wording, to use <b>only if it is true for you</b>: "I recomputed 2 of the machine's findings in a spreadsheet and read both gates before approving; the other findings were not independently checked." <b>One line covers both pieces</b> and appears in the Ethical AI section of your submission.</label>
+  <textarea id="foot" data-save="s5.foot" data-min="40" data-req style="min-height:70px"></textarea>
+  <label class="lbl" for="disc"><b>List every AI tool you used</b> in this module (plain Claude in Step 2, your Velox Close Machine, your Jordan coach, and any others) and what each did.</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 10 · Graduate students only · about 60 min</h3>
+    <p class="hint">As a graduate student you test your machine on a <b>second scenario that you build yourself</b>, compare its results with your earlier runs, and explain an improvement. <b>To build the scenario:</b> download a copy of the four <b>October</b> files (you already know October's answers), open them in Excel or Google Sheets, and <b>change them</b> to plant <b>at least three problems of your own</b> (for example, a second payment to a vendor for the same invoice, a bank deposit posted twice, or a payment dated before its invoice). Keep a private list of what you planted, plus the October problems already in the files. Do not edit the rules file.</p>
+    <label class="lbl" for="g1"><b>The scenario:</b> list what you planted and in which file (your private answer key), then say how you ran the machine on it and paste its memo</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2"><b>The comparison:</b> in numbers, how did the machine do on your scenario (caught, missed, false alarms) compared with your October and November results, and why do you think they differ? Count by hand from your key</label><textarea id="g2" data-save="s5.g2"></textarea>
+    <label class="lbl" for="g3"><b>One improvement:</b> explain at least one change that would make the machine better (to its instructions, its stages, its gates, or the tests), why it should help, and how you would test it without overfitting to your own scenario</label><textarea id="g3" data-save="s5.g3"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Everyone: now get feedback from Jordan (about 30 min)</h3>
+    <p><b>Click the button</b> to copy your whole draft (everything you typed in Steps 4 and 5). <b>Open a new chat inside your Jordan Coach project</b> (use the same chat for every round of feedback), <b>paste it</b>, and <b>ask Jordan for feedback</b> against the Module 8 rubric, in your own words.</p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+    <p class="hint" style="margin-bottom:0"><b>Read Jordan's feedback</b>, then continue to Step 6.</p>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 65 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>A machine that passed one test has told you very little. Now you fix what Walt's Gauntlet and my feedback showed you, and then you face a month you have <b>never</b> seen: December. <b>Every change you make must be a general rule.</b> Nothing in your instructions may mention a code, amount, or vendor from October or November. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Reopen your Jordan Coach chat</b> and <b>read Jordan's feedback again</b>. <b>Find what was missed.</b> The scorer shows which stage fell short but does not name the item, so compare that stage's output with Walt's rules (Rules 1, 2, or 3), look at the list of tests your machine says it ran, and find a kind of check it did not run or ran wrongly. You may ask Jordan to help you reason about it. Then <b>improve your machine</b>: open your Velox Close Machine project, <b>edit its instructions</b> with the general rules that fix what the Gauntlet and the feedback showed (or leave them unchanged if nothing needs fixing, and say why). You may fix your instructions only; the rules file is Walt's and stays as it is.</li>
+      <li><b>Download the four December files</b>:
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-bank-statement-december-simulated.csv" download>Bank statement</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-gl-cash-december-simulated.csv" download>Cash ledger</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-december-variance-simulated.csv" download>Variance report</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-8/velox-december-payments-simulated.csv" download>Payment register</a></div></li>
+      <li><b>Start a new chat inside your Velox Close Machine project</b>, <b>attach the files</b>, and <b>ask it to run the December close</b>. <b>Read at both gates and reply</b> as before. <b>Run December once</b>: only your first scored December run counts, and the stage output and memo you paste must come from it. <b>Copy the final memo</b>, <b>paste only the memo into the scorer below</b>, and <b>press Score this memo</b>.</li>
+      <li><b>Fill in the boxes below.</b> If you have time, <b>re-run October</b> with your new instructions to check that your fixes did not break anything (regression test) and note the result.</li>
+    </ol>
+  </div>
+  <p class="hint">After the December run, <b>update the "How it was tested" box of your machine card</b> (Part 7 in Step 5) with your December numbers, using the button below. You may also edit your other Step 5 answers if Jordan's feedback shows a gap; your November run, memo, and scorer result stay as first scored.</p>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to update your machine card</button></p>
+  <div class="scorer" data-scorer="s6dec" data-default="december" data-months="december"></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev"><b>What did you change in your instructions, and why?</b> For each change, name the miss, false alarm, or piece of feedback it answers and the <b>general rule</b> you wrote. (If you changed nothing, say why.)</label>
+    <textarea id="rev" data-save="s6.rev" data-min="80" data-req></textarea>
+    <label class="lbl" for="instr2"><b>Paste your updated instructions</b> (the full text now in the Project)</label>
+    <textarea id="instr2" data-save="s6.instr2" data-min="700" data-req style="min-height:240px"></textarea>
+    <label class="lbl" for="doutp"><b>Paste your machine's Stage 1, Stage 2, and Stage 3 output</b> from the December run you scored, with your replies at the gates</label>
+    <textarea id="doutp" data-save="s6.doutp" data-min="300" data-req style="min-height:180px"></textarea>
+    <label class="lbl" for="dmemo"><b>Paste the December memo</b> (the same text you scored)</label>
+    <textarea id="dmemo" data-save="s6.dmemo" data-min="150" data-req style="min-height:140px"></textarea>
+    <label class="lbl" for="cmp"><b>Compare November and December</b> in your own words: what improved, what did not, and what the two results tell you about whether your machine works on a month it has never seen</label>
+    <textarea id="cmp" data-save="s6.cmp" data-min="80" data-req style="min-height:100px"></textarea>
+    <label class="lbl" for="regr">Optional: did re-running October with your new instructions still give the results you had before? What happened?</label>
+    <textarea id="regr" data-save="s6.regr" style="min-height:60px"></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans"><b>Paste your full Jordan Coach conversation here</b></label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in your Jordan Coach chat, <b>click in the conversation</b>, <b>press Ctrl+A</b> (Cmd+A on Mac), <b>copy</b>, and <b>paste here</b>. Then <b>delete</b> any menu or sidebar text before your first message to Jordan or after the last reply. It will be long, and that is fine. If it is very long, you may delete repeated copies of your draft and keep Jordan's feedback and your replies.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed and with the log of your scorer runs.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0"><b>Open the downloaded file in Word</b> and check that every section has your text. (If Word warns about the file format, choose <b>Yes</b> or <b>Open</b>; that is expected.) Canvas accepts this file type. Then <b>upload it to the Module 8 assignment, "The Velox Close Machine," in Canvas</b>. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Your machine</td><td>15</td><td>The pieces map names a saved piece for each stage and what you changed (3); the instructions put the four stages in order and require code for every calculation (3); they stop and wait at two gates (3); they point to the rules file, use only the files, say "not in the data" instead of guessing, and stop if a file is missing (3); they require the memo as Rule 5 says, with codes, no wrongdoing language, and no names (3)</td></tr>
+    <tr><td>B. Rehearsal on October</td><td>10</td><td>The stop test shows the machine stopping with nothing attached (2); the October stage output and memo are pasted, with your scorer results and the Step 2 baseline comparison if you did it (3); your change log traces a miss, a false alarm, or a weakness to a cause and a general rule, or explains what you checked if nothing needed fixing (5)</td></tr>
+    <tr><td>C. Walt's Gauntlet (November)</td><td>15</td><td>Calculated from the scorer on the memo you pasted: the adjusted cash balance is right (3); findings (10): 10 times the problems caught, divided by (the number planted plus your false alarms plus codes not in the files), so missing problems and flooding the memo both cost you; the memo is 300 words or fewer, ends with the "Reviewed by" line, and uses no wrongdoing language (2)</td></tr>
+    <tr><td>D. Verification</td><td>10</td><td>Two findings, 5 points each: the finding is quoted (1); your own check in a spreadsheet or the files is shown (2); the verdict is correct against the files (1); you say what you did about it (1). At least one finding must be a number</td></tr>
+    <tr><td>E. Machine card and final-project idea</td><td>15</td><td>The card has what it does and needs (2), stages and gates (2), tests and results with your real scorer numbers for at least two months and one thing not shown (3), and limits plus the role that signs (3). The idea note (150 to 250 words; one point off if outside) names the option and request (1), the client, recurring task, and stages (2), and the gates and signer, three planted problems, and one thing the machine could not decide (2)</td></tr>
+    <tr><td>F. Ethical AI: human accountability</td><td>10</td><td>Step 4: five suggestions judged correctly with a reason that says what a person must do (1 point each, 5); a sound decision that keeps the gates and a named signer (2). Part 9: the accountable role and what that person opens before signing, plus one thing the machine got wrong and what you did, or what you checked if nothing went wrong (2); one disclosure line that says how AI helped, names a real person as reviewer (you, never a fictional character or the tool), and is truthful about the checking, with tools listed (1)</td></tr>
+    <tr><td>G. Mastery evidence</td><td>25</td><td>December scored by the same formula as C, on the memo you pasted (15); your changes are general rules, each tied to a miss, false alarm, or piece of feedback (5); your November versus December comparison draws a sound conclusion (2); coach conversation included and your revision addresses it, or explains why you disagreed (3)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion H, the second scenario you built, a comparison with November, and an explained improvement in Part 10 (10 extra points: scenario with at least three planted problems and a key 3, comparison with real numbers 4, improvement with a way to test it 3; graduate scores are scaled to 100). The quiz in Step 7 is graded separately in Canvas, and Part 1 and Step 8 are practice and reflection that are outside these 100 points. You are scored on your reasoning and evidence, not on matching wording.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 20 min</span></h2>
+  <div class="card">
+    <p>10 short questions about Steps 3 and 4 (workflows and agents, chaining stages, gates, instructions and guardrails, testing with caught, missed and false alarms, documenting a machine, and human accountability). You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">If no button appears here, your instructor has not posted the link yet. Find the quiz in your Canvas course, in the Module 8 section, or ask your instructor.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 10 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl"><b>First look back at your Step 2 attempt and your three scorer results.</b> Then think of a task you do again and again, at work, in an internship, or in another class. Which parts would you hand to a machine, where would you put the gates, and who would sign? <b>Write 3 to 5 sentences.</b> This is not part of your Canvas submission; it is for you.</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/m8keys.js"></script>
+<script src="assets/m8score.js"></script>
+<script src="assets/module8.js"></script>
+</body>
+</html>

@@ -1,0 +1,15 @@
+line_no,line_item,nov_budget_thousands,nov_actual_thousands,variance_thousands,favorable_or_unfavorable,internal_notes
+L01,Revenue,118000,120100,2100,Favorable,"Cars sold: 1,139 versus 1,117 in the budget."
+L02,Cost of goods sold,83000,83500,500,Unfavorable,Panel tariff steady; slightly higher volume.
+L03,Gross profit,35000,36000,1000,Favorable,
+L04,Warranty expense,1350,1330,-20,Favorable,
+L05,Freight-out,950,1310,360,Unfavorable,Expedited shipments for the Charlotte launch cars.
+L06,Marketing,2400,2420,20,Unfavorable,
+L07,Research and development,3200,3520,320,Unfavorable,Extra prototype testing at Brookside Testing Labs for the 2028 model.
+L08,Depreciation,1750,1750,0,On budget,
+L09,"Selling, general and administrative",4050,4000,-50,Favorable,
+L10,Incentive compensation,980,560,-420,Favorable,Annual bonus accrual reduced after the South Carolina plant missed its safety target.
+L11,Equipment lease expense,640,640,0,On budget,
+L12,Legal and professional fees,0,250,250,Unfavorable,Outside counsel for a routine contract review.
+L13,Total operating expenses,15320,15780,460,Unfavorable,
+L14,Operating income,19680,20220,540,Favorable,

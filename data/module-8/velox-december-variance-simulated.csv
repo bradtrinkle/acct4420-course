@@ -1,0 +1,15 @@
+line_no,line_item,dec_budget_thousands,dec_actual_thousands,variance_thousands,favorable_or_unfavorable,internal_notes
+L01,Revenue,120000,118900,-1100,Unfavorable,"Cars sold: 1,094 versus 1,105 in the budget."
+L02,Cost of goods sold,84000,85200,1200,Unfavorable,Steel prices steady; panel tariff unchanged.
+L03,Gross profit,36000,33700,-2300,Unfavorable,
+L04,Warranty expense,1400,1750,350,Unfavorable,One service campaign on 2026-model cars (windshield seal).
+L05,Freight-out,1000,1030,30,Unfavorable,
+L06,Marketing,2600,2350,-250,Favorable,Holiday dealer promotion cost less than planned.
+L07,Research and development,3300,3300,0,On budget,
+L08,Depreciation,1750,1750,0,On budget,
+L09,"Selling, general and administrative",4100,4520,420,Unfavorable,Year-end recruiting fees and an unbudgeted software license renewal.
+L10,Incentive compensation,1100,1100,0,On budget,
+L11,Equipment lease expense,640,640,0,On budget,
+L12,Legal and professional fees,0,310,310,Unfavorable,Outside counsel for a trademark filing.
+L13,Total operating expenses,15890,16750,860,Unfavorable,
+L14,Operating income,20110,17100,-3010,Unfavorable,

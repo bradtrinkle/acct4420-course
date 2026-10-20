@@ -1,0 +1,29 @@
+date,reference,description,receipts,payments,running_balance
+2026-11-30,,Beginning balance (agrees with bank on Nov 30),,,5479780.77
+2026-12-01,CHK40501,Check - Vexa Composites (panel sets),,93800.00,5385980.77
+2026-12-01,DEP1201,Dealer remittance - Prairie State Motors,312600.00,,5698580.77
+2026-12-02,CHK40502,Check - Delmar Tooling,,40260.00,5658320.77
+2026-12-03,ACH8301,ACH - Midwest Energy (utilities),,27915.30,5630405.47
+2026-12-03,WIRE6203,Wire receipt - Capital City Auto Group,250000.00,,5880405.47
+2026-12-04,CHK40503,Check - Great Plains Steel,,66850.00,5813555.47
+2026-12-07,CHK40504,Check - Kestrel Wheel Co.,,20000.00,5793555.47
+2026-12-08,DEP1208,Dealer remittance - Northwoods Performance,229950.00,,6023505.47
+2026-12-09,ACH8302,ACH - Iowa Dept of Revenue (sales tax),,50360.00,5973145.47
+2026-12-10,CHK40505,Check - Pioneer Logistics (freight),,43110.00,5930035.47
+2026-12-11,DEP1211,Dealer remittance - Blue Gate Motors,181300.00,,6111335.47
+2026-12-12,DEP1216,Dealer remittance - Ironwood Dealers,134200.00,,6245535.47
+2026-12-14,CHK40506,Check - Ames Paint Systems,,25940.00,6219595.47
+2026-12-15,CHK40507,Check - Cedar Valley Staffing,,21030.75,6198564.72
+2026-12-15,WIRE6215,Wire receipt - Heartland Motors,418900.00,,6617464.72
+2026-12-16,CHK40508,Check - Heartland Packaging,,9380.00,6608084.72
+2026-12-17,ACH8303,ACH - Employee benefits provider,,99800.00,6508284.72
+2026-12-18,DEP1218,Dealer remittance - Lakeview Auto,204750.00,,6713034.72
+2026-12-21,CHK40509,Check - Mason City Fabrication,,37120.00,6675914.72
+2026-12-22,CHK40510,Check - Prairie Insurance Group,,44000.00,6631914.72
+2026-12-22,DEP1222,Dealer remittance - Summit Auto Group,166480.00,,6798394.72
+2026-12-23,CHK40511,Check - Boone Valley Software,,22480.00,6775914.72
+2026-12-26,CHK40512,Check - Delmar Tooling,,45870.00,6730044.72
+2026-12-29,CHK40513,Check - Pioneer Logistics (freight),,33260.00,6696784.72
+2026-12-30,ACH8304,ACH - Payroll clearing,,524900.00,6171884.72
+2026-12-30,CHK40514,Check - Dallas Center Electric,,14120.50,6157764.22
+2026-12-31,DEP1231,Dealer remittance - Lakeshore Motors,259400.00,,6417164.22

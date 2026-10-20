@@ -1,0 +1,41 @@
+VELOX MOTORWORKS | MONTH-END CLOSE RULES (simulated for teaching)
+Effective October 2026. Written by Walt Brenner, Controller. These rules are the same every month.
+
+HOW TO READ THIS PAGE: dollar amounts in the variance report are in thousands of dollars ("300" means $300,000), and its amount columns carry the month in their names (for example oct_budget_thousands). Everything else is in dollars. People appear only as IDs (A-xxx for approvers).
+
+RULE 1. BANK RECONCILIATION
+1a. Compare the bank statement with the cash ledger (the GL cash file). The two files agree on the first day of the month.
+1b. Routine reconciling items. List and calculate these, but they are not exceptions: outstanding checks (written, not yet cashed), deposits in transit (recorded, not yet in the bank), a bank service charge, and bank interest earned.
+1c. Exceptions that need a person: (i) a returned (NSF) item; (ii) the same item recorded for different amounts by the bank and the books; (iii) anything on the bank statement that Velox did not authorize or that the bank posted twice; (iv) anything you cannot explain.
+1d. When the bank and the books record the same item at different amounts, assume the bank's amount is correct until a person confirms otherwise, and correct the books.
+1e. Items the bank posted twice, and items Velox did not authorize, are bank errors. Take them out of the bank side of the reconciliation (assume the bank will correct them).
+1f. Finish with the adjusted (true) cash balance. The adjusted bank balance and the adjusted book balance must agree to the cent.
+
+RULE 2. VARIANCE REVIEW (budget versus actual)
+2a. Apply the tests in 2b and 2c to the detail lines only (Revenue, Cost of goods sold, and the operating expense lines L04 to L12). Do not apply them to the subtotals and totals (Gross profit, Total operating expenses, Operating income); Rule 2d checks those.
+2b. Investigate a detail line when its variance is at least 5 percent of its budget AND at least 300 (that is, $300 thousand). Both favorable and unfavorable variances count.
+2c. If a line's budget is zero, investigate it when its actual is at least 300.
+2d. Check that each subtotal is correct. Gross profit = Revenue minus Cost of goods sold. Total operating expenses = the sum of the operating expense lines L04 to L12. Operating income = the Gross profit line minus the Total operating expenses line, as printed. A subtotal that does not equal its parts is an exception. If an error carries into a later subtotal, report it once, at the line where it starts, and mention that the later line carries it.
+2e. Explain each investigated line using the internal note in the file. If the note does not explain it, say "not in the data".
+
+RULE 3. PAYMENT TESTS (apply every test to every payment)
+3a. Duplicate: the same vendor, the same invoice number, and the same amount paid more than once. Different invoice numbers are not duplicates.
+3b. Approval: a payment of $5,000.00 or more needs a second approver who is a different person from the first approver (exactly $5,000.00 counts as "or more"). A payment under $5,000.00 needs one approver.
+3c. Splitting: two or more payments to the same vendor on the same day, each under $5,000.00 but together $5,000.00 or more, approved by the same person.
+3d. Vendor list: every payment must go to a vendor on the Approved Vendor List.
+3e. Timing: a payment may not be dated before its invoice date.
+3f. Known and legitimate: Heartland Facility Services (V-1042) is paid a fixed 3,450.00 for each of 24 sites, one invoice per site (invoice numbers HF-S01 to HF-S24). These are not duplicates.
+3g. A round amount, or an amount that repeats from month to month, is not an exception by itself.
+
+RULE 4. HOW TO REPORT AN EXCEPTION
+4a. Name the item by its code exactly as it appears in the files: the reference code (such as CHK99012 or DEP9930; the bank prints a check as "CHECK 99012" and the ledger as "CHK99012", which are the same item, so write CHK99012) for the bank and cash files, the line_no (such as L08) for the variance report, and the payment_id (such as P-900123) for payments.
+4b. Say which rule it breaks, the dollar amount, and what a person should check next.
+4c. Describe indicators that need follow-up by a person. Never say that anyone committed fraud, and never name an individual.
+4d. Do not guess. When the files do not answer a question, write "not in the data".
+
+RULE 5. THE CLOSE MEMO
+5a. The memo is one page, at most 300 words, written to the Controller.
+5b. The first sentence gives the adjusted cash balance and the number of exceptions. Count as exceptions: each Rule 1c exception, each subtotal error, each Rule 3 payment exception (a duplicate pair or a split pair counts once), and each investigated variance line whose note does not explain it.
+5c. Then list what needs a person, grouped by stage, each item by its code: in Stage 1, each exception; in Stage 2, each line you investigated (say whether its note explains it) and each subtotal error; in Stage 3, each exception. Put no other codes in the memo: not routine reconciling items, not lines you did not investigate, and not payments cleared by Rule 3f.
+5d. Then say what the files could not answer ("not in the data").
+5e. The last line is: "Reviewed by: ____ (a person must sign before this goes to the Controller)".

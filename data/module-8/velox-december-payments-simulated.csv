@@ -1,0 +1,44 @@
+payment_id,payment_date,invoice_date,vendor_id,vendor_name,invoice_number,amount,approved_by,second_approval
+P-400001,2026-12-01,2026-11-17,V-1003,Hawkeye Office Supply,HO-67848,4037.19,A-212,not required
+P-400002,2026-12-01,2026-11-23,V-1008,Great Plains Steel,GP-84164,2557.63,A-109,not required
+P-400003,2026-12-02,2026-11-22,V-1004,Linn County Packaging,LC-36939,30107.19,A-148,A-212
+P-400004,2026-12-03,2026-11-25,V-1019,Des Moines Water Works,DM-32424,771.67,A-212,not required
+P-400005,2026-12-04,2026-11-19,V-1005,Raccoon River Janitorial Goods,RR-80210,3275.60,A-190,not required
+P-400006,2026-12-04,2026-11-09,V-1028,Redwood Automation,RA-86727,4502.66,A-131,not required
+P-400007,2026-12-07,2026-11-19,V-1008,Great Plains Steel,GP-31076,45075.08,A-226,A-104
+P-400008,2026-12-07,2026-12-14,V-1018,Iowa Power & Light,IP-80555,2310.00,A-173,not required
+P-400009,2026-12-08,2026-11-23,V-1002,Ames Safety Equipment,AS-44236,1989.72,A-104,not required
+P-400010,2026-12-08,2026-11-16,V-1013,Cornerstone Fasteners,CF-32505,52539.41,A-190,A-104
+P-400011,2026-12-09,2026-11-14,V-1021,Summit Engineering Services,SE-21754,3435.91,A-205,not required
+P-400012,2026-12-10,2026-11-25,V-1014,Prairie Wind Hydraulics,PH-80300,4780.00,A-173,not required
+P-400013,2026-12-10,2026-11-25,V-1014,Prairie Wind Hydraulics,PH-80315,4350.00,A-173,not required
+P-400014,2026-12-11,2026-11-11,V-1006,Story City Printing,SC-50195,4193.39,A-226,not required
+P-400015,2026-12-11,2026-11-18,V-1029,Keystone Calibration,KC-69268,59021.96,A-166,A-205
+P-400016,2026-12-14,2026-11-29,V-1042,Heartland Facility Services,HF-S01,3450.00,A-131,not required
+P-400017,2026-12-14,2026-11-29,V-1042,Heartland Facility Services,HF-S05,3450.00,A-131,not required
+P-400018,2026-12-14,2026-11-29,V-1042,Heartland Facility Services,HF-S09,3450.00,A-131,not required
+P-400019,2026-12-14,2026-11-29,V-1042,Heartland Facility Services,HF-S15,3450.00,A-131,not required
+P-400020,2026-12-14,2026-11-29,V-1042,Heartland Facility Services,HF-S20,3450.00,A-131,not required
+P-400021,2026-12-15,2026-11-21,V-1006,Story City Printing,SC-39958,2781.10,A-109,not required
+P-400022,2026-12-15,2026-11-21,V-1019,Des Moines Water Works,DM-59963,63640.58,A-205,A-219
+P-400023,2026-12-15,2026-12-01,V-1021,Summit Engineering Services,SE-40552,2267.71,A-205,not required
+P-400024,2026-12-15,2026-11-14,V-1026,Crossroads Training Partners,CT-19838,62736.08,A-219,A-148
+P-400025,2026-12-15,2026-11-30,V-1027,Meridian Tooling Group,MT-80420,5000.00,A-117,not required
+P-400026,2026-12-16,2026-12-01,V-4503,Eastgate Machining Services,EM-210,3640.00,A-212,not required
+P-400027,2026-12-17,2026-11-27,V-1007,Boone Tool Crib,BT-46571,36221.46,A-173,A-109
+P-400028,2026-12-17,2026-12-02,V-1012,Missouri Valley Castings,MV-80700,30000.00,A-148,A-109
+P-400029,2026-12-18,2026-12-03,V-1005,Raccoon River Janitorial Goods,RR-80210,3275.60,A-190,not required
+P-400030,2026-12-18,2026-11-19,V-1006,Story City Printing,SC-54122,45643.73,A-205,A-131
+P-400031,2026-12-18,2026-11-16,V-1025,Highland Staffing,HS-25101,3773.98,A-212,not required
+P-400032,2026-12-21,2026-12-04,V-1006,Story City Printing,SC-74417,594.71,A-173,not required
+P-400033,2026-12-21,2026-12-06,V-1009,Midland Electric Motors,ME-80610,8740.00,A-190,A-190
+P-400034,2026-12-22,2026-11-25,V-1016,Squaw Creek Coatings,SC-43420,781.63,A-212,not required
+P-400035,2026-12-22,2026-12-07,V-1024,Westbrook Insurance Brokers,WB-80710,6450.00,A-173,A-205
+P-400036,2026-12-24,2026-11-23,V-1016,Squaw Creek Coatings,SC-26900,2728.92,A-205,not required
+P-400037,2026-12-25,2026-12-09,V-1003,Hawkeye Office Supply,HO-41603,1728.88,A-173,not required
+P-400038,2026-12-25,2026-12-14,V-1010,Northfield Logistics,NL-89740,51564.79,A-173,A-166
+P-400039,2026-12-25,2026-11-21,V-1019,Des Moines Water Works,DM-71960,1712.63,A-109,not required
+P-400040,2026-12-25,2026-11-21,V-1022,Lakeland IT Consulting,LI-26280,537.44,A-117,not required
+P-400041,2026-12-25,2026-12-05,V-1029,Keystone Calibration,KC-26802,3209.45,A-190,not required
+P-400042,2026-12-29,2026-12-21,V-1001,Cedar Valley Paper Co.,CV-46299,2063.73,A-173,not required
+P-400043,2026-12-30,2026-12-17,V-1003,Hawkeye Office Supply,HO-73737,693.92,A-226,not required

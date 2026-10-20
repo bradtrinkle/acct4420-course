@@ -1,0 +1,31 @@
+date,reference,description,receipts,payments,running_balance
+2026-09-30,,Beginning balance (agrees with bank on Sep 30),,,3063447.73
+2026-10-01,CHK40301,Check - Vexa Composites (panel sets),,91300.00,2972147.73
+2026-10-01,DEP1001,Dealer remittance - Prairie State Motors,301775.00,,3273922.73
+2026-10-02,ACH8101,ACH - Midwest Energy (utilities),,24980.20,3248942.53
+2026-10-02,CHK40302,Check - Delmar Tooling,,38450.00,3210492.53
+2026-10-05,CHK40303,Check - Great Plains Steel,,68740.00,3141752.53
+2026-10-05,WIRE6001,Wire receipt - Capital City Auto Group,500000.00,,3641752.53
+2026-10-06,CHK40304,Check - Kestrel Wheel Co.,,15000.00,3626752.53
+2026-10-07,CHK40305,Check - Pioneer Logistics (freight),,41620.00,3585132.53
+2026-10-08,DEP1008,Dealer remittance - Northwoods Performance,244310.00,,3829442.53
+2026-10-09,ACH8102,ACH - Iowa Dept of Revenue (sales tax),,49870.00,3779572.53
+2026-10-12,CHK40306,Check - Ames Paint Systems,,26150.00,3753422.53
+2026-10-12,DEP1012,Dealer remittance - Blue Gate Motors,187950.00,,3941372.53
+2026-10-13,CHK40307,Check - Cedar Valley Staffing,,20410.50,3920962.03
+2026-10-14,CHK40308,Check - Heartland Packaging,,10275.00,3910687.03
+2026-10-15,DEP1015,Dealer remittance - Summit Auto Group,218400.00,,4129087.03
+2026-10-16,CHK40309,Check - Dallas Center Electric,,12840.75,4116246.28
+2026-10-19,ACH8103,ACH - Employee benefits provider,,98750.00,4017496.28
+2026-10-19,WIRE6019,Wire receipt - Heartland Motors,436080.00,,4453576.28
+2026-10-20,CHK40310,Check - Mason City Fabrication,,36215.00,4417361.28
+2026-10-21,CHK40311,Check - Red Oak Machining,,41260.00,4376101.28
+2026-10-22,DEP1022,Dealer remittance - Ironwood Dealers,172640.00,,4548741.28
+2026-10-23,CHK40312,Check - Prairie Insurance Group,,44000.00,4504741.28
+2026-10-26,CHK40313,Check - Boone Valley Software,,19480.00,4485261.28
+2026-10-27,CHK40314,Check - Delmar Tooling,,47250.00,4438011.28
+2026-10-27,DEP1027,Dealer remittance - Lakeview Auto,295520.00,,4733531.28
+2026-10-29,CHK40315,Check - Pioneer Logistics (freight),,30890.00,4702641.28
+2026-10-30,ACH8104,ACH - Payroll clearing,,518300.00,4184341.28
+2026-10-30,CHK40316,Check - Cedar Valley Staffing,,18915.50,4165425.78
+2026-10-30,DEP1030,Dealer remittance - Lakeshore Motors,271900.00,,4437325.78
