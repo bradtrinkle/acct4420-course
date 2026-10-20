@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Module 4: AI in Financial Accounting</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html">Module 2</a><a href="module-3.html">Module 3</a><a href="module-4.html" aria-current="page">Module 4</a><a href="policy.html">AI Policy</a></nav>
+</div></header>
+
+<div class="progress-wrap"><div class="wrap">
+  <div class="track" aria-hidden="true"><div class="fill" id="fill"></div>
+    <svg class="car" id="car" viewBox="0 0 64 28" aria-hidden="true"><path d="M4 20c0-3 2-5 5-6l9-1 8-6c1-1 3-1 4-1h12c2 0 3 1 4 2l5 5 9 1c2 0 4 2 4 4v3c0 1-1 2-2 2H6c-1 0-2-1-2-2z" fill="#C8102E" stroke="#fff" stroke-width="1.5"/><circle cx="18" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/><circle cx="48" cy="23" r="4" fill="#222" stroke="#fff" stroke-width="1.5"/></svg>
+  </div>
+  <div class="steps-dots" id="dots"></div>
+</div></div>
+
+<main><div class="wrap">
+<span class="pill">Module 4 · Week 4 · Rotation 1: Financial Reporting</span>
+<h1 style="margin:10px 0 4px">AI in Financial Accounting: Explaining the Numbers</h1>
+<p class="hint">You will be able to read three financial statements, have AI calculate the key ratios and show its work, check those ratios yourself, explain the quarter to a CFO in plain English, and say honestly how AI contributed. Plan for about 6.3 hours. Your progress saves automatically on this device.</p>
+
+<!-- STEP 1 -->
+<section class="step" data-step="1" aria-labelledby="h1">
+  <h2 id="h1">Step 1 · Mission brief <span class="time">· 15 min</span></h2>
+  <div class="video" id="videoBox"><div><b>Module 4 video from your instructor</b><br><span class="hint" style="color:#ddd">The video will appear here. If it does not, tell your instructor and keep going; Priya's message below covers the key points.</span></div></div>
+  <div class="cfo"><b>From the CFO, Priya Natarajan</b><br>Our third-quarter earnings call is in two weeks, and I need to explain our numbers to investors in plain English. Walt's team has closed the quarter. Revenue grew, but profit fell and cash went down, and I want to know exactly why before I say a word in public. I am sending you the three financial statements and the notes from the Controller's Office. Use AI to do the heavy lifting, but I will be the one answering the analysts' questions, so every number has to be right, and I need to know what we do not know.</div>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Welcome to your first rotation: Financial Reporting, working for Priya and Walt. This week you will build a Claude Project that holds Velox's statements, have AI work out the key ratios, check them yourself, and explain the quarter to Priya. You will also pick the angle that fits your own major. Let's go.</div></div>
+  <p class="hint">Jordan Reyes is a fictional character presented by an AI avatar.</p>
+  <div class="card">
+    <h3>Module 4 at a glance</h3>
+    <p><b>Who is who:</b> Velox Motorworks is a fictional, publicly traded sports car maker. Priya Natarajan is its CFO (chief financial officer). Walt Brenner is its Controller (the senior accountant in charge of its books and reports). You are a new hire at Tallgrass Advisory, the consulting firm training Velox's finance team, and from this week you rotate through Velox departments. Jordan Reyes is your mentor at Tallgrass. All names, companies, and numbers in this course are fictional.</p>
+    <p><b>What you will produce:</b> one Word document (it builds itself from what you type on this page) that you upload to Canvas. It contains your Step 4 ethics answers, the standing instructions you write for your <b>Velox Reporting Project</b> (this week's reusable piece), six ratios calculated by AI, your own check of two of them, a one-page explanation for Priya, the angle you choose, how you disclosed AI's role, and your coach conversation and revision notes.</p>
+    <p><b>What you need:</b> your own paid Claude account (claude.ai) that includes Projects, Excel or Google Sheets (or a calculator), your Jordan Coach project from Module 1, and your Canvas login. Use the same browser and device each time, and do not use a private or incognito window, because your progress saves in this browser only. Once Steps 4 to 6 are complete, <b>Download my submission</b> in Step 6 gives you a copy of your work; until then, your answers are saved only in this browser.</p>
+    <p><b>The 8 steps:</b> 1 Mission brief (15 min, including a short video) · 2 Try it first (30) · 3 Learn (45) · 4 Ethics checkpoint (30) · 5 First attempt and coach feedback (185) · 6 Mastery attempt (45) · 7 Quiz (20) · 8 Reflection (10). Total: 380 minutes, about 6.3 hours. Graduate students add about 25 minutes for Part 8.</p>
+  </div>
+  <label class="check" data-req-box><input type="checkbox" data-save="s1.ready" data-req> <span>I watched the video (or it did not load) and read Priya's message.</span></label>
+</section>
+
+<!-- STEP 2 -->
+<section class="step" data-step="2" aria-labelledby="h2s">
+  <h2 id="h2s">Step 2 · Try it first <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. <b>Open Claude and ask it to explain what happened at Velox this quarter</b>, using only the income statement below. Write your own request in your own words, and don't overthink it. This is just to see what AI does with one statement.</div></div>
+  <div class="card">
+    <h3>Words you need</h3>
+    <p>Companies report three <b>financial statements</b>. Each answers a different question:</p>
+    <table class="t"><tr><th>Statement</th><th>The question it answers</th></tr>
+    <tr><td><b>Income statement</b></td><td>How did the company do over a period of time? It lists <b>revenue</b> (money from selling cars), the costs, and the profit that is left.</td></tr>
+    <tr><td><b>Balance sheet</b></td><td>What does the company own (<b>assets</b>) and owe (<b>liabilities</b>) on one particular day? What is left for the owners is <b>equity</b>.</td></tr>
+    <tr><td><b>Cash flow statement</b></td><td>Where did the company's cash come from and where did it go during the period? Profit and cash are not the same thing.</td></tr></table>
+    <p class="hint"><b>More words:</b> <b>Cost of goods sold</b> is what it cost to build the cars that were sold. <b>Gross profit</b> is revenue minus cost of goods sold. <b>Operating income</b> is profit from running the business, before interest and taxes. <b>Net income</b> is the final profit after interest and taxes. <b>Current assets</b> are things Velox expects to turn into cash within a year (cash, money customers owe, inventory); <b>current liabilities</b> are bills due within a year. <b>Depreciation</b> is the cost of equipment spread over its life; it lowers profit but no cash leaves the bank that quarter. <b>Accrued liabilities</b> are bills Velox owes but has not paid yet. <b>Severance</b> is pay to employees whose jobs end, and a <b>restructuring charge</b> is the cost of reorganizing a business. A <b>tariff</b> is a tax on imported goods. <b>Freight-out</b> is the cost of shipping cars to customers. <b>Capital expenditures</b> are money spent on long-lived equipment such as a paint line. <b>Dividends</b> are cash paid to shareholders. <b>Earnings per share (EPS)</b> is net income divided by the number of shares. The <b>effective tax rate</b> is income tax divided by income before taxes. <b>Q3 2026</b> means the three months ended September 30, 2026, and <b>Q3 2025</b> is the same three months a year earlier. All amounts are <b>in thousands of dollars</b>, so 338,000 means $338 million.</p>
+  </div>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Open Claude</b> in a new tab (the button just below), <b>sign in</b> with your own Claude account, and click <b>New chat</b>. Do not use your Jordan Coach project for this.<br><a class="btn btn-ghost btn-sm" href="https://claude.ai" target="_blank" rel="noopener">Open Claude in a new tab</a></li>
+      <li>Click <b>Copy the income statement</b>. Claude cannot see this page, so the numbers must go into your message.<br><button class="btn btn-gold btn-sm" type="button" data-copy="#p2text">Copy the income statement</button></li>
+      <li>In the Claude chat box, <b>type your own request in your own words</b> (the task: explain what happened this quarter). Then <b>press Shift+Enter</b> for a new line, <b>paste the income statement</b> (Ctrl+V on Windows, Cmd+V on Mac), and <b>press Enter</b> to send.</li>
+      <li><b>Read the answer</b>, then <b>answer the three questions below</b> in your own words. You will reuse your answers in Step 5, Part 1.</li>
+      <li><b>Save your work for Step 5:</b> copy your request and Claude's answer into a note on your computer (Notepad, Notes, or a Word document). Keeping this chat open is helpful but not required.</li>
+    </ol>
+    <details><summary>See what "Copy the income statement" will copy</summary><div class="copybox" id="p2text">Velox Motorworks income statement (simulated). Amounts in thousands of dollars.
+Line item: Q3 2026 | Q3 2025
+Revenue: 338,000 | 326,400
+Cost of goods sold: 250,000 | 232,700
+Gross profit: 88,000 | 93,700
+Warranty expense: 3,300 | 3,500
+Freight-out: 2,900 | 2,300
+Marketing: 6,500 | 6,200
+Research and development: 9,500 | 9,100
+Depreciation: 5,200 | 4,900
+Selling, general and administrative: 12,100 | 11,400
+Incentive compensation: 2,600 | 3,300
+Severance accrual: 3,100 | 0
+Total operating expenses: 45,200 | 40,700
+Operating income: 42,800 | 53,000
+Interest expense: 4,200 | 3,900
+Income before income taxes: 38,600 | 49,100
+Income tax expense: 8,500 | 10,800
+Net income: 30,100 | 38,300
+Weighted average shares outstanding (thousands): 40,000 | 40,000
+Earnings per share (dollars): 0.75 | 0.96</div></details>
+  </div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t2a">1. What did AI do well?</label>
+    <textarea id="t2a" data-save="s2.a" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2b">2. What could AI NOT tell you from the income statement alone? (For example, why a cost changed, or whether Velox's cash went up or down.)</label>
+    <textarea id="t2b" data-save="s2.b" data-min="15" data-req></textarea>
+    <label class="lbl" for="t2c">3. If you were an investor listening to Priya explain this quarter, what would you ask next?</label>
+    <textarea id="t2c" data-save="s2.c" data-min="15" data-req></textarea>
+  </div>
+  <p class="hint">These answers are saved on this device. They are not graded and are not in your submission; they are your starting point for Step 5.</p>
+</section>
+
+<!-- STEP 3 -->
+<section class="step" data-step="3" aria-labelledby="h3s">
+  <h2 id="h3s">Step 3 · Learn <span class="time">· 45 min</span></h2>
+  <p class="hint">Sections 3a to 3g are reading and quick checks (3g ends with one question for you). You apply every technique yourself in Step 5.</p>
+
+  <h3>3a. Three statements, three questions</h3>
+  <p>In Step 2, AI could describe the income statement but could not say where the cash went, because that is a different statement. To explain a quarter you need all three: the <b>income statement</b> (how we did), the <b>balance sheet</b> (what we own and owe), and the <b>cash flow statement</b> (where the cash came from and went). This week the balance sheet compares <b>June 30</b> (the start of the quarter) with <b>September 30</b> (the end), so that it connects to the cash flow statement for the same three months. You also get <b>management notes</b>: facts from the Controller's Office that explain <i>why</i> some numbers moved. The statements tell you <b>what</b> happened; only the notes tell you <b>why</b>.</p>
+  <p><b>How to read the cash flow statement:</b> a plus number brings cash in and a minus number takes cash out. "Increase in inventory: -18,000" means Velox spent 18,000 of cash on more inventory, so cash went down even though inventory (an asset) went up. Depreciation shows as a plus because it reduced profit but did not use any cash.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Velox's profit looks healthy, but Priya wants to know whether the company's cash went up or down and why. Which statement answers that?</p>
+    <div class="qc" data-id="q3a" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">The income statement</button><button class="choice" data-i="1">The balance sheet alone</button><button class="choice" data-i="2">The cash flow statement</button><button class="choice" data-i="3">The management notes</button></div>
+      <div class="fb" data-ok="Right. The cash flow statement shows where cash came from and where it went." data-no="Not quite. Which statement is named for the movement of cash?"></div>
+    </div>
+  </div>
+
+  <h3>3b. Ratios turn numbers into a story</h3>
+  <p>A <b>ratio</b> divides one number by another so that you can compare things of different sizes, such as this quarter against last year. You will have AI calculate these six this week:</p>
+  <table class="t"><tr><th>Ratio</th><th>Formula</th><th>What it tells you</th></tr>
+  <tr><td><b>1. Gross margin</b></td><td>Gross profit ÷ revenue</td><td>How many cents of each sales dollar are left after building the cars</td></tr>
+  <tr><td><b>2. Operating margin</b></td><td>Operating income ÷ revenue</td><td>How many cents of each sales dollar are left after all operating costs</td></tr>
+  <tr><td><b>3. Current ratio</b></td><td>Total current assets ÷ total current liabilities</td><td>Whether Velox can pay its bills due within a year (above 1 means yes, with room to spare)</td></tr>
+  <tr><td><b>4. Debt-to-equity</b></td><td>(Current portion of long-term debt + long-term debt) ÷ total shareholders' equity</td><td>How much Velox borrows compared with what the owners have put in</td></tr>
+  <tr><td><b>5. Days inventory on hand</b></td><td>Ending inventory ÷ cost of goods sold × 92 (the days in the quarter)</td><td>How many days of sales are sitting unsold in inventory</td></tr>
+  <tr><td><b>6. Cash conversion</b></td><td>Net cash from operating activities ÷ net income</td><td>How much of the profit actually turned into cash</td></tr></table>
+  <p class="hint">Ratios 1 and 2 compare Q3 2026 with Q3 2025. Ratios 3 and 4 compare September 30 with June 30. Ratios 5 and 6 are for Q3 2026 only, and the management notes give a target for each.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Revenue rose, but gross margin fell from 28.7% to 26.0%. What does that mean?</p>
+    <div class="qc" data-id="q3b" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Velox sold fewer cars</button><button class="choice" data-i="1">Each dollar of sales is leaving less profit after the cost of building the cars</button><button class="choice" data-i="2">Velox earned more cash</button><button class="choice" data-i="3">Velox lowered its debt</button></div>
+      <div class="fb" data-ok="Yes. Costs of building the cars grew faster than revenue." data-no="Think about what gross margin measures: what is left after the cost of the cars."></div>
+    </div>
+  </div>
+
+  <h3>3c. Give AI the facts once: a Claude Project</h3>
+  <p>In Step 2 you pasted data into a single chat. That works once, but it does not scale: you would paste the statements again every time, and you could forget a rule. A <b>Claude Project</b> (you built one in Module 1 for Jordan) is a workspace that keeps two things for every chat you start inside it: <b>standing instructions</b> that you write once, and <b>knowledge files</b> that Claude can read each time. Good standing instructions for reporting work cover seven things:</p>
+  <ol>
+    <li><b>Role:</b> who AI is acting as.</li>
+    <li><b>Audience:</b> who will read the results.</li>
+    <li><b>Output format:</b> the shape of the answer.</li>
+    <li><b>Grounding rule:</b> use only the files, and write "not in the data" when the files do not say.</li>
+    <li><b>Show-the-calculation rule:</b> give the formula and the numbers used for every calculation.</li>
+    <li><b>Confidentiality rule:</b> what must not appear in anything for people outside finance.</li>
+    <li><b>Disclosure line:</b> the line that goes on every deliverable saying AI helped and who reviewed it. Leave the reviewer's name as a blank, like [reviewer name], for a person to fill in only after that person has actually reviewed the work.</li>
+  </ol>
+  <div class="tech"><p><b>Technique:</b> Project instructions (standing or persistent instructions, also called a system prompt or custom instructions), together with knowledge files (grounding AI in your own documents)</p><p><b>Why it helps:</b> You set the rules and the facts once, and every chat in the project starts from the same place. That makes results more consistent, saves retyping, and keeps your rules from being forgotten. In Step 5 you save your own instructions as this week's reusable piece.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>Why put Velox's statements in a Project's knowledge files instead of pasting them into every chat?</p>
+    <div class="qc" data-id="q3c" data-correct="3" data-req>
+      <div class="choices"><button class="choice" data-i="0">Claude is not allowed to read pasted text</button><button class="choice" data-i="1">It makes the numbers correct automatically</button><button class="choice" data-i="2">It lets you skip checking the answers</button><button class="choice" data-i="3">Every chat starts from the same facts and rules, and you do not retype them</button></div>
+      <div class="fb" data-ok="Right. Consistency and reuse, but you still check the answers." data-no="A Project does not make answers correct. What does it do for you?"></div>
+    </div>
+  </div>
+
+  <h3>3d. Make AI show the calculation</h3>
+  <p>Ratios are arithmetic, and AI can slip on arithmetic or pick the wrong number from a statement. So ask for the <b>formula</b>, the <b>numbers it used</b>, and the <b>result</b> for each calculation. Then you can check each number against the statement in a few seconds. Some Claude plans can also run code to do the arithmetic exactly. If yours does, you still check that it used the right inputs, because a correct calculation on the wrong number is still wrong.</p>
+  <div class="tech"><p><b>Technique:</b> Show-your-work prompting (chain-of-thought applied to calculations, with the formula and inputs listed)</p><p><b>Why it helps:</b> A result alone can only be trusted. A result with its formula and inputs can be checked line by line, so errors are easy to see.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>AI reports a current ratio of 2.26 and nothing else. What is the most useful follow-up?</p>
+    <div class="qc" data-id="q3d" data-correct="1" data-req>
+      <div class="choices"><button class="choice" data-i="0">Tell it to sound more confident</button><button class="choice" data-i="1">Ask for the formula and the two numbers it used, so you can check them</button><button class="choice" data-i="2">Accept it because ratios are simple</button><button class="choice" data-i="3">Ask it to shorten the answer</button></div>
+      <div class="fb" data-ok="Yes. A formula and inputs are things you can verify." data-no="Which option gives you something you can actually check?"></div>
+    </div>
+  </div>
+
+  <h3>3e. Say who it is for</h3>
+  <p>The same numbers need different words for different readers. Priya has two minutes and needs the bottom line and what is still unknown. An investor analyst wants specifics. Employees need plain language and nothing confidential. When you tell AI who the reader is, how long they have, and what shape the answer should take, the first draft lands much closer.</p>
+  <div class="tech"><p><b>Technique:</b> Audience-aware prompting (also called tone or register control: telling AI who the reader is and how they read)</p><p><b>Why it helps:</b> The reader decides what to include, what to leave out, and how technical to be. Saying so up front saves you from rewriting a draft written for the wrong person.</p></div>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>You are writing for Priya, who has two minutes. Which instruction helps most?</p>
+    <div class="qc" data-id="q3e" data-correct="2" data-req>
+      <div class="choices"><button class="choice" data-i="0">Write as much detail as possible</button><button class="choice" data-i="1">Write like a textbook</button><button class="choice" data-i="2">Lead with a one-sentence takeaway, then three bullets, then what we do not know</button><button class="choice" data-i="3">Use as many accounting terms as you can</button></div>
+      <div class="fb" data-ok="Yes. It matches the reader's time and what she needs." data-no="Think about what a CFO with two minutes needs first."></div>
+    </div>
+  </div>
+
+  <h3>3f. Numbers say what; notes say why; everything else is "not in the data"</h3>
+  <p>You met grounding in Module 2: use only the facts you were given. It matters most when explaining results, because AI is very good at inventing a believable reason. For Velox, a cause is real only if the management notes say so. If a line moved and neither the statements nor the notes explain it, the honest answer is <b>"not in the data"</b>, plus who could tell you.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <p>The income statement shows marketing expense rose by 300, and the notes say nothing about it. What should the explanation say?</p>
+    <div class="qc" data-id="q3f" data-correct="0" data-req>
+      <div class="choices"><button class="choice" data-i="0">Marketing rose by 300, and the reason is not in the data (ask the marketing team)</button><button class="choice" data-i="1">Marketing rose because of a big advertising campaign</button><button class="choice" data-i="2">Marketing rose because of the tariff</button><button class="choice" data-i="3">Leave marketing out so nobody notices the gap</button></div>
+      <div class="fb" data-ok="Right. Say what the numbers show and be honest about what you do not know." data-no="Which option states only what the files support?"></div>
+    </div>
+  </div>
+
+  <h3>3g. Pick your technique</h3>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="t3g">In one sentence, which of the techniques in 3c to 3e do you think will help you most on a real task, and why? (This is saved for you. It is not graded and is not in your submission.)</label>
+    <textarea id="t3g" data-save="s3.g" data-min="15" data-req style="min-height:60px"></textarea>
+  </div>
+</section>
+
+<!-- STEP 4 -->
+<section class="step" data-step="4" aria-labelledby="h4s">
+  <h2 id="h4s">Step 4 · Ethics checkpoint: transparency and disclosure <span class="time">· 30 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Reports travel. Your page for Priya may be forwarded, quoted, and acted on. That is why area 4 of the <a href="policy.html" target="_blank" rel="noopener">Velox Responsible AI Policy</a> says: <b>Transparency and disclosure</b>. Say when and how AI contributed to your work. And area 5 says a <i>person</i> owns the result. Review the closing lines below the way Priya would.</div></div>
+  <div class="card">
+    <b>The rule:</b> every deliverable you send out carries a short line, such as <i>"AI-assisted draft, reviewed by [name]"</i>. It must say that AI helped, name a real person who reviewed it (the tool is never the reviewer), and be truthful about how far that person checked. You still follow the whole policy (its five areas are confidentiality and privacy, accuracy, bias, transparency and disclosure, and human accountability); area 4 is the focus of this step and of Part 7, and the policy link above is optional reading.
+  </div>
+  <p>Five analysts at Velox each used AI to draft a one-page explanation of the quarter for Priya, and each added a closing line. Below are the facts about how each analyst worked, and the line they used. <b>Judge each line against the policy.</b></p>
+  <div id="situations"></div>
+  <p class="hint"><b>How to choose a verdict:</b> choose <b>Meets the policy</b> only if the line says AI helped, names a real person as reviewer, and does not claim more checking than the facts show. If any one of those is missing or untrue, choose <b>Does not meet the policy</b> and say in your reason what is missing or untrue.</p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="e4d"><b>What would you do with the closing line on your own page to Priya?</b></label>
+    <select id="e4d" data-save="e4.decision" data-req data-sel><option value="">Choose one…</option><option>Add a line saying AI helped draft it, naming the person who reviewed it, and what was and was not checked</option><option>Say nothing about AI, because the numbers are right</option><option>Name the Velox Reporting Project as the reviewer</option></select>
+    <label class="lbl" for="e4w"><b>Why?</b> Mention who is accountable for what the page says and what you would tell Priya about how far you checked it.</label>
+    <textarea id="e4w" data-save="e4.why" data-min="60" data-req></textarea>
+  </div>
+</section>
+
+<!-- STEP 5 -->
+<section class="step" data-step="5" aria-labelledby="h5s">
+  <h2 id="h5s">Step 5 · First attempt and coach feedback <span class="time">· 185 min</span></h2>
+  <p class="hint">Every box needs a real answer: a box that is too short (for example, a pasted answer of only a few words) will not let you continue, and the message under the page tells you which box is still needed. In this step, "Part 1" to "Part 8" are the sections of the assignment. The grading table (rubric) is at the bottom of Step 6; the file you upload to Jordan in the Setup section just below covers the same criteria and points in more detail, so you can read it first.</p>
+
+  <h3>Setup: add the Module 4 rubric to your Jordan Coach (about 5 minutes)</h3>
+  <p class="hint">You built your Jordan Coach project in Module 1, and its instructions still work. If you did not build it, go to <a href="module-1.html">Module 1</a>, Step 5, and build it first (about 20 minutes extra), then come back here.</p>
+  <div class="check"><input type="checkbox" data-save="s5.c1" data-req id="c1"><label for="c1"><b>Download the Module 4 rubric</b> to your computer: <a class="btn btn-ghost btn-sm" href="downloads/module-4-rubric.md" download>Download module-4-rubric.md</a> (If it opens in the browser, right-click the button and choose <b>Save link as</b>.)<br>Then, in your Jordan Coach project, <b>find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload</b> the file. Leave the other files there.</label></div>
+  <div class="check"><input type="checkbox" data-save="s5.c2" data-req id="c2"><label for="c2"><b>Also upload the four Velox data files</b> to your Jordan Coach project, in the same way, so that Jordan can check your numbers against them. You can download them from the links in Part 2 below.</label></div>
+
+  <h3 style="margin-top:28px">Assignment: Explain the Quarter</h3>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Priya needs to explain Q3 to investors. <b>Build a Velox Reporting Project, have AI calculate six ratios and show its work, check two of them yourself, write a one-page explanation for Priya, and choose the angle that fits your major.</b> Everything you type below saves in this browser and builds your submission automatically, so use the same browser and device.</div></div>
+
+  <label class="lbl" for="stuName"><b>Type</b> your name</label>
+  <input type="text" id="stuName" data-save="name" data-min="2" data-req autocomplete="name">
+  <label class="check" style="margin-top:10px"><input type="checkbox" data-save="isGrad" id="isGrad"> <span>I am a graduate student (ACCT/MIS 5420). Check this only if you are in 5420. Part 8 will appear after Part 7 once you tick this box (about 25 extra minutes; finish it before you copy your draft for Jordan), where you verify a third finding, use an independent check, and name an assumption or limitation.</span></label>
+
+  <h3 style="margin-top:22px">Part 1 · Record your one-statement try (from Step 2) · about 5 min</h3>
+  <label class="lbl" for="r1p"><b>Paste your Step 2 request</b> from the note you saved (just your request, not the data)</label>
+  <textarea id="r1p" data-save="s5.r1p" data-min="15" data-req></textarea>
+  <label class="lbl" for="r1o"><b>Summarize what AI gave you</b> in two or three sentences</label>
+  <textarea id="r1o" data-save="s5.r1o" data-min="30" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="r1w"><b>Name two things you could not tell</b> from that single statement (for example, why costs moved, or what happened to cash)</label>
+  <textarea id="r1w" data-save="s5.r1w" data-min="30" data-req style="min-height:80px"></textarea>
+
+  <h3 style="margin-top:22px">Part 2 · Build your Velox Reporting Project · about 30 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Download the four Velox files</b> to your computer. If a file opens in the browser instead of downloading, right-click its button and choose <b>Save link as</b>. They are the three statements and the management notes:
+        <div class="dl-row">
+        <a class="btn btn-ghost btn-sm" href="data/module-4/velox-q3-income-statement-simulated.csv" download>Income statement</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-4/velox-q3-balance-sheet-simulated.csv" download>Balance sheet</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-4/velox-q3-cash-flow-simulated.csv" download>Cash flow statement</a>
+        <a class="btn btn-ghost btn-sm" href="data/module-4/velox-q3-management-notes-simulated.txt" download>Management notes</a></div></li>
+      <li><b>Go to</b> <a href="https://claude.ai" target="_blank" rel="noopener">claude.ai</a>, <b>sign in</b>, click <b>Projects</b> in the left sidebar, click <b>Create project</b> (or <b>+ New project</b>), <b>type the name</b> <b>Velox Reporting - ACCT 4420</b> (this is the project the page calls your "Velox Reporting Project"), and click <b>Create project</b>.</li>
+      <li><b>Find Project knowledge</b> (or <b>Files</b>), <b>click + or Add content</b>, and <b>upload all four files</b> you just downloaded.</li>
+      <li><b>Find Instructions</b> (it may say <b>Set project instructions</b>). <b>Write your own standing instructions in your own words.</b> They must cover the seven things from Step 3c: role, audience, output format, grounding rule, show-the-calculation rule, confidentiality rule, and disclosure line. Use the notes (file 4) to decide what the confidentiality rule should say. <b>Click Save.</b> Then <b>copy your instructions</b> and <b>paste them into the first box below</b>.</li>
+      <li><b>Test the project.</b> Start a <b>new chat inside the Velox Reporting project</b> and ask a simple question, such as the gross profit for Q3 2026 and where in the files it comes from. <b>Paste your question and Claude's answer</b> into the second box below. The answer should name the file it used.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="pinst"><b>Paste your Project instructions</b> (the text you wrote)</label>
+  <textarea id="pinst" data-save="s5.pinst" data-min="250" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="ptest"><b>Paste your test question and Claude's answer</b></label>
+  <textarea id="ptest" data-save="s5.ptest" data-min="60" data-req style="min-height:100px"></textarea>
+
+  <h3 style="margin-top:22px">Part 3 · Calculate the ratios and the story · about 25 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Start a new chat inside your Velox Reporting project.</b></li>
+      <li><b>Write a request in your own words</b> asking Claude for the six ratios from Step 3b (the table there has the formulas): gross margin, operating margin, current ratio, debt-to-equity, days inventory on hand, and cash conversion. <b>Ask it to show the formula, the numbers it used, and the result for each ratio</b>, and to give both periods where the table says to compare two periods.</li>
+      <li><b>Send a second request in the same chat</b> asking what changed this quarter and why, <b>using only the files</b>, and to say "not in the data" for anything the files do not explain.</li>
+      <li><b>Read both answers.</b> If something looks wrong or unclear, <b>tell Claude what to fix</b>. Then <b>come back here</b> and fill in the boxes below.</li>
+    </ol>
+  </div>
+  <label class="lbl" for="p3req"><b>Paste your two requests</b> (the requests only, not the answers)</label>
+  <textarea id="p3req" data-save="s5.p3req" data-min="100" data-req style="min-height:120px"></textarea>
+  <label class="lbl" for="p3rat"><b>Paste Claude's six ratios</b> with the formulas and numbers it showed</label>
+  <textarea id="p3rat" data-save="s5.p3rat" data-min="150" data-req style="min-height:200px"></textarea>
+  <label class="lbl" for="p3why"><b>Paste Claude's explanation of what changed and why</b></label>
+  <textarea id="p3why" data-save="s5.p3why" data-min="100" data-req style="min-height:160px"></textarea>
+
+  <h3 style="margin-top:22px">Part 4 · Check two findings yourself · about 35 min</h3>
+  <div class="card">
+    <h3>How to do this</h3>
+    <ol class="steps-list">
+      <li><b>Choose two findings</b> from Claude's answers in Part 3 (the final versions you pasted there) that matter most for Priya's explanation. A finding is a ratio value or a claim about what changed, for example "operating margin was 20%" (a made-up value, not Velox's) or "the tariff caused the margin decline". Choose two different ratios or claims.</li>
+      <li><b>Open the statements</b> you downloaded in Excel or Google Sheets (or read them in any text editor). <b>Do not ask AI to check them.</b></li>
+      <li>For each finding, <b>find the inputs</b> in the files, <b>do the arithmetic yourself</b> (a spreadsheet formula or a calculator), and <b>compare your result</b> with what Claude said. Then <b>decide what to do about it</b>.</li>
+    </ol>
+  </div>
+  <div id="vrows"></div>
+
+  <h3 style="margin-top:22px">Part 5 · Write the explanation for Priya · about 20 min</h3>
+  <p class="hint">Write a one-page explanation of the quarter that Priya could use to prepare for the call. Use AI to help, in your Velox Reporting project, but you are accountable for every word and number, whoever drafted it. Priya is inside finance, but write the page as if it could be forwarded, so follow note 5 in the management notes. Include a one-sentence headline, three bullets on what happened, what it means for Velox, and what we do not know. Use only the statements and the notes. Keep it to <b>at least 60 and at most 300 words</b> and write for a reader who has two minutes.</p>
+  <label class="lbl" for="ppr"><b>Paste the request you used</b> to have AI help draft or improve your page (it must tell AI who the reader is)</label>
+  <textarea id="ppr" data-save="s5.ppr" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="ppage"><b>Type or paste your final page for Priya</b> (60 to 300 words; pasting text that AI helped edit is fine as long as you disclose that in Part 7; do not include the closing disclosure line here)</label>
+  <textarea id="ppage" data-save="s5.ppage" data-req style="min-height:240px"></textarea>
+  <div class="hint" id="wc">0 words (300 or fewer)</div>
+
+  <h3 style="margin-top:22px">Part 6 · Choose your angle · about 25 min</h3>
+  <p class="hint">Priya wants a second piece, written from the point of view of the part of the business you care about. <b>Pick one of the six options below.</b> They are equal in effort and are graded with the same criteria. Each option has its own length. Whatever you choose: <b>show the request you used</b>, make <b>every number traceable</b> to the statements or notes, and include <b>at least one "not in the data" item or limitation</b>. Writing "a restructuring charge" with no plant, headcount, or timing (note 5) is limited disclosure: nothing false is said, some detail is left out. Saying something untrue would not be acceptable. Options 1, 2, 3, 4, and 5 may reach people outside finance, so they follow note 5; option 6 stays inside finance.</p>
+  <div id="angleCards"></div>
+  <label class="lbl" for="angle"><b>Which option did you choose?</b></label>
+  <select id="angle" data-save="s5.angle" data-req data-sel></select>
+  <label class="lbl" for="angreq"><b>Paste the request you used</b> to have AI help with this piece</label>
+  <textarea id="angreq" data-save="s5.angreq" data-min="40" data-req style="min-height:80px"></textarea>
+  <label class="lbl" for="angtext"><b>Type your final piece</b> (use the length given for your option)</label>
+  <textarea id="angtext" data-save="s5.angtext" data-min="300" data-req style="min-height:220px"></textarea>
+
+  <h3 style="margin-top:22px">Part 7 · How AI contributed · about 10 min</h3>
+  <label class="lbl" for="foot"><b>Type the closing line</b> for your page to Priya and your Part 6 piece, following the rule in Step 4. It must say AI helped, name a real person as reviewer, and be truthful about how far you checked. (For this exercise <b>name yourself as the reviewer</b>, because you are the real person who checked it. Do not name Walt Brenner or any other character: they are fictional and have not seen your work. Say exactly what you checked, for example: "I recomputed 2 of the 6 ratios; the others were not independently checked.") <b>One line covers both pieces</b> you wrote, your page for Priya and your Part 6 piece.</label>
+  <textarea id="foot" data-save="s5.foot" data-min="40" data-req style="min-height:70px"></textarea>
+  <label class="lbl" for="disc"><b>List every AI tool you used</b> in this module (Claude in Step 2, your Velox Reporting project, your Jordan coach, and any others) and what each did.</label>
+  <textarea id="disc" data-save="s5.disc" data-min="10" data-req style="min-height:60px"></textarea>
+
+  <div id="gradBlock" style="display:none">
+    <h3 style="margin-top:22px">Part 8 · Graduate students only · about 25 min</h3>
+    <p class="hint">As a graduate student you do three things beyond the undergraduate work: verify a <b>third finding</b>, do a <b>check that does not use AI</b>, and name an <b>assumption or limitation</b>. In Part 4 you checked two findings. The check in the second box is separate from your third finding. A <b>tie-out</b> is a spreadsheet formula showing that the same number agrees across two statements.</p>
+    <label class="lbl" for="g1"><b>Third finding:</b> choose a third ratio or claim from Claude's answers (not one you used in Part 4). Say what Claude reported, the inputs you found in the files, your own arithmetic, and whether it matches</label><textarea id="g1" data-save="s5.g1"></textarea>
+    <label class="lbl" for="g2"><b>Check without AI:</b> check one more thing with a method that does not use AI. For example, do a tie-out: build a spreadsheet formula that ties the statements together (net income on the cash flow statement equals net income on the income statement; ending cash equals balance sheet cash; total assets equal liabilities plus equity). Describe what you did and what you found</label><textarea id="g2" data-save="s5.g2"></textarea>
+    <label class="lbl" for="g3"><b>Assumption or limitation:</b> name at least one assumption or limitation that affects your conclusions (for example, one quarter of data, or quarter-end balances used in a ratio) and explain how it could change what Priya should say</label><textarea id="g3" data-save="s5.g3"></textarea>
+  </div>
+
+  <div class="card" style="background:var(--gold-soft);border-color:#ecd48f;margin-top:26px">
+    <h3>Everyone: now get feedback from Jordan (about 30 min)</h3>
+    <p><b>Click the button</b> to copy your whole draft (everything you typed in Steps 4 and 5). <b>Open a new chat inside your Jordan Coach project</b> (use the same chat for every round of feedback), <b>paste it</b>, and <b>ask Jordan for feedback</b> against the Module 4 rubric, in your own words.</p>
+    <button class="btn btn-red" type="button" id="copyDraft">Copy my draft for Jordan</button>
+    <p class="hint" style="margin-bottom:0"><b>Read Jordan's feedback</b>, then continue to Step 6.</p>
+  </div>
+</section>
+
+<!-- STEP 6 -->
+<section class="step" data-step="6" aria-labelledby="h6s">
+  <h2 id="h6s">Step 6 · Mastery attempt <span class="time">· 45 min</span></h2>
+  <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b><b>Go back to Step 5, improve your answers</b> (everything you typed is still there), then <b>return to Step 6</b>. To get another round of feedback, click <b>Copy my draft for Jordan</b> in Step 5 again and paste it into the same Jordan chat. You can do this as many times as you like; plan about 30 more minutes for each extra round. If you disagree with a piece of feedback, keep your version and tell me why. Spotting bad AI feedback is good judgment too.</div></div>
+  <p><button class="btn btn-ghost btn-sm" type="button" data-goto="5">Go back to Step 5 to revise</button></p>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="rev">What did you change because of Jordan's feedback?</label>
+    <textarea id="rev" data-save="s6.rev" data-min="30" data-req></textarea>
+    <label class="lbl" for="rej">Feedback you rejected, and why (optional)</label>
+    <textarea id="rej" data-save="s6.rej" style="min-height:60px"></textarea>
+    <label class="lbl" for="trans"><b>Paste your full Jordan Coach conversation here</b></label>
+    <textarea id="trans" data-save="s6.trans" data-min="60" data-req style="min-height:140px"></textarea>
+    <p class="hint">Tip: in your Jordan Coach chat, <b>click in the conversation</b>, <b>press Ctrl+A</b> (Cmd+A on Mac), <b>copy</b>, and <b>paste here</b>. Then <b>delete</b> any menu or sidebar text before your first message to Jordan or after the last reply. It will be long, and that is fine. If it is very long, you may delete repeated copies of your draft and keep Jordan's feedback and your replies.</p>
+  </div>
+  <div class="card">
+    <h3>Your submission is ready</h3>
+    <p>This button builds the Word document your instructor grades, with every section filled in from what you typed.</p>
+    <button class="btn btn-red" type="button" id="dl1">Download my submission (.doc)</button>
+    <p class="hint" style="margin-bottom:0"><b>Open the downloaded file in Word</b> and check that every section has your text. (If Word warns about the file format, choose <b>Yes</b> or <b>Open</b>; that is expected.) Canvas accepts this file type. Then <b>upload it to the Module 4 assignment, "Explain the Quarter," in Canvas</b>. <a id="submitLink" href="#" target="_blank" rel="noopener" style="display:none">Open the Canvas assignment</a></p>
+  </div>
+  <details><summary>How you will be graded (rubric, 100 points)</summary>
+    <table class="t"><tr><th>Criterion</th><th>Points</th><th>Full credit looks like</th></tr>
+    <tr><td>A. Velox Reporting Project</td><td>15</td><td>Standing instructions cover role, audience, output format, grounding rule, show-the-calculation rule, confidentiality rule, and disclosure line (2 points each, 14), and a test question with an answer that names the file it used (1)</td></tr>
+    <tr><td>B. Ratios and the story</td><td>15</td><td>Six ratios requested and shown with formulas and the numbers used (6); the request asked AI to show its calculation (4); the explanation of what changed takes causes only from the notes and marks what is not in the data (5)</td></tr>
+    <tr><td>C. Verification</td><td>20</td><td>Two findings, 10 points each: the finding quoted (2), your own arithmetic from the files shown (4), a verdict that is correct against the files (3), and what you did about it (1)</td></tr>
+    <tr><td>D. Explanation for Priya</td><td>10</td><td>300 words or fewer with a one-sentence headline, three bullets on what happened, what it means, and what we do not know (4); every number matches the files (3); written for a CFO with two minutes, and the request names the reader (3)</td></tr>
+    <tr><td>E. Your angle</td><td>10</td><td>Option chosen, request shown (3); content correct and every number traceable (4); fits the format and includes a "not in the data" item or limitation (3)</td></tr>
+    <tr><td>F. Ethical AI: transparency and disclosure</td><td>15</td><td>Step 4: five lines judged correctly with a reason that names what is present, missing, or untrue (1 point each, 5), and a sound decision that names who is accountable (3). Part 7: your closing line says AI helped, names a real person as reviewer (you, not a fictional character and never the tool), and is truthful about the checking (4); tools listed with what each did (3)</td></tr>
+    <tr><td>G. Mastery evidence</td><td>15</td><td>Coach conversation included and your revision addresses it (or explains why you disagreed)</td></tr></table>
+    <p class="hint">Graduate students also complete criterion H, the third verified finding, an independent check, and an assumption or limitation in Part 8 (10 extra points: third finding 3, check without AI 4, assumption or limitation 3; graduate scores are scaled to 100). The quiz in Step 7 is graded separately in Canvas, and Part 1 and Step 8 are practice and reflection that are outside these 100 points. You are scored on your reasoning and evidence, not on matching wording.</p>
+  </details>
+</section>
+
+<!-- STEP 7 -->
+<section class="step" data-step="7" aria-labelledby="h7s">
+  <h2 id="h7s">Step 7 · Quiz <span class="time">· 20 min</span></h2>
+  <div class="card">
+    <p>10 short questions about Steps 3 and 4 (the three statements, ratios, Project instructions and knowledge files, showing the calculation, audience, grounding, and transparency and disclosure). You get <b>two attempts</b>, and your higher score counts.</p>
+    <a id="quizLink" class="btn btn-red" href="#" target="_blank" rel="noopener" style="display:none">Open the quiz in Canvas</a>
+    <p id="quizNone" class="hint">If no button appears here, your instructor has not posted the link yet. Find the quiz in your Canvas course, in the Module 4 section, or ask your instructor.</p>
+  </div>
+  <label class="check"><input type="checkbox" data-save="s7.done" data-req> <span>I completed the quiz in Canvas.</span></label>
+</section>
+
+<!-- STEP 8 -->
+<section class="step" data-step="8" aria-labelledby="h8s">
+  <h2 id="h8s">Step 8 · Reflection <span class="time">· 10 min</span></h2>
+  <div class="turn"><span class="tag">Your turn</span>
+    <label class="lbl" for="refl"><b>First look back at your Step 2 attempt and your Velox Reporting Project instructions.</b> Then think of a report or explanation you have to write at work, in an internship, or in another class. How would you set up AI to help, and which check would you never skip? <b>Write 3 to 5 sentences.</b> This is not part of your Canvas submission; it is for you.</label>
+    <textarea id="refl" data-save="s8.refl" data-min="60" data-req></textarea>
+  </div>
+  <div id="finishBox"></div>
+</section>
+
+<div class="nav">
+  <button class="btn btn-ghost" type="button" id="prev">Back</button>
+  <div class="gate" id="gate" role="status" aria-live="polite"></div>
+  <button class="btn btn-red" type="button" id="next">Next</button>
+</div>
+
+</div></main>
+<footer><div class="wrap">ACCT/MIS 4420/5420 · Iowa State University · All companies, people, and data in this course are fictional. What you type stays in your browser until you upload your submission in Canvas.</div></footer>
+
+<script src="assets/config.js"></script>
+<script src="assets/common.js"></script>
+<script src="assets/module4.js"></script>
+</body>
+</html>
