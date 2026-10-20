@@ -59,8 +59,8 @@
 
   /* ---------- config-driven bits ---------- */
   const C = window.COURSE || {};
-  if(C.videoUrl && C.videoUrl[5]){ $("#videoBox").innerHTML = videoHtml(C.videoUrl[5], "Module 5 video"); const h=$("#videoHelp"); if(h) h.innerHTML = "Click the <b>play</b> button on the video to watch it."; }
-  else { const h=$("#videoHelp"); if(h) h.textContent = "The video for this module is not posted yet. Marcus’s message below covers what you need to start."; }
+  if(C.videoUrl && C.videoUrl[5]){ $("#videoBox").innerHTML = videoHtml(C.videoUrl[5], "Module 5 video"); const h=$("#videoHelp"); if(h) h.innerHTML = "Click the <b>play</b> button on the video to watch it. Prefer to read, or want to follow along? Use the buttons below."; }
+  else { const h=$("#videoHelp"); if(h) h.textContent = "The video is not posted yet. You can read the transcript or follow along with the slides using the buttons below."; }
   if(C.quizUrl && C.quizUrl[5]){ const q=$("#quizLink"); q.href=C.quizUrl[5]; q.style.display="inline-block"; $("#quizNone").style.display="none"; }
   if(C.submitUrl && C.submitUrl[5]){ const s=$("#submitLink"); s.href=C.submitUrl[5]; s.style.display="inline"; }
 
