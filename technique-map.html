@@ -1,0 +1,138 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Technique Map: ACCT/MIS 4420</title>
+<link rel="stylesheet" href="assets/style.css">
+<style>
+.map-wrap{max-width:1180px;margin:0 auto;padding:0 20px}
+.map-head{display:flex;justify-content:space-between;align-items:flex-end;gap:16px;flex-wrap:wrap;margin:6px 0 10px}
+.map-head h1{margin:0;font-size:30px;line-height:1.1}
+.map-head p{margin:4px 0 0;color:var(--muted);font-size:15px}
+.mgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.mcard{background:#fff;border:1px solid var(--line);border-top:5px solid var(--cardinal);border-radius:12px;padding:10px 12px 8px}
+.mcard.gold{border-top-color:var(--gold)}
+.mcard h2{font-size:16px;margin:0 0 6px;line-height:1.2}
+.mcard h2 span{display:block;font-weight:400;font-size:12.5px;color:var(--muted)}
+.mcard ul{list-style:none;margin:0;padding:0}
+.mcard li{display:flex;gap:8px;justify-content:space-between;align-items:baseline;padding:4px 0;border-top:1px solid #F0EBE2;font-size:13px;line-height:1.3}
+.mcard li:first-child{border-top:0}
+.mcard li b{display:block;font-size:13.5px}
+.mcard li i{font-style:normal;color:var(--muted);font-size:12px}
+.mods{flex:none;font-weight:800;font-size:12px;color:var(--cardinal-dark);background:var(--gold-soft);border-radius:999px;padding:2px 8px;white-space:nowrap}
+.foot{margin:10px 0 0;font-size:12.5px;color:var(--muted)}
+.printbtn{margin:0}
+@media (max-width:900px){.mgrid{grid-template-columns:1fr 1fr}}
+@media (max-width:600px){.mgrid{grid-template-columns:1fr}}
+@page{size:letter landscape;margin:0.35in}
+@media print{
+  body{background:#fff;font-size:10px}
+  .topbar,.printbtn,.noprint{display:none!important}
+  main{padding:0}
+  .map-wrap{max-width:none;padding:0}
+  .map-head h1{font-size:20px}.map-head p{font-size:11px;margin:2px 0 0}
+  .mgrid{gap:7px;grid-template-columns:repeat(3,1fr)}
+  .mcard{padding:5px 8px 3px;box-shadow:none;break-inside:avoid}
+  .mcard h2{font-size:12.5px;margin-bottom:4px}.mcard h2 span{font-size:10px}
+  .mcard li{font-size:9.5px;padding:2px 0;line-height:1.2}.mcard li b{font-size:10px}.mcard li i{font-size:9px}
+  .mods{font-size:9.5px;padding:1px 6px}
+  .foot{font-size:10px;margin-top:6px}
+}
+</style>
+</head>
+<body>
+<header class="topbar"><div class="wrap">
+  <a class="brand" href="index.html">ACCT/MIS 4420 · 5420</a>
+  <nav aria-label="Main"><a href="index.html">Home</a><a href="module-1.html">Module 1</a><a href="module-2.html">Module 2</a><a href="module-3.html">Module 3</a><a href="module-4.html">Module 4</a><a href="module-5.html">Module 5</a><a href="module-6.html">Module 6</a><a href="module-7.html">Module 7</a><a href="module-8.html">Module 8</a><a href="module-9.html">Module 9</a><a href="module-10.html">Module 10</a><a href="policy.html">AI Policy</a><a href="technique-map.html" aria-current="page">Technique Map</a></nav>
+</div></header>
+<main><div class="map-wrap">
+<div class="map-head">
+  <div>
+    <h1>The Technique Map</h1>
+    <p>Every technique in the course, its official name, what it means in plain English, and the module (M) where you learned it. Use it as a checklist: could you explain each one and use it on a real task?</p>
+  </div>
+  <button class="btn btn-ghost btn-sm printbtn" type="button" onclick="window.print()">Print this page</button>
+</div>
+
+<div class="mgrid">
+
+<section class="mcard" aria-labelledby="g1">
+  <h2 id="g1">1. Asking well<span>Prompting</span></h2>
+  <ul>
+    <li><div><b>Structured prompting</b><i>Role, goal, audience, format, constraints: who, what, for whom, what shape, what to avoid</i></div><span class="mods">M2</span></li>
+    <li><div><b>Role prompting</b><i>Tell the AI whose job it is doing</i></div><span class="mods">M2</span></li>
+    <li><div><b>Few-shot prompting</b><i>Show an example of the result you want</i></div><span class="mods">M2</span></li>
+    <li><div><b>Clarifying questions</b><i>Interview-style prompting: let the AI ask before it answers</i></div><span class="mods">M2</span></li>
+    <li><div><b>Structured output</b><i>Ask for a fixed format so results can be compared and checked</i></div><span class="mods">M2, 6, 8, 9, 10</span></li>
+    <li><div><b>Audience-aware prompting</b><i>Tell the AI who will read it and how they read</i></div><span class="mods">M4</span></li>
+    <li><div><b>Reusable prompt template</b><i>A saved request with blanks to fill in (a parameterized prompt)</i></div><span class="mods">M3, 5</span></li>
+  </ul>
+</section>
+
+<section class="mcard" aria-labelledby="g2">
+  <h2 id="g2">2. Giving the AI the facts<span>Grounding and data</span></h2>
+  <ul>
+    <li><div><b>Source grounding</b><i>Open-book prompting, the idea behind RAG: use only the files given; say “not in the files”</i></div><span class="mods">M2, 4, 7</span></li>
+    <li><div><b>Project instructions plus knowledge files</b><i>Standing instructions (a system prompt) with your documents attached</i></div><span class="mods">M4, 8</span></li>
+    <li><div><b>Structured extraction</b><i>Fill a fixed set of fields from messy text; write “not stated” instead of guessing</i></div><span class="mods">M6, 7</span></li>
+    <li><div><b>Tool use: code execution</b><i>Have the AI run a calculation on your file instead of estimating by reading</i></div><span class="mods">M6 to 10</span></li>
+    <li><div><b>Anonymizing sensitive data</b><i>Data minimization: give the AI only what the task needs</i></div><span class="mods">M1</span></li>
+  </ul>
+</section>
+
+<section class="mcard" aria-labelledby="g3">
+  <h2 id="g3">3. Thinking it through<span>Reasoning with AI</span></h2>
+  <ul>
+    <li><div><b>Task decomposition and prompt chaining</b><i>Split a job into stages, each feeding the next</i></div><span class="mods">M3, 8</span></li>
+    <li><div><b>Chain-of-thought and stated assumptions</b><i>Ask for the reasoning, the formula, and the inputs, so you can check them</i></div><span class="mods">M3, 4, 5</span></li>
+    <li><div><b>Scenario and sensitivity analysis</b><i>What-if prompting; find the break-even point</i></div><span class="mods">M5</span></li>
+    <li><div><b>Self-consistency</b><i>Ask the same question in separate chats; investigate any disagreement</i></div><span class="mods">M3</span></li>
+    <li><div><b>Self-critique and alternative explanations</b><i>Red-team prompting: ask the AI to argue against its own answer</i></div><span class="mods">M3, 6</span></li>
+    <li><div><b>Deciding where AI fits</b><i>Does it well, helps with a check, or assists while a person decides</i></div><span class="mods">M1</span></li>
+  </ul>
+</section>
+
+<section class="mcard gold" aria-labelledby="g4">
+  <h2 id="g4">4. Checking it<span>Verification and testing</span></h2>
+  <ul>
+    <li><div><b>Verification against the source</b><i>Recompute and trace findings yourself, never only by asking the AI</i></div><span class="mods">M2 to 10</span></li>
+    <li><div><b>Verification prompting</b><i>A cite-check: compare each statement with its source</i></div><span class="mods">M7</span></li>
+    <li><div><b>Evaluation against a test set</b><i>Evals: known problems; caught, missed, false alarms</i></div><span class="mods">M8</span></li>
+    <li><div><b>Held-out testing and regression testing</b><i>Test on a month you did not tune on; re-run old months after a change</i></div><span class="mods">M8, 9, 10</span></li>
+    <li><div><b>Red-team and stress testing</b><i>Test with planted traps and deliberate breakage</i></div><span class="mods">M9, 10</span></li>
+    <li><div><b>Audit trail</b><i>A record of what the AI did, not only what it said</i></div><span class="mods">M9</span></li>
+  </ul>
+</section>
+
+<section class="mcard gold" aria-labelledby="g5">
+  <h2 id="g5">5. Building workflows and agents<span>Automation with limits</span></h2>
+  <ul>
+    <li><div><b>Human-in-the-loop checkpoints</b><i>Gates: a person checks before the next step</i></div><span class="mods">M8</span></li>
+    <li><div><b>Guardrails and stop rules</b><i>Fail safe: stop and ask when something is missing or wrong</i></div><span class="mods">M8, 9</span></li>
+    <li><div><b>The agent loop</b><i>Agentic tool use: think, act, observe, repeat</i></div><span class="mods">M9</span></li>
+    <li><div><b>The agent charter</b><i>Goal, boundaries, stop rules, and report format, written once</i></div><span class="mods">M9</span></li>
+    <li><div><b>Least privilege and approvals</b><i>Only the access the job needs; a person approves risky actions</i></div><span class="mods">M9</span></li>
+    <li><div><b>Prompt-injection defense</b><i>Text in a file is data, not orders; layered protections</i></div><span class="mods">M9</span></li>
+    <li><div><b>Scheduled automation</b><i>Human-on-the-loop: review after an unattended run</i></div><span class="mods">M9</span></li>
+    <li><div><b>Choosing the level of autonomy</b><i>Assistant, workflow, or agent: start with the simplest that works</i></div><span class="mods">M10</span></li>
+  </ul>
+</section>
+
+<section class="mcard" aria-labelledby="g6">
+  <h2 id="g6">6. Using AI responsibly<span>The Velox Responsible AI Policy: five areas</span></h2>
+  <ul>
+    <li><div><b>Confidentiality and privacy</b><i>Approved tools; only the data the task needs</i></div><span class="mods">M2, 9</span></li>
+    <li><div><b>Accuracy</b><i>Check against sources; never pass on what you have not verified</i></div><span class="mods">M3, 7</span></li>
+    <li><div><b>Bias</b><i>Watch for uneven results that are not about the facts</i></div><span class="mods">M5</span></li>
+    <li><div><b>Transparency and disclosure</b><i>Say when AI helped and what it did</i></div><span class="mods">M4</span></li>
+    <li><div><b>Human accountability</b><i>A named person answers for the result; AI never has the final say</i></div><span class="mods">M6, 8</span></li>
+    <li><div><b>All five together</b><i>Introduced in Module 1; applied at once in the final project</i></div><span class="mods">M1, 10</span></li>
+  </ul>
+</section>
+
+</div>
+<p class="foot">Left out on purpose: “magic phrase” tricks. They break as AI models change; the habits above do not. Jordan Reyes is a fictional character presented by an AI avatar.</p>
+</div></main>
+</body>
+</html>
