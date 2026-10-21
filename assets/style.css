@@ -113,3 +113,13 @@ footer a{color:#fff}
 .tech{background:var(--gold-soft);border-left:6px solid var(--gold);border-radius:0 12px 12px 0;padding:10px 16px;margin:14px 0}.tech p{margin:4px 0}
 
 .dl-row{display:flex;flex-wrap:wrap;gap:10px;margin:8px 0 16px}
+
+/* Progress backup */
+.bk-fab{position:fixed;left:14px;bottom:14px;z-index:55;background:#fff;color:var(--cardinal-dark);border:2px solid var(--cardinal);border-radius:999px;padding:9px 16px;font-weight:700;font-size:14px;line-height:1.2;font-family:inherit;cursor:pointer;box-shadow:0 3px 10px rgba(0,0,0,.2)}
+.bk-fab.unsaved{background:var(--gold);color:#2b1d00;border-color:#c99a2c}
+.bk-panel{position:fixed;left:14px;bottom:62px;z-index:56;width:min(420px,calc(100vw - 28px));max-height:calc(100vh - 90px);overflow:auto;background:#fff;color:#222;border:2px solid var(--cardinal);border-radius:14px;padding:16px 18px;box-shadow:0 8px 28px rgba(0,0,0,.3)}
+.bk-panel[hidden]{display:none}
+.bk-panel h3{margin:0 0 8px}
+.bk-nudge{position:fixed;left:50%;bottom:64px;transform:translateX(-50%);z-index:57;background:var(--gold-soft);border:2px solid #c99a2c;border-radius:14px;padding:10px 14px;display:none;gap:10px;align-items:center;flex-wrap:wrap;width:min(560px,calc(100vw - 28px));box-shadow:0 6px 20px rgba(0,0,0,.25)}
+.bk-nudge.show{display:flex}
+body{padding-bottom:56px}
