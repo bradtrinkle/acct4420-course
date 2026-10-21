@@ -47,7 +47,7 @@
       <p style="margin:0 0 6px">${esc(p.blurb)}</p>
       <p class="hint" style="margin:0"><b>The signer:</b> ${esc(p.signer)}. <b>Kinds of item flagged:</b> ${p.itemKinds.map(esc).join("; ")}.</p>
     </div>`; }).join("");
-  $("#pack").innerHTML = '<option value="">Choose one…</option>' + PACK_ORDER.filter(id=>PACKS[id]).map(id=>`<option value="${id}">${esc(PACKS[id].title)} (${esc(PACKS[id].lens)})</option>`).join("") + '<option value="own">My own client (needs my instructor’s approval)</option>';
+  $("#pack").innerHTML = '<option value="">Choose one…</option>' + PACK_ORDER.filter(id=>PACKS[id]).map(id=>`<option value="${id}">${esc(PACKS[id].title)} (${esc(PACKS[id].lens)})</option>`).join("") ;
 
   $("#situations").innerHTML = SITUATIONS.map((s,i)=>{ const n=i+1; return `
     <div class="task">
@@ -120,64 +120,17 @@
   else { const h=$("#videoHelp"); if(h) h.textContent = "The video is not posted yet. The message below covers the key points."; }
   if(C.submitUrl && C.submitUrl[10]){ const s=$("#submitLink"); s.href=C.submitUrl[10]; s.style.display="inline"; }
 
-  /* ---------- own client: answer key ---------- */
   const MONTHS = ["october","november","december"];
-  function checkOwn(txt){
-    let j; try{ j = JSON.parse(txt); }catch(e){ return {ok:false, msg:"This is not valid JSON. Copy the key exactly as Claude produced it, starting with { and ending with }."}; }
-    const root = (j.months ? j : (j.own || j[Object.keys(j)[0]] || {}));
-    const m = root.months; if(!m) return {ok:false, msg:"The key needs a “months” section with october, november, and december."};
-    const problems = [];
-    MONTHS.forEach(mo=>{
-      const c = m[mo]; if(!c){ problems.push(mo+": missing"); return; }
-      if(!Array.isArray(c.items) || c.items.length!==6){ problems.push(mo+": it needs exactly 6 items"); return; }
-      const keys = [];
-      c.items.forEach((it,i)=>{
-        if(!Array.isArray(it.key) || !it.key.length || it.key.some(k=>norm(k)!==k || !k)) problems.push(mo+" item "+(i+1)+": “key” must be a list of codes with capital letters and digits only (for example CL7301)");
-        else keys.push(...it.key);
-        if(!Array.isArray(it.facts) || it.facts.length!==2 || it.facts.some(g=>!Array.isArray(g)||!g.length||g.some(a=>!String(a).trim()))) problems.push(mo+" item "+(i+1)+": “facts” must be exactly 2 lists of alternatives");
-      });
-      const inKeys = code => keys.some(k=>String(code).includes(k));
-      const need = [["injection","item","canary"],["action","item","what"],["missing","item","doc"],["unverified","item","what"]];
-      const used = [];
-      need.forEach(([t,a,b])=>{ const o=c[t]; if(!o || !o[a] || !o[b]){ problems.push(mo+": “"+t+"” needs “"+a+"” and “"+b+"”"); return; } if(!inKeys(o[a])) problems.push(mo+": the “"+t+"” item is not one of the six item keys"); used.push(o[a]); });
-      if(new Set(used).size!==used.length) problems.push(mo+": the four traps must be on four different items");
-      if(c.injection && /cleared|resolved|approved|closed|ok|verified/i.test(String(c.injection.canary||""))) problems.push(mo+": the canary phrase must not contain cleared, resolved, approved, closed, ok, or verified");
-      if(c.missing && c.missing.doc && norm(c.missing.doc)!==c.missing.doc) problems.push(mo+": “missing.doc” must be capital letters and digits only");
-    });
-    if(problems.length) return {ok:false, msg:"Fix these and check again:", list:problems};
-    const out = {label:root.label||"My own client", months:{}};
-    MONTHS.forEach(mo=>{ const c=m[mo]; out.months[mo]={label:c.label||MONTH_LABEL[mo], year:String(c.year||"2026"), items:c.items, injection:c.injection, action:c.action, missing:c.missing, unverified:c.unverified}; });
-    return {ok:true, cases:out};
-  }
-  function loadOwn(){
-    const saved = store.get(P+"own.cases", null);
-    if(saved){ window.M10CASES = window.M10CASES || {}; window.M10CASES.own = saved; }
-    return !!saved;
-  }
-  $("#ownKey").value = store.get(P+"own.keytext","");
-  $("#ownKey").addEventListener("input",()=>store.set(P+"own.keytext", $("#ownKey").value));
-  $("#ownCheck").addEventListener("click",()=>{
-    const r = checkOwn($("#ownKey").value.trim());
-    if(r.ok){ store.set(P+"own.cases", r.cases); window.M10CASES = window.M10CASES||{}; window.M10CASES.own = r.cases; $("#ownRes").innerHTML = '<p class="fb show ok">The shape of your answer key is right: six items a month, two facts each, and four traps on four different items. The page cannot check that the facts are in your files. You and your grader do that.</p>'; }
-    else { store.set(P+"own.cases", null); if(window.M10CASES) delete window.M10CASES.own; $("#ownRes").innerHTML = '<p class="fb show no">'+esc(r.msg)+'</p>'+(r.list?'<ul>'+r.list.map(x=>'<li>'+esc(x)+'</li>').join('')+'</ul>':''); }
-    onChange($("#ownKey"));
-  });
-  loadOwn();
-  const ownOk = () => !!store.get(P+"own.cases", null);
 
   /* ---------- pack-dependent bits ---------- */
   const pack = () => $("#pack").value;
-  const packTitle = () => pack()==="own" ? "My own client" : (PACKS[pack()] ? PACKS[pack()].title : "(not chosen)");
+  const packTitle = () => PACKS[pack()] ? PACKS[pack()].title : "(not chosen)";
   function refreshPack(){
     const id = pack();
-    $("#ownBox").style.display = id==="own" ? "block" : "none";
     const link = (m,label) => `<a class="btn btn-ghost btn-sm" href="data/module-10/velox-${id}-${m}.zip" download>${label}</a>`;
     if(PACKS[id]){
       $("#dlSlot").innerHTML = link("october","October case folder (zip)");
       $("#dlSlot2").innerHTML = link("november","November case folder (zip)")+link("december","December case folder (zip)");
-    } else if(id==="own"){
-      $("#dlSlot").innerHTML = '<span class="hint">(Your own client: use the October folder you make after your instructor approves your idea.)</span>';
-      $("#dlSlot2").innerHTML = '<span class="hint">(Your own client: use the November and December folders you made.)</span>';
     } else {
       $("#dlSlot").innerHTML = '<span class="hint">(Choose your client above and the download button appears here.)</span>';
       $("#dlSlot2").innerHTML = '<span class="hint">(Choose your client in Step 2 and the buttons appear here.)</span>';
@@ -221,7 +174,6 @@
     btn.addEventListener("click",()=>{
       const t = ta.value.trim();
       if(!pack()){ res.innerHTML = '<p class="fb show no">Choose your client in Step 2 first.</p>'; return; }
-      if(pack()==="own" && !ownOk()){ res.innerHTML = '<p class="fb show no">Paste and check your answer key in Step 2 first.</p>'; return; }
       if(words(t)<25){ res.innerHTML = '<p class="fb show no">Paste the report first (it is much longer than this).</p>'; return; }
       let r; try{ r = M10Score.score(pack(), month, t); }catch(e){ res.innerHTML = '<p class="fb show no">The scorer could not read the report or your client’s answer key. Reload the page and try again.</p>'; return; }
       const log = getLog(); const run = log.filter(e=>e.month===month && e.pack===pack()).length+1;
@@ -292,7 +244,6 @@
     const out = [];
     $$("[data-req]",stepEl).forEach(el=>{
       if(!shown(el)) return;
-      if(stepEl.dataset.step==="2" && pack()==="own" && ["t2a","t2b","t2c"].includes(el.id)) return; /* own-client first try is required before Step 5 */
       let ok = true;
       if(el.classList.contains("qc")) ok = el.dataset.solved==="1";
       else if(el.type==="checkbox") ok = el.checked;
@@ -303,14 +254,6 @@
     });
     const step = stepEl.dataset.step;
     const need = (m, id, what) => { if(!scored(m)){ const w=$('[data-scorer="'+id+'"]'); w.dataset.need = what; out.push(w); } };
-    if(step==="2" && pack()==="own"){
-      const el=$("#ownIdea"); if(el.value.trim().length<Number(el.dataset.min||1)){ el.dataset.need="your own-client idea (about 150 words)"; out.push(el); }
-    }
-    if(step==="5" && pack()==="own"){
-      const d=$("#ownDate"); if(d.value.trim().length<Number(d.dataset.min||1)){ d.dataset.need="the date your instructor approved your own client (Step 2)"; out.push(d); }
-      if(!ownOk()){ const el=$("#ownKey"); el.dataset.need="your answer key checked in Step 2 (press Check my answer key)"; out.push(el); }
-      ["t2a","t2b","t2c"].forEach(id=>{ const el=$("#"+id); if(el.value.trim().length<Number(el.dataset.min||1)){ el.dataset.need="your first-try answers in Step 2 (own client)"; out.push(el); } });
-    }
     if(step==="5"){ need("october","s5oct","score your October report in the Report Scorer (Part 4)"); need("november","s5nov","score your November report in the Report Scorer (Part 6)"); }
     if(step==="5" && build()==="Agent" && !$("#route").value){ out.push($("#route")); }
     if(step==="5" && build()==="Agent"){ const ok = PERMS.every(p=>$("#pmv"+p.n).value!=="" && $("#pmw"+p.n).value.trim().length>=8); if(!ok){ const el=$("#pmv1"); el.dataset.need="the permission plan for all six actions (Part 3)"; out.push(el); } }
@@ -370,7 +313,7 @@
 
   /* ---------- building the submission ---------- */
   const val = id => ($("#"+id)||{value:""}).value.trim();
-  const FIELDS = ["whypack","pr1","pr2","pr3","pr4","pr5","coach1","coach2","sol1","runreq","stoptest","mode","orep","oapp","ofold","onote","obase","ochg","stressSel","stressDid","stressRes","stressVer","stressFix","nrep","napp","nfold","nnote","coach3","coach4","rev","sol2","regr","drep","dapp","dfold","dnote","cmp","rej","trans","cd1","cd2","cd3","cd4","guide","plan","acc","foot","disc","vlen","vtrans","vslides","g1","g2","g3","ownIdea","ownDate"];
+  const FIELDS = ["whypack","pr1","pr2","pr3","pr4","pr5","coach1","coach2","sol1","runreq","stoptest","mode","orep","oapp","ofold","onote","obase","ochg","stressSel","stressDid","stressRes","stressVer","stressFix","nrep","napp","nfold","nnote","coach3","coach4","rev","sol2","regr","drep","dapp","dfold","dnote","cmp","rej","trans","cd1","cd2","cd3","cd4","guide","plan","acc","foot","disc","vlen","vtrans","vslides","g1","g2","g3"];
   function data(){
     const sits = SITUATIONS.map((s,i)=>({n:i+1,area:s.area,line:s.line,v:val("sv"+(i+1)),w:val("sw"+(i+1))}));
     const ver = [1,2].map(k=>({k,item:val("vc"+k),where:val("vw"+k),amts:val("vm"+k),verdict:val("vv"+k),action:val("va"+k)}));
@@ -402,7 +345,6 @@
 <style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt}h1{color:#C8102E}h2{color:#C8102E;border-bottom:2px solid #F1BE48}table{border-collapse:collapse;width:100%}td,th{border:1px solid #999;padding:4px;vertical-align:top}th{background:#F3E3E6}</style></head><body>
 <h1>Module 10: The Final Project</h1>
 <p><b>Student:</b> ${esc(d.name)} &nbsp; <b>Course:</b> ACCT/MIS ${d.grad?"5420":"4420"} &nbsp; <b>Client:</b> ${esc(d.pack)} &nbsp; <b>Build type:</b> ${esc(buildName(d.build))} &nbsp; <b>Run method:</b> ${esc(routeName(d.build,d.route))} &nbsp; <b>Date:</b> ${new Date().toLocaleDateString()}</p>
-${d.pack==="My own client"?`<h2>Own client</h2><p><b>Idea as sent to my instructor:</b></p>${p(d.ownIdea)}<p><b>Approved:</b> ${esc(d.ownDate)} (my three case folders are uploaded to Canvas as a zip file)</p>`:""}
 <h2>A. Proposal and design</h2><p><b>Why this client:</b></p>${p(d.whypack)}<p><b>The client and the problem:</b></p>${p(d.pr1)}<p><b>Build type and why:</b></p>${p(d.pr2)}<p><b>How it will work:</b></p>${p(d.pr3)}<p><b>Testing and success:</b></p>${p(d.pr4)}<p><b>Three biggest risks:</b></p>${p(d.pr5)}<p><b>Coach feedback (main points):</b></p>${p(d.coach1)}<p><b>What I changed or did not change, and why:</b></p>${p(d.coach2)}
 <h2>B. The solution (version 1) and its stop test</h2><p><b>Instructions:</b></p>${p(d.sol1)}<p><b>Request typed to start a run:</b> ${esc(d.runreq)}</p><p><b>What it said with the data files missing:</b></p>${p(d.stoptest)}${perms}
 <h2>C. Rehearsal on October and stress test</h2><p><b>Report:</b></p>${p(d.orep)}${run("oapp","ofold","onote")}<p><b>Scorer log (October):</b></p>${lg("october")}<p><b>Baseline comparison:</b> ${esc(d.obase||"(none)")}</p><p><b>What I changed and why:</b></p>${p(d.ochg)}<p><b>Stress test:</b> ${esc(d.stressSel)}</p><p><b>What I changed in the copy and what I expected:</b></p>${p(d.stressDid)}<p><b>What the solution produced:</b></p>${p(d.stressRes)}<p><b>How it did:</b> ${esc(d.stressVer)}</p><p><b>What I learned and changed:</b></p>${p(d.stressFix)}
@@ -441,7 +383,7 @@ ${d.grad?`<h2>M. Graduate students only</h2><p><b>A third finding, checked indep
     $("#finishBox").innerHTML = `<div class="card done-card"><h2>Module 10 complete, and so is the course!</h2>
       <p>You chose a client, defended a build type, tested your solution on three months${o?` (October ${o.pts}`:""}${n?`, November ${n.pts}`:""}${dec?`, December ${dec.pts} of 15)`:o?")":""}, checked its findings yourself, stress-tested it, documented its limits, and explained it in your own voice. That is the habit this course was built for: <b>when a task lands on your desk, ask how AI can help, then decide how far to trust it, and prove it.</b></p>
       <p><button class="btn btn-red" id="dl2" type="button">Download my submission (.doc)</button></p>
-      <p class="hint"><b>Upload to Canvas:</b> the Word document, your video${pack()==="own"?", and a zip file of your three case folders":""}. Then you are done.</p>
+      <p class="hint"><b>Upload to Canvas:</b> the Word document, your video. Then you are done.</p>
       <p><button class="btn btn-ghost btn-sm" id="reset" type="button">Clear my saved answers on this device</button></p></div>`;
     $("#dl2").addEventListener("click",download);
     $("#reset").addEventListener("click",()=>{ if(confirm("This erases everything you typed in Module 10 on this device. Continue?")){ Object.keys(localStorage).filter(k=>k.startsWith("velox."+P)).forEach(k=>localStorage.removeItem(k)); location.reload(); }});
