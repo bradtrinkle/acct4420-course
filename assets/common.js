@@ -1,7 +1,17 @@
 (function(){
   const store = {
     get(k, d){ try{ const v = localStorage.getItem("velox."+k); return v===null? d : JSON.parse(v);}catch(e){return d;} },
-    set(k, v){ try{ localStorage.setItem("velox."+k, JSON.stringify(v)); }catch(e){} }
+    set(k, v){
+      try{
+        const old = localStorage.getItem("velox."+k), nv = JSON.stringify(v);
+        localStorage.setItem("velox."+k, nv);
+        if(old!==nv && !k.startsWith("sys.")){
+          // Only real work counts as unsaved: typed text, ticked boxes, answered questions, finished modules.
+          if(/\.(f|qc)\./.test(k) ? !(v===""||v===false||v==null) : /\.done$/.test(k)) localStorage.setItem("velox.sys.dirty","1");
+          if(window.progressChanged) progressChanged(k, v, old);
+        }
+      }catch(e){}
+    }
   };
   window.store = store;
   window.videoHtml = function(url, title){
@@ -51,4 +61,92 @@
       if(++n<220) requestAnimationFrame(tick); else c.remove();
     })();
   };
+
+  // ---- Progress backup and restore -------------------------------------------------
+  // All progress lives in this browser's localStorage under "velox.*". The backup file is a
+  // plain JSON copy of those items so a student can move to another browser or recover.
+  const BK_APP = "acct4420-velox-progress";
+  const sysGet = k => { try{ return localStorage.getItem("velox.sys."+k); }catch(e){ return null; } };
+  const sysSet = (k,v) => { try{ localStorage.setItem("velox.sys."+k, v); }catch(e){} };
+  const progressKeys = () => { try{ return Object.keys(localStorage).filter(k=>k.startsWith("velox.") && !k.startsWith("velox.sys.")); }catch(e){ return []; } };
+  function saveBackup(){
+    const data = {}; progressKeys().forEach(k=>{ data[k] = localStorage.getItem(k); });
+    if(!Object.keys(data).length){ toast("Nothing to back up yet. Type something first."); return false; }
+    const now = new Date();
+    const blob = new Blob([JSON.stringify({app:BK_APP, version:1, saved:now.toISOString(), data}, null, 1)], {type:"application/json"});
+    const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
+    a.download = "acct4420-progress-backup-" + now.toISOString().slice(0,10) + ".json";
+    document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
+    sysSet("lastBackup", now.toISOString()); sysSet("dirty", "0"); refreshBackupUi();
+    toast("Backup saved. Check your Downloads folder.");
+    return true;
+  }
+  function restoreBackup(file){
+    const rd = new FileReader();
+    rd.onload = ()=>{
+      let o; try{ o = JSON.parse(rd.result); }catch(e){ o = null; }
+      if(!o || o.app!==BK_APP || !o.data || typeof o.data!=="object"){ alert("That file is not a progress backup from this course. Choose the file named acct4420-progress-backup-(date).json that you saved earlier."); return; }
+      const keys = Object.keys(o.data).filter(k=>k.startsWith("velox.") && !k.startsWith("velox.sys.") && typeof o.data[k]==="string");
+      if(!keys.length){ alert("That backup file is empty."); return; }
+      const when = o.saved ? new Date(o.saved).toLocaleString() : "an unknown date";
+      if(!confirm("Restore your progress from the backup saved on " + when + "?\n\nThis replaces everything currently saved in this browser with the contents of that file. Continue?")) return;
+      try{
+        progressKeys().forEach(k=>localStorage.removeItem(k));
+        keys.forEach(k=>localStorage.setItem(k, o.data[k]));
+        sysSet("lastBackup", new Date().toISOString()); sysSet("dirty","0");
+      }catch(e){ alert("Your browser would not let this page save the restored data. Check that private browsing is off and try again."); return; }
+      alert("Your progress is restored. The page will reload now."); location.reload();
+    };
+    rd.readAsText(file);
+  }
+  let panel, fab;
+  function refreshBackupUi(){
+    const last = sysGet("lastBackup"), dirty = sysGet("dirty")==="1";
+    if(fab){ fab.classList.toggle("unsaved", dirty); fab.querySelector(".lbl-txt").textContent = dirty ? "Save a backup (not saved yet)" : "Progress backup"; }
+    const st = document.getElementById("bkStatus");
+    if(st) st.textContent = last ? "Last backup saved: " + new Date(last).toLocaleString() + (dirty ? ". You have typed more since then, so save a new one." : ". Nothing new since then.") : "You have not saved a backup yet.";
+  }
+  function buildBackupUi(){
+    fab = document.createElement("button"); fab.type="button"; fab.className="bk-fab";
+    fab.innerHTML = '<span class="lbl-txt"></span>'; fab.setAttribute("aria-haspopup","dialog");
+    panel = document.createElement("div"); panel.className="bk-panel"; panel.hidden = true; panel.setAttribute("role","dialog"); panel.setAttribute("aria-label","Progress backup");
+    panel.innerHTML = '<h3>Protect your work</h3>' +
+      '<p>Everything you type here is saved <b>only in this browser on this computer</b>. If you switch computers or browsers, use a private window, or clear your browser data, it is gone. A backup file lets you get it back.</p>' +
+      '<p id="bkStatus" class="hint"></p>' +
+      '<p><b>1. To save:</b> click the button. A small file downloads to your computer. <b>Keep it somewhere safe</b> (your Documents folder or a cloud drive).</p>' +
+      '<p><button type="button" class="btn btn-red btn-sm" id="bkSave">Save my progress to a file</button></p>' +
+      '<p><b>2. To restore</b> (new computer, new browser, or lost work): <b>open this course site, click the button below, and choose your backup file.</b></p>' +
+      '<p><label class="btn btn-ghost btn-sm" for="bkFile" style="cursor:pointer">Restore my progress from a file</label><input type="file" id="bkFile" accept=".json,application/json" hidden></p>' +
+      '<p class="hint">Save a new backup after each step you finish. The backup covers every module, so you only need the newest file. Your backup is not your submission: upload the Word file from the module page to Canvas.</p>' +
+      '<p style="text-align:right;margin:0"><button type="button" class="btn btn-ghost btn-sm" id="bkClose">Close</button></p>';
+    document.body.appendChild(panel); document.body.appendChild(fab);
+    const show = on => { panel.hidden = !on; fab.setAttribute("aria-expanded", on?"true":"false"); if(on) refreshBackupUi(); };
+    fab.addEventListener("click", ()=>show(panel.hidden));
+    panel.querySelector("#bkClose").addEventListener("click", ()=>{ show(false); fab.focus(); });
+    panel.querySelector("#bkSave").addEventListener("click", saveBackup);
+    panel.querySelector("#bkFile").addEventListener("change", e=>{ const f = e.target.files[0]; if(f) restoreBackup(f); e.target.value=""; });
+    document.addEventListener("keydown", e=>{ if(e.key==="Escape" && !panel.hidden){ show(false); fab.focus(); } });
+    window.openBackupPanel = ()=>show(true);
+    refreshBackupUi();
+  }
+  // Nudge after a student finishes a step (the step counter or "done" flag advances).
+  let nudgeTimer;
+  window.progressChanged = function(k, v, old){
+    refreshBackupUi();
+    if(!/(^|\.)(max|done)$/.test(k)) return;
+    if(k.endsWith("max") && !(Number(v) > Number(JSON.parse(old||"0")))) return;
+    let b = document.getElementById("bkNudge");
+    if(!b){
+      b = document.createElement("div"); b.id="bkNudge"; b.className="bk-nudge"; b.setAttribute("role","status");
+      b.innerHTML = '<span><b>Step finished.</b> Save a backup so you cannot lose your work.</span> <button type="button" class="btn btn-gold btn-sm" id="bkNudgeSave">Save backup</button> <button type="button" class="btn btn-ghost btn-sm" id="bkNudgeX" aria-label="Dismiss">Later</button>';
+      document.body.appendChild(b);
+      b.querySelector("#bkNudgeSave").addEventListener("click", ()=>{ if(saveBackup()) b.classList.remove("show"); });
+      b.querySelector("#bkNudgeX").addEventListener("click", ()=>b.classList.remove("show"));
+    }
+    b.classList.add("show"); clearTimeout(nudgeTimer); nudgeTimer = setTimeout(()=>b.classList.remove("show"), 30000);
+  };
+  window.addEventListener("beforeunload", e=>{
+    if(sysGet("dirty")==="1" && progressKeys().length){ e.preventDefault(); e.returnValue = ""; }
+  });
+  if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", buildBackupUi); else buildBackupUi();
 })();
