@@ -134,7 +134,7 @@
     async set(k,v){ const d = await this.db(); return new Promise((res,rej)=>{ const t = d.transaction("h","readwrite"); t.objectStore("h").put(v,k); t.oncomplete=()=>res(); t.onerror=()=>rej(t.error); }); },
     async del(k){ const d = await this.db(); return new Promise((res,rej)=>{ const t = d.transaction("h","readwrite"); t.objectStore("h").delete(k); t.oncomplete=()=>res(); t.onerror=()=>rej(t.error); }); }
   };
-  let autoHandle = null, autoState = FS_OK ? "off" : "none", autoTimer, autoName = "";   // none | off | on | paused | error
+  let autoHandle = null, autoState = FS_OK ? "init" : "none", autoTimer, autoName = "";   // none | off | on | paused | error
   function setAuto(st){ autoState = st; refreshBackupUi(); }
   async function writeAuto(){
     if(!autoHandle || autoState==="paused") return;
@@ -159,6 +159,7 @@
       const b = await readAutoFile();
       if(b && applyBackup(b, true)) return;
     }
+    setAuto("on");                       // the student just granted access to this file
     await writeAuto();
     if(autoState==="on") toast("Automatic saving is on.");
   }
@@ -166,7 +167,7 @@
     if(!autoHandle) return enableAuto();
     let p = "denied"; try{ p = await autoHandle.requestPermission({mode:"readwrite"}); }catch(e){}
     if(p!=="granted"){ setAuto("paused"); return; }
-    autoState = "on";
+    setAuto("on");
     if(!hasRealWork()){ const b = await readAutoFile(); if(b && applyBackup(b, true)) return; }
     await writeAuto();
   }
@@ -175,7 +176,7 @@
     try{ await idb.del("handle"); }catch(e){}
     setAuto("off");
   }
-  async function initAuto(){
+  async function initAutoCore(){
     try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist(); }catch(e){}
     if(!FS_OK) return;
     let h = null; try{ h = await idb.get("handle"); }catch(e){}
@@ -183,16 +184,57 @@
     autoHandle = h; autoName = h.name || "";
     let p = "prompt"; try{ p = await h.queryPermission({mode:"readwrite"}); }catch(e){}
     if(p!=="granted"){ setAuto("paused"); return; }
-    autoState = "on";
+    setAuto("on");
     if(!hasRealWork()){          // storage was cleared but the file is still here
       const b = await readAutoFile();
       if(b && applyBackup(b, true)) return;
     }
     await writeAuto();
   }
+  async function initAuto(){
+    try{ await initAutoCore(); }catch(e){}
+    showStartPrompt();
+  }
   document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="hidden" && autoState==="on") writeAuto(); });
   window.addEventListener("pagehide", ()=>{ if(autoState==="on") writeAuto(); });
 
+  // Reminder shown on every module page, every visit: is automatic saving on?
+  const isCoursePage = () => !!document.querySelector("main .wrap") && (!!document.querySelector(".step") || !!document.getElementById("startBtn"));
+  function renderStatusBar(){
+    if(!isCoursePage() || autoState==="none" || autoState==="init") return;
+    const host = document.querySelector("main .wrap");
+    let bar = document.getElementById("bkBar");
+    if(!bar){
+      bar = document.createElement("div"); bar.id = "bkBar"; bar.setAttribute("role","status");
+      bar.innerHTML = '<span class="bk-bar-txt"></span> <button type="button" class="btn btn-sm bk-bar-btn"></button>';
+      host.insertBefore(bar, host.firstChild);
+      bar.querySelector("button").addEventListener("click", ()=>{ if(autoState==="paused") resumeAuto(); else if(autoState==="on") window.openBackupPanel && openBackupPanel(); else enableAuto(); });
+    }
+    const t = bar.querySelector(".bk-bar-txt"), b = bar.querySelector("button");
+    const where = autoName ? " to " + autoName : "";
+    if(autoState==="on"){ bar.className = "bk-bar ok"; t.innerHTML = "<b>Auto-save is ON.</b> Your work is being saved" + where + " as you type."; b.textContent = "Details"; b.className = "btn btn-ghost btn-sm bk-bar-btn"; }
+    else if(autoState==="paused"){ bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is PAUSED.</b> Click Resume before you keep working, or your new work will not be saved to your file."; b.textContent = "Resume auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
+    else if(autoState==="error"){ bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is NOT working.</b> Your file may have been moved or deleted. Choose a save location again."; b.textContent = "Fix auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
+    else { bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is OFF.</b> Turn it on before you start working, or you could lose your work."; b.textContent = "Turn on auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
+  }
+  let startPromptShown = false;
+  function showStartPrompt(){
+    if(startPromptShown || autoState==="on" || autoState==="none" || autoState==="init" || !document.querySelector(".step")) return;
+    startPromptShown = true;
+    const m = document.createElement("div"); m.id = "bkStart"; m.setAttribute("role","dialog"); m.setAttribute("aria-modal","true"); m.setAttribute("aria-label","Turn on automatic saving");
+    m.className = "bk-modal";
+    const paused = autoState==="paused";
+    m.innerHTML = '<div class="bk-modal-box"><h2 style="margin-top:0">' + (paused ? "Welcome back. Resume auto-save." : "Before you start: turn on auto-save") + '</h2>' +
+      '<p>' + (paused
+        ? "Your browser needs your permission again before it can keep saving your work to your file. <b>Click the red button below</b> to resume. It takes one click."
+        : "Everything you type in this course is kept in this browser only. <b>If auto-save is off, you can lose your work.</b> It takes about 30 seconds to turn on: <b>click the red button, choose a folder you will not delete (such as Documents), and click Save</b>.") + '</p>' +
+      '<p style="margin-bottom:0"><button type="button" class="btn btn-red" id="bkStartGo">' + (paused ? "Resume auto-save" : "Turn on auto-save") + '</button> <button type="button" class="btn btn-ghost btn-sm" id="bkStartLater">Not now (not recommended)</button></p></div>';
+    document.body.appendChild(m);
+    const close = () => { m.remove(); };
+    m.querySelector("#bkStartGo").addEventListener("click", async ()=>{ close(); await (paused ? resumeAuto() : enableAuto()); });
+    m.querySelector("#bkStartLater").addEventListener("click", close);
+    m.querySelector("#bkStartGo").focus();
+  }
   let panel, fab;
   function refreshBackupUi(){
     const last = sysGet("lastBackup"), dirty = sysGet("dirty")==="1", lastAuto = sysGet("lastAuto");
@@ -217,6 +259,7 @@
       }[autoState] || "";
       as.className = "bk-auto " + (autoState==="on" ? "ok" : "warn");
     }
+    renderStatusBar();
     const q = id => document.getElementById(id);
     if(q("autoOn")) q("autoOn").hidden = !(autoState==="off" || autoState==="error");
     if(q("autoResume")) q("autoResume").hidden = autoState!=="paused";
