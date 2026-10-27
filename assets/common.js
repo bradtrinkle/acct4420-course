@@ -69,11 +69,25 @@
   const sysGet = k => { try{ return localStorage.getItem("velox.sys."+k); }catch(e){ return null; } };
   const sysSet = (k,v) => { try{ localStorage.setItem("velox.sys."+k, v); }catch(e){} };
   const progressKeys = () => { try{ return Object.keys(localStorage).filter(k=>k.startsWith("velox.") && !k.startsWith("velox.sys.")); }catch(e){ return []; } };
-  function saveBackup(){
+  // Pages write default values (step 1, empty fields) when they load, so "has progress" means real
+  // typing, ticked boxes, answered questions, or having moved past step 1.
+  function hasRealWork(){
+    return progressKeys().some(k=>{
+      let v; try{ v = JSON.parse(localStorage.getItem(k)); }catch(e){ return true; }
+      if(/\.(step|max)$/.test(k)) return Number(v) > 1;
+      return !(v==="" || v===false || v==null);
+    });
+  }
+  function backupJson(){
+    if(!hasRealWork()) return null;
     const data = {}; progressKeys().forEach(k=>{ data[k] = localStorage.getItem(k); });
-    if(!Object.keys(data).length){ toast("Nothing to back up yet. Type something first."); return false; }
+    return JSON.stringify({app:BK_APP, version:1, saved:new Date().toISOString(), data}, null, 1);
+  }
+  function saveBackup(){
+    const text = backupJson();
+    if(!text){ toast("Nothing to back up yet. Type something first."); return false; }
     const now = new Date();
-    const blob = new Blob([JSON.stringify({app:BK_APP, version:1, saved:now.toISOString(), data}, null, 1)], {type:"application/json"});
+    const blob = new Blob([text], {type:"application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
     a.download = "acct4420-progress-backup-" + now.toISOString().slice(0,10) + ".json";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
@@ -81,72 +95,198 @@
     toast("Backup saved. Check your Downloads folder.");
     return true;
   }
+  function parseBackup(text){
+    let o; try{ o = JSON.parse(text); }catch(e){ return null; }
+    if(!o || o.app!==BK_APP || !o.data || typeof o.data!=="object") return null;
+    const keys = Object.keys(o.data).filter(k=>k.startsWith("velox.") && !k.startsWith("velox.sys.") && typeof o.data[k]==="string");
+    return keys.length ? {saved:o.saved, keys, data:o.data} : null;
+  }
+  // Returns true if the page is about to reload with restored data.
+  function applyBackup(b, ask){
+    const when = b.saved ? new Date(b.saved).toLocaleString() : "an unknown date";
+    if(ask && !confirm("Restore your progress from the backup saved on " + when + "?\n\nThis replaces everything currently saved in this browser with the contents of that file. Continue?")) return false;
+    try{
+      progressKeys().forEach(k=>localStorage.removeItem(k));
+      b.keys.forEach(k=>localStorage.setItem(k, b.data[k]));
+      sysSet("lastBackup", new Date().toISOString()); sysSet("dirty","0");
+    }catch(e){ alert("Your browser would not let this page save the restored data. Check that private browsing is off and try again."); return false; }
+    alert("Your progress is restored. The page will reload now."); location.reload();
+    return true;
+  }
   function restoreBackup(file){
     const rd = new FileReader();
     rd.onload = ()=>{
-      let o; try{ o = JSON.parse(rd.result); }catch(e){ o = null; }
-      if(!o || o.app!==BK_APP || !o.data || typeof o.data!=="object"){ alert("That file is not a progress backup from this course. Choose the file named acct4420-progress-backup-(date).json that you saved earlier."); return; }
-      const keys = Object.keys(o.data).filter(k=>k.startsWith("velox.") && !k.startsWith("velox.sys.") && typeof o.data[k]==="string");
-      if(!keys.length){ alert("That backup file is empty."); return; }
-      const when = o.saved ? new Date(o.saved).toLocaleString() : "an unknown date";
-      if(!confirm("Restore your progress from the backup saved on " + when + "?\n\nThis replaces everything currently saved in this browser with the contents of that file. Continue?")) return;
-      try{
-        progressKeys().forEach(k=>localStorage.removeItem(k));
-        keys.forEach(k=>localStorage.setItem(k, o.data[k]));
-        sysSet("lastBackup", new Date().toISOString()); sysSet("dirty","0");
-      }catch(e){ alert("Your browser would not let this page save the restored data. Check that private browsing is off and try again."); return; }
-      alert("Your progress is restored. The page will reload now."); location.reload();
+      const b = parseBackup(rd.result);
+      if(!b){ alert("That file is not a progress backup from this course. Choose the file named acct4420-progress-backup-(date).json or acct4420-progress.json that you saved earlier."); return; }
+      applyBackup(b, true);
     };
     rd.readAsText(file);
   }
+
+  // ---- Automatic saving to a file on the student's computer ------------------------
+  // Chrome and Edge on a computer can keep a file handle the student picks once; the page then
+  // rewrites that file whenever progress changes. Other browsers keep the manual backup button.
+  const FS_OK = typeof window.showSaveFilePicker === "function" && window.isSecureContext && !!window.indexedDB;
+  const AUTO_PICK = {suggestedName:"acct4420-progress.json", types:[{description:"Course progress", accept:{"application/json":[".json"]}}]};
+  const idb = {
+    db(){ return new Promise((res,rej)=>{ const r = indexedDB.open("acct4420-autosave",1); r.onupgradeneeded=()=>r.result.createObjectStore("h"); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); },
+    async get(k){ const d = await this.db(); return new Promise((res,rej)=>{ const q = d.transaction("h").objectStore("h").get(k); q.onsuccess=()=>res(q.result); q.onerror=()=>rej(q.error); }); },
+    async set(k,v){ const d = await this.db(); return new Promise((res,rej)=>{ const t = d.transaction("h","readwrite"); t.objectStore("h").put(v,k); t.oncomplete=()=>res(); t.onerror=()=>rej(t.error); }); },
+    async del(k){ const d = await this.db(); return new Promise((res,rej)=>{ const t = d.transaction("h","readwrite"); t.objectStore("h").delete(k); t.oncomplete=()=>res(); t.onerror=()=>rej(t.error); }); }
+  };
+  let autoHandle = null, autoState = FS_OK ? "off" : "none", autoTimer, autoName = "";   // none | off | on | paused | error
+  function setAuto(st){ autoState = st; refreshBackupUi(); }
+  async function writeAuto(){
+    if(!autoHandle || autoState==="paused") return;
+    const text = backupJson();
+    if(!text) return;   // never replace a good file with an empty one
+    try{
+      const w = await autoHandle.createWritable(); await w.write(text); await w.close();
+      sysSet("lastAuto", new Date().toISOString()); sysSet("dirty","0"); setAuto("on");
+    }catch(e){ setAuto("error"); }
+  }
+  function scheduleAuto(){ if(autoHandle){ clearTimeout(autoTimer); autoTimer = setTimeout(writeAuto, 1200); } }
+  async function readAutoFile(){
+    try{ const f = await autoHandle.getFile(); return f.size ? parseBackup(await f.text()) : null; }catch(e){ return null; }
+  }
+  async function enableAuto(){
+    let fh;
+    try{ fh = await window.showSaveFilePicker(AUTO_PICK); }catch(e){ return; }   // student cancelled
+    autoHandle = fh; autoName = fh.name || "";
+    try{ await idb.set("handle", fh); }catch(e){}
+    try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist(); }catch(e){}
+    if(!hasRealWork()){          // new browser or cleared data: the file may already hold the work
+      const b = await readAutoFile();
+      if(b && applyBackup(b, true)) return;
+    }
+    await writeAuto();
+    if(autoState==="on") toast("Automatic saving is on.");
+  }
+  async function resumeAuto(){
+    if(!autoHandle) return enableAuto();
+    let p = "denied"; try{ p = await autoHandle.requestPermission({mode:"readwrite"}); }catch(e){}
+    if(p!=="granted"){ setAuto("paused"); return; }
+    autoState = "on";
+    if(!hasRealWork()){ const b = await readAutoFile(); if(b && applyBackup(b, true)) return; }
+    await writeAuto();
+  }
+  async function disableAuto(){
+    clearTimeout(autoTimer); autoHandle = null; autoName = "";
+    try{ await idb.del("handle"); }catch(e){}
+    setAuto("off");
+  }
+  async function initAuto(){
+    try{ if(navigator.storage && navigator.storage.persist) navigator.storage.persist(); }catch(e){}
+    if(!FS_OK) return;
+    let h = null; try{ h = await idb.get("handle"); }catch(e){}
+    if(!h){ setAuto("off"); return; }
+    autoHandle = h; autoName = h.name || "";
+    let p = "prompt"; try{ p = await h.queryPermission({mode:"readwrite"}); }catch(e){}
+    if(p!=="granted"){ setAuto("paused"); return; }
+    autoState = "on";
+    if(!hasRealWork()){          // storage was cleared but the file is still here
+      const b = await readAutoFile();
+      if(b && applyBackup(b, true)) return;
+    }
+    await writeAuto();
+  }
+  document.addEventListener("visibilitychange", ()=>{ if(document.visibilityState==="hidden" && autoState==="on") writeAuto(); });
+  window.addEventListener("pagehide", ()=>{ if(autoState==="on") writeAuto(); });
+
   let panel, fab;
   function refreshBackupUi(){
-    const last = sysGet("lastBackup"), dirty = sysGet("dirty")==="1";
-    if(fab){ fab.classList.toggle("unsaved", dirty); fab.querySelector(".lbl-txt").textContent = dirty ? "Save a backup (not saved yet)" : "Progress backup"; }
+    const last = sysGet("lastBackup"), dirty = sysGet("dirty")==="1", lastAuto = sysGet("lastAuto");
+    if(fab){
+      const t = {on:"Progress auto-saved", paused:"Auto-save paused: click to fix", error:"Auto-save problem: click", off:"Turn on auto-save"}[autoState]
+        || (dirty ? "Save a backup (not saved yet)" : "Progress backup");
+      fab.classList.toggle("unsaved", autoState==="paused" || autoState==="error" || autoState==="off" || (autoState==="none" && dirty));
+      fab.classList.toggle("ok", autoState==="on");
+      fab.querySelector(".lbl-txt").textContent = t;
+    }
     const st = document.getElementById("bkStatus");
-    if(st) st.textContent = last ? "Last backup saved: " + new Date(last).toLocaleString() + (dirty ? ". You have typed more since then, so save a new one." : ". Nothing new since then.") : "You have not saved a backup yet.";
+    if(st) st.textContent = last ? "Last backup file saved: " + new Date(last).toLocaleString() + (dirty ? ". You have typed more since then, so save a new one." : ". Nothing new since then.") : "You have not saved a backup file yet.";
+    const as = document.getElementById("autoStatus");
+    if(as){
+      const where = autoName ? " (" + autoName + ")" : "";
+      as.textContent = {
+        on: "Automatic saving is ON" + where + (lastAuto ? ". Last saved " + new Date(lastAuto).toLocaleTimeString() + "." : "."),
+        paused: "Automatic saving is PAUSED. Your browser needs your permission again. Click Resume.",
+        error: "The last automatic save did not work. The file may have been moved or deleted. Click Choose a save location to fix it.",
+        off: "Automatic saving is OFF. Your work is saved only in this browser until you turn it on.",
+        none: "Automatic saving needs Chrome or Edge on a computer. Use the manual backup below instead."
+      }[autoState] || "";
+      as.className = "bk-auto " + (autoState==="on" ? "ok" : "warn");
+    }
+    const q = id => document.getElementById(id);
+    if(q("autoOn")) q("autoOn").hidden = !(autoState==="off" || autoState==="error");
+    if(q("autoResume")) q("autoResume").hidden = autoState!=="paused";
+    if(q("autoOff")) q("autoOff").hidden = !(autoState==="on" || autoState==="paused" || autoState==="error");
   }
   function buildBackupUi(){
     fab = document.createElement("button"); fab.type="button"; fab.className="bk-fab";
     fab.innerHTML = '<span class="lbl-txt"></span>'; fab.setAttribute("aria-haspopup","dialog");
-    panel = document.createElement("div"); panel.className="bk-panel"; panel.hidden = true; panel.setAttribute("role","dialog"); panel.setAttribute("aria-label","Progress backup");
+    panel = document.createElement("div"); panel.className="bk-panel"; panel.hidden = true; panel.setAttribute("role","dialog"); panel.setAttribute("aria-label","Protect your work");
     panel.innerHTML = '<h3>Protect your work</h3>' +
-      '<p>Everything you type here is saved <b>only in this browser on this computer</b>. If you switch computers or browsers, use a private window, or clear your browser data, it is gone. A backup file lets you get it back.</p>' +
+      '<p>What you type is kept <b>in this browser on this computer</b>. If you switch computers or browsers, use a private window, or clear your browser data, it is gone, unless you save it to a file.</p>' +
+      '<div id="autoBox"><h4>Automatic saving (recommended)</h4>' +
+      '<p id="autoStatus" class="bk-auto"></p>' +
+      '<p><button type="button" class="btn btn-red btn-sm" id="autoOn">Turn on automatic saving</button><button type="button" class="btn btn-red btn-sm" id="autoResume">Resume automatic saving</button> <button type="button" class="btn btn-ghost btn-sm" id="autoOff">Turn off</button></p>' +
+      '<p class="hint">When you click <b>Turn on automatic saving</b>, a Save window opens. <b>Choose a folder you will not delete</b>, such as Documents or a cloud-synced folder like OneDrive or Google Drive, and <b>click Save</b>. After that the file <code>acct4420-progress.json</code> updates by itself whenever you type. Only you can see that file.</p></div>' +
+      '<h4>Manual backup file</h4>' +
       '<p id="bkStatus" class="hint"></p>' +
-      '<p><b>1. To save:</b> click the button. A small file downloads to your computer. <b>Keep it somewhere safe</b> (your Documents folder or a cloud drive).</p>' +
-      '<p><button type="button" class="btn btn-red btn-sm" id="bkSave">Save my progress to a file</button></p>' +
-      '<p><b>2. To restore</b> (new computer, new browser, or lost work): <b>open this course site, click the button below, and choose your backup file.</b></p>' +
+      '<p><button type="button" class="btn btn-ghost btn-sm" id="bkSave">Save my progress to a file</button></p>' +
+      '<h4>Get your work back</h4>' +
+      '<p>On a new computer or browser, <b>open this course site, click the button below, and choose your backup file</b> (<code>acct4420-progress.json</code> or a file named <code>acct4420-progress-backup-(date).json</code>). If you use automatic saving on a computer that already has your file, you can also just turn it on and pick that same file.</p>' +
       '<p><label class="btn btn-ghost btn-sm" for="bkFile" style="cursor:pointer">Restore my progress from a file</label><input type="file" id="bkFile" accept=".json,application/json" hidden></p>' +
-      '<p class="hint">Save a new backup after each step you finish. The backup covers every module, so you only need the newest file. Your backup is not your submission: upload the Word file from the module page to Canvas.</p>' +
+      '<p class="hint">One file covers every module. Your backup is not your submission: upload the Word file from the module page to Canvas.</p>' +
       '<p style="text-align:right;margin:0"><button type="button" class="btn btn-ghost btn-sm" id="bkClose">Close</button></p>';
     document.body.appendChild(panel); document.body.appendChild(fab);
     const show = on => { panel.hidden = !on; fab.setAttribute("aria-expanded", on?"true":"false"); if(on) refreshBackupUi(); };
-    fab.addEventListener("click", ()=>show(panel.hidden));
+    fab.addEventListener("click", ()=>{
+      if(panel.hidden && autoState==="paused"){ resumeAuto(); }       // the click is the permission gesture
+      show(panel.hidden);
+    });
     panel.querySelector("#bkClose").addEventListener("click", ()=>{ show(false); fab.focus(); });
     panel.querySelector("#bkSave").addEventListener("click", saveBackup);
+    panel.querySelector("#autoOn").addEventListener("click", enableAuto);
+    panel.querySelector("#autoResume").addEventListener("click", resumeAuto);
+    panel.querySelector("#autoOff").addEventListener("click", ()=>{ if(confirm("Turn off automatic saving? Your existing file stays where it is, but it will stop updating.")) disableAuto(); });
     panel.querySelector("#bkFile").addEventListener("change", e=>{ const f = e.target.files[0]; if(f) restoreBackup(f); e.target.value=""; });
     document.addEventListener("keydown", e=>{ if(e.key==="Escape" && !panel.hidden){ show(false); fab.focus(); } });
     window.openBackupPanel = ()=>show(true);
     refreshBackupUi();
+    initAuto();
+    // The course asks for Chrome or Edge on a computer; say so plainly on module pages in any other browser.
+    const host = document.querySelector("main .wrap");
+    if(!FS_OK && host && document.querySelector(".step")){
+      const n = document.createElement("div"); n.className = "bk-browser"; n.setAttribute("role","alert");
+      n.innerHTML = "<b>Please switch browsers.</b> This course requires <b>Google Chrome or Microsoft Edge on a computer</b>. Your browser cannot save your work automatically, so you could lose it. <b>Open this page in Chrome or Edge.</b>";
+      host.insertBefore(n, host.firstChild);
+    }
   }
   // Nudge after a student finishes a step (the step counter or "done" flag advances).
   let nudgeTimer;
   window.progressChanged = function(k, v, old){
+    scheduleAuto();
     refreshBackupUi();
+    if(autoState==="on") return;       // saved by itself
     if(!/(^|\.)(max|done)$/.test(k)) return;
-    if(k.endsWith("max") && !(Number(v) > Number(JSON.parse(old||"0")))) return;
+    if(old==null || (k.endsWith("max") ? !(Number(v) > Number(JSON.parse(old))) : v!==true)) return;   // not a first-visit default
     let b = document.getElementById("bkNudge");
     if(!b){
       b = document.createElement("div"); b.id="bkNudge"; b.className="bk-nudge"; b.setAttribute("role","status");
-      b.innerHTML = '<span><b>Step finished.</b> Save a backup so you cannot lose your work.</span> <button type="button" class="btn btn-gold btn-sm" id="bkNudgeSave">Save backup</button> <button type="button" class="btn btn-ghost btn-sm" id="bkNudgeX" aria-label="Dismiss">Later</button>';
+      b.innerHTML = '<span id="bkNudgeTxt"></span> <button type="button" class="btn btn-gold btn-sm" id="bkNudgeSave"></button> <button type="button" class="btn btn-ghost btn-sm" id="bkNudgeX" aria-label="Dismiss">Later</button>';
       document.body.appendChild(b);
-      b.querySelector("#bkNudgeSave").addEventListener("click", ()=>{ if(saveBackup()) b.classList.remove("show"); });
       b.querySelector("#bkNudgeX").addEventListener("click", ()=>b.classList.remove("show"));
     }
+    const auto = autoState==="off" || autoState==="paused" || autoState==="error";
+    b.querySelector("#bkNudgeTxt").innerHTML = auto ? "<b>Step finished.</b> Turn on automatic saving so you cannot lose your work." : "<b>Step finished.</b> Save a backup so you cannot lose your work.";
+    const btn = b.querySelector("#bkNudgeSave"); btn.textContent = auto ? "Turn on automatic saving" : "Save backup";
+    btn.onclick = ()=>{ b.classList.remove("show"); if(auto) (autoState==="paused" ? resumeAuto() : enableAuto()); else saveBackup(); };
     b.classList.add("show"); clearTimeout(nudgeTimer); nudgeTimer = setTimeout(()=>b.classList.remove("show"), 30000);
   };
   window.addEventListener("beforeunload", e=>{
-    if(sysGet("dirty")==="1" && progressKeys().length){ e.preventDefault(); e.returnValue = ""; }
+    if(autoState!=="on" && sysGet("dirty")==="1" && hasRealWork()){ e.preventDefault(); e.returnValue = ""; }
   });
   if(document.readyState==="loading") document.addEventListener("DOMContentLoaded", buildBackupUi); else buildBackupUi();
 })();
