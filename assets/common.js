@@ -14,6 +14,20 @@
     }
   };
   window.store = store;
+  /* Reviewer mode: module-N.html?review=1 opens the step bar for that module so evaluators can read every step. */
+  try{
+    const rm = location.pathname.match(/module-(\d+)\.html$/);
+    if(rm && new URLSearchParams(location.search).get("review")==="1"){
+      store.set("m"+rm[1]+".max", 8);
+      document.addEventListener("DOMContentLoaded", ()=>{
+        const b = document.createElement("div");
+        b.setAttribute("role","note");
+        b.style.cssText = "background:#F1BE48;color:#000;padding:10px 16px;text-align:center;font:600 15px/1.4 system-ui,sans-serif";
+        b.textContent = "Reviewer mode: use the numbered step bar to open any step and read it. The Next button still checks answers, as it does for students.";
+        document.body.insertBefore(b, document.body.firstChild);
+      });
+    }
+  }catch(e){}
   window.videoHtml = function(url, title){
     const u = String(url).replace(/&/g,"&amp;").replace(/"/g,"&quot;");
     if(/\.mp4(\?|$)/i.test(url)) return `<video controls playsinline preload="metadata" title="${title}"><source src="${u}" type="video/mp4">Your browser cannot play this video. Use the transcript button below instead.</video>`;
