@@ -15,19 +15,21 @@
   };
   window.store = store;
   /* Reviewer mode: module-N.html?review=1 opens the step bar for that module so evaluators can read every step.
+     Any page with ?review=all opens it for all ten modules (for the instructor's own checking).
      It asks for a password once per browser. The page is static, so this is a speed bump, not real security.
      While it is on for a module, a gold pill stays on screen with a Turn off button. */
   try{
     const rm = location.pathname.match(/module-(\d+)\.html$/);
-    if(rm){
-      const N = rm[1], FLAG = "sys.rv" + N;
+    const rvParam = new URLSearchParams(location.search).get("review");
+    if(rm || rvParam==="all"){
+      const N = rm ? rm[1] : "", FLAG = "sys.rv" + N;
       const REVIEW_HASH = "4a03ac2b94c4ff8841e9992f452ea36c73b487a626b4a694f9c46357dc7a122c", REVIEW_SALT = "acct4420-review-v1:";
       const sha = async s => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))).map(x=>x.toString(16).padStart(2,"0")).join("");
       const authed = store.get("sys.reviewOK","")===REVIEW_HASH;
-      const wants = new URLSearchParams(location.search).get("review")==="1";
-      const turnOn = () => { store.set("m"+N+".max", 8); store.set(FLAG, true); };
-      if(wants && authed) turnOn();
-      if(authed && store.get(FLAG,false)){
+      const wants = (rm && rvParam==="1") || rvParam==="all";
+      const turnOn = () => { (rvParam==="all" ? [1,2,3,4,5,6,7,8,9,10] : [N]).forEach(n=>{ store.set("m"+n+".max", 8); store.set("sys.rv"+n, true); }); };
+      if(wants && authed){ turnOn(); if(!rm) location.replace("module-1.html"); }
+      if(rm && authed && store.get(FLAG,false)){
         document.addEventListener("DOMContentLoaded", ()=>{
           const b = document.createElement("div");
           b.id = "rvPill"; b.setAttribute("role","status");
@@ -47,7 +49,7 @@
           document.body.appendChild(m);
           const pw = m.querySelector("#rvPw"); pw.focus();
           const go = async ()=>{
-            if(await sha(REVIEW_SALT + pw.value.trim().toLowerCase()) === REVIEW_HASH){ store.set("sys.reviewOK", REVIEW_HASH); turnOn(); location.reload(); }
+            if(await sha(REVIEW_SALT + pw.value.trim().toLowerCase()) === REVIEW_HASH){ store.set("sys.reviewOK", REVIEW_HASH); turnOn(); if(rm) location.reload(); else location.href = "module-1.html"; }
             else m.querySelector("#rvMsg").textContent = "That password is not right. Check it and try again.";
           };
           m.querySelector("#rvGo").addEventListener("click", go);
