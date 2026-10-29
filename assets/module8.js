@@ -14,13 +14,15 @@
     {n:3, stage:"Stage 3: Scan the payments", hint:"For example, your Module 6 payment checks and your Module 7 rule to write “not in the sources” (here, “not in the data”)."},
     {n:4, stage:"Stage 4: Write the close memo", hint:"For example, your Module 2 prompt constraints, your Module 5 template with defined inputs, and your Module 7 habit of writing for the reader."}
   ];
-  const ANGLES = [
-    {id:"Accounting: audit testing machine", major:"Accounting", title:"Audit testing machine", text:"A machine for an audit team that tests a client’s quarter of journal entries against a short list of rules (for example, entries posted on weekends, round amounts, entries with no description) and drafts the exceptions list for the audit senior."},
-    {id:"Finance: weekly cash forecast machine", major:"Finance", title:"Weekly cash forecast machine", text:"A machine for a treasury team that compares last week’s cash forecast with the bank’s actual activity, explains the differences from the treasury notes, and drafts a note for the CFO."},
-    {id:"Marketing: dealer incentive claim checker", major:"Marketing", title:"Dealer incentive claim checker", text:"A machine that checks dealers’ incentive claims against the campaign terms, flags claims that break a rule, and drafts a summary for the marketing director."},
-    {id:"Management: plant scorecard machine", major:"Management", title:"Plant scorecard machine", text:"A machine that compares each plant’s weekly measures (output, scrap, safety) with its targets, flags the misses, and drafts a message to the plant manager for a person to review."},
-    {id:"Supply chain: three-way match machine", major:"Supply chain", title:"Three-way match machine", text:"A machine that matches supplier invoices to purchase orders and to receiving records, flags mismatches, and drafts a list for the buyer."},
-    {id:"MIS: data quality intake machine", major:"MIS (information systems)", title:"Data quality intake machine", text:"A machine that checks each incoming monthly data file (expected columns, duplicate rows, impossible values) before any other workflow uses it, and drafts a report for the data owner."}
+  const ENGAGEMENTS = [
+    {title:"Journal Entry Testing", lens:"audit and assurance", acc:true, text:"Check the month's manual journal entries that the close system flagged as unusual."},
+    {title:"Sales and Use Tax Check", lens:"tax", acc:true, text:"Check that the sales tax Velox charged and reported in six states is right."},
+    {title:"Account Reconciliations", lens:"financial reporting", acc:true, text:"Tie about fifteen balance sheet accounts back to the bank, the subledgers and the schedules."},
+    {title:"Cash Forecast Check", lens:"finance", text:"Compare the 13-week cash forecast with the cash that really moved each week."},
+    {title:"Dealer Incentive Claims", lens:"marketing and sales", text:"Check dealers' bonus claims against the terms of the sales programs."},
+    {title:"Plant Scorecard", lens:"management and operations", text:"Check the South Carolina plant's weekly scorecard against its production, downtime and scrap logs."},
+    {title:"Three-Way Match", lens:"supply chain", text:"Match supplier invoices to the purchase orders and the receiving records."},
+    {title:"Data Quality Check", lens:"MIS and information systems", text:"Check the monthly vendor, dealer and parts data extract for errors and duplicates."}
   ];
   const OCT_KEY = {
     stage1:"CHK40311 (the bank cleared 41,620.00; the books recorded 41,260.00), DEP1015 (the bank posted the 218,400.00 deposit twice), and RTN1021 (a 36,750.00 NSF return that is not in the books).",
@@ -71,12 +73,12 @@
       <textarea id="va${k}" data-save="v.${k}.action" data-min="5" data-req style="min-height:50px"></textarea>
     </div>`).join("");
 
-  $("#angleCards").innerHTML = ANGLES.map((a,i)=>`
+  $("#angleCards").innerHTML = ENGAGEMENTS.map((e,i)=>`
     <div class="card">
-      <h3>Option ${i+1} · ${esc(a.major)}: ${esc(a.title)}</h3>
-      <p style="margin:0">${esc(a.text)}</p>
+      <h3>${i+1}. ${esc(e.title)} <span class="hint" style="font-weight:400">· ${esc(e.lens)}${e.acc?" · <b>Accounting engagement</b>":""}</span></h3>
+      <p style="margin:0">${esc(e.text)}</p>
     </div>`).join("");
-  $("#angle").innerHTML = '<option value="">Choose one…</option>'+ANGLES.map(a=>`<option>${esc(a.id)}</option>`).join("");
+  $("#angle").innerHTML = '<option value="">Choose one…</option>'+ENGAGEMENTS.map(e=>`<option>${esc(e.title)}</option>`).join("");
 
   /* ---------- config-driven bits ---------- */
   const C = window.COURSE || {};
@@ -241,7 +243,7 @@
     s += "B. REHEARSAL ON OCTOBER\nPart 1 (practice, not graded) - first try (Step 2): "+d.r1p+"\nWhat Claude gave me: "+d.r1o+"\nThings I could not rely on: "+d.r1w+"\n\nStage outputs and my replies at the gates:\n"+d.ooutp+"\n\nMemo:\n"+d.omemo+"\n\nScorer log (October):\n"+logText(d,"october")+"\n\nBaseline comparison: "+(d.obase||"(none)")+"\nWhat I changed and why:\n"+d.ochg+"\n\n";
     s += "C. WALT'S GAUNTLET (NOVEMBER)\nStage outputs and my replies at the gates:\n"+d.noutp+"\n\nMemo:\n"+d.nmemo+"\n\nScorer log (November):\n"+logText(d,"november")+"\n\nWhat I checked at each gate:\n"+d.ngate+"\n\n";
     s += "D. VERIFICATION\n"+d.ver.map(x=>`Finding ${x.k}: ${x.item}\nWhere the inputs are: ${x.where}\nMy check: ${x.amts}\nWhat I found: ${x.verdict}\nWhat I did about it: ${x.action}`).join("\n\n")+"\n\n";
-    s += "E. MACHINE CARD AND FINAL-PROJECT IDEA\n1. What it does and needs: "+d.cd1+"\n2. Stages and gates: "+d.cd2+"\n3. Testing and results: "+d.cd3+"\n4. Limits and who signs: "+d.cd4+"\n\nOption chosen: "+d.angle+"\nRequest I used: "+d.angreq+"\n\nMy idea note:\n"+d.angtext+"\n\n";
+    s += "E. MACHINE CARD AND FINAL-PROJECT IDEA\n1. What it does and needs: "+d.cd1+"\n2. Stages and gates: "+d.cd2+"\n3. Testing and results: "+d.cd3+"\n4. Limits and who signs: "+d.cd4+"\n\nEngagement I lean toward: "+d.angle+"\nRequest I used: "+d.angreq+"\n\nMy idea note:\n"+d.angtext+"\n\n";
     s += "F. ETHICAL AI: HUMAN ACCOUNTABILITY\nStep 4 review of the five suggestions:\n"+d.sits.map(x=>`Suggestion ${x.n} (“${x.line}”): ${x.v}. Why: ${x.w}`).join("\n")+"\nDecision: "+d.e4d+"\nWhy: "+d.e4w+"\nAccountable person, what they check, and one thing the machine got wrong: "+d.acc+"\nMy disclosure line: "+d.foot+"\nAI tools I used: "+d.disc+"\n";
     if(!forCoach || d.rev || d.doutp){
       s += "\nG. MASTERY EVIDENCE\nWhat I changed and why: "+d.rev+"\n\nUpdated instructions:\n"+d.instr2+"\n\nDecember stage outputs and my replies at the gates:\n"+d.doutp+"\n\nDecember memo:\n"+d.dmemo+"\n\nScorer log (December):\n"+logText(d,"december")+"\n\nNovember versus December: "+d.cmp+"\nRe-run of October (optional): "+(d.regr||"(none)")+"\nFeedback I rejected and why: "+(d.rej||"(none)")+"\n";
@@ -264,7 +266,7 @@
 <h2>B. Rehearsal on October</h2><p><b>Part 1 (practice, not graded): first try (Step 2):</b></p>${p(d.r1p)}<p><b>What Claude gave me:</b></p>${p(d.r1o)}<p><b>Things I could not rely on:</b></p>${p(d.r1w)}<p><b>Stage outputs and my replies at the gates:</b></p>${p(d.ooutp)}<p><b>Memo:</b></p>${p(d.omemo)}<p><b>Scorer log (October):</b></p>${lg("october")}<p><b>Baseline comparison:</b> ${esc(d.obase||"(none)")}</p><p><b>What I changed and why:</b></p>${p(d.ochg)}
 <h2>C. Walt's Gauntlet (November)</h2><p><b>Stage outputs and my replies at the gates:</b></p>${p(d.noutp)}<p><b>Memo:</b></p>${p(d.nmemo)}<p><b>Scorer log (November):</b></p>${lg("november")}<p><b>What I checked at each gate:</b></p>${p(d.ngate)}
 <h2>D. Verification</h2><table><tr><th>#</th><th>Finding (as my machine stated it)</th><th>Where the inputs are</th><th>My check</th><th>What I found</th><th>What I did</th></tr>${ver}</table>
-<h2>E. Machine card and final-project idea</h2><p><b>1. What it does and needs:</b></p>${p(d.cd1)}<p><b>2. Stages and gates:</b></p>${p(d.cd2)}<p><b>3. Testing and results:</b></p>${p(d.cd3)}<p><b>4. Limits and who signs:</b></p>${p(d.cd4)}<p><b>Option chosen:</b> ${esc(d.angle)}</p><p><b>Request I used:</b></p>${p(d.angreq)}<p><b>My idea note:</b></p>${p(d.angtext)}
+<h2>E. Machine card and final-project idea</h2><p><b>1. What it does and needs:</b></p>${p(d.cd1)}<p><b>2. Stages and gates:</b></p>${p(d.cd2)}<p><b>3. Testing and results:</b></p>${p(d.cd3)}<p><b>4. Limits and who signs:</b></p>${p(d.cd4)}<p><b>Engagement I lean toward:</b> ${esc(d.angle)}</p><p><b>Request I used:</b></p>${p(d.angreq)}<p><b>My idea note:</b></p>${p(d.angtext)}
 <h2>F. Ethical AI: human accountability</h2><table><tr><th>#</th><th>Suggestion</th><th>My verdict</th><th>Why</th></tr>${sit}</table><p><b>Decision:</b> ${esc(d.e4d)}</p><p><b>Why:</b></p>${p(d.e4w)}<p><b>Accountable person, what they check, and one thing the machine got wrong:</b></p>${p(d.acc)}<p><b>My disclosure line:</b></p>${p(d.foot)}<p><b>AI tools I used:</b></p>${p(d.disc)}
 <h2>G. Mastery evidence</h2><p><b>What I changed and why:</b></p>${p(d.rev)}<p><b>Updated instructions:</b></p>${p(d.instr2)}<p><b>December stage outputs and my replies at the gates:</b></p>${p(d.doutp)}<p><b>December memo:</b></p>${p(d.dmemo)}<p><b>Scorer log (December):</b></p>${lg("december")}<p><b>November versus December:</b></p>${p(d.cmp)}<p><b>Re-run of October (optional):</b> ${esc(d.regr||"(none)")}</p><p><b>Feedback I rejected and why:</b></p>${p(d.rej||"(none)")}<p><b>Full coach conversation:</b></p>${p(d.trans)}
 ${d.grad?`<h2>H. Graduate students only</h2><p><b>Second scenario and key</b></p>${p(d.g1)}<p><b>Comparison with November</b></p>${p(d.g2)}<p><b>One improvement</b></p>${p(d.g3)}`:""}
