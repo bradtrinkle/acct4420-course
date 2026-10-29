@@ -15,23 +15,29 @@
   };
   window.store = store;
   /* Reviewer mode: module-N.html?review=1 opens the step bar for that module so evaluators can read every step.
-     It asks for a password once per browser. The page is static, so this is a speed bump, not real security. */
+     It asks for a password once per browser. The page is static, so this is a speed bump, not real security.
+     While it is on for a module, a gold pill stays on screen with a Turn off button. */
   try{
     const rm = location.pathname.match(/module-(\d+)\.html$/);
-    if(rm && new URLSearchParams(location.search).get("review")==="1"){
+    if(rm){
+      const N = rm[1], FLAG = "sys.rv" + N;
       const REVIEW_HASH = "4a03ac2b94c4ff8841e9992f452ea36c73b487a626b4a694f9c46357dc7a122c", REVIEW_SALT = "acct4420-review-v1:";
       const sha = async s => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))).map(x=>x.toString(16).padStart(2,"0")).join("");
-      const banner = () => {
-        const b = document.createElement("div");
-        b.setAttribute("role","note");
-        b.style.cssText = "background:#F1BE48;color:#000;padding:10px 16px;text-align:center;font:600 15px/1.4 system-ui,sans-serif";
-        b.textContent = "Reviewer mode: use the numbered step bar to open any step and read it. The Next button still checks answers, as it does for students.";
-        document.body.insertBefore(b, document.body.firstChild);
-      };
-      if(store.get("sys.reviewOK","")===REVIEW_HASH){
-        store.set("m"+rm[1]+".max", 8);
-        document.addEventListener("DOMContentLoaded", banner);
-      } else {
+      const authed = store.get("sys.reviewOK","")===REVIEW_HASH;
+      const wants = new URLSearchParams(location.search).get("review")==="1";
+      const turnOn = () => { store.set("m"+N+".max", 8); store.set(FLAG, true); };
+      if(wants && authed) turnOn();
+      if(authed && store.get(FLAG,false)){
+        document.addEventListener("DOMContentLoaded", ()=>{
+          const b = document.createElement("div");
+          b.id = "rvPill"; b.setAttribute("role","status");
+          b.style.cssText = "position:fixed;right:14px;bottom:14px;z-index:58;background:#F1BE48;color:#000;border:2px solid #c99a2c;border-radius:14px;padding:10px 14px;max-width:min(340px,calc(100vw - 28px));font:600 14px/1.35 system-ui,sans-serif;box-shadow:0 3px 10px rgba(0,0,0,.25)";
+          b.innerHTML = 'REVIEWER MODE IS ON for this module. Click any numbered step to read it. <button type="button" style="margin-left:6px;font:inherit;cursor:pointer">Turn off</button>';
+          b.querySelector("button").addEventListener("click", ()=>{ store.set("m"+N+".max",1); store.set("m"+N+".step",1); store.set(FLAG,false); location.href = location.pathname; });
+          document.body.appendChild(b);
+        });
+      }
+      if(wants && !authed){
         document.addEventListener("DOMContentLoaded", ()=>{
           const m = document.createElement("div"); m.className = "bk-modal"; m.setAttribute("role","dialog"); m.setAttribute("aria-modal","true"); m.setAttribute("aria-label","Reviewer password");
           m.style.zIndex = "10000";
@@ -41,7 +47,7 @@
           document.body.appendChild(m);
           const pw = m.querySelector("#rvPw"); pw.focus();
           const go = async ()=>{
-            if(await sha(REVIEW_SALT + pw.value.trim().toLowerCase()) === REVIEW_HASH){ store.set("sys.reviewOK", REVIEW_HASH); store.set("m"+rm[1]+".max", 8); location.reload(); }
+            if(await sha(REVIEW_SALT + pw.value.trim().toLowerCase()) === REVIEW_HASH){ store.set("sys.reviewOK", REVIEW_HASH); turnOn(); location.reload(); }
             else m.querySelector("#rvMsg").textContent = "That password is not right. Check it and try again.";
           };
           m.querySelector("#rvGo").addEventListener("click", go);
@@ -354,7 +360,7 @@
     if(old==null || (k.endsWith("max") ? !(Number(v) > Number(JSON.parse(old))) : v!==true)) return;   // not a first-visit default
     let b = document.getElementById("bkNudge");
     if(!b){
-      b = document.createElement("div"); b.id="bkNudge"; b.className="bk-nudge"; b.setAttribute("role","status");
+      b = document.createElement("div"); b.id="bkNudge"; b.className="bk-nudge"; b.id = "rvPill"; b.setAttribute("role","status");
       b.innerHTML = '<span id="bkNudgeTxt"></span> <button type="button" class="btn btn-gold btn-sm" id="bkNudgeSave"></button> <button type="button" class="btn btn-ghost btn-sm" id="bkNudgeX" aria-label="Dismiss">Later</button>';
       document.body.appendChild(b);
       b.querySelector("#bkNudgeX").addEventListener("click", ()=>b.classList.remove("show"));
