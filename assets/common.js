@@ -14,18 +14,41 @@
     }
   };
   window.store = store;
-  /* Reviewer mode: module-N.html?review=1 opens the step bar for that module so evaluators can read every step. */
+  /* Reviewer mode: module-N.html?review=1 opens the step bar for that module so evaluators can read every step.
+     It asks for a password once per browser. The page is static, so this is a speed bump, not real security. */
   try{
     const rm = location.pathname.match(/module-(\d+)\.html$/);
     if(rm && new URLSearchParams(location.search).get("review")==="1"){
-      store.set("m"+rm[1]+".max", 8);
-      document.addEventListener("DOMContentLoaded", ()=>{
+      const REVIEW_HASH = "4a03ac2b94c4ff8841e9992f452ea36c73b487a626b4a694f9c46357dc7a122c", REVIEW_SALT = "acct4420-review-v1:";
+      const sha = async s => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))).map(x=>x.toString(16).padStart(2,"0")).join("");
+      const banner = () => {
         const b = document.createElement("div");
         b.setAttribute("role","note");
         b.style.cssText = "background:#F1BE48;color:#000;padding:10px 16px;text-align:center;font:600 15px/1.4 system-ui,sans-serif";
         b.textContent = "Reviewer mode: use the numbered step bar to open any step and read it. The Next button still checks answers, as it does for students.";
         document.body.insertBefore(b, document.body.firstChild);
-      });
+      };
+      if(store.get("sys.reviewOK","")===REVIEW_HASH){
+        store.set("m"+rm[1]+".max", 8);
+        document.addEventListener("DOMContentLoaded", banner);
+      } else {
+        document.addEventListener("DOMContentLoaded", ()=>{
+          const m = document.createElement("div"); m.className = "bk-modal"; m.setAttribute("role","dialog"); m.setAttribute("aria-modal","true"); m.setAttribute("aria-label","Reviewer password");
+          m.style.zIndex = "10000";
+          m.innerHTML = '<div class="bk-modal-box"><h2 style="margin-top:0">Reviewer mode</h2><p><b>Type the reviewer password</b> your instructor gave you, then <b>click Open</b>. If you are a student taking the course, <b>click Cancel</b> and work through the steps in order.</p>' +
+            '<p><label for="rvPw" class="lbl">Reviewer password</label><input type="password" id="rvPw" autocomplete="off" style="width:100%"></p><p id="rvMsg" role="alert" style="color:#C8102E;min-height:1.4em"></p>' +
+            '<p style="margin-bottom:0"><button type="button" class="btn btn-red" id="rvGo">Open</button> <button type="button" class="btn btn-ghost btn-sm" id="rvNo">Cancel</button></p></div>';
+          document.body.appendChild(m);
+          const pw = m.querySelector("#rvPw"); pw.focus();
+          const go = async ()=>{
+            if(await sha(REVIEW_SALT + pw.value.trim().toLowerCase()) === REVIEW_HASH){ store.set("sys.reviewOK", REVIEW_HASH); store.set("m"+rm[1]+".max", 8); location.reload(); }
+            else m.querySelector("#rvMsg").textContent = "That password is not right. Check it and try again.";
+          };
+          m.querySelector("#rvGo").addEventListener("click", go);
+          pw.addEventListener("keydown", e=>{ if(e.key==="Enter") go(); });
+          m.querySelector("#rvNo").addEventListener("click", ()=>{ location.href = location.pathname; });
+        });
+      }
     }
   }catch(e){}
   window.videoHtml = function(url, title){
