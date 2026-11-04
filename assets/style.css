@@ -136,3 +136,5 @@ body{padding-bottom:56px}
 .bk-bar .bk-bar-txt{flex:1 1 280px}
 .bk-modal{position:fixed;inset:0;background:rgba(0,0,0,.6);z-index:9998;display:flex;align-items:center;justify-content:center;padding:16px}
 .bk-modal-box{background:#fff;color:#222;border-radius:16px;max-width:520px;width:100%;padding:22px 24px;border:3px solid var(--cardinal)}
+
+.needs-fix{outline:3px solid var(--bad,#b3261e);outline-offset:2px;border-radius:8px}

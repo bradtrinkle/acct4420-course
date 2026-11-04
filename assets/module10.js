@@ -259,7 +259,7 @@
     if(step==="5" && build()==="Agent"){ const ok = PERMS.every(p=>$("#pmv"+p.n).value!=="" && $("#pmw"+p.n).value.trim().length>=8); if(!ok){ const el=$("#pmv1"); el.dataset.need="the permission plan for all six actions (Part 3)"; out.push(el); } }
     if(step==="6"){ need("december","s6dec","score your December report in the Report Scorer (Part 10)"); }
     if(step==="6" && isGrad()){
-      [["g1",100],["g2",120],["g3",120]].forEach(([id,n])=>{ const el=$("#"+id); if(el.value.trim().length<n) out.push(el); });
+      [["g1",100],["g2",120],["g3",120]].forEach(([id,n])=>{ const el=$("#"+id); el.dataset.min=String(n); if(el.value.trim().length<n) out.push(el); });
     }
     return out;
   }
@@ -302,8 +302,7 @@
       const home = el.closest(".step"); if(home && Number(home.dataset.step)!==cur){ go(Number(home.dataset.step)); }
       (el.closest(".task,.card,.turn,.check")||el).scrollIntoView({behavior:"smooth",block:"center"});
       if(el.focus && !el.classList.contains("qc") && !el.dataset.scorer) el.focus({preventScroll:true});
-      const lb = el.id && $('label[for="'+el.id+'"]'); const nm = el.dataset.need || (lb ? lb.textContent.replace(/\s+/g," ").trim().slice(0,90) : (el.classList.contains("qc") ? "the quick check above" : ""));
-      $("#gate").textContent = "Still needed: "+(nm||"finish the highlighted item")+(nm.length>=90?"…":""); return;
+      $("#gate").textContent = window.explainUnmet(el); return;
     }
     if(cur===8) return finish();
     go(cur+1);

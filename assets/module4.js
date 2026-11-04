@@ -142,8 +142,7 @@
     if(left.length){
       const el = left[0]; (el.closest(".task,.card,.turn,.check")||el).scrollIntoView({behavior:"smooth",block:"center"});
       if(el.focus && !el.classList.contains("qc")) el.focus({preventScroll:true});
-      const lb = el.id && $('label[for="'+el.id+'"]'); const nm = lb ? lb.textContent.replace(/\s+/g," ").trim().slice(0,90) : (el.classList.contains("qc") ? "the quick check above" : "");
-      $("#gate").textContent = "Still needed: "+(nm||"finish the highlighted item")+(nm.length>=90?"\u2026":""); return;
+      $("#gate").textContent = window.explainUnmet(el); return;
     }
     if(cur===8) return finish();
     go(cur+1);
@@ -228,4 +227,6 @@ ${d.grad?`<h2>H. Graduate students only</h2><p><b>Third finding</b></p>${p(d.g1)
   $("#ppage").dataset.minwords = "60"; $("#ppage").dataset.maxwords = "300";
   onChange($("#ppage")); onChange($("#isGrad"));
   render();
+  /* The Part 3 formulas box is a copy of the Step 3b table, so there is only one table to maintain. */
+  (function(){ const tb=$("#ratioTable"), nt=$("#ratioNote"), box=$("#ratioCopy"); if(tb && box){ box.innerHTML = tb.outerHTML.replace(' id="ratioTable"',"") + (nt ? nt.outerHTML.replace(' id="ratioNote"',"") : ""); } })();
 })();

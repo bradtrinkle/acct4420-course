@@ -32,10 +32,9 @@
       </div>
     </div>`).join("");
 
-  const testsEl = $("#tests");
-  testsEl.innerHTML = [1,2,3].map(k=>`
+  const testHtml = [1,2,3].map(k=>`
     <div class="card">
-      <h3>Test ${k}${k===1?" · Task 10 (required)":""}</h3>
+      <h3>Record Test ${k}${k===1?" (Task 10, required)":""}</h3>
       ${k===1?'':`<label class="lbl" for="tt${k}">Which task did you test?</label>
       <select id="tt${k}" data-save="test.${k}.task" data-req data-sel><option value="">Choose a task…</option>${TASKS.filter(t=>t.n!==10).map(t=>`<option value="${t.n}">Task ${t.n}: ${esc(t.t)}</option>`).join("")}</select>`}
       <label class="lbl" for="tp${k}">Your prompt (paste it)</label>
@@ -46,7 +45,9 @@
       </div>
       <label class="lbl" for="tr${k}">What was the result? (right, wrong, partly right…)</label>
       <textarea id="tr${k}" data-save="test.${k}.res" data-min="5" data-req style="min-height:50px"></textarea>
-    </div>`).join("");
+    </div>`);
+  $("#test1").innerHTML = testHtml[0];
+  $("#tests").innerHTML = testHtml.slice(1).join("");
   $("#memo").dataset.minwords = "80";
 
   /* ---------- config-driven bits ---------- */
@@ -132,7 +133,7 @@
     if(left.length){
       const el = left[0]; (el.closest(".task,.card,.turn,.check")||el).scrollIntoView({behavior:"smooth",block:"center"});
       if(el.focus && !el.classList.contains("qc")) el.focus({preventScroll:true});
-      $("#gate").textContent = "Finish this first, then you can continue."; return;
+      $("#gate").textContent = window.explainUnmet(el); return;
     }
     if(cur===8) return finish();
     go(cur+1);

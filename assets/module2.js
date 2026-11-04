@@ -40,7 +40,7 @@
       <label class="lbl" for="vv${k}"><b>What did you find?</b></label>
       <select id="vv${k}" data-save="v.${k}.verdict" data-req data-sel><option value="">Choose one…</option>${VERDICTS.map(c=>`<option>${esc(c)}</option>`).join("")}</select>
       <label class="lbl" for="va${k}"><b>What did you do about it?</b> (kept it, fixed the number, removed it, or would confirm with someone)</label>
-      <textarea id="va${k}" data-save="v.${k}.action" data-min="10" data-req style="min-height:60px"></textarea>
+      <textarea id="va${k}" data-save="v.${k}.action" data-min="5" data-req style="min-height:60px"></textarea>
     </div>`).join("");
 
   /* ---------- config-driven bits ---------- */
@@ -127,7 +127,7 @@
     if(left.length){
       const el = left[0]; (el.closest(".task,.card,.turn,.check")||el).scrollIntoView({behavior:"smooth",block:"center"});
       if(el.focus && !el.classList.contains("qc")) el.focus({preventScroll:true});
-      $("#gate").textContent = "Finish this first, then you can continue."; return;
+      $("#gate").textContent = window.explainUnmet(el); return;
     }
     if(cur===8) return finish();
     go(cur+1);

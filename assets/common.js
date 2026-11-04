@@ -70,6 +70,37 @@
     t.textContent = msg; t.classList.add("show");
     clearTimeout(t._h); t._h = setTimeout(()=>t.classList.remove("show"), 2200);
   };
+
+  // Explains which box is blocking "Next" and why; outlines it until the student edits it.
+  window.explainUnmet = function(el){
+    document.querySelectorAll(".needs-fix").forEach(n=>n.classList.remove("needs-fix"));
+    if(!el || !el.classList) return "Still needed: finish the highlighted item.";
+    el.classList.add("needs-fix");
+    const wc = t => (String(t).trim().match(/\S+/g)||[]).length;
+    const lb = (el.id && document.querySelector('label[for="'+el.id+'"]')) || (el.closest && el.closest("label"));
+    let nm = el.dataset.need || (lb ? lb.textContent.replace(/\s+/g," ").trim() : (el.classList.contains("qc") ? "the quick check above" : ""));
+    const bd = lb && el.type!=="checkbox" && lb.querySelector("b");
+    if(bd && bd.textContent.trim().length>=6 && !el.dataset.need) nm = bd.textContent.replace(/\s+/g," ").trim();
+    if(nm.length>90) nm = nm.slice(0,90)+"\u2026";
+    nm = nm.replace(/[.:;\s]+$/,"");
+    let why = "";
+    if(el.classList.contains("qc")) why = "Click an answer.";
+    else if(el.type==="checkbox") why = "Tick the box.";
+    else if(el.tagName==="SELECT") why = "Choose an option.";
+    else if(!el.dataset.scorer && typeof el.value==="string"){
+      const v = el.value.trim(), w = wc(v);
+      const minW = Number(el.dataset.minwords||0), maxW = Number(el.dataset.maxwords||0);
+      const min = Number(el.dataset.min || (/^g[1-3]$/.test(el.id) ? 30 : 1));
+      if(minW && w<minW) why = "Write at least "+minW+" words (you have "+w+").";
+      else if(maxW && w>maxW) why = "Keep it to "+maxW+" words or fewer (you have "+w+").";
+      else if(v.length<min) why = v.length ? "Add more: at least "+min+" characters (you have "+v.length+")." : (min>1 ? "Type your answer (at least "+min+" characters)." : "Type your answer.");
+    }
+    const nm2 = nm||"the highlighted item", end = /[?!\u2026]$/.test(nm2);
+    return "Still needed: "+nm2+(why ? (end ? " " : ". ")+why : (end ? "" : "."));
+  };
+  document.addEventListener("input", e=>{ if(e.target && e.target.classList) e.target.classList.remove("needs-fix"); });
+  document.addEventListener("click", e=>{ const q = e.target && e.target.closest && e.target.closest(".qc"); if(q) q.classList.remove("needs-fix"); });
+  document.addEventListener("change", e=>{ if(e.target && e.target.classList) e.target.classList.remove("needs-fix"); });
   function manualCopy(text){
     let m = document.getElementById("copyFallback");
     if(m) m.remove();

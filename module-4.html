@@ -120,14 +120,14 @@ Earnings per share (dollars): 0.75 | 0.96</div></details>
 
   <h3>3b. Ratios turn numbers into a story</h3>
   <p>A <b>ratio</b> divides one number by another so that you can compare things of different sizes, such as this quarter against last year. You will have AI calculate these six this week:</p>
-  <table class="t"><tr><th>Ratio</th><th>Formula</th><th>What it tells you</th></tr>
+  <table class="t" id="ratioTable"><tr><th>Ratio</th><th>Formula</th><th>What it tells you</th></tr>
   <tr><td><b>1. Gross margin</b></td><td>Gross profit ÷ revenue</td><td>How many cents of each sales dollar are left after building the cars</td></tr>
   <tr><td><b>2. Operating margin</b></td><td>Operating income ÷ revenue</td><td>How many cents of each sales dollar are left after all operating costs</td></tr>
   <tr><td><b>3. Current ratio</b></td><td>Total current assets ÷ total current liabilities</td><td>Whether Velox can pay its bills due within a year (above 1 means yes, with room to spare)</td></tr>
   <tr><td><b>4. Debt-to-equity</b></td><td>(Current portion of long-term debt + long-term debt) ÷ total shareholders' equity</td><td>How much Velox borrows compared with what the owners have put in</td></tr>
   <tr><td><b>5. Days inventory on hand</b></td><td>Ending inventory ÷ cost of goods sold × 92 (the days in the quarter)</td><td>How many days of sales are sitting unsold in inventory</td></tr>
   <tr><td><b>6. Cash conversion</b></td><td>Net cash from operating activities ÷ net income</td><td>How much of the profit actually turned into cash</td></tr></table>
-  <p class="hint">Ratios 1 and 2 compare Q3 2026 with Q3 2025. Ratios 3 and 4 compare September 30 with June 30. Ratios 5 and 6 are for Q3 2026 only, and the management notes give a target for each.</p>
+  <p class="hint" id="ratioNote">Ratios 1 and 2 compare Q3 2026 with Q3 2025. Ratios 3 and 4 compare September 30 with June 30. Ratios 5 and 6 are for Q3 2026 only, and the management notes give a target for each.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Revenue rose, but gross margin fell from 28.7% to 26.0%. What does that mean?</p>
     <div class="qc" data-id="q3b" data-correct="1" data-req>
@@ -264,11 +264,12 @@ Earnings per share (dollars): 0.75 | 0.96</div></details>
     <h3>How to do this</h3>
     <ol class="steps-list">
       <li><b>Start a new chat inside your Velox Reporting Project.</b></li>
-      <li><b>Write a request in your own words</b> asking Claude for the six ratios from Step 3b (the table there has the formulas): gross margin, operating margin, current ratio, debt-to-equity, days inventory on hand, and cash conversion. <b>Ask it to show the formula, the numbers it used, and the result for each ratio</b>, and to give both periods where the table says to compare two periods.</li>
+      <li><b>Write a request in your own words</b> asking Claude for the six ratios: gross margin, operating margin, current ratio, debt-to-equity, days inventory on hand, and cash conversion. <b>Ask it to show the formula, the numbers it used, and the result for each ratio</b>, and to give both periods where the formulas box below says to compare two periods. <b>Open the box "Show the six ratio formulas"</b> just below these steps to see each formula.</li>
       <li><b>Send a second request in the same chat</b> asking what changed this quarter and why, <b>using only the files</b>, and to say "not in the data" for anything the files do not explain.</li>
       <li><b>Read both answers.</b> If something looks wrong or unclear, <b>tell Claude what to fix</b>. Then <b>come back here</b> and fill in the boxes below.</li>
     </ol>
   </div>
+  <details><summary>Show the six ratio formulas</summary><div id="ratioCopy"></div></details>
   <label class="lbl" for="p3req"><b>Paste your two requests</b> (the requests only, not the answers)</label>
   <textarea id="p3req" data-save="s5.p3req" data-min="100" data-req style="min-height:120px"></textarea>
   <label class="lbl" for="p3rat"><b>Paste Claude's six ratios</b> with the formulas and numbers it showed</label>

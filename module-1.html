@@ -120,10 +120,10 @@ Notes from Cost and Planning: a new tariff on imported carbon-fiber panels began
   <tr><td><b>AI helps, a person checks</b></td><td>AI does the work; you verify facts and numbers</td><td>Summarizing an internal policy memo for a coworker</td></tr>
   <tr><td><b>AI assists, a person decides</b></td><td>AI prepares the analysis; a named person makes the judgment or signs</td><td>Recommending a receivable write-off</td></tr></table>
   <div class="turn"><span class="tag">Your turn</span>
-    <p><b>Sort this practice task:</b> <b>"Draft talking points for the CEO's dealer conference."</b></p>
+    <p><b>Sort this practice task:</b> <b>"Draft talking points for the plant manager's weekly team huddle (a short meeting with the plant's own employees)."</b></p>
     <div class="qc" data-id="q3d" data-correct="0" data-req>
       <div class="choices"><button class="choice" data-i="0">AI does it well</button><button class="choice" data-i="1">AI helps, a person checks</button><button class="choice" data-i="2">AI assists, a person decides</button></div>
-      <div class="fb" data-ok="Yes, with a quick read for tone. If the talking points quote Velox's financial results, they would move to 'a person checks,' because AI cannot verify those figures." data-no="Think about the risk. Drafting talking points is something AI does quickly and the stakes are low. What would make you check more?"></div>
+      <div class="fb" data-ok="Yes, with a quick read for tone. The words stay inside Velox and the stakes are low. If the talking points quoted Velox's financial results, or were going to people outside Velox, they would move to 'a person checks,' because AI cannot verify those figures." data-no="Think about the risk. AI drafts talking points quickly, they stay inside Velox, and the stakes are low. What would make you check more?"></div>
     </div>
   </div>
 </section>
@@ -194,7 +194,7 @@ Your job is feedback, never answers.
 - Cars sold in Q3: 1,210
 - Expected warranty claim rate: 4% of cars sold
 - Average cost per claim: $6,500</div>
-    <p><b>Task 10, layoff analysis:</b> 40 fictional employees in a spreadsheet. <a href="data/module-1/employees-simulated.csv" download>Download employees-simulated.csv</a>. Treat it as real employee data: the Responsible AI Policy applies. These employees are fictional, but practice as if they were real. <b>Do not give the file to Claude until you have anonymized it.</b> Follow "How to anonymize and test task 10" in Part 3 below first.</p>
+    <p><b>Task 10, layoff analysis:</b> 40 fictional employees in a spreadsheet. <a href="data/module-1/employees-simulated.csv" download>Download employees-simulated.csv</a>. Treat it as real employee data: the Responsible AI Policy applies. These employees are fictional, but practice as if they were real. <b>Do not give the file to Claude until you have anonymized it.</b> Follow the steps in <b>Test 1</b> in Part 2 below first.</p>
   </details>
 
   <h3 style="margin-top:22px">Part 2 · Test AI on three tasks</h3>
@@ -202,18 +202,15 @@ Your job is feedback, never answers.
     <h3>How to run a test (do this for each of your three tests)</h3>
     <ol class="steps-list">
       <li><b>Open a new chat</b> in Claude (claude.ai, then <b>New chat</b>). Do <b>not</b> use your Jordan Coach project for tests; use a regular chat outside the project.</li>
-      <li><b>Give Claude the task and all of its data in the same message</b> (tasks that use a made-up sample are the exception; see the next step). Claude cannot see this page, so anything it needs (numbers, a file, a document) must be pasted or attached in the chat. <b>Write your own request in your own words, then paste the data under it.</b> For tasks 5 and 6, use the copy-data buttons in the data box above. For task 10, <b>do the steps in Part 3 below first</b>, then return here.</li>
+      <li><b>Give Claude the task and all of its data in the same message</b> (tasks that use a made-up sample are the exception; see the next step). Claude cannot see this page, so anything it needs (numbers, a file, a document) must be pasted or attached in the chat. <b>Write your own request in your own words, then paste the data under it.</b> For tasks 5 and 6, use the copy-data buttons in the data box above. For task 10, <b>follow the steps in Test 1 below</b>.</li>
       <li>For task 1, 2, 3, 4, 8, or 9, <b>first ask Claude</b>: <i>"Create a short, realistic, fictional sample I can use for this task: [paste the task]."</i> <b>Copy the task wording from Part 1 into the brackets.</b> Then, in the same chat, <b>send a second message</b>: your own request for the task, with the sample pasted under it. Task 7 is a fact lookup and needs no sample: just <b>write your request</b>. For a made-up sample there is no outside source, so your check is whether the answer is consistent with the sample and makes sense.</li>
       <li><b>Read the answer.</b> <b>Check it yourself</b>: redo the math, look up facts at the original source, compare against the data.</li>
       <li>Only after the test is done, <b>come back and record it in the boxes below</b>. For the prompt box, <b>paste just your request</b>, not the data. If you used a made-up sample, paste only your second request (the one asking Claude to do the task), not the sample-creating request and not the sample. "Result" means whether the AI's output held up after your check.</li>
     </ol>
   </div>
-  <p class="hint">Test <b>task 10</b> and two other tasks you choose.</p>
-  <div id="tests"></div>
-
-  <h3 style="margin-top:22px">Part 3 · Task 10 ethics</h3>
+  <h3 style="margin-top:22px">Test 1 · Task 10 (required)</h3>
   <div class="card">
-    <h3>How to anonymize and test task 10</h3>
+    <h3>Test 1 steps: anonymize the file, then test task 10</h3>
     <ol class="steps-list">
       <li><b>Download</b> <a href="data/module-1/employees-simulated.csv" download>employees-simulated.csv</a> and <b>open it</b> in Excel or Google Sheets.</li>
       <li>The file has these columns: employee_id, name, department, age, years_at_velox, annual_salary, performance_rating_1_to_5. <b>Delete the <code>name</code> and <code>employee_id</code> columns</b>, because they identify people. Keep the other five.</li>
@@ -223,6 +220,13 @@ Your job is feedback, never answers.
       <li><b>Read the answer.</b> <b>Look for</b> anything unfair or risky (for example, a pattern that treats people differently by age, which is a bias risk under the policy) and check any numbers yourself, such as an average salary by department, using Excel or Sheets.</li>
     </ol>
   </div>
+  <div id="test1"></div>
+
+  <h3 style="margin-top:22px">Tests 2 and 3 · Two other tasks you choose</h3>
+  <div id="tests"></div>
+
+  <h3 style="margin-top:22px">Part 3 · Task 10 ethics</h3>
+  <p class="hint">This is about the Task 10 test you just ran in Part 2.</p>
   <label class="lbl" for="anon">How did you anonymize the data before using AI, and which policy areas apply? <b>Answer all three:</b> (a) what you removed or changed, (b) confidentiality plus at least one more of the five areas (accuracy, bias, transparency and disclosure, human accountability), and (c) why each area applies.</label>
   <textarea id="anon" data-save="s5.anon" data-min="40" data-req></textarea>
 
