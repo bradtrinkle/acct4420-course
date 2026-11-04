@@ -1,4 +1,4 @@
-# ACCT/MIS 4420/5420: Generative AI in Business Decision-Making
+# ACCT/MIS 4420/5420: Artificial Intelligence in Business Decision-Making
 
 Student-facing course site (Iowa State cardinal and gold), hosted with GitHub Pages. **Everything in this repository is public.**
 
