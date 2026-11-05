@@ -124,7 +124,7 @@ Received September 30, 2026. Caller: anonymous.
   <div class="turn"><span class="tag">Your turn</span>
     <p>A landscaping company is paid exactly 7,200.00 each month at 10 sites. Digit 7 comes out too high. What is the best conclusion?</p>
     <div class="qc" data-id="q3b" data-correct="1" data-req>
-      <div class="choices"><button class="choice" data-i="0">The landscaping company is committing fraud</button><button class="choice" data-i="1">A fixed fee makes every payment start with 3, so this is a gap with a likely innocent explanation that a person should confirm in the contract</button><button class="choice" data-i="2">Benford's Law is wrong</button><button class="choice" data-i="3">The payments should be deleted</button></div>
+      <div class="choices"><button class="choice" data-i="0">The landscaping company is committing fraud</button><button class="choice" data-i="1">A fixed fee makes every payment start with 7, so this is a gap with a likely innocent explanation that a person should confirm in the contract</button><button class="choice" data-i="2">Benford's Law is wrong</button><button class="choice" data-i="3">The payments should be deleted</button></div>
       <div class="fb" data-ok="Yes. Find the cause of each gap before drawing any conclusion." data-no="What would a fixed monthly fee do to the first digit of every payment?"></div>
     </div>
   </div>
@@ -291,6 +291,9 @@ Received September 30, 2026. Caller: anonymous.
       <li><b>Send a third request</b> asking for the <b>most likely innocent explanations</b> for each of the top vendors it flagged (no more than four), <b>what you would need to see to check them</b>, and <b>what it could not tell from the data</b>. Tell it not to say anyone committed fraud.</li>
       <li><b>Come back here</b> and fill in the boxes below.</li>
     </ol>
+  <details><summary><b>Show the expected first-digit shares</b> (from Step 3b)</summary>
+  <table class="t"><tr><th>First digit</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+  <tr><td>Expected share</td><td>30.1%</td><td>17.6%</td><td>12.5%</td><td>9.7%</td><td>7.9%</td><td>6.7%</td><td>5.8%</td><td>5.1%</td><td>4.6%</td></tr></table></details>
   </div>
   <label class="lbl" for="p4req"><b>Paste the requests you sent</b> (the requests only, not the answers)</label>
   <textarea id="p4req" data-save="s5.p4req" data-min="200" data-req style="min-height:140px"></textarea>
