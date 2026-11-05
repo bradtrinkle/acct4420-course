@@ -27,3 +27,11 @@ Student-facing course site (Iowa State cardinal and gold), hosted with GitHub Pa
 | `data/module-N/` | Simulated datasets (all fictional) |
 
 Note: the Jordan coach instructions are in `downloads/jordan-coach-instructions.txt` and are also embedded in `module-1.html` so students can copy them with one click. Keep the two in sync.
+
+## Terms and sections (one frozen copy per term)
+
+The main site (the files at the top level) is the **working copy**. Each term or section gets its own frozen copy in `terms/<name>/` (for example `terms/spring2027/` and `terms/test/`), with its own Canvas course number in that copy's `assets/config.js` and a `term.json` note. Videos are shared: each copy points to `assets/videos/` in the main site. Each Canvas course links to its own term folder.
+
+- **Freeze a term** (once the working copy is final): `python3 tools/release_term.py spring2027 --course-id 132435 --label "Spring 2027"`. It refuses to overwrite an existing term.
+- **Fix a running term** (must-fix problems only): fix the working copy, then `python3 tools/patch_term.py spring2027 module-3.html assets/module3.js` (or `all`). It copies those files into the term folder, never touches that term's `config.js`, and refuses if a saved-answer name (a `data-save` name or a quick-check id) would disappear, because that would erase students' saved answers. Needs node and playwright.
+- Progress is saved in the student's browser under the same names in every copy, so a fix never makes students redo work.
