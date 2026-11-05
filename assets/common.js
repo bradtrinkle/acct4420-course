@@ -203,7 +203,7 @@
   // Chrome and Edge on a computer can keep a file handle the student picks once; the page then
   // rewrites that file whenever progress changes. Other browsers keep the manual backup button.
   const FS_OK = typeof window.showSaveFilePicker === "function" && window.isSecureContext && !!window.indexedDB;
-  const AUTO_PICK = {suggestedName:"acct4420-progress.json", types:[{description:"Course progress", accept:{"application/json":[".json"]}}]};
+  const AUTO_PICK = {suggestedName:"acct4420-progress.json", startIn:"documents", types:[{description:"Course progress", accept:{"application/json":[".json"]}}]};
   const idb = {
     db(){ return new Promise((res,rej)=>{ const r = indexedDB.open("acct4420-autosave",1); r.onupgradeneeded=()=>r.result.createObjectStore("h"); r.onsuccess=()=>res(r.result); r.onerror=()=>rej(r.error); }); },
     async get(k){ const d = await this.db(); return new Promise((res,rej)=>{ const q = d.transaction("h").objectStore("h").get(k); q.onsuccess=()=>res(q.result); q.onerror=()=>rej(q.error); }); },
@@ -337,7 +337,7 @@
     const paused = autoState==="paused";
     m.innerHTML = '<div class="bk-modal-box"><h2 style="margin-top:0">' + (paused ? "Welcome back. Resume auto-save." : "Before you start: turn on auto-save") + '</h2>' +
       '<p>' + (paused
-        ? "Your browser needs your permission again before it can keep saving your work to your file. <b>Click the red button below</b> to resume. If Chrome asks, choose <b>Allow on every visit</b> when you see that choice, and it will ask less often."
+        ? "Chrome needs your permission again before it can keep saving your work to your file. <b>Click the red button below.</b> Chrome then shows a small box about <code>acct4420-progress.json</code> with three choices. <b>Click Allow on every visit</b> (the choice that covers future visits). Do not click the \"this time\" choice, or Chrome will ask you again next time."
         : "Everything you type in this course is kept in this browser only. <b>If auto-save is off, you can lose your work.</b> It takes about 30 seconds to turn on: <b>click the red button, choose the Documents folder (or another plain folder you will not delete), and click Save</b>. If Chrome asks about permission afterward, choose <b>Allow on every visit</b>.") + '</p>' +
       '<p style="margin-bottom:0"><button type="button" class="btn btn-red" id="bkStartGo">' + (paused ? "Resume auto-save" : "Turn on auto-save") + '</button> <button type="button" class="btn btn-ghost btn-sm" id="bkStartLater">Not now (not recommended)</button></p></div>';
     document.body.appendChild(m);
