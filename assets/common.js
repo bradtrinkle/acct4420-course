@@ -159,16 +159,16 @@
     const data = {}; progressKeys().forEach(k=>{ data[k] = localStorage.getItem(k); });
     return JSON.stringify({app:BK_APP, version:1, saved:new Date().toISOString(), data}, null, 1);
   }
-  function saveBackup(){
+  function saveBackup(auto){
     const text = backupJson();
-    if(!text){ toast("Nothing to back up yet. Type something first."); return false; }
+    if(!text){ if(!auto) toast("Nothing to back up yet. Type something first."); return false; }
     const now = new Date();
     const blob = new Blob([text], {type:"application/json"});
     const a = document.createElement("a"); a.href = URL.createObjectURL(blob);
-    a.download = "acct4420-progress-backup-" + now.toISOString().slice(0,10) + ".json";
+    a.download = "acct4420-progress-backup-" + now.toISOString().slice(0,10) + (auto ? "-" + String(now.getHours()).padStart(2,"0") + String(now.getMinutes()).padStart(2,"0") : "") + ".json";
     document.body.appendChild(a); a.click(); a.remove(); setTimeout(()=>URL.revokeObjectURL(a.href), 4000);
     sysSet("lastBackup", now.toISOString()); sysSet("dirty", "0"); refreshBackupUi();
-    toast("Backup saved. Check your Downloads folder.");
+    toast(auto ? "Auto-save is not working right now, so a backup copy was saved to your Downloads folder." : "Backup saved. Check your Downloads folder.");
     return true;
   }
   function parseBackup(text){
@@ -321,10 +321,10 @@
     else if(autoState==="paused"){ bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is PAUSED.</b> Click Resume before you keep working, or your new work will not be saved to your file."; b.textContent = "Resume auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
     else if(autoState==="error"){
       const gone = autoErr==="NotFoundError";
-      bar.className = "bk-bar warn";
+      bar.className = gone ? "bk-bar bad" : "bk-bar warn";
       t.innerHTML = gone ? "<b>Auto-save cannot find your file.</b> It may have been moved or deleted. Your work is still saved in this browser. Choose a save location again."
         : "<b>Auto-save is having trouble</b> (the browser said: " + autoErr + "). Your work is still saved in this browser and the page keeps trying. <b>Download a backup now to be safe.</b>";
-      b.textContent = gone ? "Choose a save location" : "Download a backup"; b.className = "btn btn-gold btn-sm bk-bar-btn";
+      b.textContent = gone ? "Choose a save location" : "Download a backup"; b.className = gone ? "btn btn-red btn-sm bk-bar-btn" : "btn btn-gold btn-sm bk-bar-btn";
     }
     else { bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is OFF.</b> Turn it on before you start working, or you could lose your work."; b.textContent = "Turn on auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
   }
@@ -425,6 +425,11 @@
     refreshBackupUi();
     if(!/(^|\.)(max|done)$/.test(k)) return;
     if(old==null || (k.endsWith("max") ? !(Number(v) > Number(JSON.parse(old))) : v!==true)) return;   // not a first-visit default
+    // Fallback: if the file auto-save is paused or in trouble, save a backup copy automatically (at most once every 2 minutes).
+    if(autoState==="paused" || autoState==="error"){
+      const lb = sysGet("lastBackup");
+      if(!lb || Date.now() - new Date(lb).getTime() > 120000) saveBackup(true);
+    }
     let b = document.getElementById("bkNudge");
     if(!b){
       b = document.createElement("div"); b.id="bkNudge"; b.className="bk-nudge"; b.setAttribute("role","status");
