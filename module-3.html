@@ -52,7 +52,8 @@
   <h2 id="h2s">Step 2 · Try it first <span class="time">· 0.5 hr</span></h2>
   <div class="jordan"><div class="face" aria-hidden="true">JR</div><div class="bubble"><b class="who">Jordan</b>Before I teach you anything, try something. <b>Open Claude and ask it to do Walt's September bank reconciliation in one request.</b> <b>Write your own request</b> in your own words and don't overthink it. You will compare this first try with a better method later.</div></div>
   <div class="card">
-    <h3>Words you need</h3>
+    <details class="refresher"><summary><b>Word list for this module</b> (open if you want a refresher)</summary>
+    
     <p>A <b>bank reconciliation</b> compares two records of the same cash: Velox's own books (called the <b>book balance</b>) and the bank's statement (the <b>bank balance</b>). The two numbers usually differ for ordinary reasons. You find each reason, adjust whichever balance needs it, and show that both sides end at the same <b>adjusted balance</b> (the balance for that side after you apply its adjustments). Here are the usual reasons:</p>
     <table class="t"><tr><th>Item</th><th>What it is</th><th>Which balance you adjust</th></tr>
     <tr><td><b>Deposit in transit</b></td><td>Velox recorded a deposit, but the bank had not yet added it by month-end.</td><td>Bank balance goes <b>up</b></td></tr>
@@ -63,8 +64,20 @@
     <tr><td><b>NSF check</b></td><td>A customer's check Velox deposited bounced ("not sufficient funds"), so the bank took the money back.</td><td>Book balance goes <b>down</b></td></tr>
     <tr><td><b>Electronic deposit not yet recorded</b></td><td>A customer paid electronically straight into the bank, and Velox has not recorded it yet.</td><td>Book balance goes <b>up</b></td></tr>
     <tr><td><b>Book error</b></td><td>Velox recorded the wrong amount (for example two digits swapped).</td><td>Book balance goes <b>down</b> if Velox recorded a payment too small (or a receipt too large), <b>up</b> if the reverse</td></tr></table>
-    <p class="hint"><b>More words:</b> A <b>reconciling item</b> is any difference between the two records that you find and explain. <b>ACH</b> is an electronic bank-to-bank payment, a <b>wire</b> is a same-day electronic transfer, a <b>dealer remittance</b> is a payment from a car dealer, and <b>CSV</b> is a plain spreadsheet file you can open in Excel. </p>
+    <p class="hint"><b>More words:</b> A <b>reconciling item</b> is any difference between the two records that you find and explain. <b>ACH</b> is an electronic bank-to-bank payment, a <b>wire</b> is a same-day electronic transfer, a <b>dealer remittance</b> is a payment from a car dealer, and <b>CSV</b> is a plain spreadsheet file you can open in Excel. The <b>general ledger</b> (GL) is the company's main set of accounting records; the cash report you will use is the part for the cash account. <b>Accounts payable</b> is the team that pays Velox's suppliers.</p>
     <p class="hint">Rule of thumb: timing items (Velox knows, the bank does not yet) change the <b>bank</b> balance. Items only the bank has recorded change the <b>book</b> balance. An error is fixed on the side that made the mistake.</p>
+  </details>
+  </div>
+  <div class="card">
+    <details class="refresher"><summary><b>Concept refresher: How a bank reconciliation works</b> (optional)</summary>
+    <p>Velox and its bank each keep a record of the same cash, and the two almost never match on the last day of the month. Some differences are only timing (a check Velox has written has not reached the bank yet). Others are items one side has recorded and the other has not, or mistakes. A reconciliation starts from each balance, adds or subtracts the items that side is missing, and ends with two <b>adjusted balances</b> that must be equal.</p>
+    <ul>
+      <li><b>Adjusted bank balance</b> = bank balance + deposits in transit − outstanding checks, then correct any bank error (add back money the bank wrongly took out; subtract money it wrongly added).</li>
+      <li><b>Adjusted book balance</b> = book balance − bank service charges − NSF checks + interest earned + electronic deposits not yet recorded, then correct any book error (the word list above shows which way each one goes).</li>
+    </ul>
+    <p><b>A small made-up example</b> (not the Velox numbers). The bank says 10,000 and the books say 11,300. A deposit of 2,000 is in transit and one check for 500 is outstanding: 10,000 + 2,000 − 500 = <b>11,500</b>. The bank also charged a 40 fee and paid 240 interest that the books do not show yet: 11,300 − 40 + 240 = <b>11,500</b>. The two sides agree, so the reconciliation is finished.</p>
+    <p>If the two sides do not agree, an item is still missing or wrong. Do not add an unexplained amount to force them to match; that is called a plug.</p>
+    </details>
   </div>
   <div class="card">
     <h3>What you know</h3>

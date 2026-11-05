@@ -138,3 +138,5 @@ body{padding-bottom:56px}
 .bk-modal-box{background:#fff;color:#222;border-radius:16px;max-width:520px;width:100%;padding:22px 24px;border:3px solid var(--cardinal)}
 
 .needs-fix{outline:3px solid var(--bad,#b3261e);outline-offset:2px;border-radius:8px}
+.card details.refresher{border:0;padding:0;margin:0;background:transparent}
+.card details.refresher>summary{font-weight:600}
