@@ -212,14 +212,43 @@
   };
   let autoHandle = null, autoState = FS_OK ? "init" : "none", autoTimer, autoName = "";   // none | off | on | paused | error
   function setAuto(st){ autoState = st; refreshBackupUi(); }
+  // Writes never overlap (not within this page, and not across two module tabs), a failed write is
+  // retried before the student sees a problem, and a lost permission is "paused", never "error".
+  let writing = false, again = false, autoErr = "", retryTimer;
+  const sleep = ms => new Promise(r=>setTimeout(r,ms));
+  async function writeOnce(text){
+    const w = await autoHandle.createWritable();
+    try{ await w.write(text); await w.close(); }catch(e){ try{ await w.abort(); }catch(_){} throw e; }
+  }
   async function writeAuto(){
     if(!autoHandle || autoState==="paused") return;
-    const text = backupJson();
-    if(!text) return;   // never replace a good file with an empty one
+    if(writing){ again = true; return; }
+    writing = true;
     try{
-      const w = await autoHandle.createWritable(); await w.write(text); await w.close();
-      sysSet("lastAuto", new Date().toISOString()); sysSet("dirty","0"); setAuto("on");
-    }catch(e){ setAuto("error"); }
+      do{
+        again = false;
+        if(!backupJson()) break;   // never replace a good file with an empty one
+        let ok = false, err = null;
+        for(let i=0; i<4 && !ok; i++){
+          try{
+            const job = ()=>writeOnce(backupJson());
+            if(navigator.locks && navigator.locks.request) await navigator.locks.request("acct4420-autosave", job); else await job();
+            ok = true;
+          }catch(e){
+            err = e;
+            let p = "granted"; try{ p = await autoHandle.queryPermission({mode:"readwrite"}); }catch(_){}
+            if(p!=="granted"){ setAuto("paused"); return; }
+            if(e && e.name==="NotFoundError") break;   // file moved or deleted: retrying cannot help
+            await sleep([500,1500,4000][i] || 0);
+          }
+        }
+        if(ok){ autoErr = ""; clearTimeout(retryTimer); sysSet("lastAuto", new Date().toISOString()); sysSet("dirty","0"); setAuto("on"); }
+        else{
+          autoErr = (err && err.name) ? err.name : "UnknownError"; setAuto("error");
+          clearTimeout(retryTimer); retryTimer = setTimeout(()=>{ if(autoState==="error") writeAuto(); }, 30000);   // keep trying quietly
+        }
+      }while(again);
+    }finally{ writing = false; }
   }
   function scheduleAuto(){ if(autoHandle){ clearTimeout(autoTimer); autoTimer = setTimeout(writeAuto, 1200); } }
   async function readAutoFile(){
@@ -284,13 +313,19 @@
       bar = document.createElement("div"); bar.id = "bkBar"; bar.setAttribute("role","status");
       bar.innerHTML = '<span class="bk-bar-txt"></span> <button type="button" class="btn btn-sm bk-bar-btn"></button>';
       host.insertBefore(bar, host.firstChild);
-      bar.querySelector("button").addEventListener("click", ()=>{ if(autoState==="paused") resumeAuto(); else if(autoState==="on") window.openBackupPanel && openBackupPanel(); else enableAuto(); });
+      bar.querySelector("button").addEventListener("click", ()=>{ if(autoState==="paused") resumeAuto(); else if(autoState==="on") window.openBackupPanel && openBackupPanel(); else if(autoState==="error" && autoErr!=="NotFoundError") saveBackup(); else enableAuto(); });
     }
     const t = bar.querySelector(".bk-bar-txt"), b = bar.querySelector("button");
     const where = autoName ? " to " + autoName : "";
     if(autoState==="on"){ bar.className = "bk-bar ok"; t.innerHTML = "<b>Auto-save is ON.</b> Your work is being saved" + where + " as you type."; b.textContent = "Details"; b.className = "btn btn-ghost btn-sm bk-bar-btn"; }
     else if(autoState==="paused"){ bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is PAUSED.</b> Click Resume before you keep working, or your new work will not be saved to your file."; b.textContent = "Resume auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
-    else if(autoState==="error"){ bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is NOT working.</b> Your file may have been moved or deleted. Choose a save location again."; b.textContent = "Fix auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
+    else if(autoState==="error"){
+      const gone = autoErr==="NotFoundError";
+      bar.className = "bk-bar warn";
+      t.innerHTML = gone ? "<b>Auto-save cannot find your file.</b> It may have been moved or deleted. Your work is still saved in this browser. Choose a save location again."
+        : "<b>Auto-save is having trouble</b> (the browser said: " + autoErr + "). Your work is still saved in this browser and the page keeps trying. <b>Download a backup now to be safe.</b>";
+      b.textContent = gone ? "Choose a save location" : "Download a backup"; b.className = "btn btn-gold btn-sm bk-bar-btn";
+    }
     else { bar.className = "bk-bar bad"; t.innerHTML = "<b>Auto-save is OFF.</b> Turn it on before you start working, or you could lose your work."; b.textContent = "Turn on auto-save"; b.className = "btn btn-red btn-sm bk-bar-btn"; }
   }
   let startPromptShown = false;
@@ -302,8 +337,8 @@
     const paused = autoState==="paused";
     m.innerHTML = '<div class="bk-modal-box"><h2 style="margin-top:0">' + (paused ? "Welcome back. Resume auto-save." : "Before you start: turn on auto-save") + '</h2>' +
       '<p>' + (paused
-        ? "Your browser needs your permission again before it can keep saving your work to your file. <b>Click the red button below</b> to resume. It takes one click."
-        : "Everything you type in this course is kept in this browser only. <b>If auto-save is off, you can lose your work.</b> It takes about 30 seconds to turn on: <b>click the red button, choose a folder you will not delete (such as Documents), and click Save</b>.") + '</p>' +
+        ? "Your browser needs your permission again before it can keep saving your work to your file. <b>Click the red button below</b> to resume. If Chrome asks, choose <b>Allow on every visit</b> when you see that choice, and it will ask less often."
+        : "Everything you type in this course is kept in this browser only. <b>If auto-save is off, you can lose your work.</b> It takes about 30 seconds to turn on: <b>click the red button, choose the Documents folder (or another plain folder you will not delete), and click Save</b>. If Chrome asks about permission afterward, choose <b>Allow on every visit</b>.") + '</p>' +
       '<p style="margin-bottom:0"><button type="button" class="btn btn-red" id="bkStartGo">' + (paused ? "Resume auto-save" : "Turn on auto-save") + '</button> <button type="button" class="btn btn-ghost btn-sm" id="bkStartLater">Not now (not recommended)</button></p></div>';
     document.body.appendChild(m);
     const close = () => { m.remove(); };
@@ -315,7 +350,7 @@
   function refreshBackupUi(){
     const last = sysGet("lastBackup"), dirty = sysGet("dirty")==="1", lastAuto = sysGet("lastAuto");
     if(fab){
-      const t = {on:"Progress auto-saved", paused:"Auto-save paused: click to fix", error:"Auto-save problem: click", off:"Turn on auto-save"}[autoState]
+      const t = {on:"Progress auto-saved", paused:"Auto-save paused: click to fix", error:"Auto-save trouble: click", off:"Turn on auto-save"}[autoState]
         || (dirty ? "Save a backup (not saved yet)" : "Progress backup");
       fab.classList.toggle("unsaved", autoState==="paused" || autoState==="error" || autoState==="off" || (autoState==="none" && dirty));
       fab.classList.toggle("ok", autoState==="on");
@@ -329,7 +364,7 @@
       as.textContent = {
         on: "Automatic saving is ON" + where + (lastAuto ? ". Last saved " + new Date(lastAuto).toLocaleTimeString() + "." : "."),
         paused: "Automatic saving is PAUSED. Your browser needs your permission again. Click Resume.",
-        error: "The last automatic save did not work. The file may have been moved or deleted. Click Choose a save location to fix it.",
+        error: "The last automatic save did not work (the browser said: " + autoErr + "). Your work is still saved in this browser and the page keeps trying. Use Save my progress to a file below to be safe, or click Choose a save location.",
         off: "Automatic saving is OFF. Your work is saved only in this browser until you turn it on.",
         none: "Automatic saving needs Chrome or Edge on a computer. Use the manual backup below instead."
       }[autoState] || "";
@@ -350,7 +385,7 @@
       '<div id="autoBox"><h4>Automatic saving (recommended)</h4>' +
       '<p id="autoStatus" class="bk-auto"></p>' +
       '<p><button type="button" class="btn btn-red btn-sm" id="autoOn">Turn on automatic saving</button><button type="button" class="btn btn-red btn-sm" id="autoResume">Resume automatic saving</button> <button type="button" class="btn btn-ghost btn-sm" id="autoOff">Turn off</button></p>' +
-      '<p class="hint">When you click <b>Turn on automatic saving</b>, a Save window opens. <b>Choose a folder you will not delete</b>, such as Documents or a cloud-synced folder like OneDrive or Google Drive, and <b>click Save</b>. After that the file <code>acct4420-progress.json</code> updates by itself whenever you type. Only you can see that file.</p></div>' +
+      '<p class="hint">When you click <b>Turn on automatic saving</b>, a Save window opens. <b>Choose the Documents folder</b> (or another plain folder you will not delete) and <b>click Save</b>. Avoid folders that sync to OneDrive, iCloud or Google Drive, because syncing can interrupt saving. After that the file <code>acct4420-progress.json</code> updates by itself whenever you type. Only you can see that file. If Chrome later asks for permission, choose <b>Allow on every visit</b> when you see it.</p></div>' +
       '<h4>Manual backup file</h4>' +
       '<p id="bkStatus" class="hint"></p>' +
       '<p><button type="button" class="btn btn-ghost btn-sm" id="bkSave">Save my progress to a file</button></p>' +
@@ -388,19 +423,18 @@
   window.progressChanged = function(k, v, old){
     scheduleAuto();
     refreshBackupUi();
-    if(autoState==="on") return;       // saved by itself
     if(!/(^|\.)(max|done)$/.test(k)) return;
     if(old==null || (k.endsWith("max") ? !(Number(v) > Number(JSON.parse(old))) : v!==true)) return;   // not a first-visit default
     let b = document.getElementById("bkNudge");
     if(!b){
-      b = document.createElement("div"); b.id="bkNudge"; b.className="bk-nudge"; b.id = "rvPill"; b.setAttribute("role","status");
+      b = document.createElement("div"); b.id="bkNudge"; b.className="bk-nudge"; b.setAttribute("role","status");
       b.innerHTML = '<span id="bkNudgeTxt"></span> <button type="button" class="btn btn-gold btn-sm" id="bkNudgeSave"></button> <button type="button" class="btn btn-ghost btn-sm" id="bkNudgeX" aria-label="Dismiss">Later</button>';
       document.body.appendChild(b);
       b.querySelector("#bkNudgeX").addEventListener("click", ()=>b.classList.remove("show"));
     }
     const auto = autoState==="off" || autoState==="paused" || autoState==="error";
-    b.querySelector("#bkNudgeTxt").innerHTML = auto ? "<b>Step finished.</b> Turn on automatic saving so you cannot lose your work." : "<b>Step finished.</b> Save a backup so you cannot lose your work.";
-    const btn = b.querySelector("#bkNudgeSave"); btn.textContent = auto ? "Turn on automatic saving" : "Save backup";
+    b.querySelector("#bkNudgeTxt").innerHTML = auto ? "<b>Step finished.</b> Turn on automatic saving so you cannot lose your work." : autoState==="on" ? "<b>Step finished.</b> Auto-save has you covered. For extra safety, download a backup copy too." : "<b>Step finished.</b> Save a backup so you cannot lose your work.";
+    const btn = b.querySelector("#bkNudgeSave"); btn.textContent = auto ? "Turn on automatic saving" : "Download backup";
     btn.onclick = ()=>{ b.classList.remove("show"); if(auto) (autoState==="paused" ? resumeAuto() : enableAuto()); else saveBackup(); };
     b.classList.add("show"); clearTimeout(nudgeTimer); nudgeTimer = setTimeout(()=>b.classList.remove("show"), 30000);
   };
