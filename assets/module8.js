@@ -1,7 +1,7 @@
 (function(){
   const SITUATIONS = [
     {facts:"The machine stops at Gate 1 with a long reconciliation. The person running it is busy and the machine has been right every month so far.", line:"Type ‘approved’ at Gate 1 without reading it, so the close is not delayed."},
-    {facts:"A teammate wants the monthly memo to reach the Controller without anyone opening it first.", line:"Set the machine to email the memo automatically and fill in the sign-off line as ‘Reviewed by: Velox Close Machine.’"},
+    {facts:"A teammate wants the monthly memo to reach the Controller without anyone opening it first.", line:"Set the machine to email the memo automatically and fill in the sign-off line as ‘Reviewed by: Month-End Machine.’"},
     {facts:"At Gate 2 the machine reports that it found no payment exceptions this month.", line:"Skip Gate 2 whenever the machine reports no exceptions, since there is nothing to review."},
     {facts:"The memo lists seven exceptions by code.", line:"Before signing, a named accountant opens the bank, ledger, variance, and payment files behind each exception, confirms what the machine says, and then signs the memo."},
     {facts:"Walt wants to change a threshold in the rules file.", line:"The Controller approves the change in writing, it is recorded with the date, and an earlier month is run again to confirm the machine still catches what it caught before."}
@@ -260,7 +260,7 @@
     const pcs = d.pcs.map(x=>`<tr><td>${esc(x.stage)}</td><td>${esc(x.t)}</td></tr>`).join("");
     return `<html xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:w="urn:schemas-microsoft-com:office:word" xmlns="http://www.w3.org/TR/REC-html40"><head><meta charset="utf-8"><title>Module 8 Submission</title>
 <style>body{font-family:Calibri,Arial,sans-serif;font-size:11pt}h1{color:#C8102E}h2{color:#C8102E;border-bottom:2px solid #F1BE48}table{border-collapse:collapse;width:100%}td,th{border:1px solid #999;padding:4px;vertical-align:top}th{background:#F3E3E6}</style></head><body>
-<h1>Module 8: The Velox Close Machine</h1>
+<h1>Module 8: The Month-End Machine</h1>
 <p><b>Student:</b> ${esc(d.name)} &nbsp; <b>Course:</b> ACCT/MIS ${d.grad?"5420":"4420"} &nbsp; <b>Date:</b> ${new Date().toLocaleDateString()}</p>
 <h2>A. My machine</h2><p><b>Pieces I reused:</b></p><table><tr><th>Stage</th><th>Piece reused and what I changed</th></tr>${pcs}</table><p><b>Instructions:</b></p>${p(d.instr)}<p><b>What it said with no files attached:</b></p>${p(d.stoptest)}
 <h2>B. Rehearsal on October</h2><p><b>Part 1 (practice, not graded): first try (Step 2):</b></p>${p(d.r1p)}<p><b>What Claude gave me:</b></p>${p(d.r1o)}<p><b>Things I could not rely on:</b></p>${p(d.r1w)}<p><b>Stage outputs and my replies at the gates:</b></p>${p(d.ooutp)}<p><b>Memo:</b></p>${p(d.omemo)}<p><b>Scorer log (October):</b></p>${lg("october")}<p><b>Baseline comparison:</b> ${esc(d.obase||"(none)")}</p><p><b>What I changed and why:</b></p>${p(d.ochg)}
