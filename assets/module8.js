@@ -4,7 +4,7 @@
     {facts:"A teammate wants the monthly memo to reach the Controller without anyone opening it first.", line:"Set the machine to email the memo automatically and fill in the sign-off line as ‘Reviewed by: Month-End Machine.’"},
     {facts:"At Gate 2 the machine reports that it found no payment exceptions this month.", line:"Skip Gate 2 whenever the machine reports no exceptions, since there is nothing to review."},
     {facts:"The memo lists seven exceptions by code.", line:"Before signing, a named accountant opens the bank, ledger, variance, and payment files behind each exception, confirms what the machine says, and then signs the memo."},
-    {facts:"Walt wants to change a threshold in the rules file.", line:"The Controller approves the change in writing, it is recorded with the date, and an earlier month is run again to confirm the machine still catches what it caught before."}
+    {facts:"Walt wants to change a threshold in the rules file. Every month the two gates and the named accountant’s sign-off on the memo stay in place.", line:"The Controller approves the change in writing, it is recorded with the date, and an earlier month is run again to confirm the machine still catches what it caught before."}
   ];
   const SIT_VERDICTS = ["Meets the policy","Does not meet the policy"];
   const FIND_VERDICTS = ["Matches the files or my calculation","Differs only in rounding or wording","Differs from the files or my calculation","Cannot be checked from the files"];
