@@ -188,7 +188,7 @@ date,reference,description,deposits,withdrawals,running_balance
   <p>A reconciliation has many small steps: line up two lists, spot the lines that do not match, decide what kind of difference each one is, adjust the right balance, and add it all up. If you ask for all of it in one request, the answer arrives as a finished-looking whole. When something is wrong, you cannot see which step went wrong, and AI may fill a gap with something that merely fits.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Why is a single request for a whole reconciliation risky?</p>
-    <div class="qc" data-id="q3a" data-correct="2" data-req>
+    <div class="qc" data-id="q3a" data-h="0a32f6eaa1fdd8e8041e75fe08f2760fc22708c78442076f3f73ba00b39419a9" data-req>
       <div class="choices"><button class="choice" data-i="0">AI cannot read spreadsheets</button><button class="choice" data-i="1">AI is not allowed to do accounting</button><button class="choice" data-i="2">A wrong step is hidden inside a polished answer, so you cannot tell where to look</button><button class="choice" data-i="3">It uses too much of your Claude plan</button></div>
       <div class="fb" data-ok="Right. Smaller steps let you check each piece before the next one builds on it." data-no="Not quite. Think about what you can see when everything arrives as one finished answer."></div>
     </div>
@@ -199,7 +199,7 @@ date,reference,description,deposits,withdrawals,running_balance
   <div class="tech"><p><b>Technique:</b> Task decomposition, carried out as prompt chaining (a chain of prompts where each answer feeds the next)</p><p><b>Why it helps:</b> Each step is small enough for you to check, so mistakes are caught early instead of being buried in the final answer. It also lets you steer: if step two looks wrong, you fix it before step three builds on it.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>You are asking AI to review 200 vendor invoices for duplicates. Which is the best way to start a chain?</p>
-    <div class="qc" data-id="q3b" data-correct="1" data-req>
+    <div class="qc" data-id="q3b" data-h="5b6917c330604b2d067f1bd61d1ebfdbe5a667578d0bb1c2297bece6f3f5f2dc" data-req>
       <div class="choices"><button class="choice" data-i="0">Ask for the final recovery memo right away</button><button class="choice" data-i="1">Ask AI first to list the invoices it sees, so you can confirm it read the data correctly</button><button class="choice" data-i="2">Ask AI to find duplicates and write the memo in one go</button><button class="choice" data-i="3">Ask AI to skip the checking steps to save time</button></div>
       <div class="fb" data-ok="Yes. Confirming the first step is right protects every step after it." data-no="Think about which first step gives you something you can check quickly."></div>
     </div>
@@ -210,7 +210,7 @@ date,reference,description,deposits,withdrawals,running_balance
   <div class="tech"><p><b>Technique:</b> Chain-of-thought prompting (asking AI to show its reasoning), together with stating assumptions</p><p><b>Why it helps:</b> A visible reason is something you can check against the source. A hidden reason is something you can only trust. Named assumptions show you exactly where a human judgment is needed.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>AI classifies an item and says only "outstanding check." What is the most useful follow-up?</p>
-    <div class="qc" data-id="q3c" data-correct="3" data-req>
+    <div class="qc" data-id="q3c" data-h="e46d8d16f7b8ec945c3c74e40210ed1fae5472b73fe6d9c9fd8f3802d4c80edf" data-req>
       <div class="choices"><button class="choice" data-i="0">Tell it to be more confident</button><button class="choice" data-i="1">Accept it, because AI classified it</button><button class="choice" data-i="2">Ask it to shorten the answer</button><button class="choice" data-i="3">Ask which line it relied on and what it assumed, so you can check both</button></div>
       <div class="fb" data-ok="Yes. A reason and an assumption are both things you can verify." data-no="Which option gives you something you can actually check?"></div>
     </div>
@@ -221,7 +221,7 @@ date,reference,description,deposits,withdrawals,running_balance
   <div class="tech"><p><b>Technique:</b> Self-critique (also called red-team prompting or self-refinement: asking AI to look for flaws in its own work)</p><p><b>Why it helps:</b> A second pass with a different job ("find what is wrong") often catches things the first pass ("do the task") did not. It is cheap, and it tells you where to look first.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>AI reviews its own reconciliation and replies that everything is correct. What should you conclude?</p>
-    <div class="qc" data-id="q3d" data-correct="1" data-req>
+    <div class="qc" data-id="q3d" data-h="381e27d285378393e380551a1d24efed658bc17d9e987d453a9e726e7516d3a2" data-req>
       <div class="choices"><button class="choice" data-i="0">The reconciliation is proven correct</button><button class="choice" data-i="1">Nothing is proven. You still check it yourself against the source</button><button class="choice" data-i="2">AI is lying</button><button class="choice" data-i="3">You can skip your own check</button></div>
       <div class="fb" data-ok="Right. A self-review is a clue, not proof." data-no="A self-review comes from the same AI that made the answer. Does that prove anything?"></div>
     </div>
@@ -232,7 +232,7 @@ date,reference,description,deposits,withdrawals,running_balance
   <div class="tech"><p><b>Technique:</b> Self-consistency (running the same task independently more than once and comparing the answers)</p><p><b>Why it helps:</b> Differences between runs point you straight to the shaky items, and agreement raises your confidence a little. It is a fast way to decide where your checking time should go.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Two independent runs give you the same list of reconciling items. What does that tell you?</p>
-    <div class="qc" data-id="q3e" data-correct="2" data-req>
+    <div class="qc" data-id="q3e" data-h="82fc38c33e4d81b1556bd2a888a2d911b622d9bcac0a08a88918595550e8f3c3" data-req>
       <div class="choices"><button class="choice" data-i="0">The list is certainly correct</button><button class="choice" data-i="1">You can skip checking</button><button class="choice" data-i="2">You can be a bit more confident, but both could share the same mistake, so you still check</button><button class="choice" data-i="3">Nothing at all</button></div>
       <div class="fb" data-ok="Yes. Agreement helps, but it does not replace checking the source." data-no="Agreement is useful evidence but not proof. Which option says both of those things?"></div>
     </div>
@@ -243,7 +243,7 @@ date,reference,description,deposits,withdrawals,running_balance
   <div class="tech"><p><b>Technique:</b> Verification against the source (recompute, trace to the source, and use a second tool such as a spreadsheet to check the first)</p><p><b>Why it helps:</b> It turns "this looks right" into "I confirmed it." A spreadsheet adds up numbers exactly, and a source line is evidence, so each check catches a different kind of error.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>AI's reconciliation includes a line "miscellaneous adjustment, $1,200" that makes the two sides agree. What is it?</p>
-    <div class="qc" data-id="q3f" data-correct="1" data-req>
+    <div class="qc" data-id="q3f" data-h="33df9e98888bee87da1c2579986cf35155c1c712dac028ac509a57abcf8495b7" data-req>
       <div class="choices"><button class="choice" data-i="0">A normal reconciling item you can accept</button><button class="choice" data-i="1">A plug: you trace it to a source line or treat the reconciliation as unfinished</button><button class="choice" data-i="2">Proof the reconciliation is finished</button><button class="choice" data-i="3">A bank service charge</button></div>
       <div class="fb" data-ok="Right. If you cannot trace an adjustment to a source line, the work is not done." data-no="An adjustment with no source line is the warning sign. What is it called?"></div>
     </div>

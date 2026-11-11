@@ -101,7 +101,7 @@ Received September 30, 2026. Caller: anonymous.
   <p>The rule that matters most: <b>an indicator is not proof.</b> Some clues are also weak: two account numbers that match only in their last four digits are a small match, because many unrelated accounts end in the same four digits. Each indicator has innocent explanations, and fraud is decided by people who gather documents and hear from the people involved, not by a pattern in a spreadsheet. Wrongly accusing someone harms a real person. So your job is to find the leads, test them, and report them honestly.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Most of one vendor's invoices are just under the $5,000 approval limit. What does that show?</p>
-    <div class="qc" data-id="q3a" data-correct="2" data-req>
+    <div class="qc" data-id="q3a" data-h="38bd3dfc52462f05d206547ff7f01ec6ad39dc5c954732bc84baedeca8f77958" data-req>
       <div class="choices"><button class="choice" data-i="0">That the vendor is committing fraud</button><button class="choice" data-i="1">Nothing at all</button><button class="choice" data-i="2">An indicator that a person should follow up on, since there may also be an innocent explanation</button><button class="choice" data-i="3">That the approval limit is too low</button></div>
       <div class="fb" data-ok="Right. It is a lead, and a person decides what it means." data-no="Does the pattern tell you why the amounts look that way?"></div>
     </div>
@@ -114,7 +114,7 @@ Received September 30, 2026. Caller: anonymous.
   <p>Why auditors like it: people who invent amounts, or keep them just under a limit, usually do not follow the pattern. A big gap between the expected and the actual share of a digit is a reason to look closer. A gap is not proof either. Honest data breaks the pattern too, for example a vendor paid the <b>same fixed fee</b> every month (every payment starts with the same digit), or amounts that stay in a narrow range. The test also needs a lot of amounts (hundreds or more) to be meaningful. The practical rule: <b>count first digits, find the digits that are off by about 2 percentage points or more (too high or too low), then find which vendors cause each gap.</b></p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>A landscaping company is paid exactly 7,200.00 each month at 10 sites. Digit 7 comes out too high. What is the best conclusion?</p>
-    <div class="qc" data-id="q3b" data-correct="1" data-req>
+    <div class="qc" data-id="q3b" data-h="ba3f6a40131a41f74c2cf059bf967b6785fdda9d88bf5daddcd607b8d315673e" data-req>
       <div class="choices"><button class="choice" data-i="0">The landscaping company is committing fraud</button><button class="choice" data-i="1">A fixed fee makes every payment start with 7, so this is a gap with a likely innocent explanation that a person should confirm in the contract</button><button class="choice" data-i="2">Benford's Law is wrong</button><button class="choice" data-i="3">The payments should be deleted</button></div>
       <div class="fb" data-ok="Yes. Find the cause of each gap before drawing any conclusion." data-no="What would a fixed monthly fee do to the first digit of every payment?"></div>
     </div>
@@ -136,7 +136,7 @@ Received September 30, 2026. Caller: anonymous.
   <p><b>What to notice:</b> (1) Claude counted with code and showed observed versus expected for every digit, so you can check any row. (2) It wrote <b>"not stated"</b> instead of guessing when a record left out a year, a PO number, or a final amount. (3) It did not stop at the flag. It traced each gap to one vendor, offered an innocent explanation for each, and said what a person would need to see to check it. (4) It listed what it could <b>not</b> tell, such as why the amounts look that way, and wrote: "Nothing here says anyone committed fraud." Your job is to get this kind of answer for Velox, and then to check it.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>In the example, why did Claude say the trucking lease probably has an innocent explanation?</p>
-    <div class="qc" data-id="q3c" data-correct="3" data-req>
+    <div class="qc" data-id="q3c" data-h="73366a9ca5af73cf22318696ff423b4efdd579a354c2301d1c82dfd1ce4d5498" data-req>
       <div class="choices"><button class="choice" data-i="0">It made a mistake in counting the payments for that vendor</button><button class="choice" data-i="1">Leases are never fraud, so the vendor needed no further look</button><button class="choice" data-i="2">It wanted to ignore the vendor because the amounts were small</button><button class="choice" data-i="3">Every payment was exactly 2,450.00, which looks like a fixed lease fee, and a fixed fee makes every payment start with the same digit</button></div>
       <div class="fb" data-ok="Right. A fixed amount explains the gap, and a person still confirms it in the contract." data-no="Look at the example: what do all 60 trucking payments have in common?"></div>
     </div>
@@ -147,7 +147,7 @@ Received September 30, 2026. Caller: anonymous.
   <div class="tech"><p><b>Technique:</b> Structured extraction (also called schema-based or information extraction: you give the AI a fixed set of fields to fill from messy text)</p><p><b>Why it helps:</b> It turns text you cannot sort or count into a table you can. The "not stated" rule keeps AI from guessing, and the quoted words let you spot-check any row. In Step 5 you write your own extraction template.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>A record says only "total due: see attached statement." What should a good extraction table show for the amount?</p>
-    <div class="qc" data-id="q3d" data-correct="1" data-req>
+    <div class="qc" data-id="q3d" data-h="e6f21734c273440c102e307a2badf1e689236b4610b3623bd954117336d3a45b" data-req>
       <div class="choices"><button class="choice" data-i="0">The most common amount from the other records</button><button class="choice" data-i="1">"not stated"</button><button class="choice" data-i="2">Zero</button><button class="choice" data-i="3">A reasonable guess</button></div>
       <div class="fb" data-ok="Yes. A missing fact is written as missing, never filled in." data-no="What does the rule 'not stated instead of guessing' tell you?"></div>
     </div>
@@ -158,7 +158,7 @@ Received September 30, 2026. Caller: anonymous.
   <div class="tech"><p><b>Technique:</b> Tool use, specifically code execution (asking the AI to run a program on your file instead of estimating by reading)</p><p><b>Why it helps:</b> Counting and totaling by code is exact and repeatable, and the code can be shown to you. AI that "eyeballs" a large file can be confidently wrong.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>You attach a ledger of 2,000 payments. What is the best way to get first-digit counts?</p>
-    <div class="qc" data-id="q3e" data-correct="0" data-req>
+    <div class="qc" data-id="q3e" data-h="85e7b66a14285cf48077fa92dc0188f5a0f07179fcc092cff75047d565139153" data-req>
       <div class="choices"><button class="choice" data-i="0">Ask Claude to use code on the file to count and show the table, then check one count yourself</button><button class="choice" data-i="1">Ask Claude to look at the file and tell you roughly how many</button><button class="choice" data-i="2">Paste 50 rows into the chat and extend the result</button><button class="choice" data-i="3">Skip the counts and ask who the fraudster is</button></div>
       <div class="fb" data-ok="Yes. Code for the counting, you for the checking." data-no="Which method gives an exact count you can reproduce?"></div>
     </div>
@@ -169,7 +169,7 @@ Received September 30, 2026. Caller: anonymous.
   <div class="tech"><p><b>Technique:</b> Alternative-explanations prompting (a form of devil's-advocate or red-team prompting: asking the AI to argue against its own flag)</p><p><b>Why it helps:</b> The first answer from AI tends to follow the question's framing. Asking for the other side shows you which flags are likely harmless and which need a person's attention.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Claude flags a vendor. What is the best follow-up?</p>
-    <div class="qc" data-id="q3f" data-correct="2" data-req>
+    <div class="qc" data-id="q3f" data-h="58f26cd3a3e6606d023ac75cdc21e3135b89fe3e97179551640266cde729b41d" data-req>
       <div class="choices"><button class="choice" data-i="0">"Draft a letter to the vendor accusing them."</button><button class="choice" data-i="1">"Delete the flag, it is probably fine."</button><button class="choice" data-i="2">"What are the most likely innocent explanations for this flag, and what would I need to see to check them?"</button><button class="choice" data-i="3">"Are you sure?"</button></div>
       <div class="fb" data-ok="Yes. Ask for the other side, and for what to check." data-no="Which question gives you something a person can actually test?"></div>
     </div>
@@ -179,7 +179,7 @@ Received September 30, 2026. Caller: anonymous.
   <p>An audit report says what the data show, how strong each lead is, what is <b>not</b> known, and what a person should do next. It refers to people only by ID, never accuses anyone, and never says "committed fraud." Start with the most important sentence: <b>what the data show and that they are indicators for follow-up</b>. Then give the few numbers that matter, the innocent explanations you considered, what you do not know, and the next step for a person (such as getting documents). The person who owns the investigation decides what happens next.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Which opening sentence is best for a report to the head of Internal Audit?</p>
-    <div class="qc" data-id="q3g" data-correct="2" data-req>
+    <div class="qc" data-id="q3g" data-h="e4834a6de04d4d63a5c1dea75b14cf083d1eca82f9ebaf559c031ded93921d25" data-req>
       <div class="choices"><button class="choice" data-i="0">"Approver A-100 committed fraud through vendor V-9999, based on the payment pattern."</button><button class="choice" data-i="1">"There are many things to look at in the data, and more work is needed."</button><button class="choice" data-i="2">"The payments to one vendor show several indicators that need follow-up by a person; they do not show who, if anyone, did something wrong."</button><button class="choice" data-i="3">"AI found a suspicious vendor."</button></div>
       <div class="fb" data-ok="Yes. It says what the data show, calls them indicators, and leaves the decision to a person." data-no="Which sentence would still be fair if the vendor turns out to be innocent?"></div>
     </div>

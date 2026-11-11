@@ -107,7 +107,7 @@ Please respond by November 9, 2026. If we do not hear from you by that date, we 
   <p>Tax professionals answer a question in a <b>research memo</b> with five parts: the <b>question</b>; the <b>facts</b> (what happened); the <b>rules</b> (the authorities that apply); the <b>analysis</b> (applying the rules to the facts); and the <b>conclusion</b> with a next step. The rules part is where sources matter. An <b>authority</b> is a source anyone can open and read: the Internal Revenue Code (the federal tax law), Treasury regulations, IRS notices, and court decisions. IRS publications are helpful guidance, but a tax professional prefers the notice or regulation behind them. A <b>citation</b> is the address of an authority. Articles by accounting firms are helpful commentary, but a tax professional relies on the authority itself, because commentary can be out of date or wrong.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Which of these would a tax professional cite as an authority in a memo to the IRS?</p>
-    <div class="qc" data-id="q3a" data-correct="1" data-req>
+    <div class="qc" data-id="q3a" data-h="37a99896c47c6659ac7b0cf7278126586a95b61f35975bcd4d0243025b5b90db" data-req>
       <div class="choices"><button class="choice" data-i="0">A blog post that summarizes the rule</button><button class="choice" data-i="1">An IRS notice that explains the rule, which anyone can open and read</button><button class="choice" data-i="2">What a colleague remembers about the rule</button><button class="choice" data-i="3">What an AI chat said when asked from memory</button></div>
       <div class="fb" data-ok="Right. An authority is something you can open and read." data-no="Which one is a document anyone can open and read?"></div>
     </div>
@@ -117,7 +117,7 @@ Please respond by November 9, 2026. If we do not hear from you by that date, we 
   <p>AI writes text that sounds right. With citations, three things can go wrong: it can cite a real rule with the wrong section number, cite a rule that has since changed, or cite something that does not exist. Often an AI memo is mostly right and still cannot be relied on, because you cannot tell which parts are right without opening the sources. Asking "are you sure?" does not fix this, because AI will sound sure either way. What does help is to <b>give the AI the sources</b>, make it <b>quote them</b>, and then <b>open the ones that matter yourself</b>.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Claude drafts a memo with five citations, and the dollar figures all look reasonable. What does that tell you about the citations?</p>
-    <div class="qc" data-id="q3b" data-correct="2" data-req>
+    <div class="qc" data-id="q3b" data-h="5690ce6a2bf783635d18ae8f93c0916b9b6071bab120f1c78dcdbbad5c4255d7" data-req>
       <div class="choices"><button class="choice" data-i="0">That they are accurate, because the numbers look reasonable</button><button class="choice" data-i="1">That they are invented, because AI cannot cite</button><button class="choice" data-i="2">Nothing yet. Each citation has to be checked against a source before anyone relies on it</button><button class="choice" data-i="3">That they are accurate if Claude says it is confident</button></div>
       <div class="fb" data-ok="Yes. Reasonable-looking numbers say nothing about whether a citation is real or says what Claude claims." data-no="Can you tell from the numbers whether a citation says what Claude claims?"></div>
     </div>
@@ -128,7 +128,7 @@ Please respond by November 9, 2026. If we do not hear from you by that date, we 
   <div class="tech"><p><b>Technique:</b> Source-grounded prompting (also called grounding, or open-book prompting; it is the idea behind retrieval-augmented generation, or RAG, where AI answers from documents it is given)</p><p><b>Why it helps:</b> Answers can be checked against text you can see, and gaps show up as "not in the sources" instead of guesses. In Step 5 you write your own template that does this.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Imagine you gave Claude a packet that never mentions state taxes. You ask whether state taxes apply. What is the best answer from a grounded Claude?</p>
-    <div class="qc" data-id="q3c" data-correct="3" data-req>
+    <div class="qc" data-id="q3c" data-h="13f563dfeeac683f575e71a37399bd09b9f08c44db687fbaae337462a05b4a65" data-req>
       <div class="choices"><button class="choice" data-i="0">A confident answer from its general knowledge</button><button class="choice" data-i="1">A guess labeled as a guess, with no mention of the packet</button><button class="choice" data-i="2">"No, they do not apply."</button><button class="choice" data-i="3">"Not in the sources," plus a note that a tax professional should confirm</button></div>
       <div class="fb" data-ok="Yes. A gap in the sources is reported as a gap." data-no="What does the 'not in the sources' rule tell Claude to do when the packet is silent?"></div>
     </div>
@@ -139,7 +139,7 @@ Please respond by November 9, 2026. If we do not hear from you by that date, we 
   <div class="tech"><p><b>Technique:</b> Structured extraction of claims, then verification prompting (also called self-verification or a cite-check: the AI compares its own statements against the sources)</p><p><b>Why it helps:</b> AI is good at comparing text against text, and the table turns a wall of prose into a list you can check line by line. But AI checking AI can still be wrong, so a person opens the two or three sources that matter most.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>In Claude's cite-check, one row says "Not in the packet." What does that tell you?</p>
-    <div class="qc" data-id="q3d" data-correct="1" data-req>
+    <div class="qc" data-id="q3d" data-h="285bf31278129cec41f44ba653f0a8b1e41de63d6a50457f457782a842edaa41" data-req>
       <div class="choices"><button class="choice" data-i="0">The citation is invented, so delete it and say so</button><button class="choice" data-i="1">The packet cannot confirm it, so a person must open the original source or leave it out</button><button class="choice" data-i="2">The citation is correct, because Claude found no conflict</button><button class="choice" data-i="3">The packet is wrong</button></div>
       <div class="fb" data-ok="Right. It is a flag for a person, not a verdict." data-no="Does 'the packet does not contain it' show that it is false?"></div>
     </div>
@@ -150,7 +150,7 @@ Please respond by November 9, 2026. If we do not hear from you by that date, we 
   <p><b>A worked example of the two-part first-year deduction</b> (made-up item, not Velox's): an item that cost $100 and was acquired under the older rule gets a <b>40 percent</b> deduction first, which is $40.00. The <b>remaining $60</b> is then deducted over several years, and its first-year part is <b>14.29 percent</b> of $60, which is $8.57. The item's total first-year deduction is $48.57. An item acquired under the newer rule gets all $100 in the first year.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Claude gives a company's corrected deduction as one rounded figure with no calculation shown. What is the best next step?</p>
-    <div class="qc" data-id="q3e" data-correct="0" data-req>
+    <div class="qc" data-id="q3e" data-h="04c54714779ed92a86632a21ad44bbddd796f94d21e68de7cb08e6f3941465df" data-req>
       <div class="choices"><button class="choice" data-i="0">Ask Claude to use code and show each item's calculation and rule, then recompute one item yourself</button><button class="choice" data-i="1">Use the figure, since it is close enough</button><button class="choice" data-i="2">Ask Claude "Are you sure?"</button><button class="choice" data-i="3">Ask Claude to explain why the figure is probably right</button></div>
       <div class="fb" data-ok="Yes. Show the work, then check part of it yourself." data-no="Which step lets you see and check how the number was built?"></div>
     </div>
@@ -186,7 +186,7 @@ Please respond by November 9, 2026. If we do not hear from you by that date, we 
 
   <div class="turn"><span class="tag">Your turn</span>
     <p>In the example, why was Claude's first memo not good enough to send, even though its conclusion turned out to be right?</p>
-    <div class="qc" data-id="q3f" data-correct="1" data-req>
+    <div class="qc" data-id="q3f" data-h="1ba25e410f0bad3bb6b944ae882e17694985916a948d912b3f26a677c4065b9b" data-req>
       <div class="choices"><button class="choice" data-i="0">Its conclusion was wrong, so none of it could be used</button><button class="choice" data-i="1">It was written from memory, so a person could not tell which citations and figures were reliable until they were compared with sources</button><button class="choice" data-i="2">Claude refused to give any conclusion without the sources</button><button class="choice" data-i="3">It left out the IRS letter's reference number</button></div>
       <div class="fb" data-ok="Right. A conclusion can be right and still not be something you can stand behind." data-no="What did Claude itself say about where the memo came from?"></div>
     </div>
@@ -196,7 +196,7 @@ Please respond by November 9, 2026. If we do not hear from you by that date, we 
   <p>Grace needs a short memo she can act on. Start with the most important sentence: <b>what you found, how big it is, and that it rests on the Source Packet only</b>. Then give the rules you relied on (with their packet labels), the numbers that matter, what is <b>not</b> known or <b>not in the sources</b>, and the next step for a person (such as finding the missing contract date). Say what a person must confirm before anything goes to the IRS.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Which opening sentence is best for a memo to the Director of Tax?</p>
-    <div class="qc" data-id="q3g" data-correct="2" data-req>
+    <div class="qc" data-id="q3g" data-h="c15a8619da9a7b89fb58c74b88ada1f0833632f9ddd8721012e70feb518e9f60" data-req>
       <div class="choices"><button class="choice" data-i="0">"The IRS letter raises several questions about equipment, and more research is needed."</button><button class="choice" data-i="1">"Velox clearly took too large a deduction and should pay what the IRS wants."</button><button class="choice" data-i="2">"Based only on the Source Packet, part of the claimed deduction appears to be too large, here is how large, and one missing fact must be confirmed by a person before we respond."</button><button class="choice" data-i="3">"AI found a tax problem."</button></div>
       <div class="fb" data-ok="Yes. It gives the finding, its size, the limit of the sources, and what a person must still do." data-no="Which sentence tells Grace what to do and how far to trust it?"></div>
     </div>
