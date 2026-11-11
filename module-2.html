@@ -113,7 +113,7 @@ Operating income: budget 59,400; actual 42,800; variance -16,600</div></details>
   <p>AI cannot see your situation. When you leave details out, it fills the gaps with a guess about the average case. The more relevant context you give, the less it has to guess. That context is the difference between a generic answer and a useful one.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Imagine you typed a request like "Write a summary of Q3 results" and the answer was generic. Why?</p>
-    <div class="qc" data-id="q3a" data-correct="1" data-req>
+    <div class="qc" data-id="q3a" data-h="3ee0ac41244b0f99bdab07e3ef4379ef8291c1ae7e4909b2a61c37bf0addec87" data-req>
       <div class="choices"><button class="choice" data-i="0">AI is broken</button><button class="choice" data-i="1">AI was not told the audience, the format, or what the summary was for</button><button class="choice" data-i="2">AI is not allowed to write summaries</button><button class="choice" data-i="3">The data was too long</button></div>
       <div class="fb" data-ok="Right. Without the audience, goal, and format, AI guesses." data-no="Not quite. Think about what the request did not say."></div>
     </div>
@@ -134,7 +134,7 @@ Operating income: budget 59,400; actual 42,800; variance -16,600</div></details>
   <div class="tech"><p><b>Technique:</b> Structured output (the Format part)</p><p><b>Why it helps:</b> Asking for a specific shape, such as a headline and three bullets or a table, makes the answer easy to scan and easy to check, and keeps every run consistent.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Here is a request: <i>"You are a plant analyst. Summarize the attached downtime log for the plant manager, who reads for two minutes. Use hours, not minutes, and no speculation."</i> Which of the five parts is missing?</p>
-    <div class="qc" data-id="q3b" data-correct="3" data-req>
+    <div class="qc" data-id="q3b" data-h="3177f9c98193f94e0f8f594adc44ff0777a32d231a7301511de5e053c73ed24b" data-req>
       <div class="choices"><button class="choice" data-i="0">Role</button><button class="choice" data-i="1">Audience</button><button class="choice" data-i="2">Constraints</button><button class="choice" data-i="3">Format</button></div>
       <div class="fb" data-ok="Yes. It has a role (plant analyst), a goal (summarize the downtime log), an audience (the plant manager), and constraints, but it never says what shape the summary should take." data-no="Check each part against the request: who is the role, what is the goal, who is the audience, what are the constraints? One is not there."></div>
     </div>
@@ -145,7 +145,7 @@ Operating income: budget 59,400; actual 42,800; variance -16,600</div></details>
   <div class="tech"><p><b>Technique:</b> Grounding  (also called source-grounded prompting)</p><p><b>Why it helps:</b> AI answers from the facts you gave it instead of from memory. That cuts invented numbers and reasons, and it makes every claim checkable against a source you can point to.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Which instruction best keeps AI from making things up?</p>
-    <div class="qc" data-id="q3c" data-correct="1" data-req>
+    <div class="qc" data-id="q3c" data-h="7cc0c85c1e288489b4e146336f2b71e2b93de2034bb129f1c51cff83c92a2a5e" data-req>
       <div class="choices"><button class="choice" data-i="0">Tell it to be accurate</button><button class="choice" data-i="1">Tell it to rely only on the data you gave it, and to say so when the data does not explain something</button><button class="choice" data-i="2">Tell it to think carefully</button><button class="choice" data-i="3">Tell it not to make mistakes</button></div>
       <div class="fb" data-ok="Yes. It points AI to the facts and gives it a way to admit a gap." data-no="Those words ask for good behavior but give AI nothing to rely on. Which option names the source and what to do when the source is silent?"></div>
     </div>
@@ -156,7 +156,7 @@ Operating income: budget 59,400; actual 42,800; variance -16,600</div></details>
   <div class="tech"><p><b>Technique:</b> Few-shot prompting (giving AI examples; with exactly one example it is called one-shot)</p><p><b>Why it helps:</b> An example shows tone, length, and layout faster than any list of rules. It is the quickest way to make AI match your team's house style.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>You paste last quarter's summary as an example. What should you add to your request?</p>
-    <div class="qc" data-id="q3d" data-correct="1" data-req>
+    <div class="qc" data-id="q3d" data-h="c88a012960e41976f3def4789c87dc93207c60970ce8ba9c25ccfe308f0c9f84" data-req>
       <div class="choices"><button class="choice" data-i="0">Tell it to reuse the numbers from the example</button><button class="choice" data-i="1">Tell it to match the example's style and structure but take the numbers only from this quarter's data</button><button class="choice" data-i="2">Nothing, AI will figure it out</button><button class="choice" data-i="3">Tell it to ignore the new data</button></div>
       <div class="fb" data-ok="Right. The example sets the style; the data supplies the facts." data-no="The example is for style only. What should supply the numbers?"></div>
     </div>
@@ -167,7 +167,7 @@ Operating income: budget 59,400; actual 42,800; variance -16,600</div></details>
   <div class="tech"><p><b>Technique:</b> Clarifying questions (also called interview-style prompting: letting AI ask before it answers)</p><p><b>Why it helps:</b> AI finds the gaps in your request before it writes, so you fix them once instead of redoing the whole draft. It is also a good habit for you: if AI needs the answer, a human reader probably does too.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>What is the main benefit of letting AI ask questions first?</p>
-    <div class="qc" data-id="q3e" data-correct="1" data-req>
+    <div class="qc" data-id="q3e" data-h="611f663b0be4605c391d8af6022f9b6c9858f2173fb9ba4c8f701c1453398828" data-req>
       <div class="choices"><button class="choice" data-i="0">It makes AI faster</button><button class="choice" data-i="1">It shows you what AI needs to know that you did not think to say</button><button class="choice" data-i="2">It removes the need to check the output</button><button class="choice" data-i="3">It guarantees correct numbers</button></div>
       <div class="fb" data-ok="Yes. It surfaces missing context. You still check the output." data-no="Questions help with context, but they do not make AI faster or guarantee anything. What do they reveal?"></div>
     </div>
@@ -178,7 +178,7 @@ Operating income: budget 59,400; actual 42,800; variance -16,600</div></details>
   <div class="tech"><p><b>Technique:</b> Verification against the source (checking claims, sometimes called fact-checking the output). It is something you do after any prompt technique.</p><p><b>Why it helps:</b> Tracing three claims to the data catches the errors that matter before they reach an executive.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>AI's summary says, "Marketing came in under budget because the dealer event moved to next quarter." Nothing in the data you pasted explains marketing. What do you do?</p>
-    <div class="qc" data-id="q3f" data-correct="1" data-req>
+    <div class="qc" data-id="q3f" data-h="cbe18a453de54b45a1beba1abf4fe7aedcf15f992117d21930c6d713fa9ac30b" data-req>
       <div class="choices"><button class="choice" data-i="0">Keep it, it sounds reasonable</button><button class="choice" data-i="1">Mark it unsupported (in Step 5 you will choose "Not in the data") and remove it, or confirm the reason with Cost and Planning (the Velox team that owns the budget)</button><button class="choice" data-i="2">Ask AI to sound more confident</button><button class="choice" data-i="3">Assume it came from the data</button></div>
       <div class="fb" data-ok="Right. If it is not in the data, it needs a human to confirm it." data-no="Sounding reasonable is not evidence. Where would the support have to come from?"></div>
     </div>

@@ -103,7 +103,7 @@ The offer expires October 30, 2026.</div></details>
   </ul>
   <div class="turn"><span class="tag">Your turn</span>
     <p>The cost sheet shows 44,600 of fixed overhead per car. Should it count against the special order?</p>
-    <div class="qc" data-id="q3a" data-correct="1" data-req>
+    <div class="qc" data-id="q3a" data-h="e775fda439d1eb2358d6b16fd3ede006780cc7958303f656b4f0e8629a4d3b1f" data-req>
       <div class="choices"><button class="choice" data-i="0">Yes, because every car should carry its share of overhead</button><button class="choice" data-i="1">No, because the plant's total fixed overhead is the same whether or not it takes the order</button><button class="choice" data-i="2">Yes, because overhead is always a variable cost</button><button class="choice" data-i="3">It does not matter</button></div>
       <div class="fb" data-ok="Right. Only costs that change with the decision count." data-no="Think about what the plant pays if it says no. Does the overhead total change?"></div>
     </div>
@@ -120,7 +120,7 @@ The offer expires October 30, 2026.</div></details>
   <p><b>Inputs a special order needs:</b> the number of cars; the price per car; the variable cost per car; the cars that fit in regular time; the overtime limit and the overtime extra cost per car; the extra cost of any rush parts and how many cars need them; the payment days and the borrowing rate; and the size of the price-leak risk. You will use a list like this to write your template in Step 5.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>A special order adds 100 in contribution per unit built in spare regular-time capacity, but only 60 per unit built on overtime. What does that tell you?</p>
-    <div class="qc" data-id="q3b" data-correct="2" data-req>
+    <div class="qc" data-id="q3b" data-h="3f30c84e2509e48e0b821c37fbda9c8317c4aeb34055797a2da5c8d599efc58a" data-req>
       <div class="choices"><button class="choice" data-i="0">Overtime units should be left out of the analysis</button><button class="choice" data-i="1">All units add the same amount</button><button class="choice" data-i="2">How many units fit in regular time changes the total, so capacity matters</button><button class="choice" data-i="3">The price must be wrong</button></div>
       <div class="fb" data-ok="Yes. Units beyond regular-time capacity cost more, so the split matters." data-no="Which units are cheaper to build? What decides how many of each there are?"></div>
     </div>
@@ -138,7 +138,7 @@ The offer expires October 30, 2026.</div></details>
   <p><b>What to notice:</b> (1) Claude kept the $9 of fixed overhead out and explained that counting it would make the order look like a $2 loss per bracket, which is misleading because the $9 does not change. (2) For every number it gave the formula, the numbers it used, and a check. (3) It also found the break-even price cut (about 2.5% of the regular price) and listed what is <b>not in the files</b>, such as how likely a leak is and whether the customer would accept $41. It did not invent a better best case. Your job is to get this kind of answer for Velox, and then to check it.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>In the example, why did Claude leave the $9 of fixed overhead out of the decision?</p>
-    <div class="qc" data-id="q3c" data-correct="3" data-req>
+    <div class="qc" data-id="q3c" data-h="bb975daebdfeaecf96c5dc089e28e7b6a212cd60d556dc5805ecfabfcfa8d836" data-req>
       <div class="choices"><button class="choice" data-i="0">It made a mistake</button><button class="choice" data-i="1">Fixed overhead is always zero</button><button class="choice" data-i="2">It wanted the order to look better</button><button class="choice" data-i="3">The total fixed overhead is paid whether or not Prairie takes the order, so it is not a relevant cost</button></div>
       <div class="fb" data-ok="Right. Only costs that change with the decision count." data-no="Look at the example text: does the $38,700 total change if Prairie takes the order?"></div>
     </div>
@@ -156,7 +156,7 @@ Show the formula, the numbers used, and the result. List anything you could not 
   <div class="tech"><p><b>Technique:</b> Prompt template with defined inputs (also called a parameterized prompt: a request with variables)</p><p><b>Why it helps:</b> The next time, you only change the inputs, so the request does not get shorter or sloppier. Defining each input (name, unit, source) also tells you exactly which numbers to look up and check. In Step 5 you write your own template for special orders.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>What is the main benefit of marking [TOTAL CLAIMED] with its unit and where to find it?</p>
-    <div class="qc" data-id="q3d" data-correct="0" data-req>
+    <div class="qc" data-id="q3d" data-h="b37e6e178c424fa4caca95fca3c66b94e4f82b449e7269efcb7675d8dc34e6e3" data-req>
       <div class="choices"><button class="choice" data-i="0">You know exactly what to enter and can check it against the source</button><button class="choice" data-i="1">It makes the AI faster</button><button class="choice" data-i="2">It removes the need to check the answer</button><button class="choice" data-i="3">It makes the request longer on purpose</button></div>
       <div class="fb" data-ok="Yes. Defined inputs make the request repeatable and checkable." data-no="Think about what you need to type in and where you would check it."></div>
     </div>
@@ -167,7 +167,7 @@ Show the formula, the numbers used, and the result. List anything you could not 
   <div class="tech"><p><b>Technique:</b> Scenario analysis and sensitivity analysis (what-if prompting, finding the break-even point), together with listing assumptions</p><p><b>Why it helps:</b> A decision maker needs to know not just the expected result but how wrong it could go and what would change the answer. AI can run many what-ifs in seconds, and you can check one or two of them by hand.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>AI says accepting adds 5,500 in the base case and 1,028 in the worst case. What does the worst case tell the manager?</p>
-    <div class="qc" data-id="q3e" data-correct="1" data-req>
+    <div class="qc" data-id="q3e" data-h="babc7d8ccd0b8297fd798103eed7d3c9058769d4642777f6aaf77b41f0f9a667" data-req>
       <div class="choices"><button class="choice" data-i="0">The order will definitely add 1,028</button><button class="choice" data-i="1">Even if the main risk happens, the order is still slightly positive, so the risk alone does not decide it</button><button class="choice" data-i="2">The base case is wrong</button><button class="choice" data-i="3">The order should always be declined</button></div>
       <div class="fb" data-ok="Right. The worst case shows how much cushion there is." data-no="What does a positive result in the worst case mean about the risk?"></div>
     </div>
@@ -177,7 +177,7 @@ Show the formula, the numbers used, and the result. List anything you could not 
   <p>AI can calculate options and explain their results. It cannot decide, because it does not own the consequences. When you recommend, write it so that the reader can act on it: start with the <b>recommendation</b> (accept, decline, or counter-offer on stated terms), give the <b>few numbers that drive it</b>, say what <b>conditions or events would change your mind</b>, and list <b>what you do not know</b>. A person signs the decision; the AI's work is an input.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Which opening sentence of a recommendation is best for a busy manager?</p>
-    <div class="qc" data-id="q3f" data-correct="2" data-req>
+    <div class="qc" data-id="q3f" data-h="a76a851019dc00103a57e42f6d4c47434d85d3297a6fc1d78f86cbe85835c12c" data-req>
       <div class="choices"><button class="choice" data-i="0">"There are many factors to consider in this complex decision."</button><button class="choice" data-i="1">"AI says the order is probably fine."</button><button class="choice" data-i="2">"I recommend accepting only if payment is due in 60 days, because the order adds about 40,000 even after the price-cut risk."</button><button class="choice" data-i="3">"The numbers are in the attached tables."</button></div>
       <div class="fb" data-ok="Yes. A clear recommendation, a condition, and the number behind it." data-no="Which sentence tells Marcus what to do and why, right away?"></div>
     </div>

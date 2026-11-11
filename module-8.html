@@ -108,7 +108,7 @@
   <p>In Step 2, Claude chose what to check, what thresholds to use, and when to stop. That is flexible, and it is also why two runs can differ. A <b>workflow</b> is the opposite: <b>you</b> fix the steps, the order, and the places where a person must look, and the AI does the work inside each step. An <b>agent</b> (Module 9) is an AI that chooses its own steps. For a task that must be the same every month and that someone will sign, start with a workflow: it is predictable, and you can test it.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Walt wants the same three checks and the memo in the same order every month, with a person approving along the way. Which describes what he is asking for?</p>
-    <div class="qc" data-id="q3a" data-correct="1" data-req>
+    <div class="qc" data-id="q3a" data-h="9986dd6d44716e6489d7a7a8fb0e1a5b20dcbdb9f591b4fea6b41149315338a4" data-req>
       <div class="choices"><button class="choice" data-i="0">An agent that decides each month which checks to run</button><button class="choice" data-i="1">A workflow with fixed stages and fixed places where a person must approve</button><button class="choice" data-i="2">A single long prompt typed fresh each month</button><button class="choice" data-i="3">A chat where Claude decides when to ask for help</button></div>
       <div class="fb" data-ok="Right. Fixed steps and fixed approvals make it predictable and testable." data-no="Who decides the steps and the approvals: you, or the AI?"></div>
     </div>
@@ -132,7 +132,7 @@
   <div class="tech"><p><b>Technique:</b> Prompt chaining (also called a multi-step workflow or a pipeline: a task split into stages, where each stage's output is the next stage's input)</p><p><b>Why it helps:</b> Each stage is small enough to check, a mistake is easier to locate, and the same stages run the same way every month. In Step 5 you write the stages into your own instructions.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Why is it better to keep Walt's thresholds in a rules file than to write them inside each stage?</p>
-    <div class="qc" data-id="q3b" data-correct="2" data-req>
+    <div class="qc" data-id="q3b" data-h="b969f16031066fbfb8f33ff8b914caf3d27ab6eebc023ec14c02f56141b1a672" data-req>
       <div class="choices"><button class="choice" data-i="0">Because Claude cannot read thresholds inside instructions</button><button class="choice" data-i="1">Because rules files are always more accurate</button><button class="choice" data-i="2">Because Walt can change a rule in one place without anyone rewriting the machine</button><button class="choice" data-i="3">Because it makes the instructions longer</button></div>
       <div class="fb" data-ok="Yes. The rules change more often than the procedure does." data-no="Which choice describes a benefit to the person who owns the rules?"></div>
     </div>
@@ -143,7 +143,7 @@
   <div class="tech"><p><b>Technique:</b> Human-in-the-loop checkpoints (also called gates, approval steps, or human review)</p><p><b>Why it helps:</b> The AI does the heavy lifting; a person keeps the judgment and the accountability. The checkpoint sits where an error would be most costly or hardest to see later.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>At Gate 2 the machine reports "no payment exceptions found." What should the person do?</p>
-    <div class="qc" data-id="q3c" data-correct="3" data-req>
+    <div class="qc" data-id="q3c" data-h="d31ce9ae7f0a8bfda7df0ad02c257005dac820b00f81ca96ae02e0a3263b9346" data-req>
       <div class="choices"><button class="choice" data-i="0">Approve at once, since there is nothing to review</button><button class="choice" data-i="1">Ask the machine "Are you sure?" and approve if it says yes</button><button class="choice" data-i="2">Delete the gate, because it never finds anything</button><button class="choice" data-i="3">Check that the machine states which tests it ran on which payments, and spot-check one test in the register before approving</button></div>
       <div class="fb" data-ok="Right. A clean result is only worth something if the tests really ran." data-no="What would a skipped test look like in the machine's output?"></div>
     </div>
@@ -154,7 +154,7 @@
   <div class="tech"><p><b>Technique:</b> Standing instructions plus knowledge files (a system prompt with attached documents), tool use for calculations (code execution), and guardrails (a stop-if-something-is-wrong rule, sometimes called failing safe)</p><p><b>Why it helps:</b> The same rules and procedure apply to every run, whoever starts it. A machine that stops when something is wrong is safer than one that improvises.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Someone forgets to attach the cash ledger. What should the machine do?</p>
-    <div class="qc" data-id="q3d" data-correct="0" data-req>
+    <div class="qc" data-id="q3d" data-h="b6e81c9b726a811bd6abd38130a97175d1c19e98d105f3a5eb6f6c04a0c98d9a" data-req>
       <div class="choices"><button class="choice" data-i="0">Stop, say which file is missing, and wait; make up nothing</button><button class="choice" data-i="1">Estimate the cash ledger from the bank statement and carry on</button><button class="choice" data-i="2">Skip Stage 1 and run the other stages without saying so</button><button class="choice" data-i="3">Use last month's ledger</button></div>
       <div class="fb" data-ok="Yes. A missing input is a stop, not a guess." data-no="Which choice avoids inventing numbers?"></div>
     </div>
@@ -166,12 +166,12 @@
   <div class="tech"><p><b>Technique:</b> Evaluation against a test set (often called evals): known problems, caught versus missed versus false alarms (recall and precision), a held-out test month, and regression testing after changes</p><p><b>Why it helps:</b> It replaces "it sounds right" with a number you can compare from one version of the machine to the next, and it shows whether a fix works in general or only on the month you used.</p></div>
   <div class="turn"><span class="tag">Your turn</span>
     <p>A test month has 12 planted problems. Your machine lists 10 items: 8 are planted problems and 2 are not. How would you describe the result?</p>
-    <div class="qc" data-id="q3e1" data-correct="0" data-req>
+    <div class="qc" data-id="q3e1" data-h="575cfa76979e5755b02a4a2bc987de125516bd61415ec6e20946389492bc9f51" data-req>
       <div class="choices"><button class="choice" data-i="0">It caught 8 of 12 and raised 2 false alarms</button><button class="choice" data-i="1">It caught 10 of 12 and raised no false alarms</button><button class="choice" data-i="2">It caught 8 of 10, so it missed nothing</button><button class="choice" data-i="3">It was 80 percent accurate, so it is ready</button></div>
       <div class="fb" data-ok="Right. Count the planted problems it found, the planted problems it did not, and the extras it flagged." data-no="Of the 12 planted problems, how many did it find? How many of its 10 items were not planted?"></div>
     </div>
     <p>The machine missed a payment that was paid twice in October. Which fix follows the rule "fix the rule, not the practice month"?</p>
-    <div class="qc" data-id="q3e2" data-correct="1" data-req>
+    <div class="qc" data-id="q3e2" data-h="97f2c037af9e1ec5a7f25c55ba8c45de0ee6a66e67e9ada07545f59767dffd37" data-req>
       <div class="choices"><button class="choice" data-i="0">Add to the instructions: "Always flag payment P-900123"</button><button class="choice" data-i="1">Add to the instructions: "Compare every payment with every other payment for the same vendor, invoice number, and amount, and list each pair"</button><button class="choice" data-i="2">Re-run October until it finds it, then use that run</button><button class="choice" data-i="3">Tell the machine October has a duplicate</button></div>
       <div class="fb" data-ok="Yes. A general instruction works next month too." data-no="Which fix would still help in a month where the duplicate is a different payment?"></div>
     </div>
@@ -226,7 +226,7 @@ Reviewed by: ____ (a person must sign before this goes to the Controller)</div>
 
   <div class="turn"><span class="tag">Your turn</span>
     <p>In the example, why did Claude list L02 as needing a person?</p>
-    <div class="qc" data-id="q3f" data-correct="1" data-req>
+    <div class="qc" data-id="q3f" data-h="7ef400db43758f7efc260a4e0113ce935104a93ad5184f5b7e6411631fc3701e" data-req>
       <div class="choices"><button class="choice" data-i="0">Because the L02 variance was the biggest on the report</button><button class="choice" data-i="1">Because the note given for L02 did not explain the variance, and the files said nothing else</button><button class="choice" data-i="2">Because Claude suspected a mistake by a particular employee</button><button class="choice" data-i="3">Because every investigated line goes in the memo as an exception</button></div>
       <div class="fb" data-ok="Right. The rule is to explain a line from its note, and to say 'not in the data' when the note does not fit." data-no="What does the rule say to do when the note does not explain the variance?"></div>
     </div>
@@ -238,7 +238,7 @@ Reviewed by: ____ (a person must sign before this goes to the Controller)</div>
   <p>A machine nobody can describe cannot be trusted or handed over. Write a <b>one-page machine card</b> with four parts: <b>what it does and what it needs</b> (its purpose, the files it takes, the rules file it follows); <b>its stages and gates</b>; <b>how it was tested and the results</b> (which months, caught, missed, false alarms, using the real numbers); and <b>its limits and who signs</b> (what it could not decide, what you did not test, and the role of the person accountable for the memo). Be honest about the limits: a card that says only good things will not be believed.</p>
   <div class="turn"><span class="tag">Your turn</span>
     <p>Which sentence belongs in the testing part of a machine card?</p>
-    <div class="qc" data-id="q3g" data-correct="2" data-req>
+    <div class="qc" data-id="q3g" data-h="006d00cb88bfcc0551e004eb4f88bc5d986faf740afb7975fd5543a7adae3cc5" data-req>
       <div class="choices"><button class="choice" data-i="0">"The machine is very accurate and ready for use."</button><button class="choice" data-i="1">"The machine was tested and works well."</button><button class="choice" data-i="2">"On a test month with 12 planted problems it caught 10, missed 2, and raised 1 false alarm; it has not been tested on a month with a missing file."</button><button class="choice" data-i="3">"Claude passed its own check."</button></div>
       <div class="fb" data-ok="Yes. Real numbers, and a limit stated." data-no="Which sentence gives numbers and admits what was not tested?"></div>
     </div>

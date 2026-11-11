@@ -173,7 +173,7 @@
 
   /* ---------- quick checks ---------- */
   $$(".qc").forEach(q=>{
-    const id = q.dataset.id, fb = $(".fb",q), right = Number(q.dataset.correct);
+    const id = q.dataset.id, fb = $(".fb",q), right = VeloxQC.right(q,9);
     const btns = $$(".choice",q);
     const markRight = ()=>{ btns.forEach(b=>b.classList.remove("wrong")); btns[right].classList.add("right"); fb.className="fb show ok"; fb.textContent=fb.dataset.ok; q.dataset.solved="1"; };
     if(store.get(P+"qc."+id,false)) markRight();
