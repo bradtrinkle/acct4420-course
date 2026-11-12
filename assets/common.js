@@ -52,14 +52,14 @@ window.VeloxQC=(function(){
   try{
     const rm = location.pathname.match(/module-(\d+)\.html$/);
     const rvParam = new URLSearchParams(location.search).get("review");
-    if(rm || rvParam==="all"){
+    if(true){
       const N = rm ? rm[1] : "", FLAG = "sys.rv" + N;
       const REVIEW_HASH = "4a03ac2b94c4ff8841e9992f452ea36c73b487a626b4a694f9c46357dc7a122c", REVIEW_SALT = "acct4420-review-v1:";
       const sha = async s => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))).map(x=>x.toString(16).padStart(2,"0")).join("");
       const authed = store.get("sys.reviewOK","")===REVIEW_HASH;
       const wants = (rm && rvParam==="1") || rvParam==="all";
       const turnOn = () => { (rvParam==="all" ? [1,2,3,4,5,6,7,8,9,10] : [N]).forEach(n=>{ store.set("m"+n+".max", 8); store.set("sys.rv"+n, true); }); };
-      if(wants && authed){ turnOn(); if(!rm) location.replace("module-1.html"); }
+      if(wants && authed){ turnOn(); }
       if(rm && authed && store.get(FLAG,false)){
         document.addEventListener("DOMContentLoaded", ()=>{
           const b = document.createElement("div");
@@ -67,6 +67,16 @@ window.VeloxQC=(function(){
           b.style.cssText = "position:fixed;right:14px;bottom:14px;z-index:58;background:#F1BE48;color:#000;border:2px solid #c99a2c;border-radius:14px;padding:10px 14px;max-width:min(340px,calc(100vw - 28px));font:600 14px/1.35 system-ui,sans-serif;box-shadow:0 3px 10px rgba(0,0,0,.25)";
           b.innerHTML = 'REVIEWER MODE IS ON for this module. Click any numbered step to read it. <button type="button" style="margin-left:6px;font:inherit;cursor:pointer">Turn off</button>';
           b.querySelector("button").addEventListener("click", ()=>{ store.set("m"+N+".max",1); store.set("m"+N+".step",1); store.set(FLAG,false); location.href = location.pathname; });
+          document.body.appendChild(b);
+        });
+      }
+      if(!rm && authed && [1,2,3,4,5,6,7,8,9,10].every(n=>store.get("sys.rv"+n,false))){
+        document.addEventListener("DOMContentLoaded", ()=>{
+          const b = document.createElement("div");
+          b.id = "rvPill"; b.setAttribute("role","status");
+          b.style.cssText = "position:fixed;right:14px;bottom:14px;z-index:58;background:#F1BE48;color:#000;border:2px solid #c99a2c;border-radius:14px;padding:10px 14px;max-width:min(340px,calc(100vw - 28px));font:600 14px/1.35 system-ui,sans-serif;box-shadow:0 3px 10px rgba(0,0,0,.25)";
+          b.innerHTML = 'REVIEWER MODE IS ON for all ten modules. Open any module and click any numbered step to read it. <button type="button" style="margin-left:6px;font:inherit;cursor:pointer">Turn off</button>';
+          b.querySelector("button").addEventListener("click", ()=>{ [1,2,3,4,5,6,7,8,9,10].forEach(n=>{ store.set("m"+n+".max",1); store.set("m"+n+".step",1); store.set("sys.rv"+n,false); }); location.href = location.pathname; });
           document.body.appendChild(b);
         });
       }
@@ -80,7 +90,7 @@ window.VeloxQC=(function(){
           document.body.appendChild(m);
           const pw = m.querySelector("#rvPw"); pw.focus();
           const go = async ()=>{
-            if(await sha(REVIEW_SALT + pw.value.trim().toLowerCase()) === REVIEW_HASH){ store.set("sys.reviewOK", REVIEW_HASH); turnOn(); if(rm) location.reload(); else location.href = "module-1.html"; }
+            if(await sha(REVIEW_SALT + pw.value.trim().toLowerCase()) === REVIEW_HASH){ store.set("sys.reviewOK", REVIEW_HASH); turnOn(); location.reload(); }
             else m.querySelector("#rvMsg").textContent = "That password is not right. Check it and try again.";
           };
           m.querySelector("#rvGo").addEventListener("click", go);
