@@ -166,7 +166,7 @@
     s += "B. RATIOS AND THE STORY\nFirst attempt request (Step 2): "+d.r1p+"\nFirst attempt summary: "+d.r1o+"\nThings I could not tell: "+d.r1w+"\n\nMy two requests:\n"+d.p3req+"\n\nClaude's six ratios:\n"+d.p3rat+"\n\nClaude's explanation of what changed:\n"+d.p3why+"\n\n";
     s += "C. VERIFICATION\n"+d.ver.map(x=>`Finding ${x.k}: ${x.item}\nWhere the inputs are: ${x.where}\nMy arithmetic: ${x.amts}\nWhat I found: ${x.verdict}\nWhat I did about it: ${x.action}`).join("\n\n")+"\n\n";
     s += "D. EXPLANATION FOR PRIYA\nRequest I used: "+d.ppr+"\n\nMy page:\n"+d.ppage+"\n\n";
-    s += "E. MY ANGLE\nOption chosen: "+d.angle+"\nRequest I used: "+d.angreq+"\n\nMy piece:\n"+d.angtext+"\n\n";
+    s += "E. MY LENS\nOption chosen: "+d.angle+"\nRequest I used: "+d.angreq+"\n\nMy piece:\n"+d.angtext+"\n\n";
     s += "F. ETHICAL AI: TRANSPARENCY AND DISCLOSURE\nStep 4 review of the five closing lines:\n"+d.sits.map(x=>`Line ${x.n} (“${x.line}”): ${x.v}. Why: ${x.w}`).join("\n")+"\nDecision: "+d.e4d+"\nWhy: "+d.e4w+"\nMy closing line for Priya: "+d.foot+"\nAI tools I used: "+d.disc+"\n";
     if(!forCoach){
       s += "\nG. COACH FEEDBACK AND MASTERY EVIDENCE\nWhat I changed after feedback: "+d.rev+"\nFeedback I rejected and why: "+(d.rej||"(none)")+"\n\nFull coach conversation:\n"+d.trans+"\n";
@@ -186,7 +186,7 @@
 <h2>B. Ratios and the story</h2><p><b>First attempt request (Step 2):</b></p>${p(d.r1p)}<p><b>First attempt summary:</b></p>${p(d.r1o)}<p><b>Things I could not tell:</b></p>${p(d.r1w)}<p><b>My two requests:</b></p>${p(d.p3req)}<p><b>Claude's six ratios:</b></p>${p(d.p3rat)}<p><b>Claude's explanation of what changed:</b></p>${p(d.p3why)}
 <h2>C. Verification</h2><table><tr><th>#</th><th>Finding (as Claude stated it)</th><th>Where the inputs are</th><th>My arithmetic</th><th>What I found</th><th>What I did</th></tr>${ver}</table>
 <h2>D. Explanation for Priya</h2><p><b>Request I used:</b></p>${p(d.ppr)}<p><b>My page:</b></p>${p(d.ppage)}
-<h2>E. My angle</h2><p><b>Option chosen:</b> ${esc(d.angle)}</p><p><b>Request I used:</b></p>${p(d.angreq)}<p><b>My piece:</b></p>${p(d.angtext)}
+<h2>E. My lens</h2><p><b>Option chosen:</b> ${esc(d.angle)}</p><p><b>Request I used:</b></p>${p(d.angreq)}<p><b>My piece:</b></p>${p(d.angtext)}
 <h2>F. Ethical AI: transparency and disclosure</h2><table><tr><th>#</th><th>Closing line</th><th>My verdict</th><th>Why</th></tr>${sit}</table><p><b>Decision:</b> ${esc(d.e4d)}</p><p><b>Why:</b></p>${p(d.e4w)}<p><b>My closing line for Priya:</b></p>${p(d.foot)}<p><b>AI tools I used:</b></p>${p(d.disc)}
 <h2>G. Coach feedback and mastery evidence</h2><p><b>What I changed after feedback:</b></p>${p(d.rev)}<p><b>Feedback I rejected and why:</b></p>${p(d.rej||"(none)")}<p><b>Full coach conversation:</b></p>${p(d.trans)}
 ${d.grad?`<h2>H. Graduate students only</h2><p><b>Third finding</b></p>${p(d.g1)}<p><b>Check without AI</b></p>${p(d.g2)}<p><b>Assumption or limitation</b></p>${p(d.g3)}`:""}
