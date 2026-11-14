@@ -43,6 +43,7 @@
     <p><b>What you will produce:</b> (1) one Word document, built from what you type on this page, that you upload to Canvas; (2) a 5 to 10 minute video, recorded with any free tool, that you upload to Canvas, with its transcript pasted on this page (so the transcript is part of the Word document).</p>
     <p><b>What you need:</b> your own paid Claude account (claude.ai), your Jordan Coach project from Module 1, Excel or Google Sheets (you will check numbers yourself), a way to record your screen and voice (Step 3f suggests free options), and your Canvas login. If you build an agent, the Claude desktop app with Cowork (as in Module 9) is the recommended way to run it; everything else runs in an ordinary Claude chat. Use Chrome or Edge on a computer, keep Auto-save ON (the bar at the top of the page), and do not use a private or incognito window. As you go, also keep your instructions, your reports, and your scorer results in a text file of your own, so a cleared browser cannot cost you your work.</p>
     <p><b>The three weeks.</b> <b>Week 10 (about 7.5 hours):</b> Steps 1 to 4 and the first half of Step 5 (the Setup and Parts 1 to 3): choose your client, write your proposal, get feedback from your coach, and build version 1. <b>Week 11 (about 8.5 hours):</b> the rest of Step 5 (Parts 4 to 8): rehearse on October, stress-test it, take the November test, check two findings yourself, and have your coach review the evidence. <b>Week 12 (about 7.5 hours):</b> Steps 6 to 8: improve it, run December, document it, record the video, and reflect. You can only open each step after finishing the one before it, so the page itself makes sure the evidence from Weeks 10 and 11 exists before Week 12 begins. There is no quiz. Graduate students add about 2.5 hours (Part 14).</p>
+    <p><b>Deadline: this one is a Friday.</b> Modules 1 to 9 are due on a Sunday. The Module 10 package (the Word document and the video) is due on a <b>Friday</b>, a couple of days earlier than a Sunday would be. The exact date and time are on the Canvas assignment, so check it when you start Week 12 and plan your recording time around it.</p>
     <p><b>How you are graded:</b> once, on the package you submit at the end of Week 12, using the 100-point rubric at the bottom of Step 6 (it is also a downloadable file you will upload to your coach). Your proposal and your Week 11 work are for feedback and for the evidence they produce; their points are earned in the final package. Your solution's reports are scored by the same scorer you will use here, and your grader recomputes the numbers from the reports you paste.</p>
     <p><b>A note about usage:</b> on a $20 per month plan, chat and Cowork share one usage allowance that resets on a schedule. You will do a couple of dozen runs across three weeks. <b>Click your name, choose Settings, then Usage</b> to see how much you have left, and spread your runs over several days. A run in Cowork uses much more of your allowance than a run in a chat, so do not stack many Cowork runs in one sitting. If a limit stops a run partway, wait for the reset, run it again, and say so in your run notes; that run counts as your first complete run. Tell your instructor if the wait affects a deadline.</p>
     <p><b>How this page is organized:</b> 8 steps. Step 1 Mission brief (0.25 hr) · 2 Choose your client and try it first (1.25 hr) · 3 Learn (0.75 hr) · 4 Ethics checkpoint (0.75 hr) · 5 Build and test, Weeks 10 and 11 (13 hr, the Setup plus Parts 1 to 8) · 6 The final package, Week 12 (4.75 hr, with Parts 9 to 13, and Part 14 for graduate students) · 7 The video (2.5 hr) · 8 Reflection (0.25 hr). The step times add up to the total. Each run of your solution also takes a few minutes while Claude works; that waiting is included in the times above.</p>
@@ -58,6 +59,7 @@
   <div class="card">
     <h3>The engagement board</h3>
     <p>Every engagement has the same shape, so none is easier than another: <b>three months of simulated files</b> (October for practice, November for the test, December for the final), <b>six flagged items</b> each month, <b>four traps</b> hidden in each month's notes, the same <b>report format</b>, and the same scoring. They differ in subject, so choose the one whose business you would like to understand better. Three of the eight are accounting engagements (audit testing, tax, and financial reporting). No major is required to choose any particular one.</p>
+    <p><b>A suggestion, not a requirement:</b> if you stayed with one department (your “lens”) for the choices in Modules 4 to 7 and 9, an engagement from the same department lets you keep thinking the way you already have all term. Each card below names its department. Any engagement is fine.</p>
     <div id="packCards"></div>
     <p class="hint">The subject is only the setting. What you are graded on is the quality of your solution, your testing, your own checking, and your honesty about its limits. You do not need to know the accounting beforehand; each case folder has a rules file that says what counts as a problem.</p>
   </div>
@@ -260,6 +262,7 @@ Report only the items in the exceptions file (do not add items you notice elsewh
   </div>
   <label class="lbl" for="sol1"><b>Paste your instructions</b> <span data-build="Assistant">(the full Project instructions)</span><span data-build="Workflow">(the shared rules and every stage prompt, labelled Stage 1, Stage 2, and so on)</span><span data-build="Agent">(the full charter)</span></label>
   <textarea id="sol1" data-save="s5.sol1" data-min="800" data-req style="min-height:300px"></textarea>
+  <p class="hint"><b>What to paste:</b> the full text of your instructions (the Project instructions, every stage prompt, or the charter, as you chose in Part 1), not a summary of them. Covering the seven required things takes more than the minimum. <b>The box needs at least 800 characters</b> (about 133 words); if the page will not let you continue, the message at the bottom names this box.</p>
   <label class="lbl" for="runreq"><b>The exact request you type to start a run</b> (for example, "Run the November review on the attached files." If your workflow starts by pasting Stage 1, write what you type.)</label>
   <input type="text" id="runreq" data-save="s5.runreq" data-min="8" data-req>
   <label class="lbl" for="stoptest"><b>Paste what the solution said</b> when you ran it with the data files missing</label>
@@ -289,6 +292,7 @@ Report only the items in the exceptions file (do not add items you notice elsewh
   <div class="scorer" data-scorer="s5oct" data-default="october"></div>
   <label class="lbl" for="orep"><b>Paste the report</b> from your best October run (the same text you scored)</label>
   <textarea id="orep" data-save="s5.orep" data-min="400" data-req style="min-height:160px"></textarea>
+  <p class="hint"><b>What to paste:</b> only the report your solution wrote (the lines starting with the item codes, plus the INSTRUCTIONS FOUND IN FILES and ACTIONS I DID NOT TAKE sections, in the format you saw in Step 3c), exactly as it wrote it. A real report is much longer than the minimum. <b>The box needs at least 400 characters</b> (about 66 words); if the page will not let you continue, the message at the bottom names this box.</p>
   <div data-build="Agent" data-route="A">
     <label class="lbl" for="oapp"><b>Approvals log for that run:</b> each permission prompt you saw (what it asked, what you chose, why). If there were many, list the first six and say how many there were in total.</label>
     <textarea id="oapp" data-save="s5.oapp" data-min="30" data-req style="min-height:100px"></textarea>
@@ -340,6 +344,7 @@ Report only the items in the exceptions file (do not add items you notice elsewh
   <div class="scorer" data-scorer="s5nov" data-default="november"></div>
   <label class="lbl" for="nrep"><b>Paste the report</b> from the run you scored</label>
   <textarea id="nrep" data-save="s5.nrep" data-min="400" data-req style="min-height:160px"></textarea>
+  <p class="hint"><b>What to paste:</b> only the report your solution wrote (the lines starting with the item codes, plus the INSTRUCTIONS FOUND IN FILES and ACTIONS I DID NOT TAKE sections, in the format you saw in Step 3c), exactly as it wrote it. A real report is much longer than the minimum. <b>The box needs at least 400 characters</b> (about 66 words); if the page will not let you continue, the message at the bottom names this box.</p>
   <div data-build="Agent" data-route="A">
     <label class="lbl" for="napp"><b>Approvals log for that run:</b> each permission prompt (what it asked, what you chose, why). Then name <b>one approval you denied, or would have denied</b>, and why.</label>
     <textarea id="napp" data-save="s5.napp" data-min="50" data-req style="min-height:100px"></textarea>
@@ -397,6 +402,7 @@ Report only the items in the exceptions file (do not add items you notice elsewh
   <textarea id="rev" data-save="s6.rev" data-min="80" data-req style="min-height:100px"></textarea>
   <label class="lbl" for="sol2"><b>Paste your updated instructions</b> (the full text you will use for December)</label>
   <textarea id="sol2" data-save="s6.sol2" data-min="800" data-req style="min-height:240px"></textarea>
+  <p class="hint"><b>What to paste:</b> the full text of your instructions as you will use them for December, not only the lines you changed. <b>The box needs at least 800 characters</b> (about 133 words); if the page will not let you continue, the message at the bottom names this box.</p>
   <label class="lbl" for="regr">Optional: did re-running October with your new instructions still give the results you had before? What happened?</label>
   <textarea id="regr" data-save="s6.regr" style="min-height:60px"></textarea>
 
@@ -414,6 +420,7 @@ Report only the items in the exceptions file (do not add items you notice elsewh
   <div class="scorer" data-scorer="s6dec" data-default="december"></div>
   <label class="lbl" for="drep"><b>Paste the December report</b> (the same text you scored)</label>
   <textarea id="drep" data-save="s6.drep" data-min="400" data-req style="min-height:160px"></textarea>
+  <p class="hint"><b>What to paste:</b> only the report your solution wrote (the lines starting with the item codes, plus the INSTRUCTIONS FOUND IN FILES and ACTIONS I DID NOT TAKE sections, in the format you saw in Step 3c), exactly as it wrote it. A real report is much longer than the minimum. <b>The box needs at least 400 characters</b> (about 66 words); if the page will not let you continue, the message at the bottom names this box.</p>
   <div data-build="Agent" data-route="A">
     <label class="lbl" for="dapp"><b>Approvals log for the December run:</b> each permission prompt (what it asked, what you chose, why)</label>
     <textarea id="dapp" data-save="s6.dapp" data-min="30" data-req style="min-height:90px"></textarea>
