@@ -54,7 +54,7 @@ window.VeloxQC=(function(){
     const rvParam = new URLSearchParams(location.search).get("review");
     if(true){
       const N = rm ? rm[1] : "", FLAG = "sys.rv" + N;
-      const REVIEW_HASH = "4a03ac2b94c4ff8841e9992f452ea36c73b487a626b4a694f9c46357dc7a122c", REVIEW_SALT = "acct4420-review-v1:";
+      const REVIEW_HASH = "d3316d37cd8bf010c35cafbcb15062f0b4674127f6207e926fafc29cf2f5b863", REVIEW_SALT = "acct4420-review-v1:";
       const sha = async s => Array.from(new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(s)))).map(x=>x.toString(16).padStart(2,"0")).join("");
       const authed = store.get("sys.reviewOK","")===REVIEW_HASH;
       const wants = (rm && rvParam==="1") || rvParam==="all";
