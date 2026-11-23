@@ -157,7 +157,7 @@
   function data(){
     const sits = SITUATIONS.map((s,i)=>({n:i+1,line:s.line,v:val("sv"+(i+1)),w:val("sw"+(i+1))}));
     const ver = [1,2].map(k=>({k,item:val("vc"+k),where:val("vw"+k),amts:val("vm"+k),verdict:val("vv"+k),action:val("va"+k)}));
-    const f = ["r1p","r1o","r1w","pinst","ptest","p3req","p3rat","p3why","ppr","ppage","angle","angreq","angtext","foot","disc","e4d","e4w","rev","rej","trans","g1","g2","g3"];
+    const f = ["r1p","r1o","r1w","pinst","ptest","p3req","p3rat","p3why","ppr","ppage","angle","angreq","angtext","foot","disc","dashtrust","e4d","e4w","rev","rej","trans","g1","g2","g3"];
     const o = {grad:isGrad(),sits,ver}; f.forEach(id=>{o[id]=val(id);}); o.name=val("stuName"); return o;
   }
   function asText(d, forCoach){
@@ -171,7 +171,8 @@
     if(!forCoach){
       s += "\nG. COACH FEEDBACK AND MASTERY EVIDENCE\nWhat I changed after feedback: "+d.rev+"\nFeedback I rejected and why: "+(d.rej||"(none)")+"\n\nFull coach conversation:\n"+d.trans+"\n";
     }
-    if(d.grad) s += "\nH. GRADUATE STUDENTS ONLY\nThird finding: "+d.g1+"\nCheck without AI: "+d.g2+"\nAssumption or limitation: "+d.g3+"\n";
+    s += "\nH. CHARTS AND DASHBOARDS (Part 7)\nI completed the four tests and filled in the template, which I upload separately to Canvas.\nWrap-up: "+d.dashtrust+"\n";
+    if(d.grad) s += "\nI. GRADUATE STUDENTS ONLY\nThird finding: "+d.g1+"\nCheck without AI: "+d.g2+"\nAssumption or limitation: "+d.g3+"\n";
     return s;
   }
   function asDoc(d){
@@ -189,7 +190,8 @@
 <h2>E. My lens</h2><p><b>Option chosen:</b> ${esc(d.angle)}</p><p><b>Request I used:</b></p>${p(d.angreq)}<p><b>My piece:</b></p>${p(d.angtext)}
 <h2>F. Ethical AI: transparency and disclosure</h2><table><tr><th>#</th><th>Closing line</th><th>My verdict</th><th>Why</th></tr>${sit}</table><p><b>Decision:</b> ${esc(d.e4d)}</p><p><b>Why:</b></p>${p(d.e4w)}<p><b>My closing line for Priya:</b></p>${p(d.foot)}<p><b>AI tools I used:</b></p>${p(d.disc)}
 <h2>G. Coach feedback and mastery evidence</h2><p><b>What I changed after feedback:</b></p>${p(d.rev)}<p><b>Feedback I rejected and why:</b></p>${p(d.rej||"(none)")}<p><b>Full coach conversation:</b></p>${p(d.trans)}
-${d.grad?`<h2>H. Graduate students only</h2><p><b>Third finding</b></p>${p(d.g1)}<p><b>Check without AI</b></p>${p(d.g2)}<p><b>Assumption or limitation</b></p>${p(d.g3)}`:""}
+<h2>H. Charts and dashboards (Part 7)</h2><p>I completed all four tests (Sheets, Data, Whiteboards, and a chat dashboard) and filled in the Part 7 template, which I upload to Canvas as a second file.</p><p><b>Wrap-up (which tool I would trust least, and which I would show Priya):</b></p>${p(d.dashtrust)}
+${d.grad?`<h2>I. Graduate students only</h2><p><b>Third finding</b></p>${p(d.g1)}<p><b>Check without AI</b></p>${p(d.g2)}<p><b>Assumption or limitation</b></p>${p(d.g3)}`:""}
 </body></html>`;
   }
   function download(){
